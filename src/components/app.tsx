@@ -1,8 +1,11 @@
 import React from "react"
+import Home from "./home/home"
 
 const App=()=>(
 
-        <h1>Hi Shama !!!</h1>
+       <>
+       <Home/>
+       </>
     )
 
 export default App;
