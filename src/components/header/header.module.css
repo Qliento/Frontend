@@ -1,0 +1,123 @@
+.header{
+    height: 100px;
+    display: flex;
+    padding-left: 15%;
+    padding-right: 15%;
+    align-items: center;
+    color: #000;
+}
+
+.header img{
+    width: 50px;
+    height: 50px;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    font-weight: 500;
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+.navbar div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar div + div{
+    margin-top: 7px;
+}
+
+.navbar div span{
+    padding: 5px 10px;
+    transition: all ease-in-out 0.3s;
+}
+
+.navbar div span:hover{
+    background-color: var(--green);
+    cursor: pointer;
+    color: #fff;
+}
+
+.local_basket{
+    margin-left: 230px;
+    display: flex;
+    flex-direction: column;
+}
+
+.localiz span{
+    color: #828282;
+    cursor: pointer;
+    position: relative;
+}
+
+.localiz span::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--green);
+    bottom: 0;
+    left: 0;
+    transform: scale(0);
+    transition: ease-in-out 0.2s;
+}
+
+.localiz span:hover::after{
+    transform: scale(1);
+}
+
+.localiz span + span{
+    margin-left: 15px;
+}
+
+.basket{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.basket svg{
+    margin-left: 10px;
+}
+
+.vertical_line{
+    background-color: #BDBDBD;
+    width: 2px;
+    height: 80px;
+    margin-left: 30px;
+    margin-right: 40px;
+}
+
+.regisration {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start
+}
+
+.regisration button{
+    cursor: pointer;
+}
+
+.Lk{
+    padding: 5px 20px;
+    background-color: var(--green);
+    border: none;
+    color: #fff;
+}
+
+.regisrationBtn{
+    border: none;
+    background-color: #fff;
+    color: #828282;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.regisrationBtn:hover{
+    text-decoration: underline;
+}
