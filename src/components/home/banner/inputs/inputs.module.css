@@ -10,7 +10,7 @@
     height: 100%;
     background: #FFFFFF;
     border: 1px solid #FFFFFF;
-    color: #333333;
+    color: rgba(51, 51, 51, 1);
     padding-left: 20px;
     font-size: 14px;
 }
