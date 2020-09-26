@@ -10,6 +10,7 @@
 }
 .card:hover{
     background: #6FCF97;
+    transition: ease-in-out 0.2s;
 }
 .BlockTitle {
   width: 80%;
