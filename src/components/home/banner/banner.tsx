@@ -1,11 +1,16 @@
 import React from "react"
-import "./banner.css"
+import classes from  "./banner.module.css"
 import banner from "./img/баннер.png"
+import Inputs from "./inputs/inputs"
 
 const Banner = ()=>{
     return(
-        <div>
-            <img alt="banner" src={banner}/>
+        <div className={classes.wrapper}>
+            <img alt="banner" className={classes.banner} src={banner}/>
+            <div className={classes.blockSearch}>
+<Inputs/>
+
+            </div>
         </div>
     )
 }

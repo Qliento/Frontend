@@ -9,8 +9,6 @@ const App=()=>(
     <>
         <Header />
         <Home/>
-        <div>
-        </div>
         <Footer />
     </>
     )
