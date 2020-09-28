@@ -1,6 +1,6 @@
 import React from "react"
 import classes from  "./banner.module.css"
-import banner from "./img/баннер.png"
+import banner from "./img/banner.svg"
 import Inputs from "./inputs/inputs"
 
 const Banner = ()=>{
