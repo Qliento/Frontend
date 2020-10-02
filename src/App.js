@@ -6,6 +6,7 @@ import Auth from "./components/auth/auth";
 import Registration from "./components/registration/registration";
 import Header from "./components/header/header"
 import Footer from "./components/footer/footer"
+import RegistOrganization from "./components/registOrganization/regisrtOrganization"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/" component={Main} />
         <Route path="/auth" component={Auth} />
         <Route path="/registration" component={Registration} />
+        <Route path="/registration-organization" component={RegistOrganization} />
       </Switch>
       <Footer />
     </div>

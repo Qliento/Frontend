@@ -1,0 +1,143 @@
+.regist {
+  width: 100%;
+  height: auto;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  background: #e5e5e5;
+}
+.blockRegist {
+  width: 35%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.canceling {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.img {
+  padding: 10px;
+}
+.blockTitle {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 24px;
+  color: #333333;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.step {
+  font-size: 18px;
+  color: #828282;
+}
+.blockTop {
+  width: 100%;
+}
+.blockInput {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+.inputs {
+  width: 100%;
+  height: 42px;
+  margin-top: 10px;
+}
+.blockForm {
+  margin-top: 10px;
+  width: 85%;
+}
+.blockInput > label {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+.inputs {
+  background: #ffffff;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  padding: 11px;
+  font-size: 16px;
+}
+.checkbox {
+  width: 42px;
+  height: 42px;
+  background: #ffffff;
+  border: 2px solid #bdbdbd;
+  box-sizing: border-box;
+}
+.blockChecket {
+  width: 100%;
+  height: 51px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.text {
+  font-size: 14px;
+  color: #333333;
+  width: 60%;
+  margin-left: 20px;
+}
+.blockCapcha {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+.inputCapcha {
+  background: #ffffff;
+  border: 2px solid #bdbdbd;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #828282;
+  padding: 10px;
+  height: 100%;
+  width: 45%;
+}
+.btnRegist {
+  width: 85%;
+  height: 42px;
+  margin-top: 60px;
+  background: #76b73e;
+  border: 1px solid #76b73e;
+  font-weight: bold;
+  font-size: 18px;
+
+  color: #ffffff;
+}
+.btnRegist:hover{
+    background: #ffffff;
+    border: 1px solid #76b73e;
+    color:#76b73e;
+}
+.error{
+    color: red;
+}
