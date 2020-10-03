@@ -22,7 +22,10 @@ const Registration =()=>{
 
                 <div className={classes.blockBtn}>
                     <button className={classes.btn}>Частное лицо</button>
+                    <Link to="/registration-organization">
                     <button className={classes.btn}>Организация</button>
+                    </Link>
+                  
                 </div>
                 <Link to="/" className={classes.linkCancel}><button className={classes.btnCancel}>Отмена</button></Link>
                
