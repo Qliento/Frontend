@@ -10,8 +10,11 @@
 
 input, button{
   outline: none;
+  cursor: pointer;
 }
 
 a{
   text-decoration: none;
+  color: #828282;
+  cursor: pointer;
 }

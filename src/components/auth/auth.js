@@ -14,11 +14,13 @@ const Auth = () => (
                 <input name="sing_in" id="sing_in" type="input" value="" placeholder="Ваш пароль"/>
             </div>
             <Link to="/">
-                Забыли пароль?
+                Забыл пароль
             </Link>
             <div className={st.auth_btn}>
                 <button>Войти</button>
-                <button>Регистрация</button>
+                <Link to="/Registration">
+                    Регистрация
+                </Link>
             </div>
             <div className={st.social_auth}>
                 <span>Войти через</span>

@@ -70,3 +70,51 @@
 .form input + label{
     margin-top: 30px;
 }
+
+.auth_content > a{
+    margin: 10px 50px 40px auto;
+}
+
+.auth_content a:hover{
+    text-decoration: underline;
+}
+
+.auth_btn{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth_btn button{
+    height: 40px;
+    background-color: var(--green);
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.auth_btn > a{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.social_auth{
+    width: 350px;
+}
+
+.social_auth span{
+    color: #333;
+}
+
+.social_auth_icons{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.social_auth_icons img{
+    cursor: pointer;
+}
