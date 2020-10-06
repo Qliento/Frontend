@@ -1,0 +1,55 @@
+.aboutPage {
+  width: 100%;
+  height: auto;
+  padding-top: 100px;
+  padding-bottom: 188px;
+  background: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.topBlock {
+  width: 65%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.blockDescrip {
+  width: 100%;
+  height: auto;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+.blockDescrip span {
+  text-align: center;
+  font-size: 18px;
+
+  color: #333333;
+}
+.title {
+  font-size: 48px;
+  color: #333333;
+}
+.block1 {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 363px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+.text1 {
+  width: 50%;
+  height: auto;
+}
+.text1 span {
+  font-size: 18px;
+  color: #333333;
+}

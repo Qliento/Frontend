@@ -57,7 +57,7 @@ const Header = () => (
 
     <div className={st.navbar}>
       <span>Новости</span>
-      <span>О нас</span>
+      <Link to="/about-us"><span>О нас</span></Link>
       <span>Блог</span>
       <span>Стать партнёром</span>
       <span>Маркет исследований</span>
