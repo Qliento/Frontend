@@ -87,7 +87,9 @@ const Header = () => (
     </div>
     <div className={st.vertical_line}></div>
     <div className={st.regisration}>
-      <button className={st.Lk}>личный кабинет</button>
+      <Link to="/auth">
+        <button className={st.Lk}>личный кабинет</button>
+      </Link>
       <Link to="/registration">
         {" "}
         <button className={st.regisrationBtn}>Регистрация</button>

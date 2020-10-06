@@ -5,8 +5,6 @@ import Tabs from "./tabs/tabs";
 import Order from "./order/order";
 import AboutUs from "./aboutUs/aboutUs";
 import News from "./news/news";
-import Header from "../header/header";
-import Footer from "../footer/footer";
 import banner from "./img/Group 45.png";
 import GooglePlay from "./googlePlay/googlePlay"
 import Analytics from "./analytics/analytics"
