@@ -6,8 +6,9 @@ import Auth from "./components/auth/auth";
 import Registration from "./components/registration/registration";
 import Header from "./components/header/header"
 import Footer from "./components/footer/footer"
-import RegistOrganization from "./components/registOrganization/regisrtOrganization";
 import RegistrationClient from './components/registClient/registClient'
+import RegistOrganization from "./components/registOrganization/regisrtOrganization"
+import About from "./components/about/about";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/registration" component={Registration} />
         <Route path="/registration-organization" component={RegistOrganization} />
         <Route path="/registration-client" component={RegistrationClient} />
+        <Route path="/about-us" component={About} />
       </Switch>
       <Footer />
     </div>
