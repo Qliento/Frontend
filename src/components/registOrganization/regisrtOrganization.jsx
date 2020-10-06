@@ -32,8 +32,13 @@ const RegistOrganization = () => {
               className={classes.inputs}
               placeholder="Название"
               type="text"
+              ref={register({
+                validate: (name2) => name2 && name2.length > 2,
+              })}
             />
-
+            {errors.name2 && (
+              <span className={classes.error}>Не корректно велли данные</span>
+            )}
           </div>
           <div className={classes.blockInput}>
             <label>Имя</label>
@@ -42,7 +47,13 @@ const RegistOrganization = () => {
               className={classes.inputs}
               placeholder="Ваше имя"
               type="text"
+              ref={register({
+                validate: (name) => name && name.length > 2,
+              })}
             />
+            {errors.name && (
+              <span className={classes.error}>Не корректно велли данные</span>
+            )}
           </div>
           <div className={classes.blockInput}>
             <label>Фамилия</label>
@@ -51,7 +62,13 @@ const RegistOrganization = () => {
               className={classes.inputs}
               placeholder="Ваша фамилия"
               type="text"
+              ref={register({
+                validate: (lastName) => lastName && lastName.length > 2,
+              })}
             />
+            {errors.lastName && (
+              <span className={classes.error}>Не корректно велли данные</span>
+            )}
           </div>
           <div className={classes.blockInput}>
             <label>E-mail</label>
@@ -79,7 +96,13 @@ const RegistOrganization = () => {
               className={classes.inputs}
               placeholder="+996 (___) __ - __ - __"
               type="number"
+              ref={register({
+                validate: (phone) => phone && phone.length > 2,
+              })}
             />
+            {errors.phone && (
+              <span className={classes.error}>Не корректно велли данные</span>
+            )}
           </div>
           <div className={classes.blockInput}>
             <label>Пароль</label>
@@ -88,7 +111,13 @@ const RegistOrganization = () => {
               className={classes.inputs}
               placeholder="Ваш пароль"
               type="password"
+              ref={register({
+                validate: (password) => password && password.length > 6,
+              })}
             />
+            {errors.password && (
+              <span className={classes.error}>Пароль менее 6 символов</span>
+            )}
           </div>
           <div className={classes.blockInput}>
             <label>Повторит пароль</label>
@@ -97,13 +126,21 @@ const RegistOrganization = () => {
               className={classes.inputs}
               placeholder="Ваш пароль"
               type="password"
+              ref={register({
+                validate: (repeatPasssword) =>
+                  repeatPasssword && repeatPasssword.length > 6,
+              })}
             />
+            {errors.repeatPasssword && (
+              <span className={classes.error}>Пароль менее 6 символов</span>
+            )}
           </div>
           <div className={classes.blockChecket}>
             <input
               className={classes.checkbox}
               type="checkbox"
               name="checkbox"
+              required
             />
             <div className={classes.text}>
               <span>Подтверждаю, что ознакомлен и согласен с </span>
