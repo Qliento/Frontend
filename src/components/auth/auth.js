@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 const Auth = () => (
     <div className={st.auth_bg}>
         <div className={st.auth_content}>
-            <div className={st.strike}></div>
+            <Link to = '/' className = {st.strikeLink} >
+                <div className={st.strike}></div>
+            </Link>
             <h2>Вход</h2>
             <div className={st.form}>
                 <label for="sing_in">E-mail</label>
@@ -13,7 +15,7 @@ const Auth = () => (
                 <label for="sing_in">Пароль</label>
                 <input name="sing_in" id="sing_in" type="input" value="" placeholder="Ваш пароль"/>
             </div>
-            <Link to="/">
+            <Link to="/" className={st.forgetPass}>
                 Забыл пароль
             </Link>
             <div className={st.auth_btn}>

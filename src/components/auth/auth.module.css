@@ -17,15 +17,18 @@
     margin-bottom: 180px;
 }
 
+.strikeLink{
+    margin-left: auto;
+    margin-right: 20px;
+}
+
 .strike{
     width: 24px;
     background-color: #828282;
     height: 2px;
     transform: rotate(45deg);
     margin-top: 20px;
-    margin-right: 20px;
     position: relative;
-    margin-left: auto;
     cursor: pointer;
 }
 
@@ -71,7 +74,7 @@
     margin-top: 30px;
 }
 
-.auth_content > a{
+.forgetPass{
     margin: 10px 50px 40px auto;
 }
 

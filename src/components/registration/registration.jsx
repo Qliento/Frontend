@@ -21,7 +21,9 @@ const Registration =()=>{
                 </div>
 
                 <div className={classes.blockBtn}>
+                    <Link to = '/registration-client'>
                     <button className={classes.btn}>Частное лицо</button>
+                    </Link>
                     <Link to="/registration-organization">
                     <button className={classes.btn}>Организация</button>
                     </Link>

@@ -5,6 +5,9 @@
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body{
   --green:#27AE60;
 }
 
@@ -18,3 +21,4 @@ a{
   color: #828282;
   cursor: pointer;
 }
+
