@@ -1,15 +1,17 @@
-import React from "react";
+import React,{useState} from "react";
 import { useForm } from "react-hook-form";
 import classes from "./regisrtOrganization.module.css";
 
 import cancel from "./img/cancel.png";
 import { Link } from "react-router-dom";
 import capcha from "./img/capcha.png";
-
+import noVis from "./img/noVisibility.png"
+import vis from "./img/visibility 1.png"
 const RegistOrganization = () => {
   const { handleSubmit, register, errors } = useForm();
   const onSubmit = (values) => console.log(values);
-
+  const [visibility,setVisibility]=useState(false)
+  const [visibility2,setVisibility2]=useState(false)
   return (
     <div className={classes.regist}>
       <div className={classes.blockRegist}>
@@ -106,31 +108,40 @@ const RegistOrganization = () => {
           </div>
           <div className={classes.blockInput}>
             <label>Пароль</label>
+            <div className={classes.blockVisibil}>
             <input
               name="password"
-              className={classes.inputs}
+              className={classes.inputs1}
               placeholder="Ваш пароль"
-              type="password"
+              type={visibility? "text":"password"}
               ref={register({
                 validate: (password) => password && password.length > 6,
               })}
             />
+            <img className={classes.imgVisib} onClick={()=>setVisibility(!visibility)} src={visibility? vis : noVis}/>
+            </div>
+
+
             {errors.password && (
               <span className={classes.error}>Пароль менее 6 символов</span>
             )}
           </div>
           <div className={classes.blockInput}>
             <label>Повторит пароль</label>
+            <div className={classes.blockVisibil}>
             <input
               name="repeatPasssword"
-              className={classes.inputs}
+              className={classes.inputs1}
               placeholder="Ваш пароль"
-              type="password"
+              type={visibility2? "text":"password"}
               ref={register({
                 validate: (repeatPasssword) =>
                   repeatPasssword && repeatPasssword.length > 6,
               })}
             />
+             <img className={classes.imgVisib} onClick={()=>setVisibility2(!visibility2)} src={visibility2? vis : noVis}/>
+            </div>
+          
             {errors.repeatPasssword && (
               <span className={classes.error}>Пароль менее 6 символов</span>
             )}
