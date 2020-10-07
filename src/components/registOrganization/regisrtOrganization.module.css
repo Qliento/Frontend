@@ -56,10 +56,35 @@
   align-items: flex-start;
   margin-top: 30px;
 }
+.blockVisibil{
+    width: 100%;
+    height: 42px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #bdbdbd;
+
+margin-top: 10px;
+}
 .inputs {
   width: 100%;
   height: 42px;
   margin-top: 10px;
+}
+.inputs1{
+    flex-grow: 2;
+    background: #ffffff;
+    border:  none;
+    padding: 11px;
+    height: 100%;
+    font-size: 16px;
+}
+.imgVisib{
+    width: 42px;
+
+}
+.inputs1:focus{
+    outline: none;
 }
 .blockForm {
   margin-top: 10px;
