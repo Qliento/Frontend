@@ -9,13 +9,13 @@ footer > div{
     flex-direction: column;
 }
 
-footer > div span:nth-child(1){
+.footer_title{
     font-weight: 700;
     position: relative;
     margin-bottom: 20px;
 }
 
-footer > div span:nth-child(1)::after{
+.footer_title::after{
     content: '';
     position: absolute;
     left: 0;
@@ -25,8 +25,9 @@ footer > div span:nth-child(1)::after{
     bottom: -10px;
 }
 
-footer > div span{
+footer > div a{
     margin-bottom: 8px;
+    color: #000;
 }
 
 .quest{

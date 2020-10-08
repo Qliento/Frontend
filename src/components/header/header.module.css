@@ -5,6 +5,10 @@
     color: #000;
     padding: 0px 10%;
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    background-color: #fff;
 }
 
 .navbar{
@@ -13,7 +17,7 @@
     flex-wrap: wrap;
     font-weight: 500;
     font-size: 13px;
-    max-width: 500px;
+    max-width: 670px;
 }
 
 
@@ -36,13 +40,16 @@
     }
 }
 
+.navbar a{
+    color: #000;
+}
 
 .navbar span{
-    line-height: 30px;
     margin-right: 30px;
     cursor: pointer;
     transition: ease-in-out 0.2s;
-    padding: 0 5px;
+    line-height: 30px;
+    padding: 5px 10px;
     margin-top: 5px;
 }
 
@@ -117,6 +124,7 @@
     background-color: var(--green);
     border: none;
     color: #fff;
+    width: 100%;
 }
 
 .regisrationBtn{
@@ -125,6 +133,7 @@
     color: #828282;
     text-align: right;
     margin-top: 10px;
+    width: 100%;
 }
 
 .regisrationBtn:hover{

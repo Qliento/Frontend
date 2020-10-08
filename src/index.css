@@ -8,7 +8,12 @@
 }
 
 body{
-  --green:#27AE60;
+  --green:#76B73E;
+}
+
+.container_wrapper{
+  padding-top: 100px;
+  background-color: #E5E5E5;
 }
 
 input, button{

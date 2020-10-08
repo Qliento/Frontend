@@ -56,12 +56,14 @@ const Header = () => (
     </Link>
 
     <div className={st.navbar}>
-      <span>Новости</span>
+      <Link to="/"><span>Новости</span></Link>
       <Link to="/about-us"><span>О нас</span></Link>
-      <span>Блог</span>
-      <span>Стать партнёром</span>
-      <span>Маркет исследований</span>
-      <span>Продать исследования</span>
+      <Link to="/analitic"><span>Аналитика</span></Link>
+      <Link to="/"><span>Стать партнёром</span></Link>
+      <Link to="/"><span>Вопросы и ответы</span></Link>
+      <Link to="/"><span>Маркет исследований</span></Link>
+      <Link to="/"><span>Продать исследования</span></Link>
+      <Link to="/"><span>Заказать исследования</span></Link>
     </div>
     <div className={st.local_basket}>
       <div className={st.localiz}>
@@ -91,7 +93,6 @@ const Header = () => (
         <button className={st.Lk}>личный кабинет</button>
       </Link>
       <Link to="/registration">
-        {" "}
         <button className={st.regisrationBtn}>Регистрация</button>
       </Link>
     </div>

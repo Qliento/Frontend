@@ -1,5 +1,6 @@
 import React from "react";
 import st from './footer.module.css';
+import { Link } from 'react-router-dom';
 
 const Footer=()=>(
     <footer>
@@ -16,36 +17,35 @@ const Footer=()=>(
 <path d="M46.6017 46.0957C46.6017 46.0957 45.1732 52.3615 42.067 52.3615C38.9608 52.3615 37.9329 46.0779 37.9329 46.0779C37.9329 46.0779 40.0867 50.1543 42.067 50.1543C44.0473 50.1543 46.6017 46.0957 46.6017 46.0957Z" fill="white"/>
 </svg>
         <div className={st.navbar}>
-            <span>Разделы</span>
-            <span>О нас</span>
-            <span>Блог</span>
-            <span>Новости</span>
-            <span>Стать партнёром</span>
-            <span>Маркет исследований</span>
-            <span>Продать исследования</span>
+            <span className={st.footer_title}>Разделы</span>
+            <Link to="/about-us"><span>О нас</span></Link>
+            <Link to="/analitic"><span>Аналитика</span></Link>
+            <Link to="/"><span>Новости</span></Link>
+            <Link to="/"><span>Заказать исследования</span></Link>
+            <Link to="/"><span>Маркет исследований</span></Link>
+            <Link to="/"><span>Продать исследования</span></Link>
         </div>
         <div className={st.contacts}>
-            <span>Контакты</span>
-            <span>+996 700 455 455</span>
-            <span>+996 555 455 455</span>
-            <span>info@qliento.com</span>
-            <span>г.Бишкек, ул. Раззакова 14</span>
+            <span className={st.footer_title}>Контакты</span>
+            <Link to="/"><span>+996 700 455 455</span></Link>
+            <Link to="/"><span>+996 555 455 455</span></Link>
+            <Link to="/"><span>info@qliento.com</span></Link>
         </div>
         <div className={st.socialQuest}>
             <div className={st.social}>
-                <span>Социальные сети</span>
+            <span className={st.footer_title}>Социальные сети</span>
                 <div className={st.socialIcons}>
-                    <img src={require('./image/facebook.png')} alt="img" />
-                    <img src={require('./image/008-youtube.png')} alt="img" />
-                    <img src={require('./image/instagram.png')} alt="img" />
-                    <img src={require('./image/telegram.png')} alt="img" />
-                    <img src={require('./image/whatsapp.png')} alt="img" />
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src={require('./image/facebook.png')} alt="img" /></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><img src={require('./image/008-youtube.png')} alt="img" /></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src={require('./image/instagram.png')} alt="img" /></a>
+                    <a href="https://www.telegram.com" target="_blank" rel="noopener noreferrer"><img src={require('./image/telegram.png')} alt="img" /></a>
+                    <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer"><img src={require('./image/whatsapp.png')} alt="img" /></a>
                 </div>
             </div>
             <div className={st.quest}>
-            <span>Вопросы и ответы</span>
-            <span>Часто задаваемые вопросы</span>
-            <span>Задать вопрос</span>
+            <span className={st.footer_title}>Вопросы и ответы</span>
+            <Link to=""><span>Часто задаваемые вопросы</span></Link>
+            <Link to=""><span>Задать вопрос</span></Link>
             </div>
         </div>
     </footer>

@@ -118,7 +118,7 @@ const RegistOrganization = () => {
                 validate: (password) => password && password.length > 6,
               })}
             />
-            <img className={classes.imgVisib} onClick={()=>setVisibility(!visibility)} src={visibility? vis : noVis}/>
+            <img className={classes.imgVisib} alt="img" onClick={()=>setVisibility(!visibility)} src={visibility? vis : noVis} />
             </div>
 
 
@@ -139,7 +139,7 @@ const RegistOrganization = () => {
                   repeatPasssword && repeatPasssword.length > 6,
               })}
             />
-             <img className={classes.imgVisib} onClick={()=>setVisibility2(!visibility2)} src={visibility2? vis : noVis}/>
+             <img className={classes.imgVisib} alt="img" onClick={()=>setVisibility2(!visibility2)} src={visibility2? vis : noVis}/>
             </div>
           
             {errors.repeatPasssword && (

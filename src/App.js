@@ -9,11 +9,14 @@ import Footer from "./components/footer/footer"
 import RegistrationClient from './components/registClient/registClient'
 import RegistOrganization from "./components/registOrganization/regisrtOrganization"
 import About from "./components/about/about";
+import Analitic from './components/analitic/analitic';
+import AnaliticCard from './components/analitic_Card/analiticCard';
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <div className="container_wrapper">
       <Switch>
         <Route exact path="/" component={Main} />
         <Route path="/auth" component={Auth} />
@@ -21,7 +24,10 @@ function App() {
         <Route path="/registration-organization" component={RegistOrganization} />
         <Route path="/registration-client" component={RegistrationClient} />
         <Route path="/about-us" component={About} />
+        <Route path="/analitic" component={Analitic} />
+        <Route path="/analiticCard" component={AnaliticCard} />
       </Switch>
+      </div>
       <Footer />
     </div>
   );
