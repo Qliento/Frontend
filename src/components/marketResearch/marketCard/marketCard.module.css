@@ -1,0 +1,156 @@
+.marketCard {
+  width: 100%;
+  height: 221px;
+
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+}
+.content {
+  background: #ffffff;
+  height: 100%;
+  width: 46%;
+  padding: 20px 30px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.img {
+  width: 27%;
+  height: 100%;
+}
+.blockAct {
+  width: 27%;
+  background: #e0e0e0;
+  height: 100%;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.name {
+  font-size: 14px;
+  color: #1b8e3d;
+}
+.date {
+  font-size: 14px;
+  color: #4f4f4f;
+}
+.nameCompany {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 27px;
+  border-bottom: 2px solid #bdbdbd;
+}
+.blockDescrip {
+  width: 100%;
+  height: 92px;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+.nameResearch {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.nameResearch span {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+.description {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.description span {
+  font-size: 14px;
+  color: #333333;
+}
+.blockHeshteg {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.blockHeshteg div {
+  width: auto;
+  height: 100%;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 8px;
+  font-size: 14px;
+  color: #ffffff;
+  background: #bdbdbd;
+}
+.blockPrace {
+  width: 100%;
+  height: 57px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.discounts {
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration-line: line-through;
+  color: #333333;
+}
+.newPrace {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+
+  color: #1b8e3d;
+}
+.blockBtn {
+  width: 100%;
+  height: 94px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.toBasket {
+  width: 100%;
+  height: 42px;
+  background: #1b8e3d;
+  border: 1px solid #1b8e3d;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
+.toBasket:hover{
+    background: #FFFFFF;
+    border: 1px solid #1b8e3d;
+    color: #1B8E3D;
+}
+.demo{
+    width: 100%;
+    height: 42px;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    font-weight: bold;
+font-size: 18px;
+line-height: 22px;
+color: #1B8E3D;
+}
+.demo:hover{
+    color: #1B8E3D;
+   
+    border: 1px solid #1b8e3d;
+}

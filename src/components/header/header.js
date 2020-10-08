@@ -61,7 +61,7 @@ const Header = () => (
       <Link to="/analitic"><span>Аналитика</span></Link>
       <Link to="/"><span>Стать партнёром</span></Link>
       <Link to="/"><span>Вопросы и ответы</span></Link>
-      <Link to="/"><span>Маркет исследований</span></Link>
+      <Link to="/market-research"><span>Маркет исследований</span></Link>
       <Link to="/"><span>Продать исследования</span></Link>
       <Link to="/"><span>Заказать исследования</span></Link>
     </div>
