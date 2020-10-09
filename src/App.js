@@ -11,6 +11,7 @@ import RegistOrganization from "./components/registOrganization/regisrtOrganizat
 import About from "./components/about/about";
 import Analitic from './components/analitic/analitic';
 import AnaliticCard from './components/analitic_Card/analiticCard';
+import MarketResearch from "./components/marketResearch/marketResearch"
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/about-us" component={About} />
         <Route path="/analitic" component={Analitic} />
         <Route path="/analiticCard" component={AnaliticCard} />
+        <Route path="/market-research" component={MarketResearch} />
       </Switch>
       </div>
       <Footer />
