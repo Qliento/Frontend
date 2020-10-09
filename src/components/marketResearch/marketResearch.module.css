@@ -4,6 +4,18 @@
     margin-right: auto;
     height: auto;
     background: #E5E5E5;
-    padding-top: 200px;
+    padding-top: 50px;
     padding-bottom: 200px;
+}
+.breadLink{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+.breadLink span{
+    color: #333333;
+    margin: 0px 5px;
 }

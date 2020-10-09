@@ -9,7 +9,7 @@ const MarketCard=()=>{
             <div className={classes.content}>
                 <div className={classes.nameCompany}>
                     <span className={classes.name}>ОсОО “Бимед Фарм”</span>
-                    <soan className={classes.date}>29 / 09 / 2020</soan>
+                    <span className={classes.date}>29 / 09 / 2020</span>
 
                 </div>
                 <div className={classes.blockDescrip}>

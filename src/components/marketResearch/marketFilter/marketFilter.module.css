@@ -1,0 +1,59 @@
+.blockFilter {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 164px;
+  padding: 30px;
+  background: #ffffff;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.inputs {
+  width: 24%;
+  height: 42px;
+}
+.blockRow {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.inputSearch {
+  width: 36%;
+  height: 42px;
+  outline: none;
+  background-image: url(./img/lupa.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-position: 10px;
+  padding-left: 55px;
+  font-size: 14px;
+  border: 1px solid #828282;
+}
+.btn {
+  width: 12%;
+  height: 42px;
+  background: #1b8e3d;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+  border: 1px solid #1b8e3d;
+}
+.btnSort {
+  width: 24%;
+  height: 42px;
+  background: #76b73e;
+  border: 1px solid #76b73e;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+}
