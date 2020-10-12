@@ -1,0 +1,14 @@
+.blockTitle {
+  width: 100%;
+  height: auto;
+  padding: 10px 0px;
+  border-bottom: 2px solid #828282;
+  margin-top: 130px;
+  margin-bottom: 30px;
+}
+.blockTitle span {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  color: #333333;
+}
