@@ -1,7 +1,7 @@
 import React from "react"
 import  "./category.css"
 
-import Select from 'react-select'
+import Select from 'react-select';
 
 const options = [
   { value: 'chocolate', label: 'Chocolate' },
