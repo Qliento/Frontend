@@ -1,24 +1,29 @@
 import React from "react";
-import st from "./analitic.module.css";
+import classes from "./news.module.css";
+import st from "./news.module.css";
 import { Link } from "react-router-dom";
 
-const Analitic = () => {
+const News = () => {
   const arr = [1, 2, 3, 4, 5, 6];
 
   return (
     <div className={st.analitic_container}>
       <div className={st.analitic_way}>
-        <span>Главная / </span>
-        <span>Аналитика</span>
+        <Link to="/">Главная / </Link>
+        <Link to="">Новости</Link>
       </div>
-      <h2>Аналитика</h2>
+      <h2>Новости</h2>
       <div className={st.analitic_content}>
         {arr.map((elem) => (
-          <Link to="/analiticCard">
+          <Link to="/newsCard">
             <div className={st.analitic_card}>
-              <img src={require("./analitic_bg.png")} alt="img" />
+              <img src={require("./img/analitic_bg.png")} alt="img" />
               <div className={st.card_info}>
-                <span className={st.card_date}>{elem} сентября 2020</span>
+                <di className={st.blockDate}>
+                  <span className={st.card_date}>{elem} сентября 2020</span>
+                  <span className={st.clock}>22:00</span>
+                </di>
+
                 <h5 className={st.card_title}>
                   Рынок частной медицины 2020. База сетей
                 </h5>
@@ -35,5 +40,4 @@ const Analitic = () => {
     </div>
   );
 };
-
-export default Analitic;
+export default News;
