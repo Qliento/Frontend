@@ -63,7 +63,7 @@ const Header = () => (
       <Link to="/"><span>Вопросы и ответы</span></Link>
       <Link to="/market-research"><span>Маркет исследований</span></Link>
       <Link to="/"><span>Продать исследования</span></Link>
-      <Link to="/"><span>Заказать исследования</span></Link>
+      <Link to="/order-research"><span>Заказать исследования</span></Link>
     </div>
     <div className={st.local_basket}>
       <div className={st.localiz}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import st from "./analitic.module.css";
-
+import { Link } from 'react-router-dom';
 
 const Analitic = () =>{
     const arr = [1, 2, 3, 4, 5, 6];
@@ -14,6 +14,7 @@ const Analitic = () =>{
         <h2>Аналитика</h2>
         <div className={st.analitic_content}>
             {arr.map(elem =>(
+                <Link to="/analiticCard">
                 <div className={st.analitic_card}>
                 <img src={require('./analitic_bg.png')} alt="img" />
                 <div className={st.card_info}>
@@ -22,6 +23,7 @@ const Analitic = () =>{
                     <p>Таким образом дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки дальнейших направлений развития...</p>
                 </div>
             </div>
+            </Link>
             ))}
             
         </div>
