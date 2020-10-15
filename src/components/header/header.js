@@ -56,11 +56,13 @@ const Header = () => (
     </Link>
 
     <div className={st.navbar}>
-      <Link to="/"><span>Новости</span></Link>
+      <Link to="/news"><span>Новости</span></Link>
       <Link to="/about-us"><span>О нас</span></Link>
       <Link to="/analitic"><span>Аналитика</span></Link>
       <Link to="/be-partner"><span>Стать партнёром</span></Link>
       <Link to="/"><span>Вопросы и ответы</span></Link>
+      <Link to="/"><span>Стать партнёром</span></Link>
+      <Link to="/questions"><span>Вопросы и ответы</span></Link>
       <Link to="/market-research"><span>Маркет исследований</span></Link>
       <Link to="/"><span>Продать исследования</span></Link>
       <Link to="/order-research"><span>Заказать исследования</span></Link>

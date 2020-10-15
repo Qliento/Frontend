@@ -4,17 +4,19 @@ import { Route, Switch } from "react-router-dom";
 import Main from "./components/main/main";
 import Auth from "./components/auth/auth";
 import Registration from "./components/registration/registration";
-import Header from "./components/header/header"
-import Footer from "./components/footer/footer"
-import RegistrationClient from './components/registClient/registClient'
-import RegistOrganization from "./components/registOrganization/regisrtOrganization"
+import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
+import RegistrationClient from "./components/registClient/registClient";
+import RegistOrganization from "./components/registOrganization/regisrtOrganization";
 import About from "./components/about/about";
-import Analitic from './components/analitic/analitic';
-import AnaliticCard from './components/analitic_Card/analiticCard';
-import MarketResearch from "./components/marketResearch/marketResearch";
 import OrderResearch from './components/orderResearch/orderResearch';
 import BePartner from './components/bePartner/bePartner';
-
+import Analitic from "./components/analitic/analitic";
+import AnaliticCard from "./components/analitic_Card/analiticCard";
+import MarketResearch from "./components/marketResearch/marketResearch";
+import News from "./components/news/news";
+import QuestionPage from "./components/question/question";
+import NewsCard from "./components/newsCard/newsCard";
 
 function App() {
   return (
@@ -33,11 +35,15 @@ function App() {
         <Route path="/market-research" component={MarketResearch} />
         <Route path="/order-research" component={OrderResearch} />
         <Route path="/be-partner" component={BePartner} />
-      </Switch>
+        <Route path="/news" component={News} />
+        <Route path="/questions" component={QuestionPage} />
+        <Route path="/newsCard" component={NewsCard} />
+        </Switch>
       </div>
       <Footer />
     </div>
   );
 }
+
 
 export default App;

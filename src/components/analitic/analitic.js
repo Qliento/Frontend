@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import st from "./analitic.module.css";
 import { Link } from 'react-router-dom';
 
-const Analitic = () =>{
-    const arr = [1, 2, 3, 4, 5, 6];
+const Analitic = () => {
+  const arr = [1, 2, 3, 4, 5, 6];
 
-    return(
+  return (
     <div className={st.analitic_container}>
         <div className={st.analitic_way}>
             <span>Главная / </span>
@@ -28,7 +28,7 @@ const Analitic = () =>{
             
         </div>
     </div>
-)
-}
+  );
+};
 
 export default Analitic;

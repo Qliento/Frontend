@@ -1,0 +1,76 @@
+.analitic_container {
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 200px;
+}
+
+.analitic_way {
+  color: #333;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+.analitic_container h2 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 48px;
+  margin-top: 20px;
+}
+
+.analitic_content {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+.analitic_content a{
+    width: 48.5%;
+}
+
+.analitic_card {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.analitic_card img {
+  width: 254px;
+  height: 100%;
+}
+
+.card_info {
+  margin: 30px;
+}
+
+.card_date {
+  color: var(--green);
+}
+
+.card_title {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.card_info p {
+  font-size: 14px;
+  line-height: 21px;
+  text-align: justify;
+}
+.clock {
+  font-size: 14px;
+  color: #333333;
+}
+.blockDate{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
