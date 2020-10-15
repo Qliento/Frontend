@@ -13,6 +13,8 @@ import Analitic from './components/analitic/analitic';
 import AnaliticCard from './components/analitic_Card/analiticCard';
 import MarketResearch from "./components/marketResearch/marketResearch";
 import OrderResearch from './components/orderResearch/orderResearch';
+import BePartner from './components/bePartner/bePartner';
+
 
 function App() {
   return (
@@ -30,6 +32,7 @@ function App() {
         <Route path="/analiticCard" component={AnaliticCard} />
         <Route path="/market-research" component={MarketResearch} />
         <Route path="/order-research" component={OrderResearch} />
+        <Route path="/be-partner" component={BePartner} />
       </Switch>
       </div>
       <Footer />

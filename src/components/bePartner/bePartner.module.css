@@ -1,0 +1,94 @@
+.be_partner{
+    padding-bottom: 120px;
+}
+
+.be_partner img{
+    width: 100%;
+}
+
+.be_partner_container{
+    padding: 0 25%;
+    color: #333333;
+    margin-bottom: 50px;
+}
+
+.be_partner_container h2{
+    font-family: Montserrat Alternates;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 59px;
+    margin-top: 60px;
+}
+
+.be_partner_container p{
+    font-size: 18px;
+    line-height: 22px;
+    text-align: justify;
+    margin-top: 20px;
+}
+
+.order_form{
+    width: 60%;
+    margin-left: 20%;
+    padding: 60px 65px;
+    background-color: #fff;
+}
+
+.order_form h3{
+    font-family: Montserrat Alternates;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    color: var(--green);
+}
+
+.order_form p{
+    margin: 30px 0;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: justify;
+    color: #4F4F4F;
+}
+
+.order_form form{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.order_form form > div{
+    width: 45%;
+}
+
+.form_input_block, .form_textarea_block{
+    display: flex;
+    flex-direction: column;
+}
+
+.form_input_block label, .form_textarea_block label{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.form_input_block input{
+    border: 1px solid #BDBDBD;
+    padding: 10px;
+}
+
+.form_textarea_block textarea{
+    height: 100%;
+    border: 1px solid #BDBDBD;
+    padding: 10px;
+}
+
+.form_textarea_block button{
+    margin-top: 50px;
+    background: #76B73E;
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    border: none;
+}
