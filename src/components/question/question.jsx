@@ -12,12 +12,13 @@ const QuestionPage = () => {
         <Link to=""> Вопросы ответы</Link>
       </div>
       <span className={classes.title}>Форма обратной связи</span>
-      <Form/>
+      <Form />
       <div className={classes.blockTitle}>
-      <span className={classes.titleQuestion}>Часто задаваемые вопросы</span>
+        <span className={classes.titleQuestion}>Часто задаваемые вопросы</span>
       </div>
-    
-      <Acardion/>
+      <div className={classes.questionBlock}>
+        <Acardion />
+      </div>
     </div>
   );
 };
