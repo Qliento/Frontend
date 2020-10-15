@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./news.module.css";
 import st from "./news.module.css";
 import { Link } from "react-router-dom";
+import google from "./img/google.png";
+import vk from "./img/vk.png";
+import twiter from "./img/twiter.png";
+import facebook from "./img/facebook.png";
+import bg from "./img/newsImg.png";
 
 const News = () => {
-  const arr = [1, 2, 3, 4, 5, 6];
+  const arr = [1, 2];
+  const [block, setBlock] = useState();
 
   return (
     <div className={st.analitic_container}>
@@ -15,26 +21,55 @@ const News = () => {
       <h2>Новости</h2>
       <div className={st.analitic_content}>
         {arr.map((elem) => (
-          <Link to="/newsCard">
-            <div className={st.analitic_card}>
-              <img src={require("./img/analitic_bg.png")} alt="img" />
-              <div className={st.card_info}>
-                <di className={st.blockDate}>
-                  <span className={st.card_date}>{elem} сентября 2020</span>
-                  <span className={st.clock}>22:00</span>
-                </di>
-
-                <h5 className={st.card_title}>
-                  Рынок частной медицины 2020. База сетей
-                </h5>
-                <p>
-                  Таким образом дальнейшее развитие различных форм деятельности
-                  представляет собой интересный эксперимент проверки дальнейших
-                  направлений развития...
-                </p>
+          <div className={st.analitic_card}>
+            <div className={st.blockImg}>
+              <img alt="img" src={bg} className={st.img} />
+              <div className={st.buttomBlock}>
+                <span className={st.buttomBlockTitle}>
+                  Поделится в соц сетях
+                </span>
+                <div className={st.icons}>
+                  <img src={google} alt="" className={st.icon} />
+                  <img src={vk} alt="" className={st.icon} />
+                  <img src={facebook} alt="" className={st.icon} />
+                  <img src={twiter} alt="" className={st.icon} />
+                </div>
               </div>
             </div>
-          </Link>
+
+            <div className={st.content}>
+              <span className={st.date}>30 сентября 2020</span>
+              <span className={st.title}>
+                Рынок частной медицины 2020. База сетей
+              </span>
+              <span className={st.description}>
+                Товарищи! консультация с широким активом влечет за собой процесс
+                внедрения и модернизации дальнейших направлений развития. Задача
+                организации, в особенности же новая модель организационной
+                деятельности влечет за собой процесс внедрения и модернизации
+                соответствующий условий активизации. Товарищи! реализация
+                намеченных плановых заданий позволяет оценить значение систем
+                массового участия. Равным образом постоянный количественный рост
+                и сфера нашей активности влечет за собой процесс внедрения и
+                модернизации существенных финансовых и административных условий{" "}
+                <br />
+                <br />
+                Товарищи! консультация с широким активом влечет за собой процесс
+                внедрения и модернизации дальнейших направлений развития. Задача
+                организации, в особенности же новая модель организационной
+                деятельности влечет за собой процесс внедрения и модернизации
+                соответствующий условий активизации. Товарищи! реализация
+                намеченных плановых заданий позволяет оценить значение систем
+                массового участия. Равным образом постоянный количественный рост
+                и сфера нашей активности влечет за собой процесс внедрения и
+                модернизации существенных финансовых и административных условий
+              </span>
+              <button className={st.btn} >
+                Развернуть
+              </button>
+
+            </div>
+          </div>
         ))}
       </div>
     </div>

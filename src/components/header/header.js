@@ -74,7 +74,7 @@ const Header = () => (
         <span>Eng</span>
       </div>
       <div className={st.basket}>
-        <span>Корзина</span>
+        <Link to="/basket">Корзина</Link>
         <svg
           width="22"
           height="20"

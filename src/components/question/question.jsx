@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Acardion from "./acardion/acardion";
 import Form from "./form/form";
 import classes from "./question.module.css";
 
@@ -12,6 +13,11 @@ const QuestionPage = () => {
       </div>
       <span className={classes.title}>Форма обратной связи</span>
       <Form/>
+      <div className={classes.blockTitle}>
+      <span className={classes.titleQuestion}>Часто задаваемые вопросы</span>
+      </div>
+    
+      <Acardion/>
     </div>
   );
 };
