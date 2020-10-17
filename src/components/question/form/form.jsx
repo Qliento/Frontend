@@ -3,11 +3,8 @@ import classes from "./form.module.css"
 import { useForm } from "react-hook-form";
 
 const Form=()=>{
-    const [fio,setFio]=useState("");
-    const [name,setName]=useState("")
-    const [email,setEmail]=useState("")
-    const [phone,setPhone]=useState("")
-    const [question,setQuestion]=useState("")
+    const { handleSubmit, register, errors } = useForm();
+    const onSubmit = (values) => console.log(values);
     return(
         <form className={classes.form}>
             <div className={classes.leftColumn}>
@@ -16,8 +13,14 @@ const Form=()=>{
                     <input type="text"
                     className={classes.input}
                     placeholder="Ваш ФИО"
-                    onChange={(e)=>setFio(e.target.value)}
-                   />
+                    name="fio"
+                    ref={register({
+                        validate: (fio) => fio && fio.length > 4,
+                      })}
+                    />
+                    {errors.fio && (
+                      <span className={classes.error}>Не корректно велли данные</span>
+                    )}
                 </div>
                 <div className={classes.inputs}>
                     <label>Название организации</label>
