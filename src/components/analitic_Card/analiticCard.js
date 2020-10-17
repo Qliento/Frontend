@@ -14,7 +14,7 @@ const AnaliticCard = () => {
                     <div className={st.shareIt}>
                         <span>Поделиться в соц сетях</span>
                         <div className={st.shareIt_icons}>
-                        <div class="ya-share2" data-curtain data-size="l" data-services="vkontakte,facebook,telegram,whatsapp"></div>
+                        <div className="ya-share2" data-curtain data-size="l" data-services="vkontakte,facebook,twitter,linkedin"></div>
                         </div>
                     </div>
                 </div>

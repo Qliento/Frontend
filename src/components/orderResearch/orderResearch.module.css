@@ -3,6 +3,42 @@
     padding-bottom: 200px;
 }
 
+.order_block_anchor{
+    background-color: #BDF58D;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    color: #333333;
+}
+
+.order_anchor_text{
+    margin-left: 60px;
+    display: flex;
+    flex-direction: column;
+    max-width: 270px;
+}
+
+.order_anchor_text h3{
+    font-family: Montserrat Alternates;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.order_anchor_text p{
+    line-height: 17px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.order_anchor_text a{
+    color: #fff;
+    padding: 10px 20px;
+    background: #76B73E;
+    font-weight: 700;
+    text-align: center;
+}
+
 .order_instruct{
     display: flex;
     flex-wrap: wrap;

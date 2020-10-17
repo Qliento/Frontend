@@ -1,5 +1,5 @@
 .header{
-    height: 100px;
+    height: 65px;
     display: flex;
     align-items: center;
     color: #000;
@@ -17,7 +17,7 @@
     flex-wrap: wrap;
     font-weight: 500;
     font-size: 13px;
-    max-width: 670px;
+    max-width: 900px;
 }
 
 
@@ -45,7 +45,7 @@
 }
 
 .navbar span{
-    margin-right: 30px;
+    margin-right: 15px;
     cursor: pointer;
     transition: ease-in-out 0.2s;
     line-height: 30px;
@@ -61,8 +61,8 @@
 .local_basket{
     margin-left: auto;
     display: flex;
-    flex-direction: column;
     min-width: 133px;
+    align-items: center;
 }
 
 .localiz span{
@@ -92,13 +92,9 @@
 }
 
 .basket{
-    margin-top: 20px;
     display: flex;
     align-items: center;
-}
-
-.basket svg{
-    margin-left: 10px;
+    margin: 0 50px;
 }
 
 .vertical_line{
@@ -110,29 +106,25 @@
 }
 
 .regisration {
-    width: 160px;
     display: flex;
     flex-direction: column;
     align-content: flex-start
 }
-.regisration button{
-    cursor: pointer;
-}
 
 .Lk{
-    padding: 5px 20px;
+    padding: 5px 30px;
     background-color: var(--green);
     border: none;
     color: #fff;
     width: 100%;
+    font-weight: 700;
 }
 
 .regisrationBtn{
     border: none;
     background-color: #fff;
     color: #828282;
-    text-align: right;
-    margin-top: 10px;
+    margin-top: 5px;
     width: 100%;
 }
 
