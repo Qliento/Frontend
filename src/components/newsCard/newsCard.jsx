@@ -37,7 +37,7 @@ str=str.slice(0, 1120)
           </div>
         </div>
       </div>
-      <div className={st.content}>
+      <div className={cardId==key?st.content1:st.content}>
         <span className={st.date}>30 сентября 2020</span>
         <span className={st.title}>
           Рынок частной медицины 2020. База сетей

@@ -20,7 +20,7 @@ const About = () => {
         data.map((item) => {
           return(
             <div className={classes.block1} key={item.id}>
-            <img alt="img" src={item.images[0].url} />
+            <img alt="img" src={img1} />
             <div className={classes.text1}>
               <span className={classes.blockTitle}>{item.header}</span>
               <span>{item.description}</span>
