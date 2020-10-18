@@ -21,7 +21,7 @@ const Footer=()=>(
             <Link to="/about-us"><span>О нас</span></Link>
             <Link to="/analitic"><span>Аналитика</span></Link>
             <Link to="/"><span>Новости</span></Link>
-            <Link to="/"><span>Заказать исследования</span></Link>
+            <Link to="/order-research"><span>Заказать исследования</span></Link>
             <Link to="/"><span>Маркет исследований</span></Link>
             <Link to="/"><span>Продать исследования</span></Link>
         </div>

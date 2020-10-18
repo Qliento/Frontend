@@ -1,9 +1,22 @@
 import React from 'react';
-import st from './bePartner.module.css'
+import st from './bePartner.module.css';
+import { bePartner } from '../../redux/reducers/bePartner';
 
 
 const BePartner = () =>{
+    const data = {
+        name: "sha",
+        name_of_organization: "bloo",
+        position: "head",
+        email: "test@tes2t.test",
+        phone: "0550050599",
+        extra: "Want to be a partner"
+      }
 
+
+    const onSubmit = () =>{
+        bePartner(data)
+    }
 
     return(
         <div className={st.be_partner}>
@@ -43,7 +56,7 @@ const BePartner = () =>{
                     <div className={st.form_textarea_block}>
                         <label for="description">Дополнительная информация*</label>
                         <textarea id="description" placeholder="Допольнительная информация"></textarea>
-                        <button>Отправить</button>
+                        <button onClick={onSubmit}>Отправить</button>
                     </div>
                 </form>
             </div>

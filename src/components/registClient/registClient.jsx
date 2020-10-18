@@ -26,17 +26,7 @@ const RegistClient = () => {
         </div>
         <form className={classes.blockForm} onSubmit={handleSubmit(onSubmit)}>
           <div className={classes.blockInput}>
-            <label>Название организации</label>
-            <input
-              name="name2"
-              className={classes.inputs}
-              placeholder="Название"
-              type="text"
-            />
-
-          </div>
-          <div className={classes.blockInput}>
-            <label>Имя</label>
+            <label>Имя*</label>
             <input
               name="name"
               className={classes.inputs}
@@ -45,7 +35,7 @@ const RegistClient = () => {
             />
           </div>
           <div className={classes.blockInput}>
-            <label>Фамилия</label>
+            <label>Фамилия*</label>
             <input
               name="lastName"
               className={classes.inputs}

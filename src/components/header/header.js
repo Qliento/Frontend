@@ -6,8 +6,8 @@ const Header = () => (
   <nav className={st.header}>
     <Link to="/">
       <svg
-        width="61"
-        height="70"
+        width="40"
+        height="50"
         viewBox="0 0 61 70"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -54,18 +54,12 @@ const Header = () => (
         />
       </svg>
     </Link>
-
     <div className={st.navbar}>
       <Link to="/news"><span>Новости</span></Link>
       <Link to="/about-us"><span>О нас</span></Link>
-      <Link to="/analitic"><span>Аналитика</span></Link>
-      <Link to="/be-partner"><span>Стать партнёром</span></Link>
-      <Link to="/"><span>Вопросы и ответы</span></Link>
-      <Link to="/"><span>Стать партнёром</span></Link>
-      <Link to="/questions"><span>Вопросы и ответы</span></Link>
-      <Link to="/market-research"><span>Маркет исследований</span></Link>
-      <Link to="/"><span>Продать исследования</span></Link>
-      <Link to="/order-research"><span>Заказать исследования</span></Link>
+      <Link to="/analitic"><span>Блок</span></Link>
+      <Link to="/market-research"><span>Маркет</span></Link>
+      <Link to="/be-partner"><span>Партнёрство</span></Link>
     </div>
     <div className={st.local_basket}>
       <div className={st.localiz}>
@@ -74,7 +68,6 @@ const Header = () => (
         <span>Eng</span>
       </div>
       <div className={st.basket}>
-        <Link to="/basket">Корзина</Link>
         <svg
           width="22"
           height="20"
@@ -89,10 +82,9 @@ const Header = () => (
         </svg>
       </div>
     </div>
-    <div className={st.vertical_line}></div>
     <div className={st.regisration}>
       <Link to="/auth">
-        <button className={st.Lk}>личный кабинет</button>
+        <button className={st.Lk}>Вход</button>
       </Link>
       <Link to="/registration">
         <button className={st.regisrationBtn}>Регистрация</button>
