@@ -1,82 +1,104 @@
-.container {
-  padding: 50px 10% 200px 10%;
+.analitic_container {
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 200px;
+}
+
+.analitic_way {
+  color: #333;
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+.analitic_container h2 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 48px;
+  margin-top: 20px;
+}
+
+.analitic_content {
+  margin-top: -30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.analitic_card {
+  width: 100%;
+  height: 495px;
+
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.blockImg {
+  width: 35%;
+  height: 495px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
+  width: 63%;
   height: auto;
-}
-.leftBlock {
-  width: 48%;
-  height: 550px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-.bigImg {
-  height: 371px;
-  width: 100%;
-}
-.blockSocSeti {
-  width: 100%;
-  height: 166px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
   padding: 30px;
-  background: #ffffff;
+  background-color: #fff;
 }
-.icons {
+.buttomBlock {
   width: 100%;
-  height: auto;
+  height: 124px;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background-color: #fff;
 }
-.icon {
-  margin-left: 5px;
-}
-.title {
+.buttomBlockTitle {
   font-weight: bold;
   font-size: 18px;
   line-height: 150%;
   color: #333333;
 }
-.links {
-  margin-bottom: 20px;
-}
-.textBlock {
-  padding: 30px;
-  width: 48%;
+.icons {
+  width: 80%;
   height: auto;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background: #ffffff;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .date {
   font-size: 14px;
   line-height: 150%;
   color: #1b8e3d;
 }
-.nameText {
-  font-weight: 600;
+.title {
   font-size: 24px;
   line-height: 29px;
   color: #000000;
   margin-top: 10px;
 }
-.descrip {
+.description {
   font-size: 14px;
   line-height: 120%;
   color: #000000;
   margin-top: 15px;
 }
-.links a {
+.btn {
+  background: #76b73e;
   font-size: 14px;
-  line-height: 150%;
-  color: #333333;
+  line-height: 17px;
+  color: #ffffff;
+  width: 30%;
+  height: 29px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #76b73e;
+margin-top: auto;
+}
+.fixed{
+    position: fixed;
 }

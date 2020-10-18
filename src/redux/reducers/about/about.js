@@ -6,7 +6,7 @@ const initialState = {
       case "ABOUT_DATA":
         return {
           ...state,
-          arrayData: [...action.playload],
+          arrayData: [...action.payload],
         };
       default:
         return state;
