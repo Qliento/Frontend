@@ -1,37 +1,24 @@
-import React from "react";
+import React,{useEffect} from "react";
+import { useDispatch } from "react-redux";
+import { aboutData } from "../../redux/actions/about/getAboutText";
 import classes from "./about.module.css";
 import img1 from "./img/1.png";
 import img2 from "./img/2.png"
 
 const About = () => {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(aboutData())
+  },[])
   return (
     <div className={classes.aboutPage}>
-      <div className={classes.topBlock}>
-        <span className={classes.title}>О нас</span>
-        <div className={classes.blockDescrip}>
-          <span>
-            Повседневная практика показывает, что постоянный количественный рост
-            и сфера нашей активности позволяет выполнять важные задания по
-            разработке направлений прогрессивного развития. Значимость этих
-            проблем настолько очевидна, что новая модель организационной
-            деятельности играет важную роль в формировании направлений
-            прогрессивного развития.
-          </span>
-          <br />
 
-          <span>
-            Задача организации, в особенности же новая модель организационной
-            деятельности позволяет выполнять важные задания по разработке новых
-            предложений.Повседневная практика показывает, что постоянный
-            количественный рост и сфера нашей активности позволяет выполнять
-            важные задания по разработке направлений прогрессивного роль в
-            формировании направлений прогрессивного развития.
-          </span>
-        </div>
-      </div>
+        <span className={classes.title}>О нас</span>
+
       <div className={classes.block1}>
         <img alt="img" src={img1} />
         <div className={classes.text1}>
+          <span className={classes.blockTitle}>О нас</span>
           <span>
             Повседневная практика показывает, что постоянный количественный рост
             и сфера нашей активности позволяет выполнять важные задания по
@@ -50,6 +37,7 @@ const About = () => {
       </div>
       <div className={classes.block1}>
         <div className={classes.text1}>
+        <span className={classes.blockTitle}>О нас</span>
           <span>
             Повседневная практика показывает, что постоянный количественный рост
             и сфера нашей активности позволяет выполнять важные задания по

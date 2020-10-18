@@ -1,7 +1,13 @@
-import React from "react"
+import React,{useState} from "react"
 import classes from "./form.module.css"
+import { useForm } from "react-hook-form";
 
 const Form=()=>{
+    const [fio,setFio]=useState("");
+    const [name,setName]=useState("")
+    const [email,setEmail]=useState("")
+    const [phone,setPhone]=useState("")
+    const [question,setQuestion]=useState("")
     return(
         <form className={classes.form}>
             <div className={classes.leftColumn}>
@@ -9,7 +15,9 @@ const Form=()=>{
                     <label>ФИО*</label>
                     <input type="text"
                     className={classes.input}
-                    placeholder="Ваш ФИО"/>
+                    placeholder="Ваш ФИО"
+                    onChange={(e)=>setFio(e.target.value)}
+                   />
                 </div>
                 <div className={classes.inputs}>
                     <label>Название организации</label>

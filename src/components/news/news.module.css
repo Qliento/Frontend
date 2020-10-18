@@ -18,59 +18,87 @@
 }
 
 .analitic_content {
-  margin-top: 60px;
+  margin-top: -30px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 100%;
-  justify-content: space-between;
-}
-.analitic_content a{
-    width: 48.5%;
 }
 
 .analitic_card {
   width: 100%;
-  background-color: #fff;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
-  margin-top: 30px;
+  height: 495px;
+
+  margin-top: 60px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  cursor: pointer;
 }
-
-.analitic_card img {
-  width: 254px;
-  height: 100%;
+.blockImg {
+  width: 35%;
+  height: 495px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
-.card_info {
-  margin: 30px;
+.content {
+  width: 63%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: #fff;
 }
-
-.card_date {
-  color: var(--green);
+.buttomBlock {
+  width: 100%;
+  height: 124px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background-color: #fff;
 }
-
-.card_title {
-  margin-top: 10px;
-  margin-bottom: 15px;
-  font-size: 24px;
-}
-
-.card_info p {
-  font-size: 14px;
-  line-height: 21px;
-  text-align: justify;
-}
-.clock {
-  font-size: 14px;
+.buttomBlockTitle {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 150%;
   color: #333333;
 }
-.blockDate{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.icons {
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.date {
+  font-size: 14px;
+  line-height: 150%;
+  color: #1b8e3d;
+}
+.title {
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  margin-top: 10px;
+}
+.description {
+  font-size: 14px;
+  line-height: 120%;
+  color: #000000;
+  margin-top: 15px;
+}
+.btn {
+  background: #76b73e;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  width: 30%;
+  height: 29px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #76b73e;
+margin-top: auto;
+}
+.fixed{
+    position: fixed;
 }

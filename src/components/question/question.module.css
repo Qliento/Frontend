@@ -14,3 +14,21 @@
 .links{
     margin-bottom: 20px;
 }
+.titleQuestion{
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 59px;
+    color: #333333;
+}
+.blockTitle{
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+.questionBlock{
+    width: 100%;
+    height: auto;
+    padding: 60px;
+    background: #FFFFFF;
+}

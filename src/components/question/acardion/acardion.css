@@ -1,0 +1,38 @@
+.accordion__button {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+.accordion__button::before {
+  content: none !important;
+}
+.accordion__item {
+  margin-top: 10px !important;
+}
+.accordion {
+  border: none !important;
+  border-radius: 2px;
+}
+.btnGreen {
+  height: 42px;
+  width: 42px;
+  background: #76b73e;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.accordion__button {
+  background-color: #f4f4f4;
+  color: #444;
+  cursor: pointer;
+  padding: 0px 0px 0px 10px !important ;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border: 1px solid #76b73e !important;
+}
+.accordion__panel {
+  background: #f2f2f2 !important;
+}

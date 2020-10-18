@@ -17,6 +17,7 @@ import MarketResearch from "./components/marketResearch/marketResearch";
 import News from "./components/news/news";
 import QuestionPage from "./components/question/question";
 import NewsCard from "./components/newsCard/newsCard";
+import Basket from "./components/basket/basket";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/news" component={News} />
         <Route path="/questions" component={QuestionPage} />
         <Route path="/newsCard" component={NewsCard} />
+        <Route path="/basket" component={Basket} />
         </Switch>
       </div>
       <Footer />
