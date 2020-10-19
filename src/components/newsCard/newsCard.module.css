@@ -2,6 +2,7 @@
   padding: 0 10%;
   display: flex;
   flex-direction: column;
+
   padding-bottom: 200px;
 }
 
@@ -32,6 +33,19 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  
+}
+.analitic_card1 {
+  width: 100%;
+  height: auto;
+
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+
+  
 }
 .blockImg {
   width: 35%;
@@ -39,6 +53,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.blockImg1 {
+  width: 371;
+  height: 495px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 }
 .content {
   width: 63%;
@@ -94,6 +116,20 @@
   line-height: 120%;
   color: #000000;
   margin-top: 15px;
+  height: 60%;
+  text-overflow: auto;
+  overflow: hidden;
+
+}
+.description1 {
+  font-size: 14px;
+  line-height: 120%;
+  color: #000000;
+  margin-top: 15px;
+  height: auto;
+  text-overflow: auto;
+  overflow: none;
+
 }
 .btn {
   background: #76b73e;
