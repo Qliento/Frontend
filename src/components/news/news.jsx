@@ -9,7 +9,7 @@ import { ListNews } from "../../redux/actions/getListNews/getNews";
 
 const News = () => {
   const dispatch = useDispatch();
-// const data = useSelector((state) => state.AboutUs.arrayData);
+ const data = useSelector((state) => state.ListNews.arrayNews);
 useEffect(() => {
   dispatch(ListNews());
 }, []);
@@ -23,11 +23,15 @@ useEffect(() => {
       </div>
       <h2>Новости</h2>
       <div className={st.analitic_content}>
-        {arr.map((item) => {
-          return(
-          <NewsCard key={item} />
+        {
+          data&&(
+            data.map((item) => {
+              return(
+              <NewsCard key={item.id} data={item} />
+              )
+            })
           )
-        })}
+          }
       </div>
     </div>
   );

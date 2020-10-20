@@ -1,15 +1,33 @@
-import React,{useState} from "react";
+import React,{useState ,useEffect} from "react";
 import { useForm } from "react-hook-form";
 import classes from "./regisrtOrganization.module.css";
-
+import { useDispatch, useSelector } from "react-redux";
 import cancel from "./img/cancel.png";
 import { Link } from "react-router-dom";
 import capcha from "./img/capcha.png";
 import noVis from "./img/noVisibility.png"
 import vis from "./img/visibility 1.png"
+import { error, registrationOrg } from "../../redux/actions/registrationOrg/registrationOrg";
 const RegistOrganization = () => {
   const { handleSubmit, register, errors } = useForm();
-  const onSubmit = (values) => console.log(values);
+  const dispatch = useDispatch();
+  //const data = useSelector((state) => state.AboutUs.arrayData);
+  useEffect(()=>{
+dispatch(error())
+  },[])
+  const onSubmit = (values) =>{
+    
+    if(values.repeatPassword !== values.password){
+      setErr(true)
+    }
+    else{
+      setErr(false);
+      console.log("hi");
+      console.log(values);
+      dispatch(registrationOrg(values));
+    }
+  } 
+  const[err,setErr]=useState(false)
   const [visibility,setVisibility]=useState(false)
   const [visibility2,setVisibility2]=useState(false)
   return (
@@ -35,7 +53,7 @@ const RegistOrganization = () => {
               placeholder="Название"
               type="text"
               ref={register({
-                validate: (name2) => name2 && name2.length > 2,
+                validate: (name2) => name2 && name2.length>2,
               })}
             />
             {errors.name2 && (
@@ -125,18 +143,23 @@ const RegistOrganization = () => {
             {errors.password && (
               <span className={classes.error}>Пароль менее 6 символов</span>
             )}
+              {
+              err && (
+                <span className={classes.error}>Пароли не совподают</span>
+              )
+            }
           </div>
           <div className={classes.blockInput}>
             <label>Повторит пароль</label>
             <div className={classes.blockVisibil}>
             <input
-              name="repeatPasssword"
+              name="repeatPassword"
               className={classes.inputs1}
               placeholder="Ваш пароль"
               type={visibility2? "text":"password"}
               ref={register({
-                validate: (repeatPasssword) =>
-                  repeatPasssword && repeatPasssword.length > 6,
+                validate: (repeatPassword) =>
+                  repeatPassword && repeatPassword.length > 6,
               })}
             />
              <img className={classes.imgVisib} alt="img" onClick={()=>setVisibility2(!visibility2)} src={visibility2? vis : noVis}/>
@@ -145,6 +168,11 @@ const RegistOrganization = () => {
             {errors.repeatPasssword && (
               <span className={classes.error}>Пароль менее 6 символов</span>
             )}
+            {
+              err && (
+                <span className={classes.error}>Пароли не совподают</span>
+              )
+            }
           </div>
           <div className={classes.blockChecket}>
             <input
