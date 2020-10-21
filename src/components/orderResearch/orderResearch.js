@@ -1,8 +1,25 @@
 import React from 'react';
-import st from './orderResearch.module.css'
+import st from './orderResearch.module.css';
+import { useDispatch } from "react-redux";
+import { orderResearch } from '../../redux/reducers/orderResearch/orderResearch'
 
 
 const OrderResearch = () =>{
+    const data = {
+        name: "sha",
+        surname: "bloo",
+        logo: "head",
+        email: "test@tes2t.test",
+        phone_number: "0550050599",
+        description: "Want to be a partner"
+      }
+
+    const dispatch = useDispatch();
+
+    const onSubmit = (event) =>{
+        event.preventDefault();
+        dispatch(orderResearch(data));
+    }
 
     return(
         <div className={st.order_block}>
@@ -46,7 +63,7 @@ const OrderResearch = () =>{
                         <label for="description">Дополнительная информация*</label>
                         <textarea id="description" placeholder="Краткое описание продукта\услуги, рынка, отрасли, географии охвата"></textarea>
                     </div>
-                    <button>Отправить</button>
+                    <button onClick={onSubmit}>Отправить</button>
                 </form>
             </div>
         </div>

@@ -9,9 +9,9 @@ const Analitic = () => {
     <div className={st.analitic_container}>
         <div className={st.analitic_way}>
             <span>Главная / </span>
-            <span>Аналитика</span>
+            <span>Блог</span>
         </div>
-        <h2>Аналитика</h2>
+        <h2>Блог</h2>
         <div className={st.analitic_content}>
             {arr.map(elem =>(
                 <Link to="/analiticCard">

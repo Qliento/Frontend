@@ -1,6 +1,6 @@
 import React from 'react';
 import st from './bePartner.module.css';
-import { bePartner } from '../../redux/reducers/bePartner';
+import { bePartner } from '../../redux/reducers/bePartner/bePartner';
 
 
 const BePartner = () =>{
