@@ -43,9 +43,9 @@ const Footer=()=>(
                 </div>
             </div>
             <div className={st.quest}>
-            <span className={st.footer_title}>Вопросы и ответы</span>
-            <Link to=""><span>Часто задаваемые вопросы</span></Link>
-            <Link to=""><span>Задать вопрос</span></Link>
+            <Link to="/questions"><span className={st.footer_title}>Вопросы и ответы</span></Link>
+            <Link to="/questions"><span>Часто задаваемые вопросы</span></Link>
+            <Link to="/questions"><span>Задать вопрос</span></Link>
             </div>
         </div>
     </footer>

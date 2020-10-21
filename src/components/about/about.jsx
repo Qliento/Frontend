@@ -1,60 +1,34 @@
-import React,{useEffect} from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { aboutData } from "../../redux/actions/about/getAboutText";
+import { AboutUs } from "../../redux/reducers/about/about";
 import classes from "./about.module.css";
 import img1 from "./img/1.png";
-import img2 from "./img/2.png"
+import img2 from "./img/2.png";
 
 const About = () => {
   const dispatch = useDispatch();
-  useEffect(()=>{
-    dispatch(aboutData())
-  },[])
+  const data = useSelector((state) => state.AboutUs.arrayData);
+  useEffect(() => {
+    dispatch(aboutData());
+  }, []);
   return (
     <div className={classes.aboutPage}>
+      <span className={classes.title}>О нас</span>
 
-        <span className={classes.title}>О нас</span>
+      {data &&
+        data.map((item) => {
+          return(
+            <div className={classes.block1} key={item.id}>
+            <img alt="img" src={img1} />
+            <div className={classes.text1}>
+              <span className={classes.blockTitle}>{item.header}</span>
+              <span>{item.description}</span>
+            </div>
+          </div>
+          )
 
-      <div className={classes.block1}>
-        <img alt="img" src={img1} />
-        <div className={classes.text1}>
-          <span className={classes.blockTitle}>О нас</span>
-          <span>
-            Повседневная практика показывает, что постоянный количественный рост
-            и сфера нашей активности позволяет выполнять важные задания по
-            разработке направлений прогрессивного развития. Значимость этих
-            проблем настолько очевидна, что новая модель организационной
-            деятельности играет важную роль в формировании направлений
-            прогрессивного развития. <br /> <br />
-            Задача организации, в особенности же новая модель организационной
-            деятельности позволяет выполнять важные задания по разработке новых
-            предложений.Повседневная практика показывает, что постоянный
-            количественный рост и сфера нашей активности позволяет выполнять
-            важные задания по разработке направлений прогрессивного роль в
-            формировании направлений прогрессивного развития.
-          </span>
-        </div>
-      </div>
-      <div className={classes.block1}>
-        <div className={classes.text1}>
-        <span className={classes.blockTitle}>О нас</span>
-          <span>
-            Повседневная практика показывает, что постоянный количественный рост
-            и сфера нашей активности позволяет выполнять важные задания по
-            разработке направлений прогрессивного развития. Значимость этих
-            проблем настолько очевидна, что новая модель организационной
-            деятельности играет важную роль в формировании направлений
-            прогрессивного развития. <br /> <br />
-            Задача организации, в особенности же новая модель организационной
-            деятельности позволяет выполнять важные задания по разработке новых
-            предложений.Повседневная практика показывает, что постоянный
-            количественный рост и сфера нашей активности позволяет выполнять
-            важные задания по разработке направлений прогрессивного роль в
-            формировании направлений прогрессивного развития.
-          </span>
-        </div>
-        <img alt="img" src={img2} />
-      </div>
+        })}
     </div>
   );
 };

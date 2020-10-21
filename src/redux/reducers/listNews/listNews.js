@@ -1,12 +1,14 @@
+
+
 const initialState = {
-    arrayData: [],
+    arrayNews: [],
   };
-  export function AboutUs(state = initialState, action) {
+  export function ListNews(state = initialState, action) {
     switch (action.type) {
-      case "ABOUT_DATA":
+      case "LIST_NEWS":
         return {
           ...state,
-          arrayData: [...action.payload],
+          arrayNews: [...action.payload],
         };
       default:
         return state;
