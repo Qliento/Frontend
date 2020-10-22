@@ -9,7 +9,7 @@ const Form = () => {
   const dispatch = useDispatch();
   const onSubmit = (values) => dispatch(sendQuestions(values));
   return (
-    <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
+    <form className={classes.form} onSubmit={handleSubmit(onSubmit)} MutationObserverunregister shouldUnregister>
       <div className={classes.leftColumn}>
         <div className={classes.inputs}>
           <label>ФИО*</label>
