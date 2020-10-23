@@ -55,13 +55,6 @@ const Header = () => (
       </svg>
     </Link>
     <div className={st.navbar}>
-<<<<<<< HEAD
-      <Link to="/news"><span>Новости</span></Link>
-      <Link to="/about-us"><span>О нас</span></Link>
-      <Link to="/analitic"><span>Блог</span></Link>
-      <Link to="/market-research"><span>Маркет</span></Link>
-      <Link to="/be-partner"><span>Партнёрство</span></Link>
-=======
       <Link to="/news">
         <span>Новости</span>
       </Link>
@@ -69,7 +62,7 @@ const Header = () => (
         <span>О нас</span>
       </Link>
       <Link to="/analitic">
-        <span>Блок</span>
+        <span>Блог</span>
       </Link>
       <Link to="/market-research">
         <span>Маркет</span>
@@ -77,7 +70,6 @@ const Header = () => (
       <Link to="/be-partner">
         <span>Партнёрство</span>
       </Link>
->>>>>>> 6b38426db5b36fe0b8ba2874912a86aeae38e18d
     </div>
     <div className={st.local_basket}>
       <div className={st.localiz}>

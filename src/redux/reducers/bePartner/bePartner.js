@@ -1,11 +1,10 @@
-export const bePartner = () => async (dispatch, data) =>{
-    await fetch("http://private-anon-24b1e89aa0-qliento.apiary-proxy.com/feedback/", {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            "Content-type": "application/json"
-        },
-        body: JSON.stringify(data)
-    })
-    alert("success");
+import axios from "axios";
+
+export function bePartner(data){
+  console.log(data)
+    return async (dispatch)=>{
+      await  axios
+      .post("http://207.154.250.71/feedback/", data)
+
+}
 }

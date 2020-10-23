@@ -138,8 +138,6 @@ dispatch(error())
             />
             <img className={classes.imgVisib} alt="img" onClick={()=>setVisibility(!visibility)} src={visibility? vis : noVis} />
             </div>
-
-
             {errors.password && (
               <span className={classes.error}>Пароль менее 6 символов</span>
             )}

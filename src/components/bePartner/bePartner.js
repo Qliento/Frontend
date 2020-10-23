@@ -1,62 +1,87 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import st from './bePartner.module.css';
 import { bePartner } from '../../redux/reducers/bePartner/bePartner';
-
+import { useDispatch, useSelector } from "react-redux";
+import { useForm } from "react-hook-form";
+import { BePartnerData } from '../../redux/actions/actions';
 
 const BePartner = () =>{
-    const data = {
-        name: "sha",
-        name_of_organization: "bloo",
-        position: "head",
-        email: "test@tes2t.test",
-        phone: "0550050599",
-        extra: "Want to be a partner"
-      }
 
+    const dispatch = useDispatch();
+    const data = useSelector((state) => state.BePartnerData.data.data);
+        useEffect(() => {
+        dispatch(BePartnerData());
+    }, []);
 
-    const onSubmit = () =>{
-        bePartner(data)
+    const { handleSubmit, register, errors } = useForm();
+    const onSubmit = (data) =>{
+        dispatch(bePartner(data));
     }
+
 
     return(
         <div className={st.be_partner}>
             <img src={require('./bePartner.png')} alt="img"></img>
             <div className={st.be_partner_container}>
-                <h2>Стать партнером</h2>
-                <p>Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности играет важную роль в формировании направлений прогрессивного развития.
-
-Задача организации, в особенности же новая модель организационной деятельности позволяет выполнять важные задания по разработке новых предложений.Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке направлений прогрессивного роль в формировании направлений прогрессивного развития.
-</p>
-                <h2>Условия партнерства</h2>
-                <p>Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности играет важную роль в формировании направлений прогрессивного развития.
-
-Задача организации, в особенности же новая модель организационной деятельности позволяет выполнять важные задания по разработке новых предложений.Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке направлений прогрессивного роль в формировании направлений прогрессивного развития.
-</p>
-                <h2>Ограничения</h2>
-                <p>Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности играет важную роль в формировании направлений прогрессивного развития.
-
-Задача организации, в особенности же новая модель организационной деятельности позволяет выполнять важные задания по разработке новых предложений.Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке направлений прогрессивного роль в формировании направлений прогрессивного развития.
-</p>
+                {data &&(data.map(elem =>(
+                    <div>
+                        <h2>{elem.header}</h2>
+                        <p>{elem.description}</p>
+                    </div>
+                )))}
             </div>
             <div className={st.order_form}>
                 <h3>Обратная связь</h3>
                 <form>
                     <div className={st.form_input_block}>
                         <label for="name">ФИО*</label>
-                        <input id="name" placeholder="Ваш Ф.И.О"></input>
-                        <label for="companyName">Название организации</label>
-                        <input id="companyName" placeholder="Название организации"></input>
+                        <input id="name" placeholder="Ваш Ф.И.О" name="name" ref={register({
+                        validate: (name) => name && name.length > 4,
+                        })}></input>
+                        {errors.name && (
+                            <span className={st.errorString}>Не корректно ввели данные</span>
+                        )}
+                        <label for="name_of_organization">Название организации</label>
+                        <input id="name_of_organization" placeholder="Название организации" name="name_of_organization" ref={register({
+                        validate: (name_of_organization) => name_of_organization && name_of_organization.length > 2,
+                        })}></input>
+                        {errors.name_of_organization && (
+                            <span className={st.errorString}>Не корректно ввели данные</span>
+                        )}
                         <label for="position">Должность</label>
-                        <input id="position" placeholder="Должность"></input>
+                        <input id="position" placeholder="Должность" name="position" ref={register({
+                        validate: (position) => position && position.length > 2,
+                        })}></input>
+                        {errors.position && (
+                            <span className={st.errorString}>Не корректно ввели данные</span>
+                        )}
                         <label for="mail">Почта*</label>
-                        <input id="mail" placeholder="Ваш email"></input>
+                        <input id="mail" placeholder="Ваш email" name="email" ref={register({
+                        pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            message: "Неверный адрес электронной почты",
+                          }
+                        })}></input>
+                        {errors.email && (
+                            <span className={st.errorString}>{errors.email.message}</span>
+                        )}
                         <label for="phone">Телефон*</label>
-                        <input id="phone" placeholder="+996___-__-__-__"></input>
+                        <input id="phone" placeholder="+996___-__-__-__"  name="phone" ref={register({
+                        validate: (phone) => phone && phone > 6
+                        })}></input>
+                        {errors.phone && (
+                            <span className={st.errorString}>Заполните поле корректно</span>
+                        )}
                     </div>
                     <div className={st.form_textarea_block}>
                         <label for="description">Дополнительная информация*</label>
-                        <textarea id="description" placeholder="Допольнительная информация"></textarea>
-                        <button onClick={onSubmit}>Отправить</button>
+                        <textarea id="description" placeholder="Допольнительная информация"  name="extra" ref={register({
+                        validate: (extra) => extra && extra.length > 10
+                        })}></textarea>
+                        {errors.extra && (
+                            <span className={st.errorString}>Заполните поле</span>
+                        )}
+                        <button onClick={handleSubmit(onSubmit)}>Отправить</button>
                     </div>
                 </form>
             </div>

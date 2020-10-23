@@ -121,6 +121,10 @@
     padding: 10px;
 }
 
+.errorString{
+    color: red;
+}
+
 .form_textarea_block textarea{
     height: 100%;
     border: 1px solid #BDBDBD;
