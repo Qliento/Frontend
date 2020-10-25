@@ -172,7 +172,7 @@ const RegistClient = () => {
             <Recaptcha
               sitekey="6LcajdoZAAAAAFOgC8_IQd25j4QdCaMJBK4dfK52"
               render="explicit"
-              verifyCallback={verifiedCallback}
+              // verifyCallback={verifiedCallback}
             />
             {
               verified == false && (
