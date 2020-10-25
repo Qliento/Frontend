@@ -1,4 +1,4 @@
-import axios from "axios";
+import API from '../../API';
 
 export function seccess(data){
     return{
@@ -10,14 +10,7 @@ export function seccess(data){
 
 export function sendQuestions(data){
     return async (dispatch)=>{
-      await  axios
-      .post("http://207.154.250.71/have-question/",{
-        'name': data.fio,
-        'name_of_organization': data.name,
-        'email': data.email,
-        'phone': data.phone,
-        'extra': data.question
-      })
+      await API.sendQuestions(data)
       .then(res => {
         console.log(res)
       });

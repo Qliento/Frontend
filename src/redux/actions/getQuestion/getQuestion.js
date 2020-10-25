@@ -1,4 +1,4 @@
-import axios from "axios";
+import API from '../../API';
 
 export function seccess(data){
     return{
@@ -10,12 +10,7 @@ export function seccess(data){
 
 export function getQuestion(){
     return async (dispatch)=>{
-      await  axios
-      .get("http://207.154.250.71/faq",{
-    headers:{
-           "Accept-Language": "ru"
-         }
-     })
+      await API.getQuestion()
       .then(res => {
     dispatch(seccess(res.data))
 

@@ -1,27 +1,17 @@
-import axios from "axios";
-import { BE_PARTNER_DATA, REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR} from './constants'
+import { BE_PARTNER_DATA, REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR} from './constants';
+import API from '../API';
 
 export function BePartnerData(){
     return async (dispatch)=>{
-      await  axios
-      .get("http://207.154.250.71/partnership",{
-        headers:{
-           "Accept-Language": "ru"
-        }
-     })
+      await API.bePartnerData()
       .then(res => {
         dispatch({ type: BE_PARTNER_DATA, payload: res })
-      });
-
-}
+      })}
 }
 
 export function registrationClient(data){
   return async (dispatch)=>{
-    await  axios
-    .post("http://207.154.250.71/users/registration/clients/",{
-      'client_status': {...data}
-    })
+    await API.registrationClient(data)
     .then(res => {
       console.log(res)
       if( res.status == 200){

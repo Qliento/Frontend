@@ -1,4 +1,4 @@
-import axios from "axios";
+import API from '../../API'
 
 export function seccess(data){
     return{
@@ -10,15 +10,9 @@ export function seccess(data){
 
 export function ListNews(){
     return async (dispatch)=>{
-      await  axios
-      .get("http://207.154.250.71/news",{
-    headers:{
-           "Accept-Language": "ru"
-         }
-     })
+      await API.ListNews()
       .then(res => {
         dispatch(seccess(res.data))
- 
       });
 
 }
