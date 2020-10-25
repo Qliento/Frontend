@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import capcha from "./img/capcha.png";
 import noVis from "./img/noVisibility.png";
 import vis from "./img/visibility 1.png";
+import Recaptcha from 'react-recaptcha';
 import {
   error,
   errorMesseg,
@@ -17,6 +18,12 @@ const RegistOrganization = () => {
   const { handleSubmit, register, errors } = useForm();
   const dispatch = useDispatch();
   const isModal = useSelector((state) => state.RegistrOrg.isModal);
+  const [verified, setVerified]=useState(false)
+  const verifiedCallback = () =>{
+    setVerified(true);
+    console.log("hi")
+  }
+
   useEffect(() => {
     dispatch(errorMesseg());
   }, []);
@@ -25,8 +32,18 @@ const RegistOrganization = () => {
       setErr(true);
     } else {
       setErr(false);
-      console.log(values);
-      dispatch(registrationOrg(values));
+      if(verified){
+        console.log(values);
+        dispatch(registrationOrg(values));
+      }
+      else{
+        setVerified(false)
+      }
+    
+    
+    }
+    if(!verified){
+      setVerified(false)
     }
   };
   const [err, setErr] = useState(false);
@@ -197,13 +214,18 @@ const RegistOrganization = () => {
               </div>
             </div>
             <div className={classes.blockCapcha}>
-              <img alt="img" src={capcha} className={classes.imgCapcha} />
-              <input
-                name="capcha"
-                className={classes.inputCapcha}
-                placeholder="Введите текст "
-              />
-            </div>
+            <Recaptcha
+              sitekey="6LcajdoZAAAAAFOgC8_IQd25j4QdCaMJBK4dfK52"
+              render="explicit"
+              verifyCallback={verifiedCallback}
+            />
+            {
+              verified=== false ?  (
+                <span className={classes.error}>Подтвердите что вы не бот</span>
+              )
+              : <></>
+            }
+          </div>
             <button type="submit" className={classes.btnRegist}>
               Зарегистрироваться
             </button>

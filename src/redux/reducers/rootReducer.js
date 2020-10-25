@@ -5,6 +5,7 @@ import {ListNews} from "./listNews/listNews"
 import {RegistrOrg} from"./registrOrg/registrOrg";
 import {BePartnerData} from './bePartner/bePartnerData';
 import {RegistrationClient} from './registrationClient/registrationClient'
+import {mainGet} from "./main/main"
 
 export const rootReducer = combineReducers({
     AboutUs,
@@ -12,5 +13,6 @@ export const rootReducer = combineReducers({
     ListNews,
     RegistrOrg,
     BePartnerData,
-    RegistrationClient
+    RegistrationClient,
+    mainGet
 });
