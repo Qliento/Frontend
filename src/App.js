@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Main from "./components/main/main";
@@ -18,8 +18,12 @@ import News from "./components/news/news";
 import QuestionPage from "./components/question/question";
 import NewsCard from "./components/newsCard/newsCard";
 import Basket from "./components/basket/basket";
+import { useDispatch, useSelector } from "react-redux";
+import { mainData } from "./redux/actions/main/getMain";
 
 function App() {
+
+
   return (
     <div className="App">
       <Header />

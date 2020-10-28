@@ -22,7 +22,7 @@ const str=""
   return (
     <div className={cardId !==""? st.analitic_card1:st.analitic_card}>
       <div className={st.blockImg}>
-        <img alt="img" src={bg} className={st.img} />
+        <img alt="img" src={data.image} className={st.img} />
         <div className={st.buttomBlock}>
           <span className={st.buttomBlockTitle}>Поделится в соц сетях</span>
           <div className={st.icons}>

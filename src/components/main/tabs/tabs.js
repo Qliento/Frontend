@@ -10,7 +10,7 @@ const Tabs = ({ category }) => {
       <div className={classes.tabs}>
         {category &&
           category.map((item) => {
-            return <TabsItem title={item.name} productCount={item.count} />;
+            return <TabsItem key={item.id} title={item.name} productCount={item.count} />;
           })}
       </div>
     </div>

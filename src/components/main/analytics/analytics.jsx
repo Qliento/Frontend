@@ -7,7 +7,11 @@ const Analytics = ({ data }) => {
     <div className={classes.blockAnalytic}>
       <div className={classes.analytic}>
         <div className={classes.blockImg}>
-          <img alt="img" src={image} className={classes.images} />
+          <img
+            alt="img"
+            src={data && data.images[0].url}
+            className={classes.images}
+          />
         </div>
         <div className={classes.content}>
           <span className={classes.title}>{data && data.header}</span>

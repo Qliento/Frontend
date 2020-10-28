@@ -24,15 +24,15 @@ console.log(data)
       <div className={classes.wrapper}>
         <img alt="img" src={banner} className={classes.banner} />
         <div className={classes.blockSearch}>
-          <Inputs />
+          <Inputs arrCategory={data && data.category}/>
         </div>
       </div>
-      <Tabs category={data.category} />
+      <Tabs category={data && data.category} />
       <Order />
-      <AboutUs />
+      <AboutUs data={data&& data.info} />
       <News />
-      <Analytics data={data.post} />
-      <GooglePlay />
+      <Analytics data={ data &&data.post} />
+      <GooglePlay data ={data && data.mob_app} />
     </>
   );
 };
