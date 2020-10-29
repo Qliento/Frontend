@@ -3,35 +3,37 @@ import classes from "./marketCard.module.css";
 import doctor from "./img/Rectangle 47.png";
 import { Link } from "react-router-dom";
 
-const MarketCard = ({id}) => {
+const MarketCard = ({ id, data }) => {
   return (
     <Link to={`/market-research/detail/${id}`}>
       <div className={classes.marketCard}>
-        <img alt="img" src={doctor} className={classes.img} />
+        <img alt="img" src={data.image} className={classes.img} />
         <div className={classes.content}>
           <div className={classes.nameCompany}>
-            <span className={classes.name}>ОсОО “Бимед Фарм”</span>
-            <span className={classes.date}>29 / 09 / 2020</span>
+            <span className={classes.name}>
+              {data.author ? data.author : "Автора нет"}
+            </span>
+            <span className={classes.date}>{data.date}</span>
           </div>
           <div className={classes.blockDescrip}>
             <div className={classes.nameResearch}>
-              <span>Рынок частной медицины 2020. База сетей</span>
+              <span>{data.name}</span>
             </div>
             <div className={classes.description}>
-              <span>• 150 стр</span>
+              <span>• {data.pages} стр</span>
             </div>
           </div>
           <div className={classes.blockHeshteg}>
-            <div>#медицина</div>
-            <div>#медицина</div>
-            <div>#медицина</div>
-            <div>#медицина</div>
+            {data.hashtag &&
+              data.hashtag.map((items) => {
+                return <div key={items.id}>#{items.name}</div>;
+              })}
           </div>
         </div>
         <div className={classes.blockAct}>
           <div className={classes.blockPrace}>
-            <span className={classes.discounts}>55 000 сом</span>
-            <span className={classes.newPrace}>55 000 сом</span>
+            <span className={classes.discounts}>{data.old_price}</span>
+            <span className={classes.newPrace}>{data.new_price}</span>
           </div>
           <div className={classes.blockBtn}>
             <button className={classes.toBasket}>В корзину</button>

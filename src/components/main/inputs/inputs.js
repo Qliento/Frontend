@@ -5,8 +5,8 @@ import {Link} from "react-router-dom"
 
 const Inputs = ({ arrCategory }) => {
   const [dataSearch, setDataSearch] = useState({
-    category: "",
-    text: "",
+    category: " ",
+    text: " ",
   });
   const upadateData = (e) => {
     setDataSearch({
@@ -30,7 +30,7 @@ const Inputs = ({ arrCategory }) => {
         value={dataSearch.text}
         onChange={(e) => setDataSearch({ ...dataSearch, text: e.target.value })}
       />
-      <Link to="" className={classes.btn}> <button className={classes.btn2}>Найти</button></Link>
+      <Link to={`/market-research/${dataSearch.category}/${dataSearch.text}`} className={classes.btn}> <button className={classes.btn2}>Найти</button></Link>
      
     </div>
   );

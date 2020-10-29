@@ -37,7 +37,7 @@ function App() {
         <Route path="/about-us" component={About} />
         <Route path="/analitic" component={Analitic} />
         <Route path="/analiticCard" component={AnaliticCard} />
-        <Route path="/market-research" component={MarketResearch} />
+        <Route path="/market-research/:category/:text" component={MarketResearch} />
         <Route path="/order-research" component={OrderResearch} />
         <Route path="/be-partner" component={BePartner} />
         <Route path="/news" component={News} />

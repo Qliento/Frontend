@@ -18,6 +18,10 @@ export default {
     http.post("/users/registration/clients/", {
       client_status: { ...data },
     }),
+  resultSearchList: (category, text) =>
+    http.get(
+      `/researches/?category__name__iexact=${category}&hashtag__name__exact=${text}`
+    ),
   aboutData: () => http.get("/about-us/"),
   ListNews: () => http.get("/news"),
   getQuestion: () => http.get("/faq"),
