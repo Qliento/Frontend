@@ -10,12 +10,15 @@ import GooglePlay from "./googlePlay/googlePlay";
 import Analytics from "./analytics/analytics";
 import { useDispatch, useSelector } from "react-redux";
 import { mainData } from "../../redux/actions/main/getMain";
+import { ListNews } from "../../redux/actions/getListNews/getNews";
 
 const Main = () => {
   const dispatch = useDispatch();
   const data=useSelector((state)=>state.mainGet.mainData)
+
 useEffect(()=>{
-  dispatch(mainData())
+  dispatch(mainData());
+  dispatch(ListNews())
 },[])
 console.log(data)
 //iravolv7

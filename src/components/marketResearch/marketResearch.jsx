@@ -10,7 +10,7 @@ import DetailMarket from "./detailMarket/detailMarket";
 
 const MarketResearch = () => {
   const params = useParams();
-
+  const numberKeys=(Object.keys(params).length)
   return (
     <div className={classes.marketPage}>
       <div className={classes.breadLink}>
@@ -21,9 +21,22 @@ const MarketResearch = () => {
       </div>
       <MarketFilter category={params.category} />
       <Switch>
-        <Route
+        {
+          numberKeys===2?<Route
           path="/market-research/:category/:text"
-        ><MarketCards params={params}/></Route>
+        ><MarketCards params={params}/></Route>: null
+        }
+        {
+          numberKeys === 1 ? <Route
+          path="/market-research/:category"
+        ><MarketCards params={params}/></Route>: null
+        }
+        {
+          numberKeys=== 0 ? <Route
+          path="/market-research"
+        ><MarketCards params={params}/></Route>: null
+        }
+        
         <Route path="/market-research/detail/:id" component={DetailCard} />
       </Switch>
     </div>

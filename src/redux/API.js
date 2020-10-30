@@ -22,6 +22,11 @@ export default {
     http.get(
       `/researches/?category__name__iexact=${category}&hashtag__name__exact=${text}`
     ),
+  listResearchCategory: (category) =>
+    http.get(
+      `http://207.154.250.71/researches/?category__name__iexact=${category}`
+    ),
+    allListResearch:()=>http.get(`http://207.154.250.71/researches/`),
   aboutData: () => http.get("/about-us/"),
   ListNews: () => http.get("/news"),
   getQuestion: () => http.get("/faq"),
