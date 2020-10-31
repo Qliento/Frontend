@@ -13,6 +13,7 @@ export default {
     bePartner: (data) => http.post('/feedback/', data),
     orderResearch: (data) => http.post('/purchase/order-form/', data),
     bePartnerData: () => http.get('/partnership'),
+    agreementData: () => http.get('/users/qliento-consent/'),
     registrationClient: (data) => http.post('/users/registration/clients/',{
         'client_status': {...data}
       }),

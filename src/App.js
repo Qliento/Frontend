@@ -18,6 +18,8 @@ import News from "./components/news/news";
 import QuestionPage from "./components/question/question";
 import NewsCard from "./components/newsCard/newsCard";
 import Basket from "./components/basket/basket";
+import RecoveryPassword from './components/recoveryPassword/recoveryPassword';
+import Agreement from './components/agreement/agreement';
 
 function App() {
   return (
@@ -40,6 +42,8 @@ function App() {
         <Route path="/questions" component={QuestionPage} />
         <Route path="/newsCard" component={NewsCard} />
         <Route path="/basket" component={Basket} />
+        <Route path='/recovery-password' component={RecoveryPassword} />
+        <Route path='/agreement' component={Agreement} />
         </Switch>
       </div>
       <Footer />
