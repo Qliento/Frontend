@@ -5,27 +5,38 @@ const http = Axios.create({
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
-    "Accept-Language": "ru"
-  }
+    "Accept-Language": "ru",
+  },
 });
 
 export default {
-    bePartner: (data) => http.post('/feedback/', data),
-    orderResearch: (data) => http.post('/purchase/order-form/', data),
-    bePartnerData: () => http.get('/partnership'),
-    agreementData: () => http.get('/users/qliento-consent/'),
-    registrationClient: (data) => http.post('/users/registration/clients/',{
-        'client_status': {...data}
-      }),
-    aboutData: () => http.get('/about-us/'),
-    ListNews: () => http.get('/news'),
-    getQuestion: () => http.get('/faq'),
-    sendQuestions: (data) => http.post('/have-question/',{
-        'name': data.fio,
-        'name_of_organization': data.name,
-        'email': data.email,
-        'phone': data.phone,
-        'extra': data.question
-      })
+  bePartner: (data) => http.post("/feedback/", data),
+  orderResearch: (data) => http.post("/purchase/order-form/", data),
+  getMainData: () => http.get("/main-page/"),
+  agreementData: () => http.get('/users/qliento-consent/'),
+  bePartnerData: () => http.get("/partnership"),
+  registrationClient: (data) =>
+    http.post("/users/registration/clients/", {
+      client_status: { ...data },
+    }),
+  resultSearchList: (category, text) =>
+    http.get(
+      `/researches/?category__name__iexact=${category}&hashtag__name__exact=${text}`
+    ),
+  listResearchCategory: (category) =>
+    http.get(
+      `http://207.154.250.71/researches/?category__name__iexact=${category}`
+    ),
+    allListResearch:()=>http.get(`http://207.154.250.71/researches/`),
+  aboutData: () => http.get("/about-us/"),
+  ListNews: () => http.get("/news"),
+  getQuestion: () => http.get("/faq"),
+  sendQuestions: (data) =>
+    http.post("/have-question/", {
+      name: data.fio,
+      name_of_organization: data.name,
+      email: data.email,
+      phone: data.phone,
+      extra: data.question,
+    }),
 };
-

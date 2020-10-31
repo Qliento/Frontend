@@ -1,7 +1,7 @@
 .blockAbout{
     height: 450px;
     margin-top: 200px;
-    width: 80%;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -24,7 +24,7 @@ z-index: 2;
 .rightImg{
     position: absolute;
     transform: translate(-84%,-40px);
-   z-index: -1;
+   z-index: 1;
 
 }
 .content{

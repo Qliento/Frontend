@@ -12,6 +12,13 @@
     background: #BDF58D;
     transition: ease-in-out 0.2s;
 }
+.card1{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .BlockTitle {
   width: 80%;
   height: auto;

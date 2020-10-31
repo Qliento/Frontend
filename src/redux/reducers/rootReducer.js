@@ -7,6 +7,8 @@ import {BePartnerData} from './bePartner/bePartnerData';
 import {RegistrationClient} from './registrationClient/registrationClient';
 import {authentication} from './authClient/authClient';
 import {Agreement} from './agreement/agreement';
+import {mainGet} from "./main/main"
+import {mainResultSearch} from "./mainResultSearch/mainResultSearch"
 
 export const rootReducer = combineReducers({
     AboutUs,
@@ -16,5 +18,7 @@ export const rootReducer = combineReducers({
     BePartnerData,
     RegistrationClient,
     authentication,
-    Agreement
+    Agreement,
+    mainGet,
+    mainResultSearch
 });

@@ -1,17 +1,40 @@
-import React from "react"
+import React, { useEffect } from "react";
 import MarketCard from "./marketCard/marketCard";
+import { useDispatch, useSelector } from "react-redux";
+import { listResearchCategory, mainSearch,allResearch } from "../../redux/actions/mainSearch/mainSearch";
 
-const MarketCards=()=>{
-    return(
-        <>
-        <MarketCard  id="1"/>
-        <MarketCard  id="2"/>
-        <MarketCard  id="3"/>
-        <MarketCard  id="4"/>
-        <MarketCard  id="5"/>
-        <MarketCard  id="6"/>
-        <MarketCard  id="7"/>
-        </>
-    )
-}
+const MarketCards = ({ params }) => {
+  console.log(params);
+  const numberKeys=(Object.keys(params).length)
+  const dispatch = useDispatch();
+  const arrResearch=useSelector((state)=>state.mainResultSearch.researchList)
+  useEffect(() => {
+    if(numberKeys===2){
+      if (params.category || params.text) {
+        dispatch(mainSearch(params.category, params.text));
+      }
+    }
+    else if(numberKeys === 1){
+      dispatch(listResearchCategory(params.category))
+    }
+    else{
+      dispatch(allResearch())
+    }
+
+  }, []);
+  console.log(arrResearch)
+  return (
+    <>
+    {
+      arrResearch && 
+      arrResearch.map((item)=>{
+          return(
+                <MarketCard id={item.id} data={item} />
+          )
+      })
+    }
+      
+    </>
+  );
+};
 export default MarketCards;

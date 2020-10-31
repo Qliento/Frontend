@@ -68,4 +68,7 @@
 .blockDescrip{
     border-left: 3px solid #BDF58D;
     padding-left: 10px;
+    height: 140px;
+    text-overflow: auto;
+    overflow: hidden;
 }

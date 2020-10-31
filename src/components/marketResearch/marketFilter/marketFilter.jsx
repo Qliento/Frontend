@@ -3,12 +3,12 @@ import Category from "./category/category";
 import classes from "./marketFilter.module.css";
 import sort from "./img/sort.png"
 
-const MarketFilter = () => {
+const MarketFilter = ({category}) => {
   return (
     <div className={classes.blockFilter}>
       <div className={classes.blockRow}>
         <div className={classes.inputs}>
-          <Category name="Все котегории"/>
+          <Category name="Все котегории" category={category}/>
         </div>
         <div className={classes.inputs}>
           <Category name="Подкотегории" />

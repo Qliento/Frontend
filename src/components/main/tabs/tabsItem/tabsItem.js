@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import classes from "./tabsItem.module.css";
+import {Link } from "react-router-dom"
 
 // type PropsType = {
 //   title: string;
@@ -9,8 +10,11 @@ import classes from "./tabsItem.module.css";
 const TabsItem = ({title, productCount}) => {
   const [hover, setHover] = useState(false);
   return (
+    <Link to={`/market-research/${title}`}
+    className={classes.card}>
+  
     <div
-      className={classes.card}
+     className={classes.card1}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
@@ -23,6 +27,7 @@ const TabsItem = ({title, productCount}) => {
         </span>
       </div>
     </div>
+    </Link>
   );
 };
 export default TabsItem;

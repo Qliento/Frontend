@@ -9,7 +9,7 @@ const options = [
   { value: 'vanilla', label: 'Vanilla' }
 ]
 
-const Category = ({name}) => (
-  <Select options={options} placeholder={name} />
+const Category = ({name,category}) => (
+  <Select options={options} placeholder={name} defaultValue={category&&{ label: category, value: category }} />
 )
 export default Category
