@@ -2,19 +2,22 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import classes from "./registClient.module.css";
 import { useDispatch } from "react-redux";
-import Recaptcha from 'react-recaptcha';
+import ReCAPTCHA from "react-google-recaptcha";
 
 import cancel from "./img/cancel.png";
 import { Link } from "react-router-dom";
 import { registrationClient } from '../../redux/actions/actions';
-
+import { useSelector } from "react-redux";
 import noVis from "./img/noVisibility.png"
-import vis from "./img/visibility 1.png"
+import vis from "./img/visibility 1.png";
+import RegistrModal from "./modal";
 
 const RegistClient = () => {
   const { handleSubmit, register, errors } = useForm();
   const dispatch = useDispatch();
 
+  const isModal = useSelector((state) => state.RegistrationClient.isModal);
+  // console.log(isModal.RegistrationClient.isModal)
   const[err,setErr]=useState(false)
   const [visibility,setVisibility]=useState(false)
   const [visibility2,setVisibility2]=useState(false)
@@ -30,15 +33,21 @@ const RegistClient = () => {
     else{
       if(verified){
         setErr(false);
-        dispatch(registrationClient(values))}
+        dispatch(registrationClient(values))
+        console.log(1)
+      }
+        
         else{
           setVerified(false);
+          console.log(2)
         }
     }
   } 
 
   return (
     <div className={classes.regist}>
+      {isModal != '' ? <div>work</div> : <div>not work</div>}
+      <RegistrModal />
       <div className={classes.blockRegist}>
         <div className={classes.blockTop}>
           <div className={classes.canceling}>
@@ -169,10 +178,10 @@ const RegistClient = () => {
             </div>
           </div>
           <div className={classes.blockCapcha}>
-            <Recaptcha
+            <ReCAPTCHA
               sitekey="6LcajdoZAAAAAFOgC8_IQd25j4QdCaMJBK4dfK52"
               render="explicit"
-              // verifyCallback={verifiedCallback}
+              onChange={verifiedCallback}
             />
             {
               verified == false && (

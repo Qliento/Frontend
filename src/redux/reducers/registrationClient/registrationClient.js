@@ -1,7 +1,7 @@
 import { REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR } from '../../actions/constants';
 
 const initialState = {
-    isMOdal:false,
+    isModal: 1,
   };
 
   export function RegistrationClient(state = initialState, action) {
@@ -9,13 +9,13 @@ const initialState = {
       case REGISTRATION_CLIENT:
         return {
           ...state,
-          isMOdal: true,
+          isModal: 1,
         };
         
     case REGISTRATION_CLIENT_ERROR:
             return {
               ...state,
-              isMOdal: false,
+              isModal: 2,
             };
             
       default:

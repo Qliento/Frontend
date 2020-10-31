@@ -1,5 +1,14 @@
-import { BE_PARTNER_DATA, REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR} from './constants';
+import { BE_PARTNER_DATA, REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, AGREEMENT_DATA} from './constants';
 import API from '../API';
+
+
+export function AgreementData(){
+  return async (dispatch)=>{
+    await API.agreementData()
+    .then(res => {
+      dispatch({ type: AGREEMENT_DATA, payload: res })
+    })}
+}
 
 export function BePartnerData(){
     return async (dispatch)=>{
@@ -9,12 +18,18 @@ export function BePartnerData(){
       })}
 }
 
+export function errorClientReg() {
+  return {
+    type: REGISTRATION_CLIENT_ERROR,
+  };
+}
+
 export function registrationClient(data){
   return async (dispatch)=>{
     await API.registrationClient(data)
     .then(res => {
       console.log(res)
-      if( res.status == 200){
+      if( res.status == 201){
         dispatch({ type: REGISTRATION_CLIENT})
       }
       else{
@@ -23,4 +38,38 @@ export function registrationClient(data){
     });
 
 }
+}
+
+export function authClient(username, password){
+    return dispatch => {
+        dispatch(request({ username }));
+
+        login(username, password)
+            .then(
+                user => { 
+                    dispatch(success(user));
+                },
+                error => {
+                    dispatch(failure(error));
+                }
+            );
+    };
+
+    function request(user) { return { type: LOGIN_REQUEST, user } }
+    function success(user) { return { type: LOGIN_SUCCESS, user } }
+    function failure(error) { return { type: LOGIN_FAILURE, error } }
+}
+
+async function login(email, password) {
+  const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+  };
+
+  const response = await fetch(`http://207.154.250.71/users/login/clients/`, requestOptions);
+  // const user = await handleResponse(response);
+  // store user details and jwt token in local storage to keep user logged in between page refreshes
+  localStorage.setItem('user', JSON.stringify(response));
+  return response;
 }

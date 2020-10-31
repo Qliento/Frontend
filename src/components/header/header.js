@@ -2,8 +2,9 @@ import React from "react";
 import st from "./header.module.css";
 import { Link } from "react-router-dom";
 
-const Header = () => (
-  <nav className={st.header}>
+const Header = () => {
+  const userInfo = localStorage.getItem('user');
+ return(  <nav className={st.header}>
     <Link to="/">
       <svg
         width="40"
@@ -95,14 +96,18 @@ const Header = () => (
       </div>
     </div>
     <div className={st.regisration}>
+    {userInfo==null ? 
       <Link to="/auth">
         <button className={st.Lk}>Вход</button>
       </Link>
+      : <Link to="/">
+      <button className={st.Lk}>Личный кабинет</button>
+    </Link>}
       <Link to="/registration">
         <button className={st.regisrationBtn}>Регистрация</button>
       </Link>
     </div>
   </nav>
-);
+)};
 
 export default Header;

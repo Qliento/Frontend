@@ -74,8 +74,28 @@
     margin-top: 30px;
 }
 
+.inputs_password_block{
+    display: flex;
+    border-left: none;
+}
+
+.inputs_password_block img{
+    border: 1px solid #BDBDBD;
+    border-left: 0;
+}
+
+.inputs_password_block input{
+    border-right: none;
+}
+
 .forgetPass{
     margin: 10px 50px 40px auto;
+}
+
+.error{
+    color: red;
+    display: block;
+    max-width: 300px;
 }
 
 .auth_content a:hover{
