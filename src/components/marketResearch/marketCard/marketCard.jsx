@@ -32,8 +32,8 @@ const MarketCard = ({ id, data }) => {
         </div>
         <div className={classes.blockAct}>
           <div className={classes.blockPrace}>
-            <span className={classes.discounts}>{data.old_price}</span>
-            <span className={classes.newPrace}>{data.new_price}</span>
+            <span className={classes.discounts}>{data.old_price} сом</span>
+            <span className={classes.newPrace}>{data.new_price} сом</span>
           </div>
           <div className={classes.blockBtn}>
             <button className={classes.toBasket}>В корзину</button>

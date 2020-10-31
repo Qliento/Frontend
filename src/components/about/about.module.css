@@ -1,12 +1,18 @@
 .aboutPage {
-  width: 100%;
+  width: 80%;
   height: auto;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 100px;
   padding-bottom: 188px;
   background: #e5e5e5;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.blockCrumbs {
+  width: auto;
+  height: auto;
+  margin-top: 50px;
 }
 .topBlock {
   width: 65%;
@@ -34,9 +40,13 @@
 .title {
   font-size: 48px;
   color: #333333;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 }
 .block1 {
-  width: 85%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   height: 363px;
@@ -44,12 +54,15 @@
   flex-direction: row;
   justify-content: space-between;
   margin-top: 10px;
+  margin-bottom: 147px;
 }
 .text1 {
   width: 50%;
   height: auto;
   display: flex;
   flex-direction: column;
+  text-overflow: auto;
+  overflow: hidden;
 }
 .text1 span {
   font-size: 18px;

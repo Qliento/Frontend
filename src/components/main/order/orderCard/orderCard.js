@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./orderCard.module.css";
 import strela from "./img/strela.png";
 import strela2 from "./img/strela2.png";
+import {Link} from "react-router-dom"
 
 const OrderCard = () => {
   return (
@@ -17,7 +18,10 @@ const OrderCard = () => {
           Не нашли нужное исследование? Закажите ваше персональное исследование
           у нас
         </span>
-        <button className={classes.btn}>Заказать исследование</button>
+        <Link to="/order-research" className={classes.btn}>
+        <button className={classes.btn1}>Заказать исследование</button>
+        </Link>
+        
       </div>
     </div>
   );

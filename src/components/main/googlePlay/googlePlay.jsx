@@ -1,25 +1,32 @@
 import React from "react";
 import classes from "./googlePlay.module.css";
 import phone from "./img/phone.png";
-import google from "./img/google-play-badge 1.png"
+import google from "./img/google-play-badge 1.png";
 
-const GooglePlay = ({data}) => {
-  console.log(data)
-  let image
-  if(data){
-    image=  data.image
+const GooglePlay = ({ data }) => {
+  console.log(data);
+  let image;
+  if (data) {
+    image = data.image;
   }
-   
+  console.log(data);
   return (
     <div className={classes.googlePlay}>
-      <img alt="img" src={image?data.image :phone} className={classes.img} />
+      <img alt="img" src={image ? data.image : phone} className={classes.img} />
       <div className={classes.blockText}>
         <span className={classes.title}>мобильном приложении QlientO</span>
-        <span className={classes.description}>
-          {data && data.description}
-        </span>
+        <span className={classes.description}>{data && data.description}</span>
       </div>
-      <img alt="img" src={google} className={classes.btnGoogle}/>
+
+      <img
+        alt="img"
+        src={google}
+        onClick={(event) => {
+          event.preventDefault();
+          window.open(data && data.url);
+        }}
+        className={classes.btnGoogle}
+      />
     </div>
   );
 };
