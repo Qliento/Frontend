@@ -13,6 +13,7 @@ export default {
   bePartner: (data) => http.post("/feedback/", data),
   orderResearch: (data) => http.post("/purchase/order-form/", data),
   getMainData: () => http.get("/main-page/"),
+  createToken: (data) => http.post('/auth/jwt/create/', data),
   agreementData: () => http.get('/users/qliento-consent/'),
   bePartnerData: () => http.get("/partnership"),
   registrationClient: (data) =>

@@ -1,7 +1,7 @@
 import { REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR } from '../../actions/constants';
 
 const initialState = {
-    isModal: 1,
+    isModal: '',
   };
 
   export function RegistrationClient(state = initialState, action) {

@@ -48,6 +48,7 @@ export function authClient(username, password){
             .then(
                 user => { 
                     dispatch(success(user));
+                    dispatch(createToken(username, password));
                 },
                 error => {
                     dispatch(failure(error));
@@ -70,6 +71,21 @@ async function login(email, password) {
   const response = await fetch(`http://207.154.250.71/users/login/clients/`, requestOptions);
   // const user = await handleResponse(response);
   // store user details and jwt token in local storage to keep user logged in between page refreshes
-  localStorage.setItem('user', JSON.stringify(response));
+  // localStorage.setItem('user', JSON.stringify(response));
   return response;
 }
+
+export function createToken(email, password){
+  return async (dispatch)=>{
+    const data = JSON.stringify({email, password})
+    await API.createToken(data)
+    .then(res => {
+      console.log(res)
+      if( res.status == 200){
+        localStorage.setItem('user', JSON.stringify(res.data.access));
+      }
+      // else{
+      //   dispatch({ type: REGISTRATION_CLIENT_ERROR})
+      // }
+    });
+}}
