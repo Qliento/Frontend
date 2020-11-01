@@ -1,13 +1,12 @@
 .tabs {
   width: 80%;
-  height: 366px;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
   margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-content: space-around;
 }
 .blockIsledov {
   width: 100%;

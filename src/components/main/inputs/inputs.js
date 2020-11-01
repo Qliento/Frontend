@@ -5,8 +5,8 @@ import { Redirect } from "react-router";
 
 const Inputs = ({ arrCategory }) => {
   const [dataSearch, setDataSearch] = useState({
-    category: " ",
-    text: " ",
+    category: "",
+    text: "",
   });
   const [market, setMarket] = useState(false);
   const upadateData = (e) => {
@@ -15,6 +15,8 @@ const Inputs = ({ arrCategory }) => {
       category: e,
     });
   };
+
+
   const btnSearch = () => {
     if (dataSearch.category!==" " || dataSearch.text !==" ") {
       setMarket(true);

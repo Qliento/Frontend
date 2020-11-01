@@ -17,7 +17,6 @@ const MarketResearch = () => {
         <Link to="/">Главная</Link>
         <span>{" / "}</span>
         <Link to="/market-research">Маркет исследований</Link>
-        <Link>/ Рынок частной медицины 2020. База сетей</Link>
       </div>
       <MarketFilter category={params.category} />
       <Switch>

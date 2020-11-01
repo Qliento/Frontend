@@ -15,7 +15,7 @@
     align-items: center;
 }
 .blockImg {
-  width: auto;
+  width: 55%;
   height: 100%;
   position: relative;
 }
@@ -30,12 +30,14 @@
 .description {
   font-size: 16px;
   color: #333333;
+  margin-top: 50px;
 }
 .content{
     height: 100%;
     width: 30%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    text-overflow: auto;
+    overflow: hidden;
 
 }
