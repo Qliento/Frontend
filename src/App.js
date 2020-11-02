@@ -45,6 +45,10 @@ function App() {
             path="/market-research/:category/:text"
             component={MarketResearch}
           />
+                  <Route
+            path="/market-research/:detail/:id"
+            component={MarketResearch}
+          />
           <Route path="/market-research/:category" component={MarketResearch} />
           <Route path="/market-research" component={MarketResearch} />
           <Route path="/order-research" component={OrderResearch} />

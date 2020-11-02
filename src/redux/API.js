@@ -27,6 +27,7 @@ export default {
     http.get(
       `http://207.154.250.71/researches/?category__name__iexact=${category}`
     ),
+    dataFilter:()=>http.get(`http://207.154.250.71/filters/`),
     allListResearch:()=>http.get(`http://207.154.250.71/researches/`),
   aboutData: () => http.get("/about-us/"),
   ListNews: () => http.get("/news"),

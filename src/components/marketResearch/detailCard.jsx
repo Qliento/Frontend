@@ -8,9 +8,7 @@ const DetailCard=()=>{
         <>
         <Tabs1/>
         <SimilarResearch/>
-        <MarketCard/>
-        <MarketCard/>
-        <MarketCard/>
+ 
         </>
     )
 }

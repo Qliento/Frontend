@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import "./category.css";
 
 import Select from "react-select";
@@ -9,11 +9,72 @@ const options = [
   { value: "vanilla", label: "Vanilla" },
 ];
 
-const Category = ({ name, category }) => (
-  <Select
-    options={options}
-    placeholder={name}
-    defaultValue={category ? { label: category, value: category } : ""}
-  />
-);
+const Category = ({ name, category, listCategory, country, authors,changeCategory,subCategory ,ubdateData}) => {
+
+  const [values, setValues] = useState(
+    category
+      ? {
+          value: category,
+          label: category,
+        }
+      : ""
+  );
+  useEffect(()=>{
+    if(name==="Все котегории"){
+      changeCategory(values)
+    }
+  },[values])
+  let arr = [];
+  if (listCategory) {
+    arr = listCategory.map((item) => {
+      return {
+        value: item.name,
+        label: item.name,
+      };
+    });
+  }
+  if (country) {
+    arr = country.map((item) => {
+      return {
+        value: item.name,
+        label: item.name,
+      };
+    });
+  }
+  if (authors) {
+    arr = authors.map((item) => {
+      return {
+        value: item.logo,
+        label: item.logo,
+      };
+    });
+  }
+  if (subCategory) {
+    console.log(subCategory.subcategories)
+    arr = subCategory.subcategories.map((item) => {
+      return {
+        value: item.name,
+        label: item.name,
+      };
+    });
+  }
+  
+  const chengeData = (e) => {
+    setValues(e);
+    ubdateData(name,e)
+  };
+
+  return (
+    <Select
+      options={arr}
+      placeholder={name}
+      onChange={(e) => chengeData(e)}
+      value={values}
+      defaultValue={
+        category ? { value: category.name, label: category.name } : ""
+      }
+    />
+  );
+};
+
 export default Category;

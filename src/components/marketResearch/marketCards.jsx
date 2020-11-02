@@ -21,7 +21,7 @@ const MarketCards = ({ params }) => {
       dispatch(allResearch())
     }
 
-  }, []);
+  }, [params]);
   console.log(arrResearch)
   return (
     <>
