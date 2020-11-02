@@ -11,11 +11,14 @@ const http = Axios.create({
 
 export default {
   bePartner: (data) => http.post("/feedback/", data),
+  blogData: () => http.get('/blog/'),
   orderResearch: (data) => http.post("/purchase/order-form/", data),
   getMainData: () => http.get("/main-page/"),
   createToken: (data) => http.post('/auth/jwt/create/', data),
   agreementData: () => http.get('/users/qliento-consent/'),
+  recoveryPassword: (data) => http.post('users/send-email/', data),
   bePartnerData: () => http.get("/partnership"),
+  orderResearchData: () => http.get('/purchase/short-descriptions/'),
   registrationClient: (data) =>
     http.post("/users/registration/clients/", {
       client_status: { ...data },

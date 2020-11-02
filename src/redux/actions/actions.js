@@ -1,4 +1,4 @@
-import { BE_PARTNER_DATA, REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, AGREEMENT_DATA} from './constants';
+import { BE_PARTNER_DATA, REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, AGREEMENT_DATA, ORDER_RESEARCH_DATA, BLOG_DATA} from './constants';
 import API from '../API';
 
 
@@ -16,6 +16,22 @@ export function BePartnerData(){
       .then(res => {
         dispatch({ type: BE_PARTNER_DATA, payload: res })
       })}
+}
+
+export function blogData(){
+  return async (dispatch)=>{
+    await API.blogData()
+    .then(res => {
+      dispatch({ type: BLOG_DATA, payload: res })
+    })}
+}
+
+export function orderResearchData(){
+  return async (dispatch)=>{
+    await API.orderResearchData()
+    .then(res => {
+      dispatch({ type: ORDER_RESEARCH_DATA, payload: res })
+    })}
 }
 
 export function errorClientReg() {
@@ -37,6 +53,17 @@ export function registrationClient(data){
       }
     });
 
+}
+}
+
+export function recoveryPassword(data){
+  return async ()=>{
+    const data1 = JSON.stringify(data)
+    console.log(data1);
+    await API.recoveryPassword(data1)
+      .then(res => {
+        console.log(res);
+      })
 }
 }
 
