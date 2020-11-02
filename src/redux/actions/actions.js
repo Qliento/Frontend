@@ -1,4 +1,4 @@
-import { BE_PARTNER_DATA, REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, AGREEMENT_DATA} from './constants';
+import { BE_PARTNER_DATA, REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, AGREEMENT_DATA, ORDER_RESEARCH_DATA, BLOG_DATA} from './constants';
 import API from '../API';
 
 
@@ -16,6 +16,22 @@ export function BePartnerData(){
       .then(res => {
         dispatch({ type: BE_PARTNER_DATA, payload: res })
       })}
+}
+
+export function blogData(){
+  return async (dispatch)=>{
+    await API.blogData()
+    .then(res => {
+      dispatch({ type: BLOG_DATA, payload: res })
+    })}
+}
+
+export function orderResearchData(){
+  return async (dispatch)=>{
+    await API.orderResearchData()
+    .then(res => {
+      dispatch({ type: ORDER_RESEARCH_DATA, payload: res })
+    })}
 }
 
 export function errorClientReg() {
@@ -40,6 +56,17 @@ export function registrationClient(data){
 }
 }
 
+export function recoveryPassword(data){
+  return async ()=>{
+    const data1 = JSON.stringify(data)
+    console.log(data1);
+    await API.recoveryPassword(data1)
+      .then(res => {
+        console.log(res);
+      })
+}
+}
+
 export function authClient(username, password){
     return dispatch => {
         dispatch(request({ username }));
@@ -48,6 +75,7 @@ export function authClient(username, password){
             .then(
                 user => { 
                     dispatch(success(user));
+                    dispatch(createToken(username, password));
                 },
                 error => {
                     dispatch(failure(error));
@@ -70,6 +98,21 @@ async function login(email, password) {
   const response = await fetch(`http://207.154.250.71/users/login/clients/`, requestOptions);
   // const user = await handleResponse(response);
   // store user details and jwt token in local storage to keep user logged in between page refreshes
-  localStorage.setItem('user', JSON.stringify(response));
+  // localStorage.setItem('user', JSON.stringify(response));
   return response;
 }
+
+export function createToken(email, password){
+  return async (dispatch)=>{
+    const data = JSON.stringify({email, password})
+    await API.createToken(data)
+    .then(res => {
+      console.log(res)
+      if( res.status == 200){
+        localStorage.setItem('user', JSON.stringify(res.data.access));
+      }
+      // else{
+      //   dispatch({ type: REGISTRATION_CLIENT_ERROR})
+      // }
+    });
+}}

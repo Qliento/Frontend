@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import st from './orderResearch.module.css';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector  } from "react-redux";
 import { orderResearch } from '../../redux/reducers/orderResearch/orderResearch';
 import { useForm } from "react-hook-form";
+import { orderResearchData } from '../../redux/actions/actions';
 
 
 const OrderResearch = () =>{
     const { handleSubmit, register, errors } = useForm();
     const dispatch = useDispatch();
+    const data = useSelector((state) => state.orderResearchData.data.data);
+    useEffect(() => {
+        dispatch(orderResearchData());
+    }, []);
     const onSubmit = (data) =>{
         dispatch(orderResearch(data));
     }

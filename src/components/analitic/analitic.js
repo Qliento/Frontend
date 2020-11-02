@@ -1,9 +1,18 @@
-import React from "react";
+import React, {useEffect}  from "react";
 import st from "./analitic.module.css";
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { blogData } from '../../redux/actions/actions';
+import noPhoto from './no_photo.jpg';
 
 const Analitic = () => {
-  const arr = [1, 2, 3, 4, 5, 6];
+  const dispatch = useDispatch();
+    const data = useSelector((state) => state.blogData.data.data);
+    console.log(data);
+    useEffect(() => {
+        dispatch(blogData());
+    }, []);
+    const month = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентабрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
 
   return (
     <div className={st.analitic_container}>
@@ -13,14 +22,18 @@ const Analitic = () => {
         </div>
         <h2>Блог</h2>
         <div className={st.analitic_content}>
-            {arr.map(elem =>(
-                <Link to="/analiticCard">
+            {data && data.map(elem =>(
+                <Link to="/analiticCard" key={elem.id}>
                 <div className={st.analitic_card}>
-                <img src={require('./analitic_bg.png')} alt="img" />
+                <img src={elem.images[0] === undefined ? noPhoto : elem.images[0].url} alt="img" />
                 <div className={st.card_info}>
-                    <span className={st.card_date}>{elem} сентября 2020</span>
-                    <h5 className={st.card_title}>Рынок частной медицины 2020. База сетей</h5>
-                    <p>Таким образом дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки дальнейших направлений развития...</p>
+                <span className={st.card_date}>
+                    <span>{ elem.date.match(/\d+/g)[2] } </span>
+                    <span>{ month[Number(elem.date.match(/\d+/g)[1] - 1)] } </span>
+                    <span>{ elem.date.match(/\d+/g)[0] }</span>
+                </span>
+                    <h5 className={st.card_title}>{elem.header}</h5>
+                    <p>{elem.description}</p>
                 </div>
             </div>
             </Link>

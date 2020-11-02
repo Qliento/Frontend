@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
 import st from './analiticCard.module.css';
 
 
 
+
 const AnaliticCard = () => {
+
+    useEffect(() => {
+    window.Ya.share2('ya', {
+        theme: { services: 'vkontakte,facebook,telegram,linkedin',
+        size: 'l',
+    },
+      });
+    })
 
     return(
         <div className={st.container}>
@@ -14,7 +23,7 @@ const AnaliticCard = () => {
                     <div className={st.shareIt}>
                         <span>Поделиться в соц сетях</span>
                         <div className={st.shareIt_icons}>
-                        <div className="ya-share2" data-curtain data-size="l" data-services="vkontakte,facebook,twitter,linkedin"></div>
+                        <div id="ya"></div>
                         </div>
                     </div>
                 </div>
