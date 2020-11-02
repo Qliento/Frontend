@@ -20,7 +20,15 @@ const MarketCard = ({ id, data }) => {
               <span>{data.name}</span>
             </div>
             <div className={classes.description}>
-              <span>• {data.pages} стр</span>
+              <span>{data.pages} стр</span>
+              <span>ID: {id}</span>
+              <>
+                <span>Страны: </span>
+                {data.country &&
+                  data.country.map((item) => {
+                    return <span key={item.id}>{item.name}</span>;
+                  })}
+              </>
             </div>
           </div>
           <div className={classes.blockHeshteg}>

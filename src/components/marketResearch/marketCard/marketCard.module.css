@@ -75,6 +75,9 @@
 }
 .description span {
   font-size: 14px;
+  line-height: 17px;
+  margin-top: 4px;
+  
   color: #333333;
 }
 .blockHeshteg {
