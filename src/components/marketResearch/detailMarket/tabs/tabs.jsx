@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import classes from "./tabs.module.css";
 
-const Tabs1 = () => {
+const Tabs1 = ({ dataText, clickBtn }) => {
   const [active, setAtive] = useState(1);
+  const [isClose,setIsClose]=useState(false)
+  const onClickbtn=()=>{
+    setIsClose(!isClose);
+    clickBtn()
+  }
   return (
     <div className={classes.blockInfo}>
       <div className={classes.tabs}>
@@ -26,30 +31,25 @@ const Tabs1 = () => {
         </div>
       </div>
       <div className={classes.content}>
-        <div className={classes.contentText}>
-          <span>
-            Аналитический обзор «Медицинские услуги: исследование потребителей
-            Москвы и Московской области 2020» посвящен подробному анализу
-            потребления медицинских услуг на московском рынке в условиях
-            пандемии COVID-19. Обзор входит в серию исследований российского
-            рынка частной медицины, выполненной командой аналитиков РБК. В
-            исследовании выделены основные виды медицинского обслуживания,
-            которыми жители московского региона пользовались в динамике в
-            2010-2020 гг. Подробно изучены основные потребительские тренды рынка
-            медицинских услуг в Московском регионе, включающие анализ влияния
-            пандемии коронавируса COVID-19 на поведение россиян, их уровень
-            дохода, а также потребление медицинских услуг. В исследовании
-            содержится анализ частоты обращения к услугам различных специалистов
-            в области медицины в динамике в 2018-2020 гг., а также определена
-            динамика среднего чека посещения по различным врачам в 2018-2020 гг.
-            Проанализированы формы оплаты медицинских услуг, включая теневой
-            сегмент рынка. Показатели рассмотрены по следующими медицинским
-            направлениям: дерматология, эндокринология, аллергология,
-            гастроэнтерология, неврология, терапия, отоларингология,
-            кардиология, маммология,
-          </span>
+        <div className={ isClose ? classes.contentText1 : classes.contentText}>
+          {active === 1 ? (
+            <span>{dataText && dataText.description}</span>
+          ) : null}
+          {active === 2 ? (
+            <span>{dataText && dataText.content}</span>
+          ) : null}
+          {active === 3 ? (
+            <span>{dataText.author ? dataText.author.logo : "Автора нет"}</span>
+          ) : null}
         </div>
-        <button className={classes.contentBtn}>Развернуть</button>
+        
+        {isClose? (
+          <button className={classes.contentBtn} onClick={()=>onClickbtn()}>Закрыть</button>
+      
+        ) : (
+         
+          <button className={classes.contentBtn} onClick={()=>onClickbtn()}>Развернуть</button>
+        )}
       </div>
     </div>
   );

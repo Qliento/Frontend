@@ -4,10 +4,13 @@ import classes from "./marketFilter.module.css";
 import sort from "./img/sort.png";
 import { useDispatch, useSelector } from "react-redux";
 import { listDataFilter } from "../../../redux/actions/filterMarket/filterMarket";
+import { searchMarket } from "../../../redux/actions/mainSearch/mainSearch";
+import {Link} from "react-router-dom"
 
-const MarketFilter = ({ category ,sort1}) => {
+
+const MarketFilter = ({ category, sort1 }) => {
   const dispatch = useDispatch();
-  console.log(category)
+  console.log(category);
   const data = useSelector((state) => state.FilterMarket.listData);
   const [categor, setCategor] = useState(category && category.name);
   const [inputCategory, setInputCategory] = useState(category ? category : "");
@@ -15,6 +18,7 @@ const MarketFilter = ({ category ,sort1}) => {
   const [inputAuthor, setInputAuthor] = useState("");
   const [inputCountry, setInputCountry] = useState("");
   const [inputText, setInputText] = useState("");
+
   useEffect(() => {
     dispatch(listDataFilter());
   }, []);
@@ -27,7 +31,7 @@ const MarketFilter = ({ category ,sort1}) => {
 
   const ubdateData = (name, e) => {
     if (name === "Все котегории") {
-      setInputCategory(e.value);
+      setInputCategory(e);
     } else if (name === "Подкотегории") {
       setInputSubCategory(e.value);
     } else if (name === "Выберите автора") {
@@ -36,14 +40,15 @@ const MarketFilter = ({ category ,sort1}) => {
       setInputCountry(e.value);
     }
   };
-  const search=()=>{
-console.log(inputCategory);
-console.log(inputSubCategory);
-console.log(inputAuthor);
-console.log(inputCountry);
-console.log(inputText);
-  }
-   console.log(inputText)
+  const search = () => {
+    console.log(inputCategory);
+    console.log(inputSubCategory);
+    console.log(inputAuthor);
+    console.log(inputCountry);
+    console.log(inputText);
+    dispatch(searchMarket(inputCategory,inputSubCategory,inputAuthor,inputCountry,inputText));
+  };
+  console.log(inputText);
   return (
     <div className={classes.blockFilter}>
       <div className={classes.blockRow}>
@@ -73,7 +78,12 @@ console.log(inputText);
           }}
           value={inputText}
         />
-        <button className={classes.btn} onClick={search}>Поиск</button>
+        <Link className={classes.linkBtn} to={`/market-research`}>
+        <button className={classes.btn} onClick={search}>
+          Поиск
+        </button>
+        </Link>
+    
       </div>
       <div className={classes.blockRow}>
         <div className={classes.inputs}>
@@ -90,7 +100,10 @@ console.log(inputText);
             ubdateData={ubdateData}
           />
         </div>
-        <button className={classes.btnSort}  onDoubleClick={()=>console.log("hi2")}>
+        <button
+          className={classes.btnSort}
+          onDoubleClick={() => console.log("hi2")}
+        >
           Сортировка по цене <img alt="img" src={sort} />
         </button>
         <button className={classes.btnSort}>

@@ -18,13 +18,13 @@ import News from "./components/news/news";
 import QuestionPage from "./components/question/question";
 import NewsCard from "./components/newsCard/newsCard";
 import Basket from "./components/basket/basket";
-import RecoveryPassword from './components/recoveryPassword/recoveryPassword';
-import Agreement from './components/agreement/agreement';
+import RecoveryPassword from "./components/recoveryPassword/recoveryPassword";
+import Agreement from "./components/agreement/agreement";
 import { useDispatch, useSelector } from "react-redux";
 import { mainData } from "./redux/actions/main/getMain";
+import OrgPage from "./components/organizationPage/organizationPage";
 
 function App() {
-
   return (
     <div className="App">
       <Header />
@@ -45,11 +45,13 @@ function App() {
             path="/market-research/:category/:text"
             component={MarketResearch}
           />
-                  <Route
-            path="/market-research/:detail/:id"
+          <Route
+            path="/market-research-detail/:id"
             component={MarketResearch}
           />
           <Route path="/market-research/:category" component={MarketResearch} />
+         <Route path="/market-research-search/:category/:subCaregory:author/:country/:text" component={MarketResearch} />
+        
           <Route path="/market-research" component={MarketResearch} />
           <Route path="/order-research" component={OrderResearch} />
           <Route path="/be-partner" component={BePartner} />
@@ -57,8 +59,9 @@ function App() {
           <Route path="/questions" component={QuestionPage} />
           <Route path="/newsCard" component={NewsCard} />
           <Route path="/basket" component={Basket} />
-          <Route path='/recovery-password' component={RecoveryPassword} />
-          <Route path='/agreement' component={Agreement} />
+          <Route path="/recovery-password" component={RecoveryPassword} />
+          <Route path="/agreement" component={Agreement} />
+          <Route path="/organization-page" component={OrgPage} />
         </Switch>
       </div>
       <Footer />

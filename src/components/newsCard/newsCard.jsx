@@ -21,7 +21,7 @@ const str=""
   }
   return (
     <div className={cardId !==""? st.analitic_card1:st.analitic_card}>
-      <div className={st.blockImg}>
+      <div className={cardId !==""? st.blockImg1:st.blockImg}>
         <img alt="img" src={data.image} className={st.img} />
         <div className={st.buttomBlock}>
           <span className={st.buttomBlockTitle}>Поделится в соц сетях</span>
@@ -34,7 +34,7 @@ const str=""
         </div>
       </div>
       <div className={cardId==key?st.content1:st.content}>
-  <span className={st.date}>{data.date}</span>
+         <span className={st.date}>{data.date}</span>
         <span className={st.title}>
          {data.name}
         </span>

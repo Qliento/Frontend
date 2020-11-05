@@ -44,5 +44,12 @@ export function allResearch() {
     });
   };
 }
+export function searchMarket(category,subcaregory,author,country,text) {
+  return async (dispatch) => {
+    await API.searchMarketCerds(category,subcaregory,author,country,text).then((res) => {
+     dispatch(allListResearch(res.data));
+    });
+  };
+}
 
 

@@ -24,8 +24,7 @@ const MarketResearch = () => {
 
       <Switch>
   
-
-        <Route path="/market-research/detail/:id" component={DetailCard} />
+      <Route path="/market-research-detail/:id"><DetailCard params={params.id}/></Route>
       </Switch>
     </div>
   );

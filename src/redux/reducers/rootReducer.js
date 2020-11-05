@@ -12,6 +12,7 @@ import {mainResultSearch} from "./mainResultSearch/mainResultSearch"
 import {FilterMarket} from "./filterMarket/filterMarket"
 import {orderResearchData} from './orderResearch/orderResearchData';
 import { blogData } from './blog/blog';
+import {detailDataResearch} from "./detailResearch/detailResearch"
 
 export const rootReducer = combineReducers({
     AboutUs,
@@ -26,5 +27,6 @@ export const rootReducer = combineReducers({
     mainResultSearch,
     FilterMarket,
     orderResearchData,
-    blogData
+    blogData,
+    detailDataResearch
 });

@@ -1,0 +1,79 @@
+.blockWrapp {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.headerItem {
+  width: 100%;
+  height: 50%;
+  background: #ffffff;
+  padding-left: 250px;
+  padding-right: 28px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.bloc {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+.topItem {
+  height: 50%;
+  width: 100%;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background: linear-gradient(89.3deg, #51bbf8 0%, #1b8e3d 81.82%);
+}
+.photo {
+  position: absolute;
+  top: 50px;
+  left: 60px;
+}
+.leftBlock {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.desc {
+  font-size: 14px;
+  line-height: 17px;
+  color: #333333;
+}
+.centerBlock {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+}
+.titleNumber {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #333333;
+}
+.redact {
+  font-size: 14px;
+  line-height: 17px;
+  color: #2f80ed;
+}

@@ -29,7 +29,7 @@ const MarketCards = ({ params }) => {
       arrResearch && 
       arrResearch.map((item)=>{
           return(
-                <MarketCard id={item.id} data={item} />
+                <MarketCard  data={item} key={item.id} />
           )
       })
     }

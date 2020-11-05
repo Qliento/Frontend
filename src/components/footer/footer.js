@@ -1,23 +1,24 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import st from "./footer.module.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { mainData } from "../../redux/actions/main/getMain";
 
 const Footer = () => {
-    const dispatch = useDispatch();
-    const data=useSelector((state)=>state.mainGet.mainData)
-  useEffect(()=>{
-    dispatch(mainData())
-  },[])
-  
-    let arrContacts=[]
-    if(data.сontacts){
-        console.log(data.сontacts.contacts)
-        arrContacts=[...data.сontacts.contacts]
-    }
-  
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.mainGet.mainData);
+  useEffect(() => {
+    dispatch(mainData());
+  }, []);
+
+  console.log(data);
+  let arrContacts = [];
+  if (data.сontacts) {
+      console.log(data.сontacts.contacts);
+      arrContacts = [...data.сontacts.contacts];
     
+  }
+
   return (
     <footer>
       <svg
@@ -94,7 +95,9 @@ const Footer = () => {
         {arrContacts &&
           arrContacts.map((item) => {
             return (
-                <Link><span>{item.info}</span></Link>
+              <Link>
+                <span>{item.info}</span>
+              </Link>
             );
           })}
       </div>
