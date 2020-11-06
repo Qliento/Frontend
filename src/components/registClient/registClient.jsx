@@ -46,7 +46,6 @@ const RegistClient = () => {
 
   return (
     <div className={classes.regist}>
-      {isModal != '' ? <div>work</div> : <div>not work</div>}
       <RegistrModal />
       <div className={classes.blockRegist}>
         <div className={classes.blockTop}>
@@ -171,10 +170,11 @@ const RegistClient = () => {
               className={classes.checkbox}
               type="checkbox"
               name="checkbox"
+              required
             />
             <div className={classes.text}>
               <span>Подтверждаю, что ознакомлен и согласен с </span>
-              <span>Пользовательским соглашением</span>
+              <Link to='/agreement'>Пользовательским соглашением</Link>
             </div>
           </div>
           <div className={classes.blockCapcha}>

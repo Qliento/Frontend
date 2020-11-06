@@ -10,6 +10,7 @@ const OrderResearch = () =>{
     const { handleSubmit, register, errors } = useForm();
     const dispatch = useDispatch();
     const data = useSelector((state) => state.orderResearchData.data.data);
+    console.log(data);
     useEffect(() => {
         dispatch(orderResearchData());
     }, []);
@@ -28,18 +29,15 @@ const OrderResearch = () =>{
                 </div>
             </div>
             <div className={st.order_instruct}>
-                <img src={require('./Rectangle 55.png')} alt="img"></img>
-                <div className={st.order_instruct_descrip}>
-                    <h2>Краткая инструкция</h2>
-                    <p>Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности играет важную роль в формировании направлений прогрессивного развития.
-                    </p>
-                </div>
-                <div className={st.order_instruct_descrip}>
-                    <h2>Краткая инструкция</h2>
-                    <p>Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке направлений прогрессивного развития. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности играет важную роль в формировании направлений прогрессивного развития.
-                    </p>
-                </div>
-                <img src={require('./Rectangle 55.png')}></img>
+                {data && data.map(elem => (
+                    <div className={st.order_instruct_block}>
+                    <img src={elem.picture1} alt="img"></img>
+                    <div className={st.order_instruct_descrip}>
+                        <h2>Краткая инструкция</h2>
+                        <p>{elem.text1}</p>
+                    </div>
+                    </div>
+                ))}
             </div>
             <div className={st.order_form} id="form">
                 <h3>Заявка на исследование</h3>

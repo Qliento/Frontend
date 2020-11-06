@@ -210,7 +210,7 @@ const RegistOrganization = () => {
               />
               <div className={classes.text}>
                 <span>Подтверждаю, что ознакомлен и согласен с </span>
-                <span>Пользовательским соглашением</span>
+                <Link to='/agreement'>Пользовательским соглашением</Link>
               </div>
             </div>
             <div className={classes.blockCapcha}>

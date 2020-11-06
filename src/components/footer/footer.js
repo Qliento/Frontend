@@ -12,10 +12,10 @@ const Footer = () => {
   },[])
   
     let arrContacts=[]
-    if(data.сontacts){
-        console.log(data.сontacts.contacts)
-        arrContacts=[...data.сontacts.contacts]
-    }
+    // if(data.сontacts){
+    //     console.log(data.сontacts.contacts)
+    //     arrContacts=[...data.сontacts.contacts]
+    // }
   
     
   return (
