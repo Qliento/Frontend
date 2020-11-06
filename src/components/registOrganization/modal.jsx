@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
+// import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import classes from "./regisrtOrganization.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { errorMesseg } from "../../redux/actions/registrationOrg/registrationOrg";
+import {  useSelector } from "react-redux";
+// import { errorMesseg } from "../../redux/actions/registrationOrg/registrationOrg";
 import img1 from "./img/1.png"
 import img2 from "./img/2.png"
-
+import { Link } from "react-router-dom";
 const customStyles = {
   content: {
     top: "50%",
@@ -23,13 +23,13 @@ const customStyles = {
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
-function RegistrModal({ whatModal }) {
-  useEffect(() => {
-    dispatch(errorMesseg());
-  }, []);
+function RegistrModal() {
+  // useEffect(() => {
+  //   dispatch(errorMesseg());
+  // }, []);
 
-  const dispatch = useDispatch();
-  const isModal = useSelector((state) => state.RegistrOrg.isModal);
+  // const dispatch = useDispatch();
+  const isModal = useSelector((state) => state.RegistrationClient.isModal);
   console.log(isModal);
   return (
     <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
@@ -46,8 +46,8 @@ function RegistrModal({ whatModal }) {
            
           </span>
           </div>
-          
         </div>
+        <Link to="/">OK</Link>
       </div>
     </Modal>
   );

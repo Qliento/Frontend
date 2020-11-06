@@ -38,7 +38,7 @@
 .analitic_card1 {
   width: 100%;
   height: auto;
-
+  position: relative;
   margin-top: 60px;
   display: flex;
   flex-direction: row;
@@ -55,11 +55,13 @@
   justify-content: space-between;
 }
 .blockImg1 {
-  width: 371;
+  width: 35%;
   height: 495px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: sticky;
+  top:100px;
 
 }
 .content {
@@ -69,11 +71,13 @@
   flex-direction: column;
   padding: 30px;
   background-color: #fff;
+  justify-content: space-between;
 }
 .content1{
   width: 63%;
   height: auto;
   display: flex;
+
   flex-direction: column;
   padding: 30px;
   background-color: #fff;
@@ -114,6 +118,7 @@
 .description {
   font-size: 14px;
   line-height: 120%;
+  height: 90%;
   color: #000000;
   margin-top: 15px;
   height: 60%;
@@ -133,6 +138,7 @@
   height: auto;
   text-overflow: auto;
   overflow: none;
+  height: 90%;
 
 }
 .btn {
@@ -144,8 +150,8 @@
   height: 29px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 15px;
   border: 1px solid #76b73e;
-margin-top: auto;
 }
 .fixed{
     position: fixed;

@@ -1,17 +1,16 @@
 import React from "react";
 import classes from "./marketCard.module.css";
-import doctor from "./img/Rectangle 47.png";
 import { Link } from "react-router-dom";
 
-const MarketCard = ({ id, data }) => {
+const MarketCard = ({data}) => {
   return (
-    <Link to={`/market-research/detail/${id}`}>
+    <Link to={`/market-research-detail/${data&&data.id}`}>
       <div className={classes.marketCard}>
         <img alt="img" src={data.image} className={classes.img} />
         <div className={classes.content}>
           <div className={classes.nameCompany}>
             <span className={classes.name}>
-              {data.author ? data.author : "Автора нет"}
+              {data.author ? data.author.logo : "Автора нет"}
             </span>
             <span className={classes.date}>{data.date}</span>
           </div>
@@ -20,7 +19,15 @@ const MarketCard = ({ id, data }) => {
               <span>{data.name}</span>
             </div>
             <div className={classes.description}>
-              <span>• {data.pages} стр</span>
+              <span>{data.pages} стр</span>
+              <span>ID: {data.id}</span>
+              <div className={classes.country}>
+                <span>Страны:{" "} </span>
+                {data.country &&
+                  data.country.map((item) => {
+                    return <span key={item.id}>{item.name}</span>;
+                  })}
+              </div>
             </div>
           </div>
           <div className={classes.blockHeshteg}>
@@ -37,7 +44,8 @@ const MarketCard = ({ id, data }) => {
           </div>
           <div className={classes.blockBtn}>
             <button className={classes.toBasket}>В корзину</button>
-            <button className={classes.demo}>Демо версия</button>
+            <a href={data.demo&& data}  className={classes.demo} download>Демо версия</a>
+      
           </div>
         </div>
       </div>

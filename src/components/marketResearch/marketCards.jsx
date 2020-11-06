@@ -21,7 +21,7 @@ const MarketCards = ({ params }) => {
       dispatch(allResearch())
     }
 
-  }, []);
+  }, [params]);
   console.log(arrResearch)
   return (
     <>
@@ -29,7 +29,7 @@ const MarketCards = ({ params }) => {
       arrResearch && 
       arrResearch.map((item)=>{
           return(
-                <MarketCard id={item.id} data={item} />
+                <MarketCard  data={item} key={item.id} />
           )
       })
     }

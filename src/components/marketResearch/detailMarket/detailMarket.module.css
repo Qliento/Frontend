@@ -5,6 +5,13 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.blockDetail1 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .container {
   padding: 30px;
   height: 338px;
@@ -21,7 +28,9 @@
   justify-content: space-between;
 }
 .blockText{
-    height: auto;
+    height: 70px;
+    text-overflow: auto;
+    overflow: hidden;
 }
 .leftCard {
   width: 49%;
@@ -39,7 +48,7 @@
   height: 25px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 .blockHeshteg div {
   width: auto;
@@ -52,6 +61,7 @@
   font-size: 14px;
   color: #ffffff;
   background: #bdbdbd;
+  margin-left: 5px;
 }
 .blockImg {
   width: 100%;

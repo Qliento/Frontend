@@ -8,9 +8,11 @@ import {RegistrationClient} from './registrationClient/registrationClient';
 import {authentication} from './authClient/authClient';
 import {Agreement} from './agreement/agreement';
 import {mainGet} from "./main/main"
-import {mainResultSearch} from "./mainResultSearch/mainResultSearch";
+import {mainResultSearch} from "./mainResultSearch/mainResultSearch"
+import {FilterMarket} from "./filterMarket/filterMarket"
 import {orderResearchData} from './orderResearch/orderResearchData';
 import { blogData } from './blog/blog';
+import {detailDataResearch} from "./detailResearch/detailResearch"
 
 export const rootReducer = combineReducers({
     AboutUs,
@@ -23,6 +25,8 @@ export const rootReducer = combineReducers({
     Agreement,
     mainGet,
     mainResultSearch,
+    FilterMarket,
     orderResearchData,
-    blogData
+    blogData,
+    detailDataResearch
 });

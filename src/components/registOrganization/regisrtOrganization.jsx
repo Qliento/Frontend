@@ -180,6 +180,7 @@ const RegistOrganization = () => {
                   name="repeatPassword"
                   className={classes.inputs1}
                   placeholder="Ваш пароль"
+           
                   type={visibility2 ? "text" : "password"}
                   ref={register({
                     validate: (repeatPassword) =>
@@ -194,7 +195,7 @@ const RegistOrganization = () => {
                 />
               </div>
 
-              {errors.repeatPasssword && (
+              {errors.repeatPassword && (
                 <span className={classes.error}>Пароль менее 6 символов</span>
               )}
               {err && (
