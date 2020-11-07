@@ -109,7 +109,7 @@ export function createToken(email, password){
     .then(res => {
       console.log(res)
       if( res.status == 200){
-        localStorage.setItem('user', JSON.stringify(res.data.access));
+        localStorage.setItem('user', res.data.access);
       }
       // else{
       //   dispatch({ type: REGISTRATION_CLIENT_ERROR})

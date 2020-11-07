@@ -7,20 +7,20 @@
   flex-direction: row;
   justify-content: space-between;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
-  position: relative;
+
 }
 
 .content {
   background: #ffffff;
   height: 100%;
-  width: 46%;
+  width: 63%;
   padding: 20px 30px 20px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .img {
-  width: 27%;
+  width: 37%;
   height: 100%;
 }
 .blockAct {
@@ -81,7 +81,7 @@
   font-size: 12px;
   line-height: 17px;
   margin-top: 2px;
-  
+
   color: #333333;
 }
 .blockHeshteg {
@@ -91,7 +91,7 @@
   flex-direction: row;
   justify-content: flex-start;
 }
-.country{
+.country {
   width: 100%;
   height: auto;
   display: flex;
@@ -137,6 +137,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 99999;
+}
+.link{
+  width: 73%;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 }
 .toBasket {
   width: 100%;
@@ -147,26 +154,26 @@
   font-size: 18px;
   line-height: 22px;
   color: #ffffff;
-}
-.toBasket:hover{
-    background: #FFFFFF;
-    border: 1px solid #1b8e3d;
-    color: #1B8E3D;
-}
-.demo{
-    width: 100%;
-    height: 42px;
-    background: #FFFFFF;
-    border: 1px solid #FFFFFF;
-    font-weight: bold;
-font-size: 18px;
-line-height: 22px;
-color: #1B8E3D;
-z-index: 100;
+  z-index: 100 !important;
 
 }
-.demo:hover{
-    color: #1B8E3D;
-   
-    border: 1px solid #1b8e3d;
+.toBasket:hover {
+  background: #ffffff;
+  border: 1px solid #1b8e3d;
+  color: #1b8e3d;
+}
+.demo {
+  width: 100%;
+  height: 42px;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1b8e3d;
+  z-index: 100;
+}
+.demo:hover {
+  color: #1b8e3d;
+  border: 1px solid #1b8e3d;
 }

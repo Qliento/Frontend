@@ -8,7 +8,7 @@ const Inputs = ({ arrCategory }) => {
     category: "",
     text: "",
   });
-  const [market, setMarket] = useState(false);
+  const [market, setMarket] = useState();
   const upadateData = (e) => {
     setDataSearch({
       ...dataSearch,
@@ -18,16 +18,44 @@ const Inputs = ({ arrCategory }) => {
 
 
   const btnSearch = () => {
-    if (dataSearch.category!==" " || dataSearch.text !==" ") {
-      setMarket(true);
+    if (dataSearch.category) {
+      console.log("11")
+      if(dataSearch.text===""){
+        console.log("22")
+        setMarket(1)
+      }
+ 
     }
+    if (dataSearch.text) {
+      console.log("1")
+      if(dataSearch.category===""){
+        console.log("2")
+        setMarket(2)
+      }
+    }
+    if(dataSearch.category!=="" && dataSearch.text !==""){
+      console.log("333")
+      setMarket(3)
+    }
+ 
   };
-  console.log(dataSearch);
+
   return (
     <>
-      {market ? (
+      {market ===1? (
         <Redirect
-          to={`/market-research/${dataSearch.category}/${dataSearch.text}`}
+          to={`/market-research/${dataSearch.category}`}
+        />
+      ) : null}
+      {market ===2? (
+        <Redirect
+          to={`/market-research-search/${dataSearch.text}`}
+        />
+      ) : null}
+  
+      {market ===3? (
+        <Redirect
+          to={`/market-research-search2/${dataSearch.category}/${dataSearch.text}`}
         />
       ) : null}
       <div className={classes.blockInputs}>

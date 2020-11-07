@@ -1,9 +1,16 @@
-import React from "react"
+import React,{useEffect} from "react"
 import Order from "./order/order";
 import classes from "./basket.module.css"
 import BasketCard from "./basketCard/basketCard";
+import {useSelector,useDispatch} from "react-redux"
+import { getBasketActions } from "../../redux/actions/getBasket/getBasket";
 
 const Basket=()=>{
+    const dispatch=useDispatch();
+    
+    useEffect(()=>{
+        dispatch(getBasketActions())
+    },[])
     return(
         <div className={classes.basketPage}>
             <span className={classes.title}>Корзина</span>

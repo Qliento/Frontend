@@ -72,7 +72,7 @@ const Category = ({
     setValues(e);
     console.log(e);
     if (name === "Все котегории") {
-      ubdateData(name, e.id);
+      ubdateData(name, e.value);
     } else {
       ubdateData(name, e);
     }
