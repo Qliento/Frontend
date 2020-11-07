@@ -136,9 +136,9 @@
     margin-bottom: 30px;
   }
 
-  .blockCapcha span{
+  /* .blockCapcha span{
     color: #bdbdbd;
-  }
+  } */
 
   /* .inputCapcha {
     background: #ffffff;
@@ -176,7 +176,7 @@
     flex-direction: column;
     align-items: center;
   }
-  .modal a{
+  .modal .ok{
     padding: 10px 20px;
     background-color:  #76b73e;
     border-radius: 10px;

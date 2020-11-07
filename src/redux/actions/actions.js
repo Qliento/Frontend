@@ -1,6 +1,12 @@
-import { BE_PARTNER_DATA, REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, AGREEMENT_DATA, ORDER_RESEARCH_DATA, BLOG_DATA} from './constants';
+import { BE_PARTNER_DATA, REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, AGREEMENT_DATA, ORDER_RESEARCH_DATA, BLOG_DATA, REGISTRATION_CLIENT_SUCCESS, REGISTRATION_CLIENT_EMAIL} from './constants';
 import API from '../API';
 
+
+export function registrationClientSuccess(){
+  return {
+    type: REGISTRATION_CLIENT_SUCCESS,
+  };
+}
 
 export function AgreementData(){
   return async (dispatch)=>{
@@ -47,6 +53,9 @@ export function registrationClient(data){
       console.log(res)
       if( res.status == 201){
         dispatch({ type: REGISTRATION_CLIENT})
+      }
+      else if(res.status == 400){
+        dispatch({ type: REGISTRATION_CLIENT_EMAIL})
       }
       else{
         dispatch({ type: REGISTRATION_CLIENT_ERROR})
