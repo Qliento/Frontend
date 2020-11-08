@@ -45,13 +45,15 @@ function App() {
             path="/market-research/:category/:text"
             component={MarketResearch}
           />
-          <Route
+          {/* <Route
             path="/market-research-detail/:id"
             component={MarketResearch}
-          />
+          /> */}
+          <Route path="/market-research-search2/:category/:text" component={MarketResearch} />
           <Route path="/market-research/:category" component={MarketResearch} />
-         <Route path="/market-research-search/:category/:subCaregory:author/:country/:text" component={MarketResearch} />
-        
+          <Route path="/market-research-search/:text" component={MarketResearch} />
+            <Route path="/market-research-filter"><MarketResearch filter={true}/></Route>
+    
           <Route path="/market-research" component={MarketResearch} />
           <Route path="/order-research" component={OrderResearch} />
           <Route path="/be-partner" component={BePartner} />
@@ -62,6 +64,7 @@ function App() {
           <Route path="/recovery-password" component={RecoveryPassword} />
           <Route path="/agreement" component={Agreement} />
           <Route path="/organization-page" component={OrgPage} />
+       
         </Switch>
       </div>
       <Footer />

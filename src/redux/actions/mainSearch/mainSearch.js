@@ -22,13 +22,28 @@ export function allListResearch(data) {
 }
 
 
-export function mainSearch(category,text) {
+export function mainSearchText(text) {
   return async (dispatch) => {
-    await API.resultSearchList(category,text).then((res) => {
+    await API.resultSearchList(text).then((res) => {
      dispatch(seccess(res.data));
     });
   };
 }
+export function mainSearch() {
+  return async (dispatch) => {
+    await API.resultSearchListMain().then((res) => {
+     dispatch(seccess(res.data));
+    });
+  };
+}
+export function mainSearchCategoryText(category,text) {
+  return async (dispatch) => {
+    await API.searchCategoryText(category,text).then((res) => {
+     dispatch(seccess(res.data));
+    });
+  };
+}
+
 export function listResearchCategory(category) {
   return async (dispatch) => {
     await API.listResearchCategory(category).then((res) => {
@@ -44,9 +59,9 @@ export function allResearch() {
     });
   };
 }
-export function searchMarket(category,subcaregory,author,country,text) {
+export function searchMarket(inputCategory,inputSubCategory,inputAuthor,inputCountry,inputText) {
   return async (dispatch) => {
-    await API.searchMarketCerds(category,subcaregory,author,country,text).then((res) => {
+    await API.searchMarketCerds(inputCategory,inputSubCategory,inputAuthor,inputCountry,inputText).then((res) => {
      dispatch(allListResearch(res.data));
     });
   };

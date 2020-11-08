@@ -1,0 +1,133 @@
+.blockDetail {
+  width: 100%;
+  height: 638px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+.blockDetail1 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+.container {
+  padding: 30px;
+  height: 338px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.blockdDescrip {
+  width: 100%;
+  height: 63px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.blockText{
+    height: 70px;
+    text-overflow: auto;
+    overflow: hidden;
+}
+.leftCard {
+  width: 49%;
+  background: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+  height: 100%;
+}
+.rightCard {
+  width: 49%;
+  height: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+}
+.blockHeshteg {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.blockHeshteg div {
+  width: auto;
+  height: 100%;
+  padding-right: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 8px;
+  font-size: 14px;
+  color: #ffffff;
+  background: #bdbdbd;
+  margin-left: 5px;
+}
+.blockImg {
+  width: 100%;
+  height: 300px;
+}
+.img {
+  width: 100%;
+  height: 100%;
+}
+.title {
+  font-size: 28px;
+  line-height: 34px;
+  color: #000000;
+}
+.descrip {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.descrip span {
+  font-size: 14px;
+  line-height: 150%;
+  color: #000000;
+}
+.price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.oldPrice {
+  font-size: 18px;
+  text-align: right;
+  text-decoration-line: line-through;
+  color: #4f4f4f;
+}
+.newPrice {
+  font-weight: bold;
+  font-size: 24px;
+  color: #196c3d;
+}
+.blockBtn {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.crash {
+  width: 45%;
+  height: 100%;
+  background: #1b8e3d;
+  border: 1px solid #1b8e3d;
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffffff;
+}
+.demo {
+  width: 45%;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #1b8e3d;
+  font-weight: bold;
+  font-size: 18px;
+  color: #1b8e3d;
+}

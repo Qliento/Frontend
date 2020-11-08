@@ -59,6 +59,22 @@
   align-items: center;
   padding-left: 10px;
 }
+.btnSort1 {
+  width: 24%;
+  height: 42px;
+  background: #1b8e3d;
+  
+  border: 1px solid #1b8e3d;
+
+  font-size: 14px;
+  line-height: 17px;
+  color: #828282;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+}
 
 .linkBtn{
   width: 12%;
