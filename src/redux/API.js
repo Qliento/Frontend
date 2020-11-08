@@ -12,6 +12,7 @@ const http = Axios.create({
 export default {
   bePartner: (data) => http.post("/feedback/", data),
   blogData: () => http.get('/blog/'),
+  blogCardData: (id) => http.get(`/blog/${id}`),
   interiorPage:(id)=>http.get(`/researches/${id}`),
   searchMarketCerds:(category,subcaregory,author,country,text)=>http.get(`//researches/?country__name__icontains=${country}&category__name__iexact=${subcaregory}&hashtag__name__icontains=${text}&category=${category}&author__logo__icontains=${author}`),
   orderResearch: (data) => http.post("/purchase/order-form/", data),

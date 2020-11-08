@@ -17,13 +17,14 @@ const Analitic = () => {
   return (
     <div className={st.analitic_container}>
         <div className={st.analitic_way}>
-            <span>Главная / </span>
-            <span>Блог</span>
+            <Link to="/">Главная</Link>
+            <span> / </span>
+            <Link to="/analitic">Блог</Link>
         </div>
         <h2>Блог</h2>
         <div className={st.analitic_content}>
             {data && data.map(elem =>(
-                <Link to="/analiticCard" key={elem.id}>
+                <Link to={`/analiticCard/${elem.id}`} key={elem.id}>
                 <div className={st.analitic_card}>
                 <img src={elem.images[0] === undefined ? noPhoto : elem.images[0].url} alt="img" />
                 <div className={st.card_info}>

@@ -40,7 +40,7 @@ function App() {
           <Route path="/registration-client" component={RegistrationClient} />
           <Route path="/about-us" component={About} />
           <Route path="/analitic" component={Analitic} />
-          <Route path="/analiticCard" component={AnaliticCard} />
+          <Route path="/analiticCard/:id" component={AnaliticCard} />
           <Route
             path="/market-research/:category/:text"
             component={MarketResearch}

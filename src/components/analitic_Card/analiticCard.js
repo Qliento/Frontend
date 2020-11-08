@@ -1,11 +1,22 @@
 import React, { useEffect }  from 'react';
 import st from './analiticCard.module.css';
+import { Link, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { blogCardData } from '../../redux/actions/actions';
 
 
 
 
 const AnaliticCard = () => {
-
+    const { id } = useParams();
+    const dispatch = useDispatch();
+    const data = useSelector((state) => state.blogCardData.data.data);
+    console.log(data);
+    useEffect(() => {
+        dispatch(blogCardData(id));
+    }, []);
+    const month = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентабрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+    
     useEffect(() => {
     window.Ya.share2('ya', {
         theme: { services: 'vkontakte,facebook,telegram,linkedin',
@@ -16,26 +27,53 @@ const AnaliticCard = () => {
 
     return(
         <div className={st.container}>
-            <span className={st.analiticCard_way}>Главная / Аналитика / Рынок частной медицины 2020</span>
+            <span className={st.analiticCard_way}>
+                <Link to="/">Главная</Link>
+                <span> / </span>
+                <Link to="/analitic">Блог</Link>
+                <span> / </span>
+                {data && <Link to={`/analiticCard/${data.id}`}>{data.header}</Link>}
+            </span>
             <div className={st.card_content}>
                 <div className={st.card_img}>
-                    <img src={require('../analitic/analitic_bg.png')} alt="img" />
+                    <img src={data && data.images[0].url} alt="img" />
                     <div className={st.shareIt}>
                         <span>Поделиться в соц сетях</span>
                         <div className={st.shareIt_icons}>
                         <div id="ya"></div>
                         </div>
                     </div>
+                    <div className={st.research_info}>
+                        <div className={st.research_info_header}>
+                            <span>Name of company</span>
+                            <span>29 / 07 / 2020</span>
+                        </div>
+                        <div className={st.research_info_line}></div>
+                        <div className={st.research_info_content}>
+                            <h5>cdscdscdscd</h5>
+                            <div className={st.research_info_details}>
+                                <span>vfdv</span>
+                                <span>vfdvfd</span>
+                                <span>vfdvfd</span>
+                                <span>vfdvfd</span>
+                            </div>
+                        </div>
+                        <div className={st.research_info_hashtag}>
+                            <span>#cdscdsc</span>
+                            <span>#cdscdsc</span>
+                            <span>#cdscdsc</span>
+                            <span>#cdscdsc</span>
+                        </div>
+                    </div>
                 </div>
                 <div className={st.card_description}>
-                    <span>30 сентября 2020
+                    <span>
+                        <span>{ data && data.date.match(/\d+/g)[2] } </span>
+                        <span>{ data && month[Number(data.date.match(/\d+/g)[1] - 1)] } </span>
+                        <span>{ data && data.date.match(/\d+/g)[0] }</span>
                     </span>
-                    <h4>Рынок частной медицины 2020. База сетей</h4>
-                    <p>Товарищи! консультация с широким активом влечет за собой процесс внедрения и модернизации дальнейших направлений развития. Задача организации, в особенности же новая модель организационной деятельности влечет за собой процесс внедрения и модернизации соответствующий условий активизации. Товарищи! реализация намеченных плановых заданий позволяет оценить значение систем массового участия. Равным образом постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий.
-С другой стороны сложившаяся структура организации в значительной степени обуславливает создание модели развития. Задача организации, в особенности же новая модель организационной деятельности способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же укрепление и развитие структуры требуют определения и уточнения систем массового участия. Таким образом консультация с широким активом требуют определения и уточнения форм развития. Повседневная практика показывает, что укрепление и развитие структуры позволяет оценить значение существенных финансовых и административных условий.
-
-        С другой стороны дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации новых предложений. Равным образом реализация намеченных плановых заданий способствует подготовки и реализации соответствующий условий активизации. Равным образом постоянный количественный рост и сфера нашей активности требуют от нас анализа систем массового участия. 
-                    </p>
+                    <h4>{ data && data.header }</h4>
+                    <p>{ data && data.description}</p>
                 </div>
             </div>
         </div>
