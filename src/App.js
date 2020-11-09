@@ -23,6 +23,7 @@ import Agreement from "./components/agreement/agreement";
 import { useDispatch, useSelector } from "react-redux";
 import { mainData } from "./redux/actions/main/getMain";
 import OrgPage from "./components/organizationPage/organizationPage";
+import ClientPage from './components/clientPage/clientPage';
 
 function App() {
   return (
@@ -64,7 +65,7 @@ function App() {
           <Route path="/recovery-password" component={RecoveryPassword} />
           <Route path="/agreement" component={Agreement} />
           <Route path="/organization-page" component={OrgPage} />
-       
+          <Route path='/client-page' component={ClientPage} />
         </Switch>
       </div>
       <Footer />

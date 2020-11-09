@@ -1,4 +1,4 @@
-import { BE_PARTNER_DATA, REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, AGREEMENT_DATA, ORDER_RESEARCH_DATA, BLOG_DATA, REGISTRATION_CLIENT_SUCCESS, REGISTRATION_CLIENT_EMAIL, BLOG_CARD_DATA} from './constants';
+import { BE_PARTNER_DATA, REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, AGREEMENT_DATA, ORDER_RESEARCH_DATA, BLOG_DATA, REGISTRATION_CLIENT_SUCCESS, REGISTRATION_CLIENT_EMAIL, BLOG_CARD_DATA, CLIENT_PAGE} from './constants';
 import API from '../API';
 
 
@@ -30,6 +30,14 @@ export function BePartnerData(){
       .then(res => {
         dispatch({ type: BE_PARTNER_DATA, payload: res })
       })}
+}
+
+export function clientPage(token){
+  return async (dispatch)=>{
+    await API.clientPage(token)
+    .then(res => {
+      dispatch({ type: CLIENT_PAGE, payload: res })
+    })}
 }
 
 export function blogData(){

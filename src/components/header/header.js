@@ -119,7 +119,7 @@ const Header = () => {
             <button className={st.Lk}>Вход</button>
           </Link>
         ) : (
-          <Link to="/">
+          <Link to="/client-page">
             <button className={st.Lk}>Личный кабинет</button>
           </Link>
         )}
