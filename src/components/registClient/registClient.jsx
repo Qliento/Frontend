@@ -179,7 +179,7 @@ const RegistClient = () => {
           </div>
           <div className={classes.blockCapcha}>
             <ReCAPTCHA
-              sitekey="6LcajdoZAAAAAFOgC8_IQd25j4QdCaMJBK4dfK52"
+              sitekey="6LeBZeEZAAAAALi75B5j2Ul7RInW1IVliOhPI-2t"
               render="explicit"
               onChange={verifiedCallback}
             />

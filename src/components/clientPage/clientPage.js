@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 import ModalChange from './modal/modalChange';
 
 const ClientPage=()=>{
-    const [modal, setModal] = useState(1);
+    const [modal, setModal] = useState(2);
 
     const onModal = () =>{
         setModal(1)
