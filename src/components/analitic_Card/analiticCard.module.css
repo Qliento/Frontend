@@ -25,6 +25,7 @@
 
 .card_img img{
     width: 100%;
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
 }
 
 .shareIt{
@@ -33,6 +34,7 @@
     background-color: #fff;
     margin-top: 30px;
     padding: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .shareIt span{
@@ -48,6 +50,7 @@
     width: 540px;
     background-color: #fff;
     padding: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .card_description span{
@@ -64,4 +67,60 @@
     text-align: justify;
     line-height: 17px;
     font-size: 14px;
+}
+
+.research_info{
+    width: 100%;
+    background-color: #fff;
+    margin-top: 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px 30px;
+}
+
+.research_info_header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.research_info_header span:nth-child(1){
+    color: #1B8E3D;
+}
+
+.research_info_line{
+    background-color: #BDBDBD;
+    width: 100%;
+    height: 4px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.research_info_content{
+    display: flex;
+}
+
+.research_info_content h5{
+    width: 70%;
+}
+
+.research_info_details{
+    display: flex;
+    flex-direction: column;
+}
+
+.research_info_hashtag{
+    margin-top: 20px;
+}
+
+.research_info_hashtag span{
+    background-color: #BDBDBD;
+    color: #fff;
+    padding: 4px 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.research_info_hashtag span + span{
+    margin-left: 10px;
 }

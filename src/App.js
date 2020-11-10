@@ -23,6 +23,7 @@ import Agreement from "./components/agreement/agreement";
 import { useDispatch, useSelector } from "react-redux";
 import { mainData } from "./redux/actions/main/getMain";
 import OrgPage from "./components/organizationPage/organizationPage";
+import ClientPage from './components/clientPage/clientPage';
 
 function App() {
   return (
@@ -40,12 +41,15 @@ function App() {
           <Route path="/registration-client" component={RegistrationClient} />
           <Route path="/about-us" component={About} />
           <Route path="/analitic" component={Analitic} />
-          <Route path="/analiticCard" component={AnaliticCard} />
-     
+          <Route path="/analiticCard/:id" component={AnaliticCard} />
           <Route
-            path="/market-research-detail/:id"
+            path="/market-research/:category/:text"
             component={MarketResearch}
           />
+          {/* <Route
+            path="/market-research-detail/:id"
+            component={MarketResearch}
+          /> */}
           <Route path="/market-research-search2/:category/:text" component={MarketResearch} />
           <Route path="/market-research/:category" component={MarketResearch} />
           <Route path="/market-research-search/:text" component={MarketResearch} />
@@ -61,7 +65,7 @@ function App() {
           <Route path="/recovery-password" component={RecoveryPassword} />
           <Route path="/agreement" component={Agreement} />
           <Route path="/organization-page" component={OrgPage} />
-       
+          <Route path='/client-page' component={ClientPage} />
         </Switch>
       </div>
       <Footer />

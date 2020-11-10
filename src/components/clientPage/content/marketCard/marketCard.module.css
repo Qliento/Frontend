@@ -1,0 +1,197 @@
+.marketCard {
+  width: 100%;
+  height: 221px;
+
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+
+}
+
+.content {
+  background: #ffffff;
+  height: 100%;
+  width: 63%;
+  padding: 20px 30px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.img {
+  width: 37%;
+  height: 100%;
+}
+.blockAct {
+  width: 27%;
+  background: #e0e0e0;
+  height: 100%;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.name {
+  font-size: 14px;
+  color: #1b8e3d;
+}
+.date {
+  font-size: 14px;
+  color: #4f4f4f;
+}
+.nameCompany {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 27px;
+  border-bottom: 2px solid #bdbdbd;
+}
+.blockDescrip {
+  width: 100%;
+  height: 92px;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+.nameResearch {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  text-overflow: auto;
+  overflow: hidden;
+}
+.nameResearch span {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+.description {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.description span {
+  font-size: 12px;
+  line-height: 17px;
+  margin-top: 2px;
+
+  color: #333333;
+}
+.blockHeshteg {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.country {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.blockHeshteg div {
+  width: auto;
+  height: 100%;
+  padding-right: 8px;
+  display: flex;
+  margin-left: 10px;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 8px;
+  font-size: 14px;
+  color: #ffffff;
+  background: #bdbdbd;
+}
+.blockPrace {
+  width: 100%;
+  height: 57px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.discounts {
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration-line: line-through;
+  color: #333333;
+}
+.newPrace {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+
+  color: #1b8e3d;
+}
+.blockBtn {
+  width: 100%;
+  height: 94px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.link{
+  width: 73%;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.toBasket {
+  width: 100%;
+  height: 42px;
+  background: #1b8e3d;
+  border: 1px solid #1b8e3d;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
+.toBasket:hover {
+  background: #ffffff;
+  border: 1px solid #1b8e3d;
+  color: #1b8e3d;
+}
+.demo {
+  width: 100%;
+  height: 42px;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1b8e3d;
+  z-index: 100;
+}
+.demo:hover {
+  color: #1b8e3d;
+  border: 1px solid #1b8e3d;
+}
+
+
+.details{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.details span{
+  color: #4F4F4F;
+}
+
+.details span:nth-child(1){
+  width: 100%;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+
+.details span:nth-child(2){
+  width: 40%;
+}
