@@ -3,7 +3,7 @@ import classes from "./header.module.css"
 import photo1 from "./img/photo.png"
 import logo from "./img/logo.png"
 
-const Header=()=>{
+const Header=({onModal})=>{
     return(
         <div className={classes.blockWrapp}>
             <div className={classes.topItem}>
@@ -20,7 +20,7 @@ const Header=()=>{
                         <span></span>
                     </div>
                     <div className={classes.rightBlock}>
-                        <span className={classes.redact}>Редактировать</span>
+                        <span className={classes.redact} onClick={() => onModal()}>Редактировать</span>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,102 @@
+.modal{
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    background: rgba(0,0,0, 0.6);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.modal_content{
+    width: 440px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.strike{
+    width: 24px;
+    background-color: #828282;
+    height: 2px;
+    transform: rotate(45deg);
+    position: relative;
+    cursor: pointer;
+    margin: 20px 20px 10px auto;
+}
+
+.strike::after{
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #828282;
+    transform: rotate(-90deg);
+    bottom: 0;
+}
+
+
+.profile_img{
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile h3{
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 29px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.profile h2{
+    font-weight: bold;
+    font-size: 22px;
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 15px 45px;
+}
+
+.form input{
+    padding: 8px;
+    margin-top: 5px;
+    font-size: 18px;
+    line-height: 22px;
+    color: #333;
+}
+
+.form label{
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.form button{
+    margin: 0;
+}
+
+.form .changePass{
+    margin-top: 35px;
+    background-color: #fff;
+    color: var(--green);
+    border: 1px solid var(--green);
+    margin-bottom: 15px;
+}
