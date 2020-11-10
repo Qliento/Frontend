@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const userInfo = localStorage.getItem("user");
-
+  
   return (
     <nav className={st.header}>
       <Link to="/">

@@ -12,12 +12,13 @@ const http = Axios.create({
 export default {
   url: () => "http://207.154.250.71",
   bePartner: (data) => http.post("/feedback/", data),
-  blogData: () => http.get('/blog/'),
-  clientPage: (token) => http.get('http://207.154.250.71/purchase/my-orders/',{
-    headers: {
-      Authorization: "Bearer " + token,
-    }
-  }),
+  blogData: () => http.get("/blog/"),
+  clientPage: (token) =>
+    http.get("http://207.154.250.71/purchase/my-orders/", {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    }),
   blogCardData: (id) => http.get(`/blog/${id}`),
   interiorPage: (id) => http.get(`/researches/${id}`),
   searchMarketCerds: (category, subcaregory, author, country, text) =>
@@ -39,7 +40,14 @@ export default {
         },
       }
     ),
-    getBasket:(token)=>http.get(`/purchase/cart/`,{
+  getBasket: (token) =>
+    http.get(`/purchase/cart/`, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    }),
+  deleteResearchBasket: (id,token) =>
+    http.delete(`/purchase/delete-from-cart/${id}/`, {
       headers: {
         Authorization: "Bearer " + token,
       },
