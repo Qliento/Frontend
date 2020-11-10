@@ -11,7 +11,7 @@ export function getBasketActions() {
     let token = localStorage.getItem("user").replace(/"/g,"");
   return async (dispatch) => {
     await API.getBasket(token).then((res) => {
-  console.log(res.data)
+  console.log("String ",res.data)
     });
   };
 }

@@ -6,6 +6,7 @@ import { Link, Route, Switch, useParams } from "react-router-dom";
 import MarketCards from "./marketCards";
 import DetailCard from "./detailCard";
 import DetailMarket from "./detailMarket/detailMarket";
+import MarketCardsFilter from "./marketCardsFilter";
 
 const MarketResearch = ({filter}) => {
   const params = useParams();
@@ -37,7 +38,7 @@ const MarketResearch = ({filter}) => {
         
             
       <Switch>
-        <Route path="/market-research-filter"> <MarketCards params={params} filter={filter&&filter} sort1={sort1} sort2={sort2}/></Route>
+        <Route path="/market-research-filter"> <MarketCardsFilter params={params}  sort1={sort1} sort2={sort2}/></Route>
         <Route path="/market-research"> <MarketCards params={params} filter={filter&&filter} sort1={sort1} sort2={sort2} /></Route>
       <Route path="/market-research-detail/:id"><DetailCard params={params.id}/></Route>
       </Switch>
