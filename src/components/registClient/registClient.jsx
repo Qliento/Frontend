@@ -143,7 +143,7 @@ const RegistClient = () => {
             )}
           </div>
           <div className={classes.blockInput}>
-            <label>Повторит пароль</label>
+            <label>Повторить пароль</label>
             <div className={classes.inputs_password_block}>
               <input
                 name="password_check"
@@ -174,12 +174,12 @@ const RegistClient = () => {
             />
             <div className={classes.text}>
               <span>Подтверждаю, что ознакомлен и согласен с </span>
-              <Link to='/agreement'>Пользовательским соглашением</Link>
+              <Link to='/agreement' className={classes.agreement}>Пользовательским соглашением</Link>
             </div>
           </div>
           <div className={classes.blockCapcha}>
             <ReCAPTCHA
-              sitekey="6LeBZeEZAAAAALi75B5j2Ul7RInW1IVliOhPI-2t"
+              sitekey="6LfQZ-EZAAAAAC4RQyi7GCqJyiWXXDcIdsRVV0n4"
               render="explicit"
               onChange={verifiedCallback}
             />

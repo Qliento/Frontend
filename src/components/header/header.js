@@ -115,17 +115,19 @@ const Header = () => {
       </div>
       <div className={st.regisration}>
         {userInfo == null ? (
+          <>
           <Link to="/auth">
             <button className={st.Lk}>Вход</button>
           </Link>
+          <Link to="/registration">
+          <button className={st.regisrationBtn}>Регистрация</button>
+        </Link>
+        </>
         ) : (
           <Link to="/client-page">
             <button className={st.Lk}>Личный кабинет</button>
           </Link>
         )}
-        <Link to="/registration">
-          <button className={st.regisrationBtn}>Регистрация</button>
-        </Link>
       </div>
     </nav>
   );

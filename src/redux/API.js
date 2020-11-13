@@ -26,7 +26,7 @@ export default {
     ),
   orderResearch: (data) => http.post("/purchase/order-form/", data),
   getMainData: () => http.get("/main-page/"),
-  createToken: (data) => http.post("/auth/jwt/create/", data),
+  createToken: (data) => http.post("auth/jwt-create/", data),
   pushBasket: (id, token) =>
     http.post(
       `/purchase/add-to-cart/`,

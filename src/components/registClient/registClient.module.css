@@ -77,6 +77,14 @@
     border-right: none;
   }
 
+  .agreement{
+    color: var(--green);
+  }
+
+  .agreement:hover{
+    text-decoration: underline;
+  }
+
   .inputs_password_block img{
     width: 10%;
     height: 100%;

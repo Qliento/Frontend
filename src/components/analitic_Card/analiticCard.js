@@ -19,7 +19,7 @@ const AnaliticCard = () => {
     
     useEffect(() => {
     window.Ya.share2('ya', {
-        theme: { services: 'vkontakte,facebook,telegram,linkedin',
+        theme: { services: 'vkontakte,facebook,telegram,linkedin,twitter',
         size: 'l',
     },
       });
