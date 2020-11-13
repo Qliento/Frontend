@@ -1,4 +1,6 @@
+
 import API from "../../API";
+import { getBasketActions } from "../getBasket/getBasket";
 
 export function seccess(data) {
   return {
@@ -7,11 +9,11 @@ export function seccess(data) {
   };
 }
 
-export function getBasketActions() {
+export function deleteBasket(id) {
   let token = localStorage.getItem("user");
   return async (dispatch) => {
-    await API.getBasket(token).then((res) => {
-      dispatch(seccess(res.data));
+    await API.deleteResearchBasket(id,token).then((res) => {
+    dispatch(getBasketActions())
     });
   };
 }

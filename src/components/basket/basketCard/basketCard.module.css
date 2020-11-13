@@ -11,14 +11,14 @@
 .content {
   background: #ffffff;
   height: 100%;
-  width: 46%;
+  width: 63%;
   padding: 20px 30px 20px 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .img {
-  width: 27%;
+  width: 37%;
   height: 100%;
 }
 .blockAct {
@@ -82,7 +82,7 @@
   height: 25px;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 .blockHeshteg div {
   width: auto;
@@ -95,6 +95,13 @@
   font-size: 14px;
   color: #ffffff;
   background: #bdbdbd;
+  border-color: #ffffff;
+}
+.link{
+  width: 73%;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 }
 .blockPrace {
   width: 100%;
@@ -152,4 +159,10 @@ color: #4F4F4F;
 .demo:hover{
   
     border: 1px solid #4F4F4F;
+}
+.country{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
 }

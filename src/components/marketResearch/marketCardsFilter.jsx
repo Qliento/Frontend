@@ -9,7 +9,7 @@ import {
   mainSearchCategoryText,
 } from "../../redux/actions/mainSearch/mainSearch";
 
-const MarketCards = ({ params, sort1, sort2 }) => {
+const MarketCardsFilter = ({ params, sort1, sort2 }) => {
 
   const numberKeys = Object.keys(params).length;
   const dispatch = useDispatch();
@@ -22,20 +22,11 @@ const MarketCards = ({ params, sort1, sort2 }) => {
     : arrResearch;
   arr = sort2 ? arr.sort((a, b) => (a.date < b.date ? -1 : 1)) : arr;
   useEffect(() => {
-    if (params.text && numberKeys === 1) {
-      dispatch(mainSearchText(params.text));
-    }
-    if (params.category && numberKeys === 1) {
-      dispatch(listResearchCategory(params.category));
-    }
-    if (params.category && params.text && numberKeys === 2) {
-      dispatch(mainSearchCategoryText(params.category, params.text));
-    }
-    if (numberKeys === 0 ) {
-      dispatch(allResearch());
-    }
 
-  }, [params, sort1, sort2]);
+      dispatch(allResearch());
+    
+
+  }, []);
 
   return (
     <>
@@ -46,4 +37,4 @@ const MarketCards = ({ params, sort1, sort2 }) => {
     </>
   );
 };
-export default MarketCards;
+export default MarketCardsFilter;

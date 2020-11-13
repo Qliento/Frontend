@@ -2,45 +2,74 @@ import React from "react";
 import classes from "./basketCard.module.css";
 import doctor from "./img/Rectangle 47.png";
 import { Link } from "react-router-dom";
+import {useDispatch,useSelector} from "react-redux"
+import { deleteBasket } from "../../../redux/actions/deleteBasket/deleteBasket";
 
-const BasketCard = ({id}) => {
+const BasketCard = ({ id, data }) => {
+  const dispatch=useDispatch();
+  const deleteBtn = (e) => {
+    dispatch(deleteBasket(e.target.id));
+  };
+  console.log(data);
   return (
-    <Link to={`/market-research/detail/${id}`}>
-      <div className={classes.marketCard}>
-        <img alt="img" src={doctor} className={classes.img} />
+    <div className={classes.marketCard}>
+      <Link to={`/market-research-detail/${data.ordered_item.id}`}  className={classes.link}>
+        <img
+          alt="img"
+          src={data.ordered_item.image && data.ordered_item.image}
+          className={classes.img}
+        />
         <div className={classes.content}>
           <div className={classes.nameCompany}>
-            <span className={classes.name}>ОсОО “Бимед Фарм”</span>
-            <span className={classes.date}>29 / 09 / 2020</span>
+            <span className={classes.name}>
+              {data.ordered_item.author
+                ? data.ordered_item.author.logo
+                : "Автора нет"}
+            </span>
+            <span className={classes.date}>
+              {data && data.ordered_item.date}
+            </span>
           </div>
           <div className={classes.blockDescrip}>
             <div className={classes.nameResearch}>
-              <span>Рынок частной медицины 2020. База сетей</span>
+              <span>{data && data.ordered_item.name}</span>
             </div>
             <div className={classes.description}>
-              <span>• 150 стр</span>
-              <span>ID: 0001</span>
-              <span>Страна: Кыргызстан</span>
-
-
+              <span>
+                {data.ordered_item.pages && data.ordered_item.pages} стр
+              </span>
+              <span>ID: {data.ordered_item.id}</span>
+              <div className={classes.country}>
+                <span>Страна:&#160;</span>
+                {data.ordered_item.country &&
+                  data.ordered_item.country.map((item) => {
+                    return <span key={item.id}>{item.name}</span>;
+                  })}
+              </div>
             </div>
           </div>
           <div className={classes.blockHeshteg}>
-            <div>#медицина</div>
-            <div>#медицина</div>
-            <div>#медицина</div>
-            <div>#медицина</div>
+            {data.ordered_item.hashtag &&
+              data.ordered_item.hashtag.map((item) => {
+                return <div key={item.id}>#{item.name}</div>;
+              })}
           </div>
         </div>
-        <div className={classes.blockAct}>
-          <div className={classes.blockPrace}>
-            <span className={classes.discounts}>55 000 сом</span>
-            <span className={classes.newPrace}>55 000 сом</span>
-          </div>
-            <button className={classes.demo}>Удалить</button>
+      </Link>
+      <div className={classes.blockAct}>
+        <div className={classes.blockPrace}>
+          <span className={classes.discounts}>
+            {data && data.ordered_item.old_price}
+          </span>
+          <span className={classes.newPrace}>
+            {data && data.ordered_item.new_price}
+          </span>
         </div>
+        <button className={classes.demo} id={data.id} onClick={(e) => deleteBtn(e)}>
+          Удалить
+        </button>
       </div>
-    </Link>
+    </div>
   );
 };
 export default BasketCard;

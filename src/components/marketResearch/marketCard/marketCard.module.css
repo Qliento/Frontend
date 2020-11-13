@@ -137,7 +137,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 99999;
+
 }
 .link{
   width: 73%;
@@ -154,7 +154,7 @@
   font-size: 18px;
   line-height: 22px;
   color: #ffffff;
-  z-index: 100 !important;
+
 
 }
 .toBasket:hover {
@@ -171,7 +171,12 @@
   font-size: 18px;
   line-height: 22px;
   color: #1b8e3d;
-  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+
 }
 .demo:hover {
   color: #1b8e3d;
