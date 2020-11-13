@@ -46,7 +46,7 @@ export default {
         Authorization: "Bearer " + token,
       },
     }),
-  deleteResearchBasket: (id,token) =>
+  deleteResearchBasket: (id, token) =>
     http.delete(`/purchase/delete-from-cart/${id}/`, {
       headers: {
         Authorization: "Bearer " + token,
@@ -80,5 +80,17 @@ export default {
       email: data.email,
       phone: data.phone,
       extra: data.question,
+    }),
+  registrOrg: (data) =>
+    http.post(`/users/registration/researchers/`, {
+      logo: data.name2,
+      admin_status: {
+        name: data.name,
+        surname: data.lastName,
+        password: data.password,
+        password_check: data.repeatPassword,
+        email: data.email,
+        phone_number: data.phone,
+      },
     }),
 };

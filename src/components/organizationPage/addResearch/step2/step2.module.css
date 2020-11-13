@@ -1,0 +1,135 @@
+.step1 {
+  width: 80%;
+  height: auto;
+  margin-top: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.form {
+  width: 100%;
+  height: auto;
+  padding: 60px;
+  background: #ffffff;
+}
+.blockTitle {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.blockStep {
+  width: 40%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.step {
+  font-size: 24px;
+  line-height: 29px;
+  color: #828282;
+}
+.step11 {
+  font-size: 24px;
+  line-height: 29px;
+  color: #76b73e;
+}
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  color: #76b73e;
+}
+.topBlock {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+}
+.topBlock span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.blockFiles {
+  margin-top: 20px;
+}
+.files {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+}
+.krest {
+  margin-left: auto;
+}
+.fileName {
+  font-size: 16px;
+  line-height: 20px;
+  color: #333333;
+  margin-left: 20px;
+}
+.addFiles {
+  width: 50%;
+  height: 42px;
+  background: #ffffff;
+  border: 1px solid #828282;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #828282;
+  margin-top: 20px;
+}
+.blockBtn {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.inputNumberPage {
+  background: #ffffff;
+  height: 42px;
+  width: 45%;
+  border: 1px solid #bdbdbd;
+  margin-top: 10px;
+  padding: 10px;
+}
+.titleContent{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.leftBlock{
+    width: 10%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.centerBlock{
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.rightBlock{
+    width: 20%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.contentTitle{
+    font-weight: 600;
+font-size: 14px;
+line-height: 17px;
+
+color: #000000;
+}

@@ -29,10 +29,10 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.blockText{
-    height: 70px;
-    text-overflow: auto;
-    overflow: hidden;
+.blockText {
+  height: 70px;
+  text-overflow: auto;
+  overflow: hidden;
 }
 .leftCard {
   width: 49%;
@@ -130,4 +130,57 @@
   font-weight: bold;
   font-size: 18px;
   color: #1b8e3d;
+}
+.statistic {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 35px;
+  height: 219px;
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+.input {
+  width: 190px;
+  height: auto;
+}
+.title {
+  font-weight: 600;
+  font-size: 24px;
+  color: #1b8e3d;
+}
+.blockTitle {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.buttomBlock {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.column {
+  width: 30%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.column_title {
+  font-weight: 500;
+  font-size: 14px;
+  color: #000000;
+}
+.column_data {
+  font-weight: 600;
+  font-size: 24px;
+  color: #76b73e;
+  margin-top: 5px;
 }

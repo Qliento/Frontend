@@ -4,6 +4,7 @@ import ResearchCards from "./researchCards"
 import SubmitBtn from "./submitBtn/submitBtn"
 import classes from "./organizationPage.module.css"
 import DetailMarket from "./detailMarket/detailMarket"
+import AddReseach from "./addResearch"
 
 const Content=()=>{
     return(
@@ -14,7 +15,8 @@ const Content=()=>{
             </div>
             <ResearchCards/>
             </Route>
-          <Route path="/organization-page/submit-research"><DetailMarket/></Route>
+          <Route path="/organization-page/submit-research"><AddReseach/></Route>
+          <Route path="/organization-page/detail-card"><DetailMarket/></Route>
         </Switch>
         
     )
