@@ -14,7 +14,7 @@ export default {
   bePartner: (data) => http.post("/feedback/", data),
   blogData: () => http.get("/blog/"),
   clientPage: (token) =>
-    http.get("http://207.154.250.71/purchase/my-orders/", {
+    http.get("/purchase/my-orders/", {
       headers: {
         Authorization: "Bearer " + token,
       },

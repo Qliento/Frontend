@@ -101,6 +101,7 @@ export function authClient(username, password){
                 user => { 
                     dispatch(success(user));
                     dispatch(createToken(username, password));
+                    alert('Вы авторизованы')
                 },
                 error => {
                     dispatch(failure(error));
