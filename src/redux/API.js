@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const http = Axios.create({
-  baseURL: "http://207.154.250.71",
+  baseURL: "https://qliento.com",
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",

@@ -216,7 +216,7 @@ const RegistOrganization = () => {
             </div>
             <div className={classes.blockCapcha}>
             <Recaptcha
-              sitekey="6LcajdoZAAAAAFOgC8_IQd25j4QdCaMJBK4dfK52"
+              sitekey="6LfQZ-EZAAAAAC4RQyi7GCqJyiWXXDcIdsRVV0n4"
               render="explicit"
               verifyCallback={verifiedCallback}
             />
