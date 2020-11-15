@@ -77,13 +77,13 @@ const Footer = () => {
         <Link to="/analitic">
           <span>Аналитика</span>
         </Link>
-        <Link to="/">
+        <Link to="/news">
           <span>Новости</span>
         </Link>
         <Link to="/order-research">
           <span>Заказать исследования</span>
         </Link>
-        <Link to="/">
+        <Link to="/market-research">
           <span>Маркет исследований</span>
         </Link>
         <Link to="/">
