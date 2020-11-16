@@ -120,7 +120,7 @@ async function login(email, password) {
       body: JSON.stringify({ email, password })
   };
 
-  const response = await fetch(`http://207.154.250.71/users/login/clients/`, requestOptions);
+  const response = await fetch(`https://qliento.com/users/login/clients/`, requestOptions);
   // const user = await handleResponse(response);
   // store user details and jwt token in local storage to keep user logged in between page refreshes
   // localStorage.setItem('user', JSON.stringify(response));

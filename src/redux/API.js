@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const http = Axios.create({
-  baseURL: "http://207.154.250.71",
+  baseURL: "https://qliento.com",
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
@@ -27,7 +27,7 @@ export default {
     ),
   orderResearch: (data) => http.post("/purchase/order-form/", data),
   getMainData: () => http.get("/main-page/"),
-  createToken: (data) => http.post("/auth/jwt/create/", data),
+  createToken: (data) => http.post("auth/jwt-create/", data),
   pushBasket: (id, token) =>
     http.post(
       `/purchase/add-to-cart/`,

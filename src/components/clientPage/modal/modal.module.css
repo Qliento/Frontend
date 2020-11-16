@@ -7,6 +7,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .modal_content{
@@ -81,6 +82,7 @@
     font-size: 18px;
     line-height: 22px;
     color: #333;
+    border: 1px solid #BDBDBD;
 }
 
 .form label{
@@ -99,4 +101,13 @@
     color: var(--green);
     border: 1px solid var(--green);
     margin-bottom: 15px;
+}
+
+.form .change_btn{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.form input[placeholder]{
+    font-size: 14px;
 }

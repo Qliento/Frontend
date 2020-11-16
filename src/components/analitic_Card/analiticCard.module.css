@@ -1,5 +1,5 @@
 .container{
-    padding: 50px 12% 200px 12%;
+    padding: 50px 13% 200px 13%;
 }
 
 .analiticCard_way{
@@ -51,6 +51,7 @@
     background-color: #fff;
     padding: 30px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    height: auto;
 }
 
 .card_description span{
