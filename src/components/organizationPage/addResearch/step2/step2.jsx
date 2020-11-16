@@ -5,6 +5,7 @@ import classes from "./step2.module.css";
 import pdf from "./img/Frame .png";
 import xlm from "./img/Frame 91.png";
 import krestik from "./img/download 1.png";
+import {Link} from "react-router-dom"
 
 const Step2 = () => {
   return (
@@ -58,6 +59,30 @@ const Step2 = () => {
             <div className={classes.centerBlock}><span className={classes.contentTitle}>Название главы</span></div>
             <div className={classes.rightBlock}><span className={classes.contentTitle}>Страница</span></div>
 
+        </div>
+        <div className={classes.rowInputs}>
+            <span className={classes.number}>1</span>
+            <input className={classes.centerInput} type="text"/>
+            <input className={classes.rightInput} type="text"/>
+
+        </div>
+        <div className={classes.rowInputs}>
+            <span className={classes.number}>2</span>
+            <input className={classes.centerInput} type="text"/>
+            <input className={classes.rightInput} type="text"/>
+
+        </div>
+        <div className={classes.rowInputs}>
+            <span className={classes.number}>3</span>
+            <input className={classes.centerInput} type="text"/>
+            <input className={classes.rightInput} type="text"/>
+
+        </div>
+        <div className={classes.blockBtn1}>
+            <Link to="/organization-page/submit-research/step3" className={classes.link}>
+            <button className={classes.btn}>Далее</button>
+            </Link>
+           
         </div>
       </div>
     </div>

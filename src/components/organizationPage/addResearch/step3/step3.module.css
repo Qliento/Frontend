@@ -1,0 +1,135 @@
+.step3 {
+  width: 80%;
+  height: auto;
+  margin-top: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.form {
+  width: 100%;
+  height: auto;
+  padding: 60px;
+  background: #ffffff;
+}
+.blockTitle {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.blockStep {
+  width: 40%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.step {
+  font-size: 24px;
+  line-height: 29px;
+  color: #828282;
+}
+.step11 {
+  font-size: 24px;
+  line-height: 29px;
+  color: #76b73e;
+}
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  color: #76b73e;
+}
+.content {
+  margin-top: 40px;
+  height: 387px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.img {
+  width: 48%;
+  height: 100%;
+}
+.rightBlock {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.blockDescrip {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.descripTitle {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.descrip {
+  font-size: 16px;
+  line-height: 20px;
+  color: #828282;
+  margin-top: 5px;
+}
+.blockDescrip2 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+.btn {
+  background: #ffffff;
+  border: 1px solid #1b8e3d;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1b8e3d;
+  width: 50%;
+  height: 42px;
+}
+.titlePrice {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+
+}
+.bottomBlock {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.inputPrice {
+  width: 45%;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #bdbdbd;
+  font-size: 16px;
+  line-height: 20px;
+  color: #828282;
+  padding: 10px;
+}
+.btn2 {
+  width: 45%;
+  height: 100%;
+  background: #76b73e;
+  border: 1px solid #76b73e;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
