@@ -5,7 +5,7 @@ import Tabs from "./tabs/tabs";
 import Order from "./order/order";
 import AboutUs from "./aboutUs/aboutUs";
 import News from "./news/news";
-import banner from "./img/Group 45.png";
+import banner from "./img/Фон горы.png";
 import GooglePlay from "./googlePlay/googlePlay";
 import Analytics from "./analytics/analytics";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,12 +1,17 @@
-import React from "react";
+import React,{useState} from "react";
 import classes from "./researchCard.module.css";
 import doctor from "./img/Rectangle 47.png";
 import { Link } from "react-router-dom";
+import EditModal from "../editResearch/editResearch"
 
 const ResearchCard = ({ id }) => {
+  const [edit,setEdit]=useState(false)
   return (
-    <Link to={`/organization-page/detail-card`}>
+    <>
+  
       <div className={classes.marketCard}>
+      <Link to={`/organization-page/detail-card`}
+      className={classes.link}>
         <img alt="img" src={doctor} className={classes.img} />
         <div className={classes.content}>
           <div className={classes.nameCompany}>
@@ -32,13 +37,14 @@ const ResearchCard = ({ id }) => {
             <div >#медицина</div>
           </div>
         </div>
+          </Link>
         <div className={classes.blockAct}>
           <div className={classes.blockPrace}>
             <span className={classes.discounts}>88 000 сом</span>
             <span className={classes.newPrace}>55 000 сом</span>
           </div>
           <div className={classes.blockBtn}>
-            <button className={classes.toBasket}>Редактировать</button>
+            <button className={classes.toBasket} onClick={()=>setEdit(true)}>Редактировать</button>
             <div className={classes.blockStatus}>
                 <span className={classes.status_title}>Статус</span>
                 <span className={classes.status_desc}>На рассмотрении</span>
@@ -46,7 +52,11 @@ const ResearchCard = ({ id }) => {
           </div>
         </div>
       </div>
-    </Link>
+  
+    {
+      <EditModal changeState={()=>setEdit(false)} edit={edit}/>
+    }
+    </>
   );
 };
 export default ResearchCard;

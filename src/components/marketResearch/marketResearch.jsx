@@ -42,6 +42,9 @@ const MarketResearch = ({ filter }) => {
         <Route path="/market-research-filter">
           <MarketCardsFilter params={params} sort1={sort1} sort2={sort2} />
         </Route>
+        <Route path="/market-research-search/:text">
+          <MarketCards params={params} sort1={sort1} sort2={sort2} />
+        </Route>
         <Route path="/market-research">
           <MarketCards
             params={params}

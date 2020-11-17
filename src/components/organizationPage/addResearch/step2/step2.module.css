@@ -98,38 +98,90 @@
   margin-top: 10px;
   padding: 10px;
 }
-.titleContent{
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.titleContent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
 }
-.leftBlock{
-    width: 10%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.leftBlock {
+  width: 5%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.centerBlock{
-    width: 50%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.centerBlock {
+  width: 65%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.rightBlock{
-    width: 20%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.rightBlock {
+  width: 20%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.contentTitle{
-    font-weight: 600;
-font-size: 14px;
-line-height: 17px;
+.contentTitle {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
 
-color: #000000;
+  color: #000000;
+}
+.rowInputs {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+.number {
+  width: 5%;
+  font-size: 18px;
+  line-height: 22px;
+  color: #828282;
+}
+.centerInput {
+  width: 65%;
+  height: 100%;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid #bdbdbd;
+}
+.rightInput {
+  width: 20%;
+  height: 100%;
+  padding: 10px;
+  background: #ffffff;
+  border: 1px solid #bdbdbd;
+}
+.blockBtn1 {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 40px;
+}
+.link{
+    width: 50%;
+    height: 100%;
+}
+.btn {
+  width: 100%;
+  height: 100%;
+  background: #76b73e;
+  border: 1px solid #76b73e;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
 }

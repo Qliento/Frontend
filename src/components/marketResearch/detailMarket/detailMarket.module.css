@@ -43,6 +43,12 @@
   height: 100%;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
 }
+.country{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
 .blockHeshteg {
   width: 100%;
   height: 25px;
@@ -128,4 +134,8 @@
   font-weight: bold;
   font-size: 18px;
   color: #1b8e3d;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

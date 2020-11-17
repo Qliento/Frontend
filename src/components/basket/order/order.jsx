@@ -1,6 +1,7 @@
 import React from "react"
 import classes from "./order.module.css"
 import {useDispatch,useSelector} from "react-redux"
+import {Link} from "react-router-dom"
 
 const Order=()=>{
     const data = useSelector((state) => state.ListBasket.listResearch);
@@ -14,13 +15,28 @@ const Order=()=>{
         })
     }
     return(
-        <div className={classes.orderCard}>
-            <div className={classes.blockPrice}>
+        <form className={classes.orderCard}>
+            <div className={classes.content}>
+                <div className={classes.blockPrice}>
                 <span className={classes.titlePrice}>Итоговоя сумма</span>
                 <span className={classes.price}>{total} сом </span>
+                </div>
+                <div className={classes.blockChecket}>
+              <input
+                className={classes.checkbox}
+                type="checkbox"
+                name="checkbox"
+                required
+              />
+              <div className={classes.text}>
+                <span>Подтверждаю, что ознакомлен и согласен с </span>
+                <Link to='/agreement'>Пользовательским соглашением</Link>
+              </div>
             </div>
-            <button className={classes.btn}>Оформить заказ</button>
-        </div>
+             
+            </div>
+            <button  className={classes.btn}>Оформить заказ</button>
+        </form>
     )
 }
 export default Order;

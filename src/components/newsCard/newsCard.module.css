@@ -117,7 +117,7 @@
 }
 .description {
   font-size: 14px;
-  line-height: 120%;
+  line-height: 1.5;
   height: 90%;
   color: #000000;
   margin-top: 15px;
@@ -132,13 +132,13 @@
 }
 .description1 {
   font-size: 14px;
-  line-height: 120%;
   color: #000000;
   margin-top: 15px;
   height: auto;
   text-overflow: auto;
   overflow: none;
   height: 90%;
+  line-height: 1.5;
 
 }
 .btn {

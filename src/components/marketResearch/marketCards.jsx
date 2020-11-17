@@ -45,6 +45,7 @@ const addFlyEfyf = () => {
     }
     if (params.category && numberKeys === 1) {
       dispatch(listResearchCategory(params.category));
+      
     }
     if (params.category && params.text && numberKeys === 2) {
       dispatch(mainSearchCategoryText(params.category, params.text));
@@ -52,7 +53,6 @@ const addFlyEfyf = () => {
     if (numberKeys === 0 ) {
       dispatch(allResearch());
     }
-
   }, [params, sort1, sort2]);
 
   return (

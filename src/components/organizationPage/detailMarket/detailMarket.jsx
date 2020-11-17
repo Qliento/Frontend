@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import EditModal from "../editResearch/editResearch";
 import classes from "./detailMarket.module.css";
 import Dropdown from "./dropdown";
 import img1 from "./img/Rectangle 47.png";
@@ -6,6 +7,7 @@ import Tabs1 from "./tabs/tabs";
 
 const DetailMarket = () => {
   const [isClose, setIsClose] = useState(false);
+  const [edit, setEdit] = useState(false);
   const clickBtn = () => {
     setIsClose(!isClose);
     console.log(isClose);
@@ -40,7 +42,7 @@ const DetailMarket = () => {
               </div>
             </div>
             <div className={classes.blockBtn}>
-              <button className={classes.demo}>Редактировать</button>
+              <button className={classes.demo} onClick={()=>setEdit(true)}>Редактировать</button>
             </div>
           </div>
         </div>
@@ -70,6 +72,7 @@ const DetailMarket = () => {
           </div>
         </div>
       </div>
+      {<EditModal edit={edit} changeState={(e) => setEdit(e)} />}
     </>
   );
 };
