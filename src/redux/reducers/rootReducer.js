@@ -14,7 +14,9 @@ import {orderResearchData} from './orderResearch/orderResearchData';
 import { blogData } from './blog/blog';
 import {detailDataResearch} from "./detailResearch/detailResearch";
 import {blogCardData} from './blog/blogCard';
-import {ListBasket} from "./basketListResearch/basketListResearch"
+import {ListBasket} from "./basketListResearch/basketListResearch";
+import {clientPage} from './clientPage/clientPage';
+import {clientData} from './clientPage/clientData';
 
 export const rootReducer = combineReducers({
     AboutUs,
@@ -32,5 +34,7 @@ export const rootReducer = combineReducers({
     blogData,
     detailDataResearch,
     blogCardData,
-    ListBasket
+    ListBasket,
+    clientPage,
+    clientData
 });

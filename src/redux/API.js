@@ -19,6 +19,12 @@ export default {
         Authorization: "Bearer " + token,
       },
     }),
+  clientData: (token) =>
+    http.get("/users/update/partners", {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    }),
   blogCardData: (id) => http.get(`/blog/${id}`),
   interiorPage: (id) => http.get(`/researches/${id}`),
   searchMarketCerds: (category, subcaregory, author, country, text) =>

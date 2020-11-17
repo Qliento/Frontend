@@ -1,9 +1,15 @@
 import React from "react";
 import st from "./header.module.css";
 import { Link } from "react-router-dom";
+import Select from 'react-select';
 
 const Header = () => {
   const userInfo = localStorage.getItem("user");
+  const options = [
+    { value: 'rus', label: 'Рус' },
+    { value: 'eng', label: 'Eng' },
+    { value: 'kg', label: 'Кырг' }
+  ]
   
   return (
     <nav className={st.header}>
@@ -76,13 +82,13 @@ const Header = () => {
       </div>
       <div className={st.local_basket}>
         <div className={st.localiz}>
-          <span>Кыр</span>
-          <span>Рус</span>
-          <span>Eng</span>
+            <Select 
+            options={options}
+            defaultValue={options[0]} />
         </div>
         <div className={st.basket}>
           {userInfo ? (
-            <Link to="/basket">
+            <Link to="/basket" className={st.basket_icon}>
               <svg
                 width="22"
                 height="20"
@@ -95,6 +101,7 @@ const Header = () => {
                   fill="#090509"
                 />
               </svg>
+              <span className={st.basket_amount}>0</span>
             </Link>
           ) : (
             <Link to="/auth">
@@ -125,9 +132,12 @@ const Header = () => {
         </Link>
         </>
         ) : (
-          <Link to="/client-page">
-            <button className={st.Lk}>Личный кабинет</button>
-          </Link>
+          <>
+            <Link to="/client-page">
+              <button className={st.Lk}>Личный кабинет</button>
+            </Link>
+            <span>Выйти</span>
+          </>
         )}
       </div>
     </nav>

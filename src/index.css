@@ -27,3 +27,36 @@ a{
   cursor: pointer;
 }
 
+
+
+.add_fly{
+	position: fixed;
+	transform: translate(-50%, -50%);
+	top: 0;
+	left: 0;
+	width: 50px;
+  height: 50px;
+  pointer-events: none;
+  z-index: 10;
+  background: var(--green);
+  opacity: 0;
+  border-radius: 50%;
+}
+
+
+
+.add_fly_anim{
+	animation: add_fly_anim ease 1s forwards;
+}
+
+@keyframes add_fly_anim{
+	0%{
+    opacity: 1;
+	}
+	100%{
+    transform: translate(-50%, -50%) scale(0.5);
+    top: 30px;
+    opacity: 1;
+		left: calc(90% - 240px);
+	}
+}

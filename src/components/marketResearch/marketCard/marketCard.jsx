@@ -1,15 +1,34 @@
-import React from "react";
+import React, {useEffect} from "react";
 import classes from "./marketCard.module.css";
 import { Link } from "react-router-dom";
 import {useDispatch} from "react-redux";
 import { researchPushBasket } from "../../../redux/actions/pushResearch/pushResearch";
 
-const MarketCard = ({ data }) => {
+const MarketCard = ({ data, addFlyEfyf }) => {
   console.log("String", data);
   const dispatch=useDispatch();
   const orders=(e)=>{
     dispatch(researchPushBasket(e))
   }
+
+//   useEffect(() => {
+//     const cursor = document.querySelector('.add_fly');
+//     const editCursor = e => {
+//       const { clientX: x, clientY: y } = e;
+//       cursor.style.left = x + 'px';
+//       cursor.style.top = y + 'px';
+//   };
+//   window.addEventListener('mousemove', editCursor);
+
+// });
+
+// const addFlyEfyf = () => {
+//   const cursor = document.querySelector('.add_fly');
+//   console.log('test')
+//   cursor.classList.add('add_fly_anim');
+//   setTimeout(function () { cursor.classList.remove('add_fly_anim') }, 1000);
+// }
+
 
   return (
     <>
@@ -59,7 +78,8 @@ const MarketCard = ({ data }) => {
             <button
               className={classes.toBasket}
               id={data.id}
-              onClick={(e)=>orders(e.target.id)}
+              onClick={addFlyEfyf}
+              // onClick={(e)=>orders(e.target.id)}
               type="button"
             >
               В корзину

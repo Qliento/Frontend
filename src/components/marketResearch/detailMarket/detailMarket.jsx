@@ -11,8 +11,12 @@ const DetailMarket = ({data}) => {
     setIsClose(!isClose)
     console.log(isClose)
   }
+
+
+
   return (
     <div className={ isClose ?classes.blockDetail1 : classes.blockDetail}>
+      
       <div className={classes.leftCard}>
         <div className={classes.blockImg}>
           <img alt="img" src={data.image? data.image:img1}  className={classes.img}/>

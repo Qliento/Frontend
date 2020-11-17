@@ -16,6 +16,24 @@ const MarketCards = ({ params, sort1, sort2 }) => {
 
   let arrResearch = useSelector((state) => state.mainResultSearch.researchList);
 
+  useEffect(() => {
+    const cursor = document.querySelector('.add_fly');
+    const editCursor = e => {
+      const { clientX: x, clientY: y } = e;
+      cursor.style.left = x + 'px';
+      cursor.style.top = y + 'px';
+  };
+  window.addEventListener('mousemove', editCursor);
+
+});
+
+const addFlyEfyf = () => {
+  const cursor = document.querySelector('.add_fly');
+  console.log('test')
+  cursor.classList.add('add_fly_anim');
+  setTimeout(function () { cursor.classList.remove('add_fly_anim') }, 1000);
+}
+
   let arr = [];
   arr = sort1
     ? arrResearch.sort((a, b) => (a.new_price < b.new_price ? -1 : 1))
@@ -39,9 +57,10 @@ const MarketCards = ({ params, sort1, sort2 }) => {
 
   return (
     <>
+    <div className="add_fly"></div>
       {arr &&
         arr.map((item) => {
-          return <MarketCard data={item} key={item.id} />;
+          return <MarketCard data={item} key={item.id} addFlyEfyf={addFlyEfyf} />;
         })}
     </>
   );
