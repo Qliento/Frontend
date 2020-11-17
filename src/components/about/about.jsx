@@ -17,7 +17,7 @@ const About = () => {
     <div className={classes.aboutPage}>
       <div className={classes.blockCrumbs}>
         <Link to="/">Главная / </Link>
-        <Link to="/market-research">Маркет исследований</Link>
+        <Link to="/about-us">О нас</Link>
       </div>
       <span className={classes.title}>О нас</span>
 

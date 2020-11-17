@@ -19,7 +19,7 @@ const Category = ({ arrCategory,installCategory }) => {
     <div className="inputSearch1">
       <Select
         options={options}
-        placeholder="Все котегории"
+        placeholder="Все категории"
        onChange={(e) => installCategory(e.value)}
       />
     </div>

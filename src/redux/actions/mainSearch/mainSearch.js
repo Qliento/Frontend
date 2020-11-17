@@ -23,6 +23,7 @@ export function allListResearch(data) {
 
 
 export function mainSearchText(text) {
+  console.log("cnjcndsjkcndsjkcndsjk")
   return async (dispatch) => {
     await API.resultSearchList(text).then((res) => {
      dispatch(seccess(res.data));

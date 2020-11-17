@@ -27,6 +27,7 @@ const MarketCards = ({ params, sort1, sort2 }) => {
     }
     if (params.category && numberKeys === 1) {
       dispatch(listResearchCategory(params.category));
+      
     }
     if (params.category && params.text && numberKeys === 2) {
       dispatch(mainSearchCategoryText(params.category, params.text));
@@ -34,7 +35,6 @@ const MarketCards = ({ params, sort1, sort2 }) => {
     if (numberKeys === 0 ) {
       dispatch(allResearch());
     }
-
   }, [params, sort1, sort2]);
 
   return (
