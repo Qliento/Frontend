@@ -13,6 +13,7 @@ export default {
   url: () => "http://207.154.250.71",
   bePartner: (data) => http.post("/feedback/", data),
   blogData: () => http.get("/blog/"),
+  authClient: (data) => http.post('/users/login/clients/', data),
   clientPage: (token) =>
     http.get("/purchase/my-orders/", {
       headers: {
