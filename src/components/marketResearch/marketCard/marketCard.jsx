@@ -56,7 +56,7 @@ const MarketCard = ({ data, addFlyEfyf }) => {
                   <span>Страны: </span>
                   {data.country &&
                     data.country.map((item) => {
-                      return <span key={item.id}>{item.name}</span>;
+                    return <span key={item.id}>{" "}{item.name}</span>;
                     })}
                 </div>
               </div>

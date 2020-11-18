@@ -13,7 +13,7 @@ const Auth = () => {
     const { handleSubmit, register, errors } = useForm();
 
     const authBtn = () =>{
-        dispatch(authClient('nurlanuulushama@gmail.com', '123456789'))
+        dispatch(authClient('vadim.gerasko99@gmail.com', '123456789'))
     }
 
     const [visibility,setVisibility]=useState(false)
