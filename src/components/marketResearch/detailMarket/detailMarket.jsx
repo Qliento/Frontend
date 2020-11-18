@@ -1,14 +1,21 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { researchPushBasket } from "../../../redux/actions/pushResearch/pushResearch";
 import classes from "./detailMarket.module.css";
 import img1 from "./img/Rectangle 47.png";
 import Tabs1 from "./tabs/tabs";
 
 const DetailMarket = ({ data }) => {
+  const dispatch = useDispatch();
   console.log(data);
   const [isClose, setIsClose] = useState(false);
   const clickBtn = () => {
     setIsClose(!isClose);
     console.log(isClose);
+  };
+
+  const orders = (e) => {
+    dispatch(researchPushBasket(e));
   };
   return (
     <div className={isClose ? classes.blockDetail1 : classes.blockDetail}>
@@ -32,15 +39,15 @@ const DetailMarket = ({ data }) => {
           </div>
           <div className={classes.blockdDescrip}>
             <div className={classes.descrip}>
-              <span>{data && data.pages}</span>
+              <span>{data && data.pages} стр</span>
               <span>ID: {data && data.id}</span>
               <div className={classes.country}>
-                  <span>Страны: </span>
-                  {data.country &&
-                    data.country.map((item) => {
-                      return <span key={item.id}>{item.name}, </span>;
-                    })}
-                </div>
+                <span>Страны:	&#160; </span>
+                {data.country &&
+                  data.country.map((item) => {
+                    return <span key={item.id}>{item.name}, </span>;
+                  })}
+              </div>
             </div>
             <div className={classes.price}>
               <span className={classes.oldPrice}>
@@ -52,8 +59,20 @@ const DetailMarket = ({ data }) => {
             </div>
           </div>
           <div className={classes.blockBtn}>
-            <button className={classes.crash}>В корзину</button>
-            <a href={data.demo && data.demo} className={classes.demo} download>
+            <button
+              className={classes.crash}
+              id={data.id}
+              onClick={(e) => orders(e.target.id)}
+              type="button"
+            >
+              В корзину
+            </button>
+            <a
+              href={data.demo && data.demo}
+              target="_blank"
+              className={classes.demo}
+              download
+            >
               Демо версия
             </a>
           </div>

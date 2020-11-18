@@ -1,34 +1,33 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import classes from "./marketCard.module.css";
 import { Link } from "react-router-dom";
-import {useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { researchPushBasket } from "../../../redux/actions/pushResearch/pushResearch";
 
 const MarketCard = ({ data, addFlyEfyf }) => {
   console.log("String", data);
-  const dispatch=useDispatch();
-  const orders=(e)=>{
-    dispatch(researchPushBasket(e))
-  }
+  const dispatch = useDispatch();
+  const orders = (e) => {
+    dispatch(researchPushBasket(e));
+  };
 
-//   useEffect(() => {
-//     const cursor = document.querySelector('.add_fly');
-//     const editCursor = e => {
-//       const { clientX: x, clientY: y } = e;
-//       cursor.style.left = x + 'px';
-//       cursor.style.top = y + 'px';
-//   };
-//   window.addEventListener('mousemove', editCursor);
+  //   useEffect(() => {
+  //     const cursor = document.querySelector('.add_fly');
+  //     const editCursor = e => {
+  //       const { clientX: x, clientY: y } = e;
+  //       cursor.style.left = x + 'px';
+  //       cursor.style.top = y + 'px';
+  //   };
+  //   window.addEventListener('mousemove', editCursor);
 
-// });
+  // });
 
-// const addFlyEfyf = () => {
-//   const cursor = document.querySelector('.add_fly');
-//   console.log('test')
-//   cursor.classList.add('add_fly_anim');
-//   setTimeout(function () { cursor.classList.remove('add_fly_anim') }, 1000);
-// }
-
+  // const addFlyEfyf = () => {
+  //   const cursor = document.querySelector('.add_fly');
+  //   console.log('test')
+  //   cursor.classList.add('add_fly_anim');
+  //   setTimeout(function () { cursor.classList.remove('add_fly_anim') }, 1000);
+  // }
 
   return (
     <>
@@ -56,7 +55,7 @@ const MarketCard = ({ data, addFlyEfyf }) => {
                   <span>Страны: </span>
                   {data.country &&
                     data.country.map((item) => {
-                    return <span key={item.id}>{" "}{item.name}</span>;
+                      return <span key={item.id}> {item.name}</span>;
                     })}
                 </div>
               </div>
@@ -71,8 +70,17 @@ const MarketCard = ({ data, addFlyEfyf }) => {
         </Link>
         <div className={classes.blockAct}>
           <div className={classes.blockPrace}>
-            <span className={classes.discounts}>{data.old_price} сом</span>
-            <span className={classes.newPrace}>{data.new_price} сом</span>
+            {data.old_price && data.new_price ? (
+              <>
+                <span className={classes.discounts}>{data.old_price} сом</span>
+                <span className={classes.newPrace}>{data.new_price} сом</span>
+              </>
+            ) : (
+              <>
+              <span></span>
+              <span className={classes.newPrace}>{data.old_price} сом</span>
+              </>
+            )}
           </div>
           <div className={classes.blockBtn}>
             <button
@@ -84,7 +92,12 @@ const MarketCard = ({ data, addFlyEfyf }) => {
             >
               В корзину
             </button>
-            <a href={data.demo && data.demo} className={classes.demo} download>
+            <a
+              href={data.demo && data.demo}
+              target="_blank"
+              className={classes.demo}
+              download
+            >
               Демо версия
             </a>
           </div>

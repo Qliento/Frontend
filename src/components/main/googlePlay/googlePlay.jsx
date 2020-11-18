@@ -9,12 +9,14 @@ const GooglePlay = ({ data }) => {
   if (data) {
     image = data.image;
   }
-  console.log(data);
+
   return (
     <div className={classes.googlePlay}>
       <img alt="img" src={image ? data.image : phone} className={classes.img} />
       <div className={classes.blockText}>
-        <span className={classes.title}>мобильном приложении QlientO</span>
+        <span className={classes.title}>
+          {data && data.header ? data.header : null}
+        </span>
         <span className={classes.description}>{data && data.description}</span>
       </div>
 
