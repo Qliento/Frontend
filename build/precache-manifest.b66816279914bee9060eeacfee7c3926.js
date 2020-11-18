@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0208e1b61117f5c5f8f4597acc3baec6",
+    "revision": "f3b2e775afe694f37d0cc259dc1f158b",
     "url": "/index.html"
   },
   {
-    "revision": "d85ddb3d64c6e6c95ddd",
+    "revision": "99f866fe1e500fadc9fa",
     "url": "/static/css/2.fd971cca.chunk.css"
   },
   {
-    "revision": "e745272d947fc942ced7",
-    "url": "/static/css/main.11502f80.chunk.css"
+    "revision": "c071fa0ed72d21915fe7",
+    "url": "/static/css/main.8f9e79bb.chunk.css"
   },
   {
-    "revision": "d85ddb3d64c6e6c95ddd",
-    "url": "/static/js/2.660db7a0.chunk.js"
+    "revision": "99f866fe1e500fadc9fa",
+    "url": "/static/js/2.170b3c4d.chunk.js"
   },
   {
     "revision": "ab40d9aa0e6fc6976e4503799ee3716e",
-    "url": "/static/js/2.660db7a0.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.170b3c4d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e745272d947fc942ced7",
-    "url": "/static/js/main.c8b52100.chunk.js"
+    "revision": "c071fa0ed72d21915fe7",
+    "url": "/static/js/main.6acc27c3.chunk.js"
   },
   {
     "revision": "8bcd737825a34486dd02",
@@ -34,10 +34,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "22f07a65fc698775d09ce2b2a2d63e6b",
     "url": "/static/media/2.22f07a65.png"
-  },
-  {
-    "revision": "a6777fe7a725e45b9bb5654130a55d6c",
-    "url": "/static/media/Group 45.a6777fe7.png"
   },
   {
     "revision": "4bf1ab5748fab9f24b5b3a363f22b395",
@@ -86,5 +82,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6c88c797db79e7563ae6701549573de4",
     "url": "/static/media/photo.6c88c797.png"
+  },
+  {
+    "revision": "9687b0c18de7eebc8459dcf7fcb72f38",
+    "url": "/static/media/Фон горы.9687b0c1.png"
   }
 ]);

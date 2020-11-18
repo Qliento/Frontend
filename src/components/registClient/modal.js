@@ -43,7 +43,7 @@ function RegistrModal() {
       <div className={classes.modal}>
         <span className={classes.title}>Регистрация</span>
         <div className={classes.content}>
-          <img alt="img" src={isModal > 1 ? img1 : img2}/>
+          <img alt="img" src={isModal == 1 ? img1 : img2}/>
           <div className={classes.blockText}>
           <span className={classes.descr}>
               {

@@ -12,9 +12,9 @@ const Auth = () => {
     const dispatch = useDispatch();
     const { handleSubmit, register, errors } = useForm();
 
-    const authBtn = () =>{
-        dispatch(authClient('vadim.gerasko99@gmail.com', '123456789'))
-    }
+    const onSubmit = (values) =>{
+            dispatch(authClient(values))
+      } 
 
     const [visibility,setVisibility]=useState(false)
 
@@ -58,7 +58,7 @@ const Auth = () => {
                 Забыл пароль
             </Link>
             <div className={st.auth_btn}>
-                <button onClick={handleSubmit(authBtn)}>Войти</button>
+                <button onClick={handleSubmit(onSubmit)}>Войти</button>
                 <Link to="/Registration">
                     Регистрация
                 </Link>
