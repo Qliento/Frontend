@@ -4,6 +4,7 @@ import { useDispatch, useSelector  } from "react-redux";
 import { orderResearch } from '../../redux/reducers/orderResearch/orderResearch';
 import { useForm } from "react-hook-form";
 import { orderResearchData } from '../../redux/actions/actions';
+import Modal from "./modal";
 
 
 const OrderResearch = () =>{
@@ -20,6 +21,7 @@ const OrderResearch = () =>{
 
     return(
         <div className={st.order_block}>
+            <Modal />
             <div className={st.order_block_anchor}>
                 <img src={require('./target.png')} alt="img" />
                 <div className={st.order_anchor_text}>
@@ -60,10 +62,10 @@ const OrderResearch = () =>{
                         )}
                         <label for="companyName">Название организации</label>
                         <input id="companyName" placeholder="Название организации" name="logo" ref={register({
-                        validate: (logo) => logo && logo.length > 4,
+                        validate: (logo) => logo && logo.length > 2,
                         })}></input>
                          {errors.logo && (
-                            <span className={st.errorString}>Заполните это поле</span>
+                            <span className={st.errorString}>Заполните это поле (Более 2 символов)</span>
                         )}
                         <label for="mail">Почта*</label>
                         <input id="mail" placeholder="Ваш email" name="email" ref={register({
@@ -89,7 +91,7 @@ const OrderResearch = () =>{
                         validate: (description) => description && description.length > 10
                         })}></textarea>
                         {errors.description && (
-                            <span className={st.errorString}>Заполните поле</span>
+                            <span className={st.errorString}>Заполните поле (Более 10 символов)</span>
                         )}
                     </div>
                     <button onClick={handleSubmit(onSubmit)}>Отправить</button>

@@ -74,7 +74,6 @@ export function registrationClient(data){
   return async (dispatch)=>{
     await API.registrationClient(data)
     .then(res => {
-      console.log(res)
       if( res.status == 201){
         dispatch({ type: REGISTRATION_CLIENT})
       }
@@ -92,7 +91,6 @@ export function registrationClient(data){
 export function recoveryPassword(data){
   return async ()=>{
     const data1 = JSON.stringify(data)
-    console.log(data1);
     await API.recoveryPassword(data1)
       .then(res => {
         console.log(res);
@@ -100,67 +98,40 @@ export function recoveryPassword(data){
 }
 }
 
+export function authAfter() {
+  return {
+    type: 'POSTED__AFTER_AUTH',
+  };
+}
+
 
 export function authClient({email, password}){
   return async (dispatch)=>{
     const data = JSON.stringify({email, password})
-    console.log(data);
     await API.authClient(data)
     .then(res => {
       if( res.status == 200){
-        dispatch(createToken(email, password))
-        .then (alert('вы авторизованы'));
+        dispatch(createToken(email, password));
+      }
+      else{
+        dispatch({ type: 'POSTED__ERROR_AUTH'})
       }
     });
 }}
 
-// export function authClient(username, password){
-//     return dispatch => {
-//         dispatch(request({ username }));
-
-//         login(username, password)
-//             .then(
-//                 user => { 
-//                     dispatch(success(user));
-//                     dispatch(createToken(username, password));
-//                     alert('Вы авторизованы')
-//                 },
-//                 error => {
-//                     dispatch(failure(error));
-//                 }
-//             );
-//     };
-
-//     function request(user) { return { type: LOGIN_REQUEST, user } }
-//     function success(user) { return { type: LOGIN_SUCCESS, user } }
-//     function failure(error) { return { type: LOGIN_FAILURE, error } }
-// }
-
-// async function login(email, password) {
-//   const requestOptions = {
-//       method: 'POST',
-//       headers: { 'Content-Type': 'application/json' },
-//       body: JSON.stringify({ email, password })
-//   };
-
-//   const response = await fetch(`https://qliento.com/users/login/clients/`, requestOptions);
-//   // const user = await handleResponse(response);
-//   // store user details and jwt token in local storage to keep user logged in between page refreshes
-//   // localStorage.setItem('user', JSON.stringify(response));
-//   return response;
-// }
 
 export function createToken(email, password){
   return async (dispatch)=>{
     const data = JSON.stringify({email, password})
     await API.createToken(data)
     .then(res => {
-      console.log(res)
       if( res.status == 200){
         localStorage.setItem('user', res.data.access);
+        dispatch({ type: 'POSTED_SUCCES_AUTH'})
       }
-      // else{
-      //   dispatch({ type: REGISTRATION_CLIENT_ERROR})
-      // }
-    });
+    })
+    .catch(err =>{
+      dispatch({ type: 'POSTED__ERROR_AUTH'})
+    }
+    )
 }}
