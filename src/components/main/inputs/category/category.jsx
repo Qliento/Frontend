@@ -21,6 +21,7 @@ const Category = ({ arrCategory,installCategory }) => {
         options={options}
         placeholder="Все категории"
        onChange={(e) => installCategory(e.value)}
+       maxMenuHeight={200}
       />
     </div>
   );
