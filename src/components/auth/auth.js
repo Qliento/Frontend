@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { authClient } from '../../redux/actions/actions';
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
+import Modal from './modal';
 
 import noVis from "./image/noVisibility.png"
 import vis from "./image/visibility 1.png"
@@ -20,6 +21,7 @@ const Auth = () => {
 
     return(
     <div className={st.auth_bg}>
+        <Modal />
         <div className={st.auth_content}>
             <Link to = '/' className = {st.strikeLink} >
                 <div className={st.strike}></div>

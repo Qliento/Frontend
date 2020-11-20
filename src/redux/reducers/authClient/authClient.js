@@ -1,28 +1,26 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from '../../actions/constants'
 
-// let user = JSON.parse(localStorage.getItem('user'));
-// const initialState = user ? { loggedIn: true, user } : {};
 const initialState = {
-  user: '',
-  loggedIn: false,
+  isModal: ''
 }
 
 export function authentication(state = initialState, action) {
   switch (action.type) {
-    case LOGIN_REQUEST:
+    case "POSTED_SUCCES_AUTH":
       return {
-        loggingIn: true,
-        user: action.user
+        ...state,
+        isModal: 1,
       };
-    case LOGIN_SUCCESS:
-      return {
-        loggedIn: true,
-        user: action.user
-      };
-    case LOGIN_FAILURE:
-      return {};
-    // case userConstants.LOGOUT:
-    //   return {};
+      case 'POSTED__ERROR_AUTH':
+        return {
+          ...state,
+          isModal: 2,
+        };
+      case 'POSTED__AFTER_AUTH':
+        return {
+          ...state,
+          isModal: '',
+        }
+
     default:
       return state
   }

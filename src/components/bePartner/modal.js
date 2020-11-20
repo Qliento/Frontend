@@ -1,12 +1,11 @@
 import React from "react";
 import Modal from "react-modal";
-import classes from "./registClient.module.css";
+import classes from "./modal.module.css";
 import {  useSelector } from "react-redux";
-// import { errorMesseg } from "../../redux/actions/registrationOrg/registrationOrg";
-import img1 from "./img/1.png"
-import img2 from "./img/2.png"
+import img1 from "./1.png"
+import img2 from "./2.png"
 import { Link } from "react-router-dom";
-import { registrationClientSuccess } from '../../redux/actions/actions';
+import { afterPosted } from '../../redux/reducers/bePartner/bePartner';
 import { useDispatch } from "react-redux";
 
 const customStyles = {
@@ -23,33 +22,30 @@ const customStyles = {
 };
 
 
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
 function RegistrModal() {
-  // useEffect(() => {
-  //   dispatch(errorMesseg());
-  // }, []);
+  
   const dispatch = useDispatch();
-  const registSuccess = () =>{
-    dispatch(registrationClientSuccess())
+  const afterPosted1 = () =>{
+    dispatch(afterPosted())
 }
 
-  const isModal = useSelector((state) => state.RegistrationClient.isModal);
 
+  const isModal = useSelector((state) => state.bePartnerReducer.isModal);
   return (
     <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
       <div className={classes.modal}>
-        <span className={classes.title}>Регистрация</span>
+        <span className={classes.title}>Поздравляю</span>
         <div className={classes.content}>
           <img alt="img" src={isModal == 1 ? img1 : img2}/>
           <div className={classes.blockText}>
           <span className={classes.descr}>
               {
-                  isModal === 1 &&  "Прошла успешно. На почту отправлена ссылка для подтверждения"
+                  isModal === 1 &&  "Вы успешно отправили данные"
               }
               {
-                  isModal === 2 &&  "Произошла ошибка попробуйте снова"
+                  isModal === 2 &&  "Произошло ошибка! Попробуйте снова"
               }
            
           </span>
@@ -57,12 +53,12 @@ function RegistrModal() {
         </div>
         {
                   isModal === 1 &&  
-                  <Link to="/" onClick={registSuccess} >
+                  <Link to="/" onClick={afterPosted1} >
                     <span className={classes.ok}>OK</span>
                   </Link>
         }
               {
-                  isModal === 2 &&  <div onClick={registSuccess} >
+                  isModal === 2 &&  <div onClick={afterPosted1} >
                   <span className={classes.ok}>OK</span>
                 </div>
               }

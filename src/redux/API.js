@@ -34,7 +34,11 @@ export default {
     ),
   orderResearch: (data) => http.post("/purchase/order-form/", data),
   getMainData: () => http.get("/main-page/"),
+<<<<<<< HEAD
   createToken: (data) => http.post("users/jwt-create/", data),
+=======
+  createToken: (data) => http.post('/users/jwt-create/', data),
+>>>>>>> da370cdc8b5c6c6e8838428c319b5965a56f0e7e
   pushBasket: (id, token) =>
     http.post(
       `/purchase/add-to-cart/`,
@@ -102,4 +106,9 @@ export default {
         phone_number: data.phone,
       },
     }),
+  changePassword: (data) => http.post('/users/password-update/', data),
+  updateClient: (data, token) => http.post('/users/update/partners/', {
+    headers: { Authorization: "Bearer " + token},
+    data
+  })
 };

@@ -10,6 +10,7 @@ const Header = () => {
     { value: 'eng', label: 'Eng' },
     { value: 'kg', label: 'Кырг' }
   ]
+  const type = localStorage.getItem('type');
   
   return (
     <nav className={st.header}>
@@ -132,13 +133,16 @@ const Header = () => {
         </Link>
         </>
         ) : (
-          <>
-            <Link to="/client-page">
-              <button className={st.Lk}>Личный кабинет</button>
+        <div>{type == 'client' ? <>
+          <Link to="/client-page" className={st.Lk}>
+              <span>Личный кабинет</span>
             </Link>
-            <span onClick={()=>localStorage.clear()}>Выйти</span>
-          </>
-        )}
+        </> : <>
+        <Link to="/organization-page" className={st.Lk}>
+              <span>Личный кабинет</span>
+            </Link>
+        </>}</div>
+            )}
       </div>
     </nav>
   );

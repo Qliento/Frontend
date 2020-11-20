@@ -4,6 +4,7 @@ import { bePartner } from '../../redux/reducers/bePartner/bePartner';
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { BePartnerData } from '../../redux/actions/actions';
+import Modal from "./modal";
 
 const BePartner = () =>{
 
@@ -21,6 +22,7 @@ const BePartner = () =>{
 
     return(
         <div className={st.be_partner}>
+            <Modal />
             <img src={require('./bePartner.png')} alt="img"></img>
             <div className={st.be_partner_container}>
                 {data &&(data.map(elem =>(
