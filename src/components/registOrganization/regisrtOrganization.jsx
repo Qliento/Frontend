@@ -28,6 +28,7 @@ const RegistOrganization = () => {
     dispatch(errorMesseg());
   }, []);
   const onSubmit = (values) => {
+    console.log(values)
     if (values.repeatPassword !== values.password) {
       setErr(true);
     } else {
@@ -68,7 +69,7 @@ const RegistOrganization = () => {
           </div>
           <form className={classes.blockForm} onSubmit={handleSubmit(onSubmit)}>
             <div className={classes.blockInput}>
-              <label>Название организации</label>
+              <label>Название организации*</label>
               <input
                 name="name2"
                 className={classes.inputs}
@@ -83,7 +84,17 @@ const RegistOrganization = () => {
               )}
             </div>
             <div className={classes.blockInput}>
-              <label>Имя</label>
+              <label>Должность</label>
+              <input
+                name="position"
+                className={classes.inputs}
+                placeholder="Название"
+                type="text"
+                ref={register}
+              />
+            </div>
+            <div className={classes.blockInput}>
+              <label>Имя*</label>
               <input
                 name="name"
                 className={classes.inputs}
@@ -98,7 +109,7 @@ const RegistOrganization = () => {
               )}
             </div>
             <div className={classes.blockInput}>
-              <label>Фамилия</label>
+              <label>Фамилия*</label>
               <input
                 name="lastName"
                 className={classes.inputs}
@@ -113,7 +124,7 @@ const RegistOrganization = () => {
               )}
             </div>
             <div className={classes.blockInput}>
-              <label>E-mail</label>
+              <label>E-mail*</label>
               <input
                 name="email"
                 className={classes.inputs}
@@ -132,7 +143,7 @@ const RegistOrganization = () => {
               )}
             </div>
             <div className={classes.blockInput}>
-              <label>Номер телефона</label>
+              <label>Номер телефона*</label>
               <input
                 name="phone"
                 className={classes.inputs}
@@ -147,7 +158,7 @@ const RegistOrganization = () => {
               )}
             </div>
             <div className={classes.blockInput}>
-              <label>Пароль</label>
+              <label>Пароль*</label>
               <div className={classes.blockVisibil}>
                 <input
                   name="password"
@@ -174,7 +185,7 @@ const RegistOrganization = () => {
               )}
             </div>
             <div className={classes.blockInput}>
-              <label>Повторит пароль</label>
+              <label>Повторите пароль*</label>
               <div className={classes.blockVisibil}>
                 <input
                   name="repeatPassword"

@@ -133,6 +133,9 @@ margin-top: 10px;
   width: 60%;
   margin-left: 20px;
 }
+.text a{
+  color: #1B8E3D;
+}
 .blockCapcha {
   width: 100%;
   height: 42px;

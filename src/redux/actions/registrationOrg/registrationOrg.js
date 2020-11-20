@@ -31,6 +31,7 @@ export function registrationOrg(data) {
       })
       .catch((err) => {
         if (err.response.status === 400) {
+
           dispatch(error());
           setTimeout(() => {
             dispatch(errorMesseg());

@@ -13,7 +13,7 @@ const DetailMarket = ({ data }) => {
     setIsClose(!isClose);
     console.log(isClose);
   };
-
+  let leng = data.country && data.country.length;
   const orders = (e) => {
     dispatch(researchPushBasket(e));
   };
@@ -31,7 +31,7 @@ const DetailMarket = ({ data }) => {
           <div className={classes.blockHeshteg}>
             {data.hashtag &&
               data.hashtag.map((item) => {
-                return <div key={item.id}>#{item.name}</div>;
+                return <div className={classes.hashtag} key={item.id}>#{item.name}</div>;
               })}
           </div>
           <div className={classes.blockText}>
@@ -42,20 +42,36 @@ const DetailMarket = ({ data }) => {
               <span>{data && data.pages} стр</span>
               <span>ID: {data && data.id}</span>
               <div className={classes.country}>
-                <span>Страны:	&#160; </span>
+                <span>Страны: &#160; </span>
                 {data.country &&
-                  data.country.map((item) => {
-                    return <span key={item.id}>{item.name}, </span>;
+                  data.country.map((item, index) => {
+                    return (
+                      <span key={item.id}>
+                        {item.name}
+                        {index < leng - 1 ? "," : null}
+                      </span>
+                    );
                   })}
               </div>
             </div>
             <div className={classes.price}>
-              <span className={classes.oldPrice}>
-                {data && data.old_price} сом
-              </span>
-              <span className={classes.newPrice}>
-                {data && data.new_price} сом
-              </span>
+              {data.old_price && data.new_price ? (
+                <>
+                  <span className={classes.oldPrice}>
+                    {data && data.old_price} сом
+                  </span>
+                  <span className={classes.newPrice}>
+                    {data && data.new_price} сом
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span></span>
+                  <span className={classes.newPrice}>
+                    {data && data.old_price} сом
+                  </span>
+                </>
+              )}
             </div>
           </div>
           <div className={classes.blockBtn}>

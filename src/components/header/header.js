@@ -136,7 +136,7 @@ const Header = () => {
             <Link to="/client-page">
               <button className={st.Lk}>Личный кабинет</button>
             </Link>
-            <span>Выйти</span>
+            <span onClick={()=>localStorage.clear()}>Выйти</span>
           </>
         )}
       </div>

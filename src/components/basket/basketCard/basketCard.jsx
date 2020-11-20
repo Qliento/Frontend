@@ -8,6 +8,7 @@ import { deleteBasket } from "../../../redux/actions/deleteBasket/deleteBasket";
 const BasketCard = ({ id, data }) => {
   const dispatch=useDispatch();
   const deleteBtn = (e) => {
+    console.log(e.target.id)
     dispatch(deleteBasket(e.target.id));
   };
   console.log(data);

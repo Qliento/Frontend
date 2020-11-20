@@ -34,7 +34,7 @@ export default {
     ),
   orderResearch: (data) => http.post("/purchase/order-form/", data),
   getMainData: () => http.get("/main-page/"),
-  createToken: (data) => http.post("auth/jwt-create/", data),
+  createToken: (data) => http.post("users/jwt-create/", data),
   pushBasket: (id, token) =>
     http.post(
       `/purchase/add-to-cart/`,
@@ -91,6 +91,8 @@ export default {
   registrOrg: (data) =>
     http.post(`/users/registration/researchers/`, {
       logo: data.name2,
+      position:data.position&&data.position,
+      about_me:"vdsvdsvsvs",
       admin_status: {
         name: data.name,
         surname: data.lastName,
