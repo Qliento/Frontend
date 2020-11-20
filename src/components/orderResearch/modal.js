@@ -26,15 +26,11 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 function RegistrModal() {
-  // useEffect(() => {
-  //   dispatch(errorMesseg());
-  // }, []);
   const dispatch = useDispatch();
   const afterPosted1 = () =>{
     dispatch(afterPosted())
 }
 
-  // const dispatch = useDispatch();
   const isModal = useSelector((state) => state.orderResearchReducer.isModal);
   console.log(isModal);
   return (
@@ -55,9 +51,17 @@ function RegistrModal() {
           </span>
           </div>
         </div>
-        <Link to="/" onClick={afterPosted1} >
-          <span className={classes.ok}>OK</span>
-          </Link>
+        {
+                  isModal === 1 &&  
+                  <Link to="/" onClick={afterPosted1} >
+                    <span className={classes.ok}>OK</span>
+                  </Link>
+        }
+              {
+                  isModal === 2 &&  <div onClick={afterPosted1} >
+                  <span className={classes.ok}>OK</span>
+                </div>
+              }
       </div>
     </Modal>
   );

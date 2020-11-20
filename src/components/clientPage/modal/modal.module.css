@@ -7,7 +7,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;overflow-y: scroll;
 }
 
 .modal_content{
@@ -15,6 +15,7 @@
     background-color: #fff;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 .profile{
@@ -110,4 +111,8 @@
 
 .form input[placeholder]{
     font-size: 14px;
+}
+
+.error{
+    color: red;
 }

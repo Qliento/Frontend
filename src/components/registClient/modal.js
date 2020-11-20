@@ -35,9 +35,8 @@ function RegistrModal() {
     dispatch(registrationClientSuccess())
 }
 
-  // const dispatch = useDispatch();
   const isModal = useSelector((state) => state.RegistrationClient.isModal);
-  console.log(isModal);
+
   return (
     <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
       <div className={classes.modal}>
@@ -47,19 +46,26 @@ function RegistrModal() {
           <div className={classes.blockText}>
           <span className={classes.descr}>
               {
-                  isModal ===1 ?  "Прошла успешно. На почту отправлена ссылка для подтверждения"
-                  : "Ошибка регистрации"
+                  isModal === 1 &&  "Прошла успешно. На почту отправлена ссылка для подтверждения"
               }
               {
-                  isModal ===3 &&  "Пользователь с такой почтой уже зарегистрирован"
+                  isModal === 2 &&  "Произошла ошибка попробуйте снова"
               }
            
           </span>
           </div>
         </div>
-        <Link to="/" onClick={registSuccess} >
-          <span className={classes.ok}>OK</span>
-          </Link>
+        {
+                  isModal === 1 &&  
+                  <Link to="/" onClick={registSuccess} >
+                    <span className={classes.ok}>OK</span>
+                  </Link>
+        }
+              {
+                  isModal === 2 &&  <div onClick={registSuccess} >
+                  <span className={classes.ok}>OK</span>
+                </div>
+              }
       </div>
     </Modal>
   );

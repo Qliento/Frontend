@@ -77,13 +77,48 @@ export function registrationClient(data){
       if( res.status == 201){
         dispatch({ type: REGISTRATION_CLIENT})
       }
-      else if(res.status == 400){
-        dispatch({ type: REGISTRATION_CLIENT_EMAIL})
+    })
+    .catch(err =>{
+      console.log(err.response)
+      dispatch({ type: REGISTRATION_CLIENT_ERROR})
+    })
+
+}
+}
+
+export function updateClient(data){
+  return async (dispatch)=>{
+    let token = localStorage.getItem("user");
+    await API.updateClient(data, token)
+    .then(res => {
+      if( res.status == 201){
+        dispatch({ type: 'POSTED_SUCCES_UPDATE_CLIENT'})
       }
-      else{
-        dispatch({ type: REGISTRATION_CLIENT_ERROR})
+    })
+    .catch(err =>{
+      dispatch({ type: 'POSTED__ERROR_UPDATE_CLIENT'})
+    })
+
+}
+}
+
+export function changePassword(data){
+  return async (dispatch)=>{
+    let token = localStorage.getItem("user");
+    const data1 = {
+      method: 'POST',
+      headers: {Authorization: "Bearer " + token},
+      body: data
+  }
+    await API.changePassword(data1)
+    .then(res => {
+      if( res.status == 201){
+        dispatch({ type: 'POSTED_SUCCES_CHANGE_PASS'})
       }
-    });
+    })
+    .catch(err =>{
+      dispatch({ type: 'POSTED__ERROR_CHANGE_PASS'})
+    })
 
 }
 }
@@ -104,6 +139,11 @@ export function authAfter() {
   };
 }
 
+export function updateClientAfter() {
+  return {
+    type: 'POSTED__AFTER_UPDATE_CLIENT',
+  };
+}
 
 export function authClient({email, password}){
   return async (dispatch)=>{
@@ -127,6 +167,7 @@ export function createToken(email, password){
     .then(res => {
       if( res.status == 200){
         localStorage.setItem('user', res.data.access);
+        localStorage.setItem('type', res.data.user);
         dispatch({ type: 'POSTED_SUCCES_AUTH'})
       }
     })

@@ -5,8 +5,7 @@ import {  useSelector } from "react-redux";
 import img1 from "./1.png"
 import img2 from "./2.png"
 import { Link } from "react-router-dom";
-import { afterPosted } from '../../redux/reducers/bePartner/bePartner';
-import { useDispatch } from "react-redux";
+import {updateClientAfter} from '../../../../redux/actions/actions';
 
 const customStyles = {
   content: {
@@ -22,17 +21,12 @@ const customStyles = {
 };
 
 
+// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
 function RegistrModal() {
-  
-  const dispatch = useDispatch();
-  const afterPosted1 = () =>{
-    dispatch(afterPosted())
-}
 
-
-  const isModal = useSelector((state) => state.bePartnerReducer.isModal);
+  const isModal = useSelector((state) => state.updateClient.isModal);
   return (
     <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
       <div className={classes.modal}>
@@ -42,7 +36,7 @@ function RegistrModal() {
           <div className={classes.blockText}>
           <span className={classes.descr}>
               {
-                  isModal === 1 &&  "Вы успешно отправили данные"
+                  isModal === 1 &&  "Вы успешно изменили данные"
               }
               {
                   isModal === 2 &&  "Произошло ошибка! Попробуйте снова"
@@ -53,12 +47,12 @@ function RegistrModal() {
         </div>
         {
                   isModal === 1 &&  
-                  <Link to="/" onClick={afterPosted1} >
+                  <Link to="/" onClick={updateClientAfter} >
                     <span className={classes.ok}>OK</span>
                   </Link>
         }
               {
-                  isModal === 2 &&  <div onClick={afterPosted1} >
+                  isModal === 2 &&  <div onClick={updateClientAfter} >
                   <span className={classes.ok}>OK</span>
                 </div>
               }

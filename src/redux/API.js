@@ -100,4 +100,9 @@ export default {
         phone_number: data.phone,
       },
     }),
+  changePassword: (data) => http.post('/users/password-update/', data),
+  updateClient: (data, token) => http.post('/users/update/partners/', {
+    headers: { Authorization: "Bearer " + token},
+    data
+  })
 };

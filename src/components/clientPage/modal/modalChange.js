@@ -1,8 +1,23 @@
 import React, {useState} from 'react';
 import st from './modal.module.css';
-import photo from '../header/img/photo.png'
-
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import {changePassword} from '../../../redux/actions/actions';
 const ModalChange = ({offModal}) =>{
+    const { handleSubmit, register, errors } = useForm();
+    const dispatch = useDispatch();
+    const[err,setErr]=useState(false);
+
+
+    const onSubmit = (values) =>{
+        if(values.new_password_repeat != values.new_password){
+          setErr(true)
+        }
+        else{
+            setErr(false);
+            dispatch(changePassword(values));
+        }
+      } 
 
     return(
         <div className={st.modal}>
@@ -10,12 +25,42 @@ const ModalChange = ({offModal}) =>{
                 <span className={st.strike} onClick={offModal}></span>
                     <form className={st.form}>
                         <label>Старый пароль</label>
-                        <input placeholder='Ваш пароль'></input>
+                        <input
+                            name="old_password"
+                            placeholder="Ваш пароль"
+                            type="text"
+                            ref={register({
+                            validate: (password) => password && password.length > 6,
+                            })} />
+                            {errors.old_password && (
+                                <span className={st.error}>Пароль менее 6 символов</span>
+                                )} 
                         <label>Новый пароль</label>
-                        <input placeholder='Придумайте пароль'></input>
+                        <input
+                            name="new_password"
+                            placeholder="Придумайте пароль"
+                            type="text"
+                            ref={register({
+                            validate: (password) => password && password.length > 6,
+                            })} />
+                            {errors.new_password && (
+                                <span className={st.error}>Пароль менее 6 символов</span>
+                                )} 
                         <label>Повторите пароль</label>
-                        <input placeholder='Повторите пароль'></input>
-                        <button className={st.change_btn}>Сохранить</button>
+                        <input
+                            name="new_password_repeat"
+                            placeholder="Придумайте пароль"
+                            type="text"
+                            ref={register({
+                            validate: (password) => password && password.length > 6,
+                            })} />
+                            {errors.new_password_repeat && (
+                                <span className={st.error}>Пароль менее 6 символов</span>
+                                )} 
+                            {
+                                err && <span className={st.error}>Пароли не совпадают</span>
+                            }
+                        <button className={st.change_btn} onClick={handleSubmit(onSubmit)}>Сохранить</button>
                     </form>
             </div>
         </div>
