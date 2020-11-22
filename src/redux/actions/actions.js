@@ -101,6 +101,21 @@ export function updateClient(data){
 
 }
 }
+export function updateOrganization(data){
+  return async (dispatch)=>{
+    let token = localStorage.getItem("user");
+    await API.updateDataOrganization(data, token)
+    .then(res => {
+      if( res.status == 201){
+        dispatch({ type: 'POSTED_SUCCES_UPDATE_CLIENT'})
+      }
+    })
+    .catch(err =>{
+      dispatch({ type: 'POSTED__ERROR_UPDATE_CLIENT'})
+    })
+
+}
+}
 
 export function changePassword(data){
   return async (dispatch)=>{

@@ -37,11 +37,11 @@ const Tabs1 = ({ dataText, clickBtn }) => {
       <div className={classes.content}>
         <div className={isClose ? classes.contentText1 : classes.contentText}>
           {active === 1 ? (
-            <span>{dataText && dataText.description}</span>
+            <span>{dataText.description && dataText.description}</span>
           ) : null}
-          {active === 2 ? <span>{dataText && dataText.content}</span> : null}
+          {active === 2 ? <span>{dataText.content && dataText.content}</span> : null}
           {active === 3 ? (
-            <span>{dataText.author ? dataText.author.logo : "Автора нет"}</span>
+            <span>{dataText.author.logo ? dataText.author.logo : "Автора нет"}</span>
           ) : null}
         </div>
 

@@ -4,7 +4,7 @@ import photo1 from "./img/photo.png"
 import logo from "./img/logo.png"
 
 const Header=({onModal, data})=>{
-
+    
     return(
         <div className={classes.blockWrapp}>
             <div className={classes.topItem}>

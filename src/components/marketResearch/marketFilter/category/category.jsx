@@ -29,7 +29,7 @@ const Category = ({
   );
   console.log(category)
   useEffect(() => {
-    if (name === "Все котегории") {
+    if (name === "Все категории") {
       changeCategory(values);
     }
   }, [values]);
@@ -71,7 +71,7 @@ const Category = ({
   const chengeData = (e) => {
     setValues(e);
     console.log(e);
-    if (name === "Все котегории") {
+    if (name === "Все категории") {
       ubdateData(name, e.value);
     } else {
       ubdateData(name, e);

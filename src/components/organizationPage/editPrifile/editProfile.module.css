@@ -116,3 +116,7 @@
     line-height: 22px;
     color: #FFFFFF;
 }
+.error{
+  color: red;
+  font-size: 11px;
+}

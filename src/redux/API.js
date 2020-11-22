@@ -13,7 +13,7 @@ export default {
   url: () => "http://207.154.250.71",
   bePartner: (data) => http.post("/feedback/", data),
   blogData: () => http.get("/blog/"),
-  authClient: (data) => http.post('/users/login/clients/', data),
+  authClient: (data) => http.post("/users/login/clients/", data),
   clientPage: (token) =>
     http.get("/purchase/my-orders/", {
       headers: {
@@ -34,11 +34,7 @@ export default {
     ),
   orderResearch: (data) => http.post("/purchase/order-form/", data),
   getMainData: () => http.get("/main-page/"),
-<<<<<<< HEAD
-  createToken: (data) => http.post("users/jwt-create/", data),
-=======
-  createToken: (data) => http.post('/users/jwt-create/', data),
->>>>>>> da370cdc8b5c6c6e8838428c319b5965a56f0e7e
+  createToken: (data) => http.post("/users/jwt-create/", data),
   pushBasket: (id, token) =>
     http.post(
       `/purchase/add-to-cart/`,
@@ -95,8 +91,8 @@ export default {
   registrOrg: (data) =>
     http.post(`/users/registration/researchers/`, {
       logo: data.name2,
-      position:data.position&&data.position,
-      about_me:"vdsvdsvsvs",
+      position: data.position && data.position,
+      about_me: "vdsvdsvsvs",
       admin_status: {
         name: data.name,
         surname: data.lastName,
@@ -106,9 +102,28 @@ export default {
         phone_number: data.phone,
       },
     }),
-  changePassword: (data) => http.post('/users/password-update/', data),
-  updateClient: (data, token) => http.post('/users/update/partners/', {
-    headers: { Authorization: "Bearer " + token},
-    data
-  })
+  changePassword: (data) => http.post("/users/password-update/", data),
+  updateClient: (data, token) =>
+    http.post("/users/update/partners/", {
+      headers: { Authorization: "Bearer " + token },
+      data,
+    }),
+  updateDataOrganization: (data, token) =>
+    http.put(
+      "/users/update/partners/",
+      {
+        position: data.position && data.position,
+        about_me: data.about,
+        admin_status: {
+          name: data.name,
+          surname: data.surname,
+          phone_number: data.phone,
+        },
+      },
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      }
+    ),
 };

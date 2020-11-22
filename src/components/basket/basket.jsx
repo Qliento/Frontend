@@ -16,7 +16,7 @@ const Basket = () => {
       <span className={classes.title}>Корзина</span>
 
       <div className={classes.cards}>
-        {data ?
+        { data.lenght!==0 ?
           data.map((item) => {
             return <BasketCard id={item.ordered_item.id} data={item} key={item.id}/>;
           })

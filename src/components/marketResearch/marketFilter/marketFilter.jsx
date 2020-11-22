@@ -63,7 +63,7 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
       <div className={classes.blockRow}>
         <div className={classes.inputs}>
           <Category
-            name="Все котегории"
+            name="Все категории"
             category={category}
             listCategory={data && data.Category}
             changeCategory={(e) => setCategor(e.value)}
