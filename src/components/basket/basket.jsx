@@ -16,10 +16,15 @@ const Basket = () => {
       <span className={classes.title}>Корзина</span>
 
       <div className={classes.cards}>
-        {data &&
+        {data ?
           data.map((item) => {
             return <BasketCard id={item.ordered_item.id} data={item} key={item.id}/>;
-          })}
+          })
+        :
+        <div className={classes.noResearch}>
+          <span className={classes.text}>Исследований нет</span>
+        </div>
+        }
 
         
       </div>

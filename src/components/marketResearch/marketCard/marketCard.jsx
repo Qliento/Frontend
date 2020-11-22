@@ -9,6 +9,7 @@ const MarketCard = ({ data, addFlyEfyf }) => {
   const dispatch = useDispatch();
   const orders = (e) => {
     dispatch(researchPushBasket(e));
+    addFlyEfyf()
   };
 
   //   useEffect(() => {
@@ -86,8 +87,8 @@ const MarketCard = ({ data, addFlyEfyf }) => {
             <button
               className={classes.toBasket}
               id={data.id}
-              onClick={addFlyEfyf}
-              // onClick={(e)=>orders(e.target.id)}
+        
+              onClick={(e)=>orders(e.target.id)}
               type="button"
             >
               В корзину

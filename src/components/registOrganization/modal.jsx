@@ -29,7 +29,7 @@ function RegistrModal() {
   // }, []);
 
   // const dispatch = useDispatch();
-  const isModal = useSelector((state) => state.RegistrationClient.isModal);
+  const isModal = useSelector((state) => state.RegistrOrg.isModal);
   console.log(isModal);
   return (
     <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
