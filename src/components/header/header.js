@@ -12,7 +12,9 @@ const Header = () => {
     { value: 'kg', label: 'Кырг' }
   ]
   const type = localStorage.getItem('type');
-  
+  const logout = () =>{
+    localStorage.removeItem('user');
+  }
   return (
     <nav className={st.header}>
       <Link to="/">
@@ -138,10 +140,12 @@ const Header = () => {
           <Link to="/client-page" className={st.Lk}>
               <span>Личный кабинет</span>
             </Link>
+            <span onClick={logout} className={st.logout}>Выйти</span>
         </> : <>
         <Link to="/organization-page" className={st.Lk}>
               <span>Личный кабинет</span>
             </Link>
+            <span onClick={logout} className={st.logout}>Выйти</span>
         </>}</div>
             )}
       </div>

@@ -3,6 +3,8 @@ import st from './modal.module.css';
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import {changePassword} from '../../../redux/actions/actions';
+import Modal from './modal_window_change/modal';
+
 const ModalChange = ({offModal}) =>{
     const { handleSubmit, register, errors } = useForm();
     const dispatch = useDispatch();
@@ -10,7 +12,7 @@ const ModalChange = ({offModal}) =>{
 
 
     const onSubmit = (values) =>{
-        if(values.new_password_repeat != values.new_password){
+        if(values.password_check != values.new_password){
           setErr(true)
         }
         else{
@@ -21,6 +23,7 @@ const ModalChange = ({offModal}) =>{
 
     return(
         <div className={st.modal}>
+            <Modal />
             <div className={st.modal_content}>
                 <span className={st.strike} onClick={offModal}></span>
                     <form className={st.form}>
@@ -48,13 +51,13 @@ const ModalChange = ({offModal}) =>{
                                 )} 
                         <label>Повторите пароль</label>
                         <input
-                            name="new_password_repeat"
+                            name="password_check"
                             placeholder="Придумайте пароль"
                             type="text"
                             ref={register({
                             validate: (password) => password && password.length > 6,
                             })} />
-                            {errors.new_password_repeat && (
+                            {errors.password_check && (
                                 <span className={st.error}>Пароль менее 6 символов</span>
                                 )} 
                             {

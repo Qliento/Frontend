@@ -1,10 +1,10 @@
 import React from 'react';
 import st from './modal.module.css';
-import photo from '../header/img/photo.png';
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import {updateClient} from '../../../redux/actions/actions';
 import Modal1 from "./modal_window/modal";
+import noPhoto from '../header/img/noPhoto.jpg';
 
 const Modal = ({offModal, changeModal, data}) =>{
     const { handleSubmit, register, errors } = useForm();
@@ -21,15 +21,15 @@ const Modal = ({offModal, changeModal, data}) =>{
                     <div className={st.profile}>
                         <h3>Профиль</h3>
                         <div className={st.profile_img}>
-                            <img src={photo} alt="3
+                            <img src={noPhoto} alt="3
                             img"></img>
                         </div>
-                        <h2>{data && data.admin_status.surname + ' ' + data.admin_status.name}</h2>
-                        <span>{data && data.admin_status.email}</span>
+                        <h2>{data && data.surname + ' ' + data.name}</h2>
+                        <span>{data && data.email}</span>
                     </div>
                     <form className={st.form}>
                         <label>Имя</label>
-                        <input defaultValue={data && data.admin_status.name} name="name"
+                        <input defaultValue={data && data.name} name="name"
               placeholder="Ваше имя"
               type="text"
               ref={register({
@@ -39,7 +39,7 @@ const Modal = ({offModal, changeModal, data}) =>{
               <span className={st.error}>Заполните поле</span>
             )}
                         <label>Фамилия</label>
-                        <input defaultValue={data && data.admin_status.surname} name="surname"
+                        <input defaultValue={data && data.surname} name="surname"
               placeholder="Ваша фамилия"
               type="text"
               ref={register({
@@ -49,7 +49,7 @@ const Modal = ({offModal, changeModal, data}) =>{
               <span className={st.error}>Заполните поле</span>
             )}
                         <label>Номер телефона</label>
-                        <input defaultValue={data && data.admin_status.phone_number} name="phone_number"
+                        <input defaultValue={data && data.phone_number} name="phone_number"
               placeholder="+996 (___) __ - __ - __"
               type="text"
               ref={register({

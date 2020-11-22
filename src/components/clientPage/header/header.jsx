@@ -1,6 +1,6 @@
 import React from "react"
 import classes from "./header.module.css"
-import photo1 from "./img/photo.png"
+import noPhoto from "./img/noPhoto.jpg"
 import logo from "./img/logo.png"
 
 const Header=({onModal, data})=>{
@@ -13,11 +13,11 @@ const Header=({onModal, data})=>{
             <div className={classes.headerItem}>
                 <div className={classes.bloc}>
                     <div className={classes.leftBlock}>
-                    <span className={classes.title}>{data && data.admin_status.surname + ' ' + data.admin_status.name}</span>
-                        <span className={classes.desc}>{data && data.admin_status.email}</span>
+                    <span className={classes.title}>{data && data.surname + ' ' + data.name}</span>
+                        <span className={classes.desc}>{data && data.email}</span>
                     </div>
                     <div className={classes.centerBlock}>
-                        <span className={classes.titleNumber}>{data && data.admin_status.phone_number}</span>
+                        <span className={classes.titleNumber}>{data && data.phone_number}</span>
                         <span></span>
                     </div>
                     <div className={classes.rightBlock}>
@@ -25,7 +25,9 @@ const Header=({onModal, data})=>{
                     </div>
                 </div>
             </div>
-            <img alt="" className={classes.photo} src={photo1} />
+            <div className={classes.photo}>
+                <img alt="img" src={noPhoto} />
+            </div>
         </div>
     )
 }

@@ -21,7 +21,7 @@ export default {
       },
     }),
   clientData: (token) =>
-    http.get("/users/update/partners", {
+    http.get("/users/update/users/", {
       headers: {
         Authorization: "Bearer " + token,
       },
@@ -126,4 +126,11 @@ export default {
         },
       }
     ),
+  changePassword: (data, token) => http.patch('/users/password-update/', data, {
+    headers: { "Authorization" : "Bearer " + token}
+  }),
+  updateClient: (data, token) => 
+  http.patch('/users/update/users', data, {
+    headers: { "Authorization" : "Bearer " + token}
+  })
 };
