@@ -16,7 +16,7 @@ const ClientPage=()=>{
     const data = useSelector((state) => state.clientData.data.data);
     useEffect(() => {
         dispatch(clientData(token));
-    }, []);
+    }, []);     
 
     const onModal = () =>{
         setModal(1)

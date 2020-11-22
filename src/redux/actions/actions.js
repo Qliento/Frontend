@@ -89,9 +89,10 @@ export function registrationClient(data){
 export function updateClient(data){
   return async (dispatch)=>{
     let token = localStorage.getItem("user");
+    console.log(data);
     await API.updateClient(data, token)
     .then(res => {
-      if( res.status == 201){
+      if( res.status == 200){
         dispatch({ type: 'POSTED_SUCCES_UPDATE_CLIENT'})
       }
     })
@@ -105,12 +106,7 @@ export function updateClient(data){
 export function changePassword(data){
   return async (dispatch)=>{
     let token = localStorage.getItem("user");
-    const data1 = {
-      method: 'POST',
-      headers: {Authorization: "Bearer " + token},
-      body: data
-  }
-    await API.changePassword(data1)
+    await API.changePassword(data, token)
     .then(res => {
       if( res.status == 201){
         dispatch({ type: 'POSTED_SUCCES_CHANGE_PASS'})
@@ -176,3 +172,11 @@ export function createToken(email, password){
     }
     )
 }}
+
+
+export function changePasswordAfter() {
+  return {
+    type: 'POSTED__AFTER_CHANGE_PASS',
+  };
+}
+

@@ -116,6 +116,14 @@
     color: #fff;
     width: 100%;
     font-weight: 700;
+    display: block;
+}
+
+
+.logout{
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
 }
 
 .regisrationBtn{

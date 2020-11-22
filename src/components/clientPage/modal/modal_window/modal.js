@@ -6,8 +6,13 @@ import img1 from "./1.png"
 import img2 from "./2.png"
 import { Link } from "react-router-dom";
 import {updateClientAfter} from '../../../../redux/actions/actions';
+import { useDispatch } from "react-redux";
 
 const customStyles = {
+  overlay: {
+    position: 'fixed',
+    zIndex: 10
+  },
   content: {
     top: "50%",
     left: "50%",
@@ -17,6 +22,8 @@ const customStyles = {
     width:"40%",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    position: 'fixed',
+    zIndex: '10'
   },
 };
 
@@ -25,8 +32,13 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 function RegistrModal() {
+  const dispatch = useDispatch();
+  const updateClientAfter1 = () =>{
+    dispatch(updateClientAfter())
+}
 
   const isModal = useSelector((state) => state.updateClient.isModal);
+  console.log(isModal);
   return (
     <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
       <div className={classes.modal}>
@@ -47,12 +59,12 @@ function RegistrModal() {
         </div>
         {
                   isModal === 1 &&  
-                  <Link to="/" onClick={updateClientAfter} >
+                  <Link to="/" onClick={updateClientAfter1} >
                     <span className={classes.ok}>OK</span>
                   </Link>
         }
               {
-                  isModal === 2 &&  <div onClick={updateClientAfter} >
+                  isModal === 2 &&  <div onClick={updateClientAfter1} >
                   <span className={classes.ok}>OK</span>
                 </div>
               }

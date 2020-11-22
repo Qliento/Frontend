@@ -72,13 +72,13 @@ const Footer = () => {
       <div className={st.navbar}>
         <span className={st.footer_title}>Разделы</span>
         <Link to="/about-us">
-          <span>О нас</span>
+          <span>Новости</span>
         </Link>
         <Link to="/analitic">
-          <span>Аналитика</span>
+          <span>Блог</span>
         </Link>
         <Link to="/news">
-          <span>Новости</span>
+          <span>О нас</span>
         </Link>
         <Link to="/order-research">
           <span>Заказать исследования</span>

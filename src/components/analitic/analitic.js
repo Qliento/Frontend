@@ -24,8 +24,8 @@ const Analitic = () => {
         <h2>Блог</h2>
         <div className={st.analitic_content}>
             {data && data.map(elem =>(
-                <Link to={`/analiticCard/${elem.id}`} key={elem.id}>
-                <div className={st.analitic_card}>
+                <Link to={`/analiticCard/${elem.id}`} key={elem.id} className={st.analitic_card}>
+                <div>
                 <img src={elem.images[0] === undefined ? noPhoto : elem.images[0].url} alt="img" />
                 <div className={st.card_info}>
                 <span className={st.card_date}>

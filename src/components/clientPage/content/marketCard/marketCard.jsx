@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./marketCard.module.css";
 import { Link } from "react-router-dom";
+import photo from './Rectangle 47.jpg';
 // import {useDispatch} from "react-redux";
 // import { researchPushBasket } from "../../../redux/actions/pushResearch/pushResearch";
 
@@ -21,7 +22,7 @@ const MarketCard = ({ data }) => {
           to={`/market-research-detail/${data && data.id}`}
           className={classes.link}
         >
-          <img alt="img" src={data.image} className={classes.img} />
+          <img alt="img" src={photo} className={classes.img} />
           <div className={classes.content}>
             <div className={classes.nameCompany}>
               <span className={classes.name}>
@@ -55,8 +56,7 @@ const MarketCard = ({ data }) => {
         </Link>
         <div className={classes.blockAct}>
           <div className={classes.blockPrace}>
-            <span className={classes.discounts}>{data.old_price} сом</span>
-            <span className={classes.newPrace}>{data.new_price} сом</span>
+            <span className={classes.newPrace}>{data.new_price}17 000 сом</span>
           </div>
           <div className={classes.blockBtn}>
             <button

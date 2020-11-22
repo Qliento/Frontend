@@ -36,9 +36,21 @@
 }
 .photo {
   position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
   top: 50px;
   left: 60px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.photo img{
+  width: 100%;
+}
+
 .leftBlock {
   width: auto;
   height: auto;
