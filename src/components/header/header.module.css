@@ -121,9 +121,12 @@
 
 
 .logout{
+    display: block;
     cursor: pointer;
     text-align: center;
     width: 100%;
+    margin-top: 5px;
+    color: #BDBDBD;
 }
 
 .regisrationBtn{
