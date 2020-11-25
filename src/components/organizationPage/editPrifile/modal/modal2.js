@@ -31,7 +31,7 @@ const customStyles = {
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
-function RegistrModal() {
+function ModalPassword() {
   const dispatch = useDispatch();
   const changePasswordAfter1 = () =>{
     dispatch(changePasswordAfter())
@@ -71,4 +71,4 @@ function RegistrModal() {
     </Modal>
   );
 }
-export default RegistrModal;
+export default ModalPassword;

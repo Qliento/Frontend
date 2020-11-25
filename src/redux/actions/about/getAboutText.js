@@ -12,7 +12,8 @@ export function aboutData(){
     return async (dispatch)=>{
       await API.aboutData()
       .then(res => {
-        dispatch(seccess(res.data))
+        dispatch(seccess(res.data));
+        console.log(res.data)
       });
 
 }

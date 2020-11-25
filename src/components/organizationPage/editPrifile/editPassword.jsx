@@ -9,6 +9,7 @@ import img from "./img/Frame 72 (2).png";
 import { useForm } from "react-hook-form";
 import {useDispatch} from "react-redux"
 import { changePassword } from "../../../redux/actions/actions";
+import ModalPassword from "./modal/modal2";
 
 const customStyles = {
   content: {
@@ -26,7 +27,7 @@ const customStyles = {
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
-const EditPassword = ({ edit, changeState2 }) => {
+const EditPassword = ({ edit, changeState2,offModal }) => {
   const { handleSubmit, register, errors } = useForm();
   const dispatch = useDispatch();
   // useEffect(() => {
@@ -44,14 +45,15 @@ const EditPassword = ({ edit, changeState2 }) => {
    
   };
   return (
-    <Modal isOpen={edit} style={customStyles}>
+    <div  className={classes.changePassword}>
+      <ModalPassword/>
       <div className={classes.modal}>
         <div className={classes.blockImg}>
           <img
             alt="img"
             className={classes.img}
             src={img}
-            onClick={() => changeState2(false)}
+            onClick={() =>offModal()}
           />
         </div>
         <form className={classes.content} onSubmit={handleSubmit(onSubmit)}>
@@ -133,7 +135,7 @@ const EditPassword = ({ edit, changeState2 }) => {
           </button>
         </form>
       </div>
-    </Modal>
+    </div>
   );
 };
 export default EditPassword;

@@ -5,7 +5,7 @@ import {  useSelector } from "react-redux";
 import img1 from "./1.png"
 import img2 from "./2.png"
 import { Link } from "react-router-dom";
-import {changePasswordAfter} from '../../../../redux/actions/actions';
+import {updateClientAfter} from '../../../../redux/actions/actions';
 import { useDispatch } from "react-redux";
 
 const customStyles = {
@@ -31,13 +31,14 @@ const customStyles = {
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
-function RegistrModal() {
+function UbdateModal() {
   const dispatch = useDispatch();
-  const changePasswordAfter1 = () =>{
-    dispatch(changePasswordAfter())
+  const updateClientAfter1 = () =>{
+    dispatch(updateClientAfter())
 }
 
-  const isModal = useSelector((state) => state.changePassword.isModal);
+  const isModal = useSelector((state) => state.updateClient.isModal);
+  console.log(isModal);
   return (
     <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
       <div className={classes.modal}>
@@ -58,12 +59,12 @@ function RegistrModal() {
         </div>
         {
                   isModal === 1 &&  
-                  <Link to="/" onClick={changePasswordAfter1} >
+                  <Link to="/" onClick={updateClientAfter1} >
                     <span className={classes.ok}>OK</span>
                   </Link>
         }
               {
-                  isModal === 2 &&  <div onClick={changePasswordAfter1} >
+                  isModal === 2 &&  <div onClick={updateClientAfter1} >
                   <span className={classes.ok}>OK</span>
                 </div>
               }
@@ -71,4 +72,4 @@ function RegistrModal() {
     </Modal>
   );
 }
-export default RegistrModal;
+export default UbdateModal;

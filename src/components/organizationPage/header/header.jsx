@@ -6,7 +6,7 @@ import EditProfile from "../editPrifile/editProfile"
 import EditPassword from "../editPrifile/editPassword"
 
 
-const Header=({data})=>{
+const Header=({data,onModal})=>{
     const [edit,setEdit]=useState(false)
     const [edit2,setEdit2]=useState(false)
     return(
@@ -28,18 +28,13 @@ const Header=({data})=>{
                         <span></span>
                     </div>
                     <div className={classes.rightBlock}>
-                        <span className={classes.redact} onClick={()=>setEdit(true)}>Редактировать</span>
+                        <span className={classes.redact} onClick={()=>onModal()}>Редактировать</span>
                     </div>
                 </div>
             </div>
             <img alt="" className={classes.photo} src={photo1} />
         </div>
-        {
-            <>
-            <EditProfile onModalPassword={(e)=>setEdit2(e)} data={data&&data} changeState={(e)=>setEdit(e)} edit={edit}/>
-            <EditPassword edit={edit2} changeState2={(e)=>setEdit2(e)}/>
-            </>
-        }
+    
         </>
     )
 }

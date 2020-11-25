@@ -105,9 +105,10 @@ export function updateClient(data){
 export function updateOrganization(data){
   return async (dispatch)=>{
     let token = localStorage.getItem("user");
+    console.log(data);
     await API.updateDataOrganization(data, token)
     .then(res => {
-      if( res.status == 201){
+      if( res.status == 200){
         dispatch({ type: 'POSTED_SUCCES_UPDATE_CLIENT'})
       }
     })
@@ -128,7 +129,8 @@ export function changePassword(data){
       }
     })
     .catch(err =>{
-      dispatch({ type: 'POSTED__ERROR_CHANGE_PASS'})
+      dispatch({ type: 'POSTED__ERROR_CHANGE_PASS'});
+      console.log(err.response.data)
     })
 
 }
@@ -194,4 +196,10 @@ export function changePasswordAfter() {
     type: 'POSTED__AFTER_CHANGE_PASS',
   };
 }
-
+export function organData(token){
+  return async (dispatch)=>{
+    await API.organData(token)
+    .then(res => {
+      dispatch({ type: CLIENT_DATA, payload: res })
+    })}
+}

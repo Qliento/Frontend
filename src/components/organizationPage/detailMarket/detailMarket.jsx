@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import EditModal from "../editResearch/editResearch";
 import classes from "./detailMarket.module.css";
 import Dropdown from "./dropdown";
 import img1 from "./img/Rectangle 47.png";
 import Tabs1 from "./tabs/tabs";
+import { useDispatch, useSelector } from "react-redux";
+import { detailResearch } from "../../../redux/actions/organizationPage/action";
 
 const DetailMarket = () => {
   const [isClose, setIsClose] = useState(false);
   const [edit, setEdit] = useState(false);
+  const params = useParams();
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(detailResearch(params.id));
+  }, []);
+  const data = useSelector((state) => state.ResearchList.detailData);
   const clickBtn = () => {
     setIsClose(!isClose);
     console.log(isClose);
@@ -17,7 +27,11 @@ const DetailMarket = () => {
       <div className={isClose ? classes.blockDetail1 : classes.blockDetail}>
         <div className={classes.leftCard}>
           <div className={classes.blockImg}>
-            <img alt="img" src={img1} className={classes.img} />
+            <img
+              alt="img"
+              src={data.image ? data.image : img1}
+              className={classes.img}
+            />
           </div>
           <div className={classes.container}>
             <div className={classes.blockHeshteg}>
@@ -26,28 +40,44 @@ const DetailMarket = () => {
               <div>#медициа</div>
             </div>
             <div className={classes.blockText}>
-              <span className={classes.title}>
-                Рынок частной медицины 2020. База сетей
-              </span>
+              <span className={classes.title}>{data && data.name}</span>
             </div>
             <div className={classes.blockdDescrip}>
               <div className={classes.descrip}>
-                <span>Дата выпуска: 11-08-1999</span>
-                <span>Количество страниц: 25</span>
-                <span>ID: 003</span>
+                <span>Дата выпуска: {data && data.date}</span>
+                <span>Количество страниц: {data && data.pages}</span>
+                <span>ID: {data && data.id}</span>
               </div>
               <div className={classes.price}>
-                <span className={classes.oldPrice}>15 000 сом</span>
-                <span className={classes.newPrice}>40 000 сом</span>
+        
+                {data.old_price && data.new_price ? (
+                <>
+                  <span className={classes.oldPrice}>
+                    {data && data.old_price} сом
+                  </span>
+                  <span className={classes.newPrice}>
+                    {data && data.new_price} сом
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span></span>
+                  <span className={classes.newPrice}>
+                    {data && data.old_price} сом
+                  </span>
+                </>
+              )}
               </div>
             </div>
             <div className={classes.blockBtn}>
-              <button className={classes.demo} onClick={()=>setEdit(true)}>Редактировать</button>
+              <button className={classes.demo} onClick={() => setEdit(true)}>
+                Редактировать
+              </button>
             </div>
           </div>
         </div>
         <div className={classes.rightCard}>
-          <Tabs1 clickBtn={clickBtn} />
+          <Tabs1 data={data&&data} clickBtn={clickBtn} />
         </div>
       </div>
       <div className={classes.statistic}>

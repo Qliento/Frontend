@@ -26,6 +26,12 @@ export default {
         Authorization: "Bearer " + token,
       },
     }),
+  organData: (token) =>
+    http.get(`/users/update/partners/`, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    }),
   blogCardData: (id) => http.get(`/blog/${id}`),
   interiorPage: (id) => http.get(`/researches/${id}`),
   searchMarketCerds: (category, subcaregory, author, country, text) =>
@@ -109,7 +115,7 @@ export default {
       data,
     }),
   updateDataOrganization: (data, token) =>
-    http.put(
+    http.patch(
       "/users/update/partners/",
       {
         position: data.position && data.position,
@@ -126,11 +132,24 @@ export default {
         },
       }
     ),
-  changePassword: (data, token) => http.patch('/users/password-update/', data, {
-    headers: { "Authorization" : "Bearer " + token}
-  }),
-  updateClient: (data, token) => 
-  http.patch('/users/update/users', data, {
-    headers: { "Authorization" : "Bearer " + token}
-  })
+  changePassword: (data, token) =>
+    http.patch("/users/password-update/", data, {
+      headers: { Authorization: "Bearer " + token },
+    }),
+  updateClient: (data, token) =>
+    http.patch("/users/update/users", data, {
+      headers: { Authorization: "Bearer " + token },
+    }),
+  getResearchListOrgn: (token) =>
+    http.get(`/users/my-researches/`, {
+      headers: { Authorization: "Bearer " + token },
+    }),
+  detailResearchOrg: (token, id) =>
+    http.get(`/research-update/${id}/`, {
+      headers: { Authorization: "Bearer " + token },
+    }),
+  UbdateResearch: (price, id,token) =>
+    http.patch(`/research-update/${id}/`, price, {
+      headers: { Authorization: "Bearer " + token },
+    }),
 };

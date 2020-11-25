@@ -1,15 +1,21 @@
-import React from "react"
-import ResearchCard from "./researchCard/researchCard"
+import React, { useEffect } from "react";
+import ResearchCard from "./researchCard/researchCard";
+import { useDispatch, useSelector } from "react-redux";
+import { getReearchListOrgnPage } from "../../redux/actions/organizationPage/action";
 
-const ResearchCards=()=>{
-    return(
-        <>
-        <ResearchCard id="1"/>
-        <ResearchCard id="2"/>
-        <ResearchCard id="3"/>
-        <ResearchCard id="4"/>
-        <ResearchCard id="5"/>
-        </>
-    )
-}
+const ResearchCards = () => {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.ResearchList.ResearchList);
+  useEffect(() => {
+    dispatch(getReearchListOrgnPage());
+  }, []);
+  return (
+    <>
+      {data &&
+        data.map((item) => {
+          return <ResearchCard key={item.id} data={item} />;
+        })}
+    </>
+  );
+};
 export default ResearchCards;

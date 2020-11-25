@@ -3,6 +3,7 @@ import Dropdown from "./select/select";
 import Tabs from "../tabs/tabs";
 import classes from "./step1.module.css";
 import {Link} from "react-router-dom"
+import Country from "./country/country"
 
 const Step1 = () => {
   return (
@@ -47,7 +48,7 @@ const Step1 = () => {
         <div className={classes.blockDropdown}>
           <div className={classes.dropdown}>
             <span className={classes.dropdownTitle}>Страны</span>
-            <Dropdown name="Выберите страны"/>
+            <Country name="Выберите страны"/>
           </div>
           <div className={classes.dropdown}>
             <span className={classes.dropdownTitle}>Страны</span>

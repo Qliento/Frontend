@@ -9,6 +9,7 @@ import photo from "./img/photo.png";
 import { useForm } from "react-hook-form";
 import {useDispatch,useSelector} from "react-redux"
 import { updateOrganization } from "../../../redux/actions/actions";
+import UbdateModal from "./modal/modal";
 
 const customStyles = {
   content: {
@@ -26,7 +27,7 @@ const customStyles = {
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
-const EditProfile = ({ edit, changeState, onModalPassword, data }) => {
+const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
   // useEffect(() => {
   //   dispatch(errorMesseg());
   // }, []);
@@ -38,8 +39,9 @@ const EditProfile = ({ edit, changeState, onModalPassword, data }) => {
     dispatch(updateOrganization(values));
   };
   return (
-    <Modal isOpen={edit} style={customStyles}>
-      <form className={classes.modal} onSubmit={handleSubmit(onSubmit)}>
+    <div  className={classes.modal}>
+      <UbdateModal/>
+      <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={classes.blockImg}>
           <div className={classes.left}></div>
           <span className={classes.title}>Профиль</span>
@@ -47,7 +49,7 @@ const EditProfile = ({ edit, changeState, onModalPassword, data }) => {
             alt="img"
             className={classes.img}
             src={img}
-            onClick={() => changeState(false)}
+            onClick={() => offModal()}
           />
         </div>
         <img alt="img" src={photo} className={classes.photo} />
@@ -144,8 +146,8 @@ const EditProfile = ({ edit, changeState, onModalPassword, data }) => {
         <button
           className={classes.changeBtn}
           onClick={() => {
-            changeState(false);
-            onModalPassword(true);
+            changeModal();
+            
           }}
         >
           Сменить пароль
@@ -154,7 +156,7 @@ const EditProfile = ({ edit, changeState, onModalPassword, data }) => {
           Сохранить
         </button>
       </form>
-    </Modal>
+    </div>
   );
 };
 export default EditProfile;
