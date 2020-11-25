@@ -20,7 +20,7 @@ useEffect(()=>{
   dispatch(mainData());
   dispatch(ListNews())
 },[])
-console.log(data)
+
 //iravolv7
   return (
     <>

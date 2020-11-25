@@ -15,9 +15,7 @@ import RegistrModal from "./modal";
 const RegistClient = () => {
   const { handleSubmit, register, errors } = useForm();
   const dispatch = useDispatch();
-
-  const isModal = useSelector((state) => state.RegistrationClient.isModal);
-  // console.log(isModal.RegistrationClient.isModal)
+  const language = useSelector(state => state.langReducer.lang)
   const[err,setErr]=useState(false)
   const [visibility,setVisibility]=useState(false)
   const [visibility2,setVisibility2]=useState(false)
@@ -34,12 +32,9 @@ const RegistClient = () => {
       if(verified){
         setErr(false);
         dispatch(registrationClient(values))
-        console.log(1)
-      }
-        
-        else{
-          setVerified(false);
-          console.log(2)
+      }   
+      else{
+        setVerified(false);
         }
     }
   } 
@@ -55,25 +50,56 @@ const RegistClient = () => {
             </Link>
           </div>
           <div className={classes.blockTitle}>
-            <span className={classes.title}>Регистрация</span>
-            <span className={classes.step}>Шаг 2</span>
+            {language === 1 && <>
+              <span className={classes.title}>Регистрация</span>
+              <span className={classes.step}>Шаг 2</span>
+            </>}
+            {language === 2 && <>
+              <span className={classes.title}>Sign up</span>
+              <span className={classes.step}>Step 2</span>
+            </>}
+            {language === 3 && <>
+              <span className={classes.title}>Катто</span>
+              <span className={classes.step}>2 кадам</span>
+            </>}
+            
           </div>
         </div>
         <form className={classes.blockForm} onSubmit={handleSubmit(onSubmit)}>
           <div className={classes.blockInput}>
-            <label>Имя*</label>
+            {language === 1 && <> <label>Имя*</label>
             <input
               name="name"
               className={classes.inputs}
               placeholder="Ваше имя"
-              type="text"
               ref={register({
                 validate: (name) => name && name.length > 2,
               })}
             />
             {errors.name && (
               <span className={classes.error}>Заполните поле</span>
-            )}
+            )}</>}
+            {language === 2 && <> <label>Name*</label>
+            <input
+              name="name"
+              className={classes.inputs}
+              placeholder="Name"
+              ref={register({
+                validate: (name) => name && name.length > 2,
+              })}
+            />
+            {errors.name && (
+              <span className={classes.error}>Fill input</span>
+            )}</>}
+            {language === 3 && <> <label>Имя*</label>
+            <input name="name" className={classes.inputs} placeholder="Сиздин атыңыз"
+              ref={register({
+                validate: (name) => name && name.length > 2,
+              })}
+            />
+            {errors.name && (
+              <span className={classes.error}>Заполните поле</span>
+            )}</>}
           </div>
           <div className={classes.blockInput}>
             <label>Фамилия*</label>
@@ -81,7 +107,6 @@ const RegistClient = () => {
               name="surname"
               className={classes.inputs}
               placeholder="Ваша фамилия"
-              type="text"
               ref={register({
                 validate: (surname) => surname && surname.length > 2,
               })}
@@ -95,8 +120,7 @@ const RegistClient = () => {
             <input
               name="email"
               className={classes.inputs}
-              placeholder="Ваш email"
-              type="text"
+              placeholder="email"
               ref={register({
                 required: "Это поле обязательное",
                 pattern: {

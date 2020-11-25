@@ -18,6 +18,7 @@ const Header = () => {
     localStorage.removeItem('user');
   }
   const change = (elem) =>{
+    // localStorage.setItem('lang', elem)
     dispatch(changeLang(elem))
   }
   const language = useSelector(state => state.langReducer.lang)
@@ -73,32 +74,31 @@ const Header = () => {
           />
         </svg>
       </Link>
-      {console.log(language)}
       <div className={st.navbar}>
         <Link to="/news">
-          {language == 1 && <span>Новости</span>}
-          {language == 2 && <span>News</span>}
-          {language == 3 && <span>Жаңылыктар</span>}
+          {language === 1 && <span>Новости</span>}
+          {language === 2 && <span>News</span>}
+          {language === 3 && <span>Жаңылыктар</span>}
         </Link>
         <Link to="/about-us">
-          {language == 1 && <span>О нас</span>}
-          {language == 2 && <span>About</span>}
-          {language == 3 && <span>Биз</span>}
+          {language === 1 && <span>О нас</span>}
+          {language === 2 && <span>About</span>}
+          {language === 3 && <span>Биз жөнүндө</span>}
         </Link>
         <Link to="/analitic">
-          {language == 1 && <span>Блог</span>}
-          {language == 2 && <span>Blog</span>}
-          {language == 3 && <span>Блог</span>}
+          {language === 1 && <span>Блог</span>}
+          {language === 2 && <span>Blog</span>}
+          {language === 3 && <span>Блог</span>}
         </Link>
         <Link to="/market-research">
-          {language == 1 && <span>Маркет</span>}
-          {language == 2 && <span>Market</span>}
-          {language == 3 && <span>Изилдөөлөр</span>}
+          {language === 1 && <span>Маркет</span>}
+          {language === 2 && <span>Market</span>}
+          {language === 3 && <span>Изилдөөлөр</span>}
         </Link>
         <Link to="/be-partner">
-          {language == 1 && <span>Партнёрство</span>}
-          {language == 2 && <span>Partnership</span>}
-          {language == 3 && <span>Партнордук</span>}
+          {language === 1 && <span>Партнёрство</span>}
+          {language === 2 && <span>Partnership</span>}
+          {language === 3 && <span>Өнөктөштүк</span>}
         </Link>
       </div>
       <div className={st.local_basket}>
@@ -147,22 +147,22 @@ const Header = () => {
         {userInfo == null ? (
           <>
           <Link to="/auth">
-            {language == 1 && <button className={st.Lk}>Вход</button>}
-            {language == 2 && <button className={st.Lk}>Login</button>}
+            {language === 1 && <button className={st.Lk}>Вход</button>}
+            {language === 2 && <button className={st.Lk}>Login</button>}
             {language == 3 && <button className={st.Lk}>Кирүү</button>}
           </Link>
           <Link to="/registration">
-          {language == 1 && <button className={st.regisrationBtn}>Регистрация</button>}
-          {language == 2 && <button className={st.regisrationBtn}>Sign up</button>}
-          {language == 3 && <button className={st.regisrationBtn}>Каттоо</button>}
+          {language === 1 && <button className={st.regisrationBtn}>Регистрация</button>}
+          {language === 2 && <button className={st.regisrationBtn}>Sign up</button>}
+          {language === 3 && <button className={st.regisrationBtn}>Каттоо</button>}
         </Link>
         </>
         ) : (
         <div>{type == 'client' ? <>
           <Link to="/client-page" className={st.Lk}>
               {language === 1 && <span>Личный кабинет</span>}
-              {language === 2 && <span>clint page</span>}
-              {language === 3 && <span>Личный кабинет</span>}
+              {language === 2 && <span>Account</span>}
+              {language === 3 && <span>Жеке бөлмө</span>}
             </Link>
             {language === 1 && <span onClick={logout} className={st.logout}>Выйти</span>}
             {language === 2 && <span onClick={logout} className={st.logout}>Logout</span>}
@@ -170,8 +170,8 @@ const Header = () => {
         </> : <>
         <Link to="/organization-page" className={st.Lk}>
               {language === 1 && <span>Личный кабинет</span>}
-              {language === 2 && <span>clint page</span>}
-              {language === 3 && <span>Личный кабинет</span>}
+              {language === 2 && <span>Account</span>}
+              {language === 3 && <span>Жеке бөлмө</span>}
             </Link>
               {language === 1 && <span onClick={logout} className={st.logout}>Выйти</span>}
               {language === 2 && <span onClick={logout} className={st.logout}>Logout</span>}

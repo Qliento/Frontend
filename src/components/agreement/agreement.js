@@ -5,22 +5,18 @@ import {AgreementData} from '../../redux/actions/actions'
 
 
 const Agreement = () =>{
-    const dispatch = useDispatch();
 
+    const dispatch = useDispatch();
     const data = useSelector((state) => state.Agreement.data.data);
-    console.log(data);
-    useEffect(() => {
-        dispatch(AgreementData());
-      }, []);
+    const language = useSelector(state => state.langReducer.lang);
+    useEffect(() => {dispatch(AgreementData())}, []);
 
     return(
         <div className={st.agreement}>
-            <h2>Пользовательское соглашение</h2>
-            {
-                data && data.map(elem =>(
-                    <p>{elem.text}</p>
-                ))
-            }
+            {language === 1 && <h2>Пользовательское соглашение</h2>}
+            {language === 2 && <h2>Terms of use</h2>}
+            {language === 3 && <h2>Пайдалануу шарттары</h2>}
+            {data && data.map(elem =>(<p>{elem.text}</p>))}
         </div>
     )
 }

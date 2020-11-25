@@ -136,6 +136,7 @@ export function authAfter() {
 }
 
 export function changeLang(data) {
+  // let lang = localStorage.getItem('lang');
   return {
     type: 'CHANGE_LANG', payload: data
   };

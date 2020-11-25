@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./aboutUs.module.css";
-import mainImg from "./img/mainImag.png";
-import leftImg from "./img/leftImg.png";
-import rightImg from "./img/Rectangle 24.png";
+// import mainImg from "./img/mainImag.png";
+// import leftImg from "./img/leftImg.png";
+// import rightImg from "./img/Rectangle 24.png";
 
 const AboutUs = ({ data }) => {
   return (

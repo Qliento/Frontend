@@ -2,8 +2,10 @@ import React from "react"
 import classes from "./header.module.css"
 import noPhoto from "./img/noPhoto.jpg"
 import logo from "./img/logo.png"
+import {useSelector} from 'react-redux';
 
 const Header=({onModal, data})=>{
+    const language = useSelector(state => state.langReducer.lang)
 
     return(
         <div className={classes.blockWrapp}>
@@ -21,7 +23,9 @@ const Header=({onModal, data})=>{
                         <span></span>
                     </div>
                     <div className={classes.rightBlock}>
-                        <span className={classes.redact} onClick={() => onModal()}>Редактировать</span>
+                        {language === 1 &&<span className={classes.redact} onClick={() => onModal()}>Редактировать</span>}
+                        {language === 2 &&<span className={classes.redact} onClick={() => onModal()}>Edit</span>}
+                        {language === 3 &&<span className={classes.redact} onClick={() => onModal()}>Түзөтүү</span>}
                     </div>
                 </div>
             </div>

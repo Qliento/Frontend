@@ -1,14 +1,16 @@
 import React, { useState ,useEffect} from "react";
 import st from "./newsCard.module.css";
+import {useSelector} from 'react-redux';
 
-import f from "./img/f.png";
-import in1 from "./img/in.png";
-import twiter from "./img/twiter.png";
-import vk from "./img/vk.png";
-import bg from "./img/bg.png";
-import { Link } from "react-router-dom";
+// import f from "./img/f.png";
+// import in1 from "./img/in.png";
+// import twiter from "./img/twiter.png";
+// import vk from "./img/vk.png";
+// import bg from "./img/bg.png";
+// import { Link } from "react-router-dom";
 
 const NewsCard = ({ key,data }) => {
+  const language = useSelector(state => state.langReducer.lang); 
   const [cardId, setCardId] = useState("");
   const [heightBlock,setHeightBlock]=useState('495px');
   const text =" Товарищи! консультация с широким активом влечет за собой процесс внедрения и модернизации дальнейших направлений развития. Задача организации, в особенности же новая модель организационной деятельности влечет за собой процесс внедрения и модернизации соответствующий условий активизации. Товарищи! реализация намеченных плановых заданий позволяет оценить значение систем массового участия.Равным образом постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий Товарищи! консультация с широким активом влечет за собой процесс внедрения и модернизации дальнейших направлений развития. Задача организации, в особенности же новая модель организационной деятельности влечет за собой процесс внедрения и модернизации соответствующий условий активизации. Товарищи! реализация намеченных плановых заданий позволяет оценить значение систем массового участия.Равным образом постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий Товарищи! консультация с широким активом влечет за собой процесс внедрения и модернизации дальнейших направлений развития. Задача организации, в особенности же новая модель организационной деятельности влечет за собой процесс внедрения и модернизации соответствующий условий активизации. Товарищи! реализация намеченных плановых заданий позволяет оценить значение систем массового участия.Равным образом постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий Товарищи! консультация с широким активом влечет за собой процесс внедрения и модернизации дальнейших направлений развития. Задача организации, в особенности же новая модель организационной деятельности влечет за собой процесс внедрения и модернизации соответствующий условий активизации. Товарищи! реализация намеченных плановых заданий позволяет оценить значение систем массового участия.Равным образом постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий"
@@ -31,7 +33,9 @@ const str=""
       <div className={cardId !==""? st.blockImg1:st.blockImg}>
         <img alt="img" src={data.image} className={st.img} />
         <div className={st.buttomBlock}>
-          <span className={st.buttomBlockTitle}>Поделится в соц сетях</span>
+          {language === 1 && <span className={st.buttomBlockTitle}>Поделиться в соц сетях</span>}
+          {language === 2 && <span className={st.buttomBlockTitle}>Share in social networks</span>}
+          {language === 3 && <span className={st.buttomBlockTitle}>Социалдык тармактарда бөлүшүү</span>}
           <div className={st.icons}>
             <div id="ya"></div>
           </div>
@@ -46,13 +50,15 @@ const str=""
          {data.description}
         </span>
         {cardId == key ? (
-          <button className={st.btn} onClick={() => showHidePara("")}>
-            Закрыть
-          </button>
-        ) : (
-          <button className={st.btn} onClick={() => showHidePara(key)}>
-            Развернуть
-          </button>
+          <>
+          {language === 1 && <button className={st.btn} onClick={() => showHidePara("")}>Закрыть</button>}
+          {language === 2 && <button className={st.btn} onClick={() => showHidePara("")}>Close</button>}
+          {language === 3 && <button className={st.btn} onClick={() => showHidePara("")}>Жабуу</button>}</>
+         ) : (<>
+          {language === 1 && <button className={st.btn} onClick={() => showHidePara(key)}>Развернуть</button>}
+          {language === 2 && <button className={st.btn} onClick={() => showHidePara(key)}>Expand</button>}
+          {language === 3 && <button className={st.btn} onClick={() => showHidePara(key)}>Кеңейтүү</button>}
+          </>
         )}
       </div>
     </div>

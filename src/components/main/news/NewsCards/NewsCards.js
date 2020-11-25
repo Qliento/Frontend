@@ -1,14 +1,13 @@
 import React from "react";
 import classes from "./NewsCards.module.css";
-import card1 from "./img/card1.png";
-import card2 from "./img/card2.png";
-import card3 from "./img/card3.png";
+// import card1 from "./img/card1.png";
+// import card2 from "./img/card2.png";
+// import card3 from "./img/card3.png";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const NewsCards = () => {
   const arrNews = useSelector((state) => state.ListNews.arrayNews);
-  console.log(arrNews.length);
   let arr = [];
   if (arrNews) {
     if (arrNews.length >= 3) {
@@ -17,7 +16,6 @@ const NewsCards = () => {
       arr = [...arrNews];
     }
   }
-  console.log(arr);
   return (
     <div className={classes.cards}>
       {arr &&

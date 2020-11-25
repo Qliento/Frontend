@@ -7,11 +7,11 @@ import { deleteBasket } from "../../../redux/actions/deleteBasket/deleteBasket";
 
 const BasketCard = ({ id, data }) => {
   const dispatch=useDispatch();
+  const language = useSelector(state => state.langReducer.lang)
   const deleteBtn = (e) => {
-    console.log(e.target.id)
     dispatch(deleteBasket(e.target.id));
   };
-  console.log(data);
+ 
   return (
     <div className={classes.marketCard}>
       <Link to={`/market-research-detail/${data.ordered_item.id}`}  className={classes.link}>
@@ -66,9 +66,9 @@ const BasketCard = ({ id, data }) => {
             {data && data.ordered_item.new_price}
           </span>
         </div>
-        <button className={classes.demo} id={data.id} onClick={(e) => deleteBtn(e)}>
-          Удалить
-        </button>
+        {language === 1 && <button className={classes.demo} id={data.id} onClick={(e) => deleteBtn(e)}>Удалить</button>}
+        {language === 2 && <button className={classes.demo} id={data.id} onClick={(e) => deleteBtn(e)}>Delete</button>}
+        {language === 3 && <button className={classes.demo} id={data.id} onClick={(e) => deleteBtn(e)}>Очуруу</button>}
       </div>
     </div>
   );
