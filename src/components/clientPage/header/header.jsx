@@ -5,12 +5,9 @@ import logo from "./img/logo.png"
 import {useSelector} from 'react-redux';
 
 const Header=({onModal, data})=>{
-<<<<<<< HEAD
     
-=======
     const language = useSelector(state => state.langReducer.lang)
 
->>>>>>> 52099b65836e66b0fd9e7ec0a661f4353dd593d6
     return(
         <div className={classes.blockWrapp}>
             <div className={classes.topItem}>
