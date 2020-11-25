@@ -7,14 +7,12 @@ import { mainData } from "../../redux/actions/main/getMain";
 const Footer = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.mainGet.mainData);
+  const language = useSelector(state => state.langReducer.lang)
   useEffect(() => {
     dispatch(mainData());
   }, []);
-
-  console.log(data);
   let arrContacts = [];
   if (data.сontacts) {
-      console.log(data.сontacts.contacts);
       arrContacts = [...data.сontacts.contacts];
     
   }
@@ -70,24 +68,37 @@ const Footer = () => {
         />
       </svg>
       <div className={st.navbar}>
-        <span className={st.footer_title}>Разделы</span>
+         {language === 1 && <span className={st.footer_title}>Разделы</span>}
+         {language === 2 && <span className={st.footer_title}>sections</span>}
+         {language === 3 && <span className={st.footer_title}>Бөлүмдөр</span>}
         <Link to="/about-us">
-          <span>Новости</span>
+          {language === 1 && <span>Новости</span>}
+          {language === 2 && <span>News</span>}
+          {language === 3 && <span>Жаңылыктар</span>}
         </Link>
         <Link to="/analitic">
-          <span>Блог</span>
+          {language === 1 || 2 && <span>Блог</span>}
+          {language === 3 && <span>Blog</span>}
         </Link>
         <Link to="/news">
-          <span>О нас</span>
+          {language === 1 && <span>О нас</span>}
+          {language === 2 && <span>About</span>}
+          {language === 3 && <span>Биз жөнүндө</span>}
         </Link>
         <Link to="/order-research">
-          <span>Заказать исследования</span>
+          {language === 1 && <span>Заказать исследования</span>}
+          {language === 2 && <span>Order research</span>}
+          {language === 3 && <span>Изилдөөгө заказ берүү</span>}
         </Link>
         <Link to="/market-research">
-          <span>Маркет исследований</span>
+          {language === 1 && <span>Маркет исследований</span>}
+          {language === 2 && <span>Research market</span>}
+          {language === 3 && <span>Изилдөөлөр</span>}
         </Link>
         <Link to="/">
-          <span>Продать исследования</span>
+          {language === 1 && <span>Продать исследования</span>}
+          {language === 2 && <span>Продать исследования</span>}
+          {language === 3 && <span>Продать исследования</span>}
         </Link>
       </div>
       <div className={st.contacts}>

@@ -4,7 +4,6 @@ import phone from "./img/phone.png";
 import google from "./img/google-play-badge 1.png";
 
 const GooglePlay = ({ data }) => {
-  console.log(data);
   let image;
   if (data) {
     image = data.image;

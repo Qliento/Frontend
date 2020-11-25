@@ -11,10 +11,8 @@ const AnaliticCard = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const data = useSelector((state) => state.blogCardData.data.data);
-    console.log(data);
-    useEffect(() => {
-        dispatch(blogCardData(id));
-    }, []);
+    const language = useSelector(state => state.langReducer.lang);
+    useEffect(() => {dispatch(blogCardData(id))}, []);
     const month = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентабрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
     
     useEffect(() => {
@@ -28,9 +26,12 @@ const AnaliticCard = () => {
     return(
         <div className={st.container}>
             <span className={st.analiticCard_way}>
-                <Link to="/">Главная</Link>
-                <span> / </span>
-                <Link to="/analitic">Блог</Link>
+                {language === 1 && <><Link to="/">Главная</Link><span> / </span>
+                <Link to="/analitic">Блог</Link></>}
+                {language === 2 && <><Link to="/">Home</Link><span> / </span>
+                <Link to="/analitic">Blog</Link></>}
+                {language === 3 && <><Link to="/">Башкы бет</Link><span> / </span>
+                <Link to="/analitic">Блог</Link></>}
                 <span> / </span>
                 {data && <Link to={`/analiticCard/${data.id}`}>{data.header}</Link>}
             </span>
@@ -38,7 +39,9 @@ const AnaliticCard = () => {
                 <div className={st.card_img}>
                     <img src={data && data.images[0].url} alt="img" />
                     <div className={st.shareIt}>
-                        <span>Поделиться в соц сетях</span>
+                        {language === 1 && <span>Поделиться в соц сетях</span>}
+                        {language === 2 && <span>Share in social networks</span>}
+                        {language === 3 && <span>Социалдык тармактарда бөлүшүү</span>}
                         <div className={st.shareIt_icons}>
                         <div id="ya"></div>
                         </div>

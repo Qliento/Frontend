@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./analytics.module.css";
-import image from "./img/img.png";
+// import image from "./img/img.png";
 
 const Analytics = ({ data }) => {
   return (

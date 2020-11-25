@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Main from "./components/main/main";
@@ -20,12 +20,11 @@ import NewsCard from "./components/newsCard/newsCard";
 import Basket from "./components/basket/basket";
 import RecoveryPassword from "./components/recoveryPassword/recoveryPassword";
 import Agreement from "./components/agreement/agreement";
-import { useDispatch, useSelector } from "react-redux";
-import { mainData } from "./redux/actions/main/getMain";
 import OrgPage from "./components/organizationPage/organizationPage";
 import ClientPage from './components/clientPage/clientPage';
 
 function App() {
+
   return (
     <div className="App">
       <Header />

@@ -2,18 +2,13 @@ import React from "react";
 import classes from "./marketCard.module.css";
 import { Link } from "react-router-dom";
 import photo from './Rectangle 47.jpg';
-// import {useDispatch} from "react-redux";
-// import { researchPushBasket } from "../../../redux/actions/pushResearch/pushResearch";
+import {useSelector} from 'react-redux';
 
 const MarketCard = ({ data }) => {
   data = {
     id: "cdcscsd",
   }
-  // console.log("String", data);
-  // const dispatch=useDispatch();
-  // const orders=(e)=>{
-  //   dispatch(researchPushBasket(e))
-  // }
+  const language = useSelector(state => state.langReducer.lang)
 
   return (
     <>
@@ -35,10 +30,14 @@ const MarketCard = ({ data }) => {
                 <span>{data.name}</span>
               </div>
               <div className={classes.description}>
-                <span>{data.pages} стр</span>
+                {language === 1 && <span>{data.pages} стр</span>}
+                {language === 2 && <span>{data.pages} р</span>}
+                {language === 3 && <span>{data.pages} бет</span>}
                 <span>ID: {data.id}</span>
                 <div className={classes.country}>
-                  <span>Страны: </span>
+                  {language === 1 && <span>Страны: </span>}
+                  {language === 1 && <span>Countries: </span>}
+                  {language === 1 && <span>Мамлекеттер: </span>}
                   {data.country &&
                     data.country.map((item) => {
                       return <span key={item.id}>{item.name}</span>;
@@ -59,16 +58,13 @@ const MarketCard = ({ data }) => {
             <span className={classes.newPrace}>{data.new_price}17 000 сом</span>
           </div>
           <div className={classes.blockBtn}>
-            <button
-              className={classes.toBasket}
-              id={data.id}
-              // onClick={(e)=>orders(e.target.id)}
-              type="button"
-            >
-              Скачать
-            </button>
+            {language === 1 && <button className={classes.toBasket} id={data.id} >Скачать</button>}
+            {language === 2 && <button className={classes.toBasket} id={data.id} >Download</button>}
+            {language === 3 && <button className={classes.toBasket} id={data.id} >Жүктөө</button>}
             <div className={classes.details}>
-              <span>Время покупки</span>
+              {language === 1 && <span>Время покупки</span>}
+              {language === 2 && <span>Purchase time</span>}
+              {language === 3 && <span>Сатып алуу убактысы</span>}
               <span>21.11.2020</span>
               <span>12:50</span>
             </div>

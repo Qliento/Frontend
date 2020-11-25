@@ -152,6 +152,14 @@ export function authAfter() {
   };
 }
 
+export function changeLang(data) {
+  // let lang = localStorage.getItem('lang');
+  return {
+    type: 'CHANGE_LANG', payload: data
+  };
+}
+
+
 export function updateClientAfter() {
   return {
     type: 'POSTED__AFTER_UPDATE_CLIENT',

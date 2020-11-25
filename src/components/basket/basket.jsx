@@ -8,14 +8,16 @@ import { getBasketActions } from "../../redux/actions/getBasket/getBasket";
 const Basket = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.ListBasket.listResearch);
+  const language = useSelector(state => state.langReducer.lang);
   useEffect(() => {
     dispatch(getBasketActions());
   }, []);
  
   return (
     <div className={classes.basketPage}>
-      <span className={classes.title}>Корзина</span>
-
+      {language === 1 && <span className={classes.title}>Корзина</span>}
+      {language === 2 && <span className={classes.title}>Basket</span>}
+      {language === 3 && <span className={classes.title}>Корзина</span>}
       <div className={classes.cards}>
         { data.length!==0 ?
           data.map((item) => {
@@ -23,14 +25,18 @@ const Basket = () => {
           })
         :
         <div className={classes.noResearch}>
-          <span className={classes.text}>Исследований нет</span>
+          {language === 1 && <span className={classes.text}>Исследований нет</span>}
+          {language === 2 && <span className={classes.text}>No research</span>}
+          {language === 3 && <span className={classes.text}>Изилдөөлөр жок</span>}
         </div>
         }
 
         
       </div>
       <div className={classes.blockTitle2}>
-        <span className={classes.title2}>Ваш заказ</span>
+        {language === 1 && <span className={classes.title2}>Ваш заказ</span>}
+        {language === 2 && <span className={classes.title2}>Your order</span>}
+        {language === 3 && <span className={classes.title2}>Ваш заказ</span>}
       </div>
       <Order />
     </div>

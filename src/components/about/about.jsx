@@ -13,13 +13,21 @@ const About = () => {
   useEffect(() => {
     dispatch(aboutData());
   }, []);
+  const language = useSelector(state => state.langReducer.lang);
+
   return (
     <div className={classes.aboutPage}>
       <div className={classes.blockCrumbs}>
-        <Link to="/">Главная / </Link>
-        <Link to="/about-us">О нас</Link>
+        {language === 1 && <><Link to="/">Главная / </Link>
+        <Link to="/about-us">О нас</Link></>}
+        {language === 2 && <><Link to="/">Home / </Link>
+        <Link to="/about-us">About</Link></>}
+        {language === 3 && <><Link to="/">Башкы бет / </Link>
+        <Link to="/about-us">Биз</Link></>}
       </div>
-      <span className={classes.title}>О нас</span>
+      {language === 1 && <span className={classes.title}>О нас</span>}
+      {language === 2 && <span className={classes.title}>About</span>}
+      {language === 3 && <span className={classes.title}>Биз</span>}
 
       {data &&
         data.map((item, index) => {

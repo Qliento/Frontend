@@ -21,7 +21,11 @@ import {orderResearchReducer} from './orderResearch/orderResearch';
 import {bePartnerReducer} from './bePartner/bePartner';
 import {changePassword} from './clientPage/changePassword';
 import {updateClient} from './clientPage/updateClient';
+<<<<<<< HEAD
 import {ResearchList} from "./organizationPage/researchList"
+=======
+import {langReducer} from './lang/lang';
+>>>>>>> 52099b65836e66b0fd9e7ec0a661f4353dd593d6
 
 export const rootReducer = combineReducers({
     AboutUs,
@@ -46,5 +50,9 @@ export const rootReducer = combineReducers({
     bePartnerReducer,
     changePassword,
     updateClient,
+<<<<<<< HEAD
     ResearchList
+=======
+    langReducer
+>>>>>>> 52099b65836e66b0fd9e7ec0a661f4353dd593d6
 });

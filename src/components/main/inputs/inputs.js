@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import Category from "./category/category";
 import classes from "./inputs.module.css";
 import { Redirect } from "react-router";
+import {useSelector} from 'react-redux';
+
 
 const Inputs = ({ arrCategory }) => {
   const [dataSearch, setDataSearch] = useState({
     category: "",
     text: "",
   });
+  const language = useSelector(state => state.langReducer.lang)
   const [market, setMarket] = useState();
   const upadateData = (e) => {
     setDataSearch({
@@ -19,22 +22,17 @@ const Inputs = ({ arrCategory }) => {
 
   const btnSearch = () => {
     if (dataSearch.category) {
-      console.log("11")
       if(dataSearch.text===""){
-        console.log("22")
         setMarket(1)
       }
  
     }
     if (dataSearch.text) {
-      console.log("1")
       if(dataSearch.category===""){
-        console.log("2")
         setMarket(2)
       }
     }
     if(dataSearch.category!=="" && dataSearch.text !==""){
-      console.log("333")
       setMarket(3)
     }
  
@@ -65,18 +63,25 @@ const Inputs = ({ arrCategory }) => {
             installCategory={upadateData}
           />
         </div>
-
-        <input
-          className={classes.search}
-          placeholder="Поиск"
-          value={dataSearch.text}
+        {language === 1 && <><input className={classes.search} placeholder="Поиск" value={dataSearch.text}
           onChange={(e) =>
             setDataSearch({ ...dataSearch, text: e.target.value })
           }
         />
-        <button className={classes.btn} onClick={() => btnSearch()}>
-          Найти
-        </button>
+        <button className={classes.btn} onClick={() => btnSearch()}>Найти</button></>}
+        {language === 2 && <><input className={classes.search} placeholder="Search" value={dataSearch.text}
+          onChange={(e) =>
+            setDataSearch({ ...dataSearch, text: e.target.value })
+          }
+        />
+        <button className={classes.btn} onClick={() => btnSearch()}>Find</button></>}
+        {language === 3 && <><input className={classes.search} placeholder="Издөө" value={dataSearch.text}
+          onChange={(e) =>
+            setDataSearch({ ...dataSearch, text: e.target.value })
+          }
+        />
+        <button className={classes.btn} onClick={() => btnSearch()}>Табуу</button></>}
+        
       </div>
     </>
   );

@@ -11,6 +11,7 @@ const OrderResearch = () =>{
     const { handleSubmit, register, errors } = useForm();
     const dispatch = useDispatch();
     const data = useSelector((state) => state.orderResearchData.data.data);
+    const language = useSelector(state => state.langReducer.lang)
     console.log(data);
     useEffect(() => {
         dispatch(orderResearchData());
@@ -25,9 +26,22 @@ const OrderResearch = () =>{
             <div className={st.order_block_anchor}>
                 <img src={require('./target.png')} alt="img" />
                 <div className={st.order_anchor_text}>
-                    <h3>Заказать исследование</h3>
-                    <p>Не нашли нужное исследование? Закажите ваше персональное исследование у нас</p>
-                    <a href="#form">Заказать исследование</a>
+                    {language === 1 && <>
+                        <h3>Заказать исследование</h3>
+                        <p>Не нашли нужное исследование? Закажите ваше персональное исследование у нас</p>
+                        <a href="#form">Заказать исследование</a>
+                    </>}
+                    {language === 2 && <>
+                        <h3>Order research</h3>
+                        <p>Didn't find the research you were looking for? Order your personal research</p>
+                        <a href="#form">Order research</a>
+                    </>}
+                    {language === 3 && <>
+                        <h3>Изилдөөгө заказ бериңиз</h3>
+                        <p>Издеп жаткан изилдөөнү тапкан жоксузбу? Жеке изилдөөнү бизден заказ бериңиз</p>
+                        <a href="#form">Изилдөөгө заказ бериңиз</a>
+                    </>}
+                    
                 </div>
             </div>
             <div className={st.order_instruct}>
@@ -42,10 +56,14 @@ const OrderResearch = () =>{
                 ))}
             </div>
             <div className={st.order_form} id="form">
-                <h3>Заявка на исследование</h3>
-                <p>Оставьте свои контактные данные и мы пришлем вам на почту анкету, заполнив которую, вы сможете заказать исследование</p>
+                {language === 1 && <h3>Заявка на исследование</h3>}
+                {language === 2 && <h3>Research application</h3>}
+                {language === 3 && <h3>Изилдөө заявкасы</h3>}
+                {language === 1 && <p>Оставьте свои контактные данные и мы пришлем вам на почту анкету, заполнив которую, вы сможете заказать исследование</p>}
+                {language === 2 && <p>Leave your contact details and we will send you a questionnaire by mail that you need to fill out to order a research</p>}
+                {language === 3 && <p>Байланыш маалыматтарыңызды калтырыңыз, биз сизге почта аркылуу анкета жөнөткөндөн кийин изилдөөгө заказ кыла аласынар</p>}
                 <form>
-                    <div className={st.form_input_block}>
+                    {language === 1 && <div className={st.form_input_block}>
                         <label for="name">Имя*</label>
                         <input id="name" placeholder="Ваше имя" name="name" ref={register({
                         validate: (name) => name && name.length > 4,
@@ -84,17 +102,118 @@ const OrderResearch = () =>{
                         {errors.phone_number && (
                             <span className={st.errorString}>Заполните поле корректно</span>
                         )}
-                    </div>
+                    </div>}
+                    {language === 2 && <div className={st.form_input_block}>
+                        <label for="name">Name*</label>
+                        <input id="name" placeholder="Your name" name="name" ref={register({
+                        validate: (name) => name && name.length > 3,
+                        })}></input>
+                        {errors.name && (
+                            <span className={st.errorString}>Не корректно ввели данные</span>
+                        )}
+                        <label for="surname">Surname*</label>
+                        <input id="surname" placeholder="Your surname" name="surname" ref={register({
+                        validate: (surname) => surname && surname.length > 3,
+                        })}></input>
+                        {errors.surname && (
+                            <span className={st.errorString}>Не корректно ввели данные</span>
+                        )}
+                        <label for="companyName">Name of the organization</label>
+                        <input id="companyName" placeholder="Name of the organization" name="logo" ref={register({
+                        validate: (logo) => logo && logo.length > 2,
+                        })}></input>
+                         {errors.logo && (
+                            <span className={st.errorString}>Name less than 2 characters</span>
+                        )}
+                        <label for="mail">Email*</label>
+                        <input id="mail" placeholder="email" name="email" ref={register({
+                        pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            message: "Invalid email",
+                          }
+                        })}></input>
+                        {errors.email && (
+                            <span className={st.errorString}>{errors.email.message}</span>
+                        )}
+                        <label for="phone_number">Phone_number*</label>
+                        <input id="phone_number" placeholder="+996___-__-__-__" name="phone_number" ref={register({
+                        validate: (phone_number) => phone_number && phone_number > 6
+                        })}></input>
+                        {errors.phone_number && (
+                            <span className={st.errorString}>Заполните поле корректно</span>
+                        )}
+                    </div>}
+                    {language === 1 && <div className={st.form_input_block}>
+                        <label for="name">Сиздин атыңыз*</label>
+                        <input id="name" placeholder="Сиздин атыңыз" name="name" ref={register({
+                        validate: (name) => name && name.length > 4,
+                        })}></input>
+                        {errors.name && (
+                            <span className={st.errorString}>Не корректно ввели данные</span>
+                        )}
+                        <label for="surname">Сиздин фамилияңыз*</label>
+                        <input id="surname" placeholder="Сиздин фамилияңыз" name="surname" ref={register({
+                        validate: (surname) => surname && surname.length > 4,
+                        })}></input>
+                        {errors.surname && (
+                            <span className={st.errorString}>Не корректно ввели данные</span>
+                        )}
+                        <label for="companyName">Уюмдун аталышы</label>
+                        <input id="companyName" placeholder="Уюмдун аталышы" name="logo" ref={register({
+                        validate: (logo) => logo && logo.length > 2,
+                        })}></input>
+                         {errors.logo && (
+                            <span className={st.errorString}>Заполните это поле (Более 2 символов)</span>
+                        )}
+                        <label for="mail">Email*</label>
+                        <input id="mail" placeholder="email" name="email" ref={register({
+                        pattern: {
+                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                            message: "Неверный адрес электронной почты",
+                          }
+                        })}></input>
+                        {errors.email && (
+                            <span className={st.errorString}>{errors.email.message}</span>
+                        )}
+                        <label for="phone_number">Телефон*</label>
+                        <input id="phone_number" placeholder="+996___-__-__-__" name="phone_number" ref={register({
+                        validate: (phone_number) => phone_number && phone_number > 6
+                        })}></input>
+                        {errors.phone_number && (
+                            <span className={st.errorString}>Заполните поле корректно</span>
+                        )}
+                    </div>}
                     <div className={st.form_textarea_block}>
-                        <label for="description">Дополнительная информация*</label>
+                        {language === 1 && <>
+                            <label for="description">Дополнительная информация*</label>
                         <textarea id="description" placeholder="Краткое описание продукта\услуги, рынка, отрасли, географии охвата" name="description" ref={register({
                         validate: (description) => description && description.length > 10
                         })}></textarea>
                         {errors.description && (
                             <span className={st.errorString}>Заполните поле (Более 10 символов)</span>
-                        )}
+                        )}</>}
+                        {language === 2 && <>
+                            <label for="description">Additional Information*</label>
+                        <textarea id="description" placeholder="А short description of the product / service, market, industry, geography of coverage" name="description" ref={register({
+                        validate: (description) => description && description.length > 10
+                        })}></textarea>
+                        {errors.description && (
+                            <span className={st.errorString}>Заполните поле (Более 10 символов)</span>
+                        )}</>}
+                        {language === 3 && <>
+                            <label for="description">Кошумча маалымат*</label>
+                        <textarea id="description" placeholder="Онүмдүн / кызматтын, базардын, тармактын кыскача сүрөттөлүшү, камтуу географиясы" ref={register({
+                        validate: (description) => description && description.length > 10
+                        })}></textarea>
+                        {errors.description && (
+                            <span className={st.errorString}>Заполните поле (Более 10 символов)</span>
+                        )}</>}
+                        
+                        
                     </div>
-                    <button onClick={handleSubmit(onSubmit)}>Отправить</button>
+                    {language === 1 && <button onClick={handleSubmit(onSubmit)}>Отправить</button>}
+                    {language === 2 && <button onClick={handleSubmit(onSubmit)}>Send</button>}
+                    {language === 3 && <button onClick={handleSubmit(onSubmit)}>Жөнөтүү</button>}
                 </form>
             </div>
         </div>

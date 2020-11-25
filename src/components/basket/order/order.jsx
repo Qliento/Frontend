@@ -1,10 +1,11 @@
 import React from "react"
 import classes from "./order.module.css"
-import {useDispatch,useSelector} from "react-redux"
+import {useSelector} from "react-redux"
 import {Link} from "react-router-dom"
 
 const Order=()=>{
     const data = useSelector((state) => state.ListBasket.listResearch);
+    const language = useSelector(state => state.langReducer.lang)
     let total=0;
     {
         data&&
@@ -18,7 +19,9 @@ const Order=()=>{
         <form className={classes.orderCard}>
             <div className={classes.content}>
                 <div className={classes.blockPrice}>
-                <span className={classes.titlePrice}>Итоговоя сумма</span>
+                {language === 1 && <span className={classes.titlePrice}>Итоговоя сумма</span>}
+                {language === 1 && <span className={classes.titlePrice}>Total cost</span>}
+                {language === 1 && <span className={classes.titlePrice}>Итоговоя сумма</span>}
                 <span className={classes.price}>{total} сом </span>
                 </div>
                 <div className={classes.blockChecket}>
@@ -29,13 +32,25 @@ const Order=()=>{
                 required
               />
               <div className={classes.text}>
-                <span>Подтверждаю, что ознакомлен и согласен с </span>
-                <Link to='/agreement'>Пользовательским соглашением</Link>
+                {language === 1 && <>
+                    <span>Подтверждаю, что ознакомлен и согласен с </span>
+                    <Link to='/agreement'>Пользовательским соглашением</Link>
+                </>}
+                {language === 2 && <>
+                    <span>I confirm that I have read and agree with the </span>
+                    <Link to='/agreement'>User Agreement</Link>
+                </>}
+                {language === 3 && <>
+                    <Link to='/agreement'>Колдонуучунун келишимин</Link>
+                    <span> окуп чыкканымды жана аны менен макул экенимди ырастайм</span>
+                </>}
               </div>
             </div>
              
             </div>
-            <button  className={classes.btn}>Оформить заказ</button>
+            {language === 1 && <button  className={classes.btn}>Оформить заказ</button>}
+            {language === 2 && <button  className={classes.btn}>Checkout order</button>}
+            {language === 3 && <button  className={classes.btn}>Каттоо</button>}
         </form>
     )
 }

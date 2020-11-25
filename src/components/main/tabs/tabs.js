@@ -1,12 +1,15 @@
 import React from "react";
 import classes from "./tabs.module.css";
 import TabsItem from "./tabsItem/tabsItem";
+import {useSelector} from 'react-redux';
 
 const Tabs = ({ category }) => {
-  console.log(category);
+  const language = useSelector(state => state.langReducer.lang)
   return (
     <div className={classes.blockIsledov}>
-      <span className={classes.title}>Маркет исследований</span>
+      {language === 1 && <span className={classes.title}>Маркет исследований</span>}
+      {language === 2 && <span className={classes.title}>Research market</span>}
+      {language === 3 && <span className={classes.title}>Изилдөөлөр</span>}
       <div className={classes.tabs}>
         {category &&
           category.map((item) => {

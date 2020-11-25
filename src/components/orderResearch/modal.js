@@ -21,8 +21,6 @@ const customStyles = {
   },
 };
 
-
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
 function RegistrModal() {
@@ -32,22 +30,23 @@ function RegistrModal() {
 }
 
   const isModal = useSelector((state) => state.orderResearchReducer.isModal);
-  console.log(isModal);
+  const language = useSelector(state => state.langReducer.lang)
   return (
     <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
       <div className={classes.modal}>
-        <span className={classes.title}>Поздравляю</span>
+        {language === 1 && <span className={classes.title}>Поздравляю</span>}
+        {language === 2 && <span className={classes.title}>Congratulations</span>}
+        {language === 3 && <span className={classes.title}>Куттуктайм</span>}
         <div className={classes.content}>
           <img alt="img" src={isModal == 1 ? img1 : img2}/>
           <div className={classes.blockText}>
           <span className={classes.descr}>
-              {
-                  isModal === 1 &&  "Ваша заявка на исследование успешно отправлена"
-              }
-              {
-                  isModal === 2 &&  "Произошло ошибка! Попробуйте снова"
-              }
-           
+             {isModal === 1,language == 1 && "Ваша заявка на исследование успешно отправлена"}
+              {isModal === 1,language == 2 && "You have successfully submitted data"}
+              {isModal === 1,language == 3 && "Вы успешно отправили данные"}
+              {isModal === 2,language == 1 &&  "Произошла ошибка! Попробуйте снова"}
+              {isModal === 2,language == 2 &&  "An error has occurred! Try again"}
+              {isModal === 2,language == 3 &&  "Ката кетти! Кайра аракет кылыңыз"}
           </span>
           </div>
         </div>
