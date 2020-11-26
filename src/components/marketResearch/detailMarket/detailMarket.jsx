@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { researchPushBasket } from "../../../redux/actions/pushResearch/pushResearch";
 import classes from "./detailMarket.module.css";
 import img1 from "./img/Rectangle 47.png";
@@ -7,11 +7,10 @@ import Tabs1 from "./tabs/tabs";
 
 const DetailMarket = ({ data }) => {
   const dispatch = useDispatch();
-  console.log(data);
+  const language = useSelector(state => state.langReducer.lang)
   const [isClose, setIsClose] = useState(false);
   const clickBtn = () => {
     setIsClose(!isClose);
-    console.log(isClose);
   };
   let leng = data.country && data.country.length;
   const orders = (e) => {
@@ -39,10 +38,14 @@ const DetailMarket = ({ data }) => {
           </div>
           <div className={classes.blockdDescrip}>
             <div className={classes.descrip}>
-              <span>{data && data.pages} стр</span>
+              {language === 1 && <span>{data && data.pages} стр</span>}
+              {language === 2 && <span>{data && data.pages} рages</span>}
+              {language === 3 && <span>{data && data.pages} бет</span>}
               <span>ID: {data && data.id}</span>
               <div className={classes.country}>
-                <span>Страны: &#160; </span>
+                {language === 1 && <span>Страны: &#160; </span>}
+                {language === 2 && <span>Сountries: &#160; </span>}
+                {language === 3 && <span>Мамлекеттер: &#160; </span>}
                 {data.country &&
                   data.country.map((item, index) => {
                     return (
@@ -75,22 +78,18 @@ const DetailMarket = ({ data }) => {
             </div>
           </div>
           <div className={classes.blockBtn}>
-            <button
-              className={classes.crash}
-              id={data.id}
-              onClick={(e) => orders(e.target.id)}
-              type="button"
-            >
+           {language === 1 && <button className={classes.crash} id={data.id} onClick={(e) => orders(e.target.id)}>
               В корзину
-            </button>
-            <a
-              href={data.demo && data.demo}
-              target="_blank"
-              className={classes.demo}
-              download
-            >
-              Демо версия
-            </a>
+            </button>} 
+            {language === 2 && <button className={classes.crash} id={data.id} onClick={(e) => orders(e.target.id)}>
+            Shopping cart
+            </button>} 
+            {language === 3 && <button className={classes.crash} id={data.id} onClick={(e) => orders(e.target.id)}>
+            Корзинага
+            </button>} 
+            {language === 1 && <a href={data.demo && data.demo} target="_blank" className={classes.demo}download>Демо версия</a>}
+            {language === 2 && <a href={data.demo && data.demo} target="_blank" className={classes.demo}download>Demo version</a>}
+            {language === 3 && <a href={data.demo && data.demo} target="_blank" className={classes.demo}download>Демо версия</a>}
           </div>
         </div>
       </div>

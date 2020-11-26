@@ -12,7 +12,6 @@ const OrderResearch = () =>{
     const dispatch = useDispatch();
     const data = useSelector((state) => state.orderResearchData.data.data);
     const language = useSelector(state => state.langReducer.lang)
-    console.log(data);
     useEffect(() => {
         dispatch(orderResearchData());
     }, []);
@@ -143,7 +142,7 @@ const OrderResearch = () =>{
                             <span className={st.errorString}>Заполните поле корректно</span>
                         )}
                     </div>}
-                    {language === 1 && <div className={st.form_input_block}>
+                    {language === 3 && <div className={st.form_input_block}>
                         <label for="name">Сиздин атыңыз*</label>
                         <input id="name" placeholder="Сиздин атыңыз" name="name" ref={register({
                         validate: (name) => name && name.length > 4,

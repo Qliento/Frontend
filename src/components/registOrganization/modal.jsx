@@ -1,9 +1,7 @@
 import React from "react";
-// import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import classes from "./regisrtOrganization.module.css";
 import {  useSelector } from "react-redux";
-// import { errorMesseg } from "../../redux/actions/registrationOrg/registrationOrg";
 import img1 from "./img/1.png"
 import img2 from "./img/2.png"
 import { Link } from "react-router-dom";
@@ -20,30 +18,29 @@ const customStyles = {
   },
 };
 
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
 function RegistrModal() {
-  // useEffect(() => {
-  //   dispatch(errorMesseg());
-  // }, []);
 
-  // const dispatch = useDispatch();
   const isModal = useSelector((state) => state.RegistrOrg.isModal);
-  console.log(isModal);
+  const language = useSelector(state => state.langReducer.lang)
+
   return (
     <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
       <div className={classes.modal}>
-        <span className={classes.title}>Регистрация</span>
+        {language === 1 && <span className={classes.title}>Регистрация</span>}
+        {language === 2 && <span className={classes.title}>Registration</span>}
+        {language === 3 && <span className={classes.title}>Каттоо</span>}
         <div className={classes.content}>
           <img alt="img" src={isModal ===1 ? img1 : img2}/>
           <div className={classes.blockText}>
           <span className={classes.descr}>
-              {
-                  isModal ===1 ?  "Прошла успешно. На почту отправлена ссылка для подтверждения"
-                  : "Ошибка регистрации"
-              }
-           
+              {language === 1 && isModal ===1 ?  "Прошла успешно. На почту отправлена ссылка для подтверждения"
+                  : "Ошибка регистрации"}
+              {language === 2 && isModal ===1 ?  "Прошла успешно. На почту отправлена ссылка для подтверждения"
+                  : "An error has occurred! Try again"}
+              {language === 3 && isModal ===1 ?  "Прошла успешно. На почту отправлена ссылка для подтверждения"
+                  : "Ката кетти! Кайра аракет кылыңыз"}
           </span>
           </div>
         </div>
