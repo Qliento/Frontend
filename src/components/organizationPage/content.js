@@ -16,7 +16,7 @@ const Content=()=>{
             <ResearchCards/>
             </Route>
           <Route path="/organization-page/submit-research"><AddReseach/></Route>
-          <Route path="/organization-page/detail-card"><DetailMarket/></Route>
+          <Route path="/organization-page/detail-card/:id"><DetailMarket/></Route>
         </Switch>
         
     )

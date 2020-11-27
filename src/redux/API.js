@@ -13,7 +13,7 @@ export default {
   url: () => "http://207.154.250.71",
   bePartner: (data) => http.post("/feedback/", data),
   blogData: () => http.get("/blog/"),
-  authClient: (data) => http.post('/users/login/clients/', data),
+  authClient: (data) => http.post("/users/login/clients/", data),
   clientPage: (token) =>
     http.get("/purchase/my-orders/", {
       headers: {
@@ -26,6 +26,12 @@ export default {
         Authorization: "Bearer " + token,
       },
     }),
+  organData: (token) =>
+    http.get(`/users/update/partners/`, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    }),
   blogCardData: (id) => http.get(`/blog/${id}`),
   interiorPage: (id) => http.get(`/researches/${id}`),
   searchMarketCerds: (category, subcaregory, author, country, text) =>
@@ -34,7 +40,7 @@ export default {
     ),
   orderResearch: (data) => http.post("/purchase/order-form/", data),
   getMainData: () => http.get("/main-page/"),
-  createToken: (data) => http.post("users/jwt-create/", data),
+  createToken: (data) => http.post("/users/jwt-create/", data),
   pushBasket: (id, token) =>
     http.post(
       `/purchase/add-to-cart/`,
@@ -91,8 +97,8 @@ export default {
   registrOrg: (data) =>
     http.post(`/users/registration/researchers/`, {
       logo: data.name2,
-      position:data.position&&data.position,
-      about_me:"vdsvdsvsvs",
+      position: data.position && data.position,
+      about_me: "vdsvdsvsvs",
       admin_status: {
         name: data.name,
         surname: data.lastName,
@@ -102,11 +108,48 @@ export default {
         phone_number: data.phone,
       },
     }),
-  changePassword: (data, token) => http.patch('/users/password-update/', data, {
-    headers: { "Authorization" : "Bearer " + token}
-  }),
-  updateClient: (data, token) => 
-  http.patch('/users/update/users', data, {
-    headers: { "Authorization" : "Bearer " + token}
-  })
+  changePassword: (data) => http.post("/users/password-update/", data),
+  updateClient: (data, token) =>
+    http.post("/users/update/partners/", {
+      headers: { Authorization: "Bearer " + token },
+      data,
+    }),
+  updateDataOrganization: (data, token) =>
+    http.patch(
+      "/users/update/partners/",
+      {
+        position: data.position && data.position,
+        about_me: data.about,
+        admin_status: {
+          name: data.name,
+          surname: data.surname,
+          phone_number: data.phone,
+        },
+      },
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      }
+    ),
+  changePassword: (data, token) =>
+    http.patch("/users/password-update/", data, {
+      headers: { Authorization: "Bearer " + token },
+    }),
+  updateClient: (data, token) =>
+    http.patch("/users/update/users", data, {
+      headers: { Authorization: "Bearer " + token },
+    }),
+  getResearchListOrgn: (token) =>
+    http.get(`/users/my-researches/`, {
+      headers: { Authorization: "Bearer " + token },
+    }),
+  detailResearchOrg: (token, id) =>
+    http.get(`/research-update/${id}/`, {
+      headers: { Authorization: "Bearer " + token },
+    }),
+  UbdateResearch: (price, id,token) =>
+    http.patch(`/research-update/${id}/`, price, {
+      headers: { Authorization: "Bearer " + token },
+    }),
 };

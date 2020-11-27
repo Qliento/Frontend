@@ -32,7 +32,7 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  background: linear-gradient(89.3deg, #51bbf8 0%, #1b8e3d 81.82%);
+  background: linear-gradient(89.3deg, #51BBF8 0%, #FFFFFF 81.82%);
 }
 .photo {
   position: absolute;

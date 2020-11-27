@@ -21,6 +21,7 @@ import {orderResearchReducer} from './orderResearch/orderResearch';
 import {bePartnerReducer} from './bePartner/bePartner';
 import {changePassword} from './clientPage/changePassword';
 import {updateClient} from './clientPage/updateClient';
+import {ResearchList} from "./organizationPage/researchList"
 import {langReducer} from './lang/lang';
 
 export const rootReducer = combineReducers({
@@ -46,5 +47,6 @@ export const rootReducer = combineReducers({
     bePartnerReducer,
     changePassword,
     updateClient,
+    ResearchList,
     langReducer
 });

@@ -12,13 +12,14 @@ const Basket = () => {
   useEffect(() => {
     dispatch(getBasketActions());
   }, []);
+ 
   return (
     <div className={classes.basketPage}>
       {language === 1 && <span className={classes.title}>Корзина</span>}
       {language === 2 && <span className={classes.title}>Basket</span>}
       {language === 3 && <span className={classes.title}>Корзина</span>}
       <div className={classes.cards}>
-        {data ?
+        { data.length!==0 ?
           data.map((item) => {
             return <BasketCard id={item.ordered_item.id} data={item} key={item.id}/>;
           })

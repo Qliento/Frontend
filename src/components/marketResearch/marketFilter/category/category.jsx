@@ -28,7 +28,7 @@ const Category = ({
       : ""
   );
   useEffect(() => {
-    if (name === "Все котегории") {
+    if (name === "Все категории") {
       changeCategory(values);
     }
   }, [values]);

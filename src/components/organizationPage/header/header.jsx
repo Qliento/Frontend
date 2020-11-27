@@ -6,7 +6,7 @@ import EditProfile from "../editPrifile/editProfile"
 import EditPassword from "../editPrifile/editPassword"
 
 
-const Header=()=>{
+const Header=({data,onModal})=>{
     const [edit,setEdit]=useState(false)
     const [edit2,setEdit2]=useState(false)
     return(
@@ -18,28 +18,23 @@ const Header=()=>{
             <div className={classes.headerItem}>
                 <div className={classes.bloc}>
                     <div className={classes.leftBlock}>
-                        <span className={classes.title}>Турдубеков Акназар</span>
-                        <span className={classes.desc}>Директор</span>
-                        <span className={classes.desc}>ОсОО “Бимед Фарм”</span>
+    <span className={classes.title}>{data&&data.admin_status.name}{" "}{data&&data.admin_status.surname}</span>
+    <span className={classes.desc}>{data&&data.position}</span>
+    <span className={classes.desc}>{data&&data.logo}</span>
                     </div>
                     <div className={classes.centerBlock}>
-                        <span className={classes.titleNumber}>+996 555 444 222</span>
-                        <span className={classes.desc}>aknazar_t@gmail.com</span>
+    <span className={classes.titleNumber}>{data&&data.admin_status.phone_number}</span>
+    <span className={classes.desc}>{data&&data.admin_status.email}</span>
                         <span></span>
                     </div>
                     <div className={classes.rightBlock}>
-                        <span className={classes.redact} onClick={()=>setEdit(true)}>Редактировать</span>
+                        <span className={classes.redact} onClick={()=>onModal()}>Редактировать</span>
                     </div>
                 </div>
             </div>
             <img alt="" className={classes.photo} src={photo1} />
         </div>
-        {
-            <>
-            <EditProfile onModalPassword={(e)=>setEdit2(e)} changeState={(e)=>setEdit(e)} edit={edit}/>
-            <EditPassword edit={edit2} changeState2={(e)=>setEdit2(e)}/>
-            </>
-        }
+    
         </>
     )
 }

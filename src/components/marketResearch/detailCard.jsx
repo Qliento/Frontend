@@ -12,19 +12,19 @@ const DetailCard = ({ params }) => {
   useEffect(() => {
     dispatch(detailResearchAction(params));
   }, [params]);
-  const data = useSelector((state)=>state.detailDataResearch.detailData)
+  const data = useSelector((state) => state.detailDataResearch.detailData);
   return (
     <>
-      <DetailMarket data ={ data && data}/>
-      <SimilarResearch />
-      {
-          data.similars&&
-          data.similars.map((item)=>{
-              return(
-                  <MarketCard data={item}/>
-              )
-          })
-      }
+      <DetailMarket data={data && data} />
+      {data.similars && data.similars.lenght !== 0  ? <SimilarResearch /> : <></>}
+
+      {data.similars && data.similars.lenght !== 0 ? (
+        data.similars.map((item) => {
+          return <MarketCard data={item} />;
+        })
+      ) : (
+        <></>
+      )}
     </>
   );
 };
