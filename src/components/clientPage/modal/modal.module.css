@@ -18,6 +18,10 @@
     margin-top: 5%;
 }
 
+.input_photo{
+    display: none;
+}
+
 .profile{
     display: flex;
     flex-direction: column;

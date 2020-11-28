@@ -1,13 +1,18 @@
 import React from "react";
 import Modal from "react-modal";
 import classes from "./modal.module.css";
+import {  useSelector } from "react-redux";
 import img1 from "./1.png"
 import img2 from "./2.png"
 import { Link } from "react-router-dom";
-import { afterPosted } from '../../redux/reducers/bePartner/bePartner';
-import { useDispatch, useSelector } from "react-redux";
+import {recoveryAfter} from '../../../redux/actions/actions';
+import { useDispatch } from "react-redux";
 
 const customStyles = {
+  // overlay: {
+  //   position: 'fixed',
+  //   zIndex: 10
+  // },
   content: {
     top: "50%",
     left: "50%",
@@ -17,19 +22,20 @@ const customStyles = {
     width:"40%",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    position: 'fixed',
+    zIndex: '10'
   },
 };
-
 
 Modal.setAppElement("#root");
 
 function RegistrModal() {
-  
   const dispatch = useDispatch();
-  const afterPosted1 = () =>{
-    dispatch(afterPosted())
+  const recoveryAfter1 = () =>{
+    dispatch(recoveryAfter())
 }
-  const isModal = useSelector((state) => state.bePartnerReducer.isModal);
+
+  const isModal = useSelector((state) => state.recoveryPass.isModal);
   const language = useSelector(state => state.langReducer.lang);
 
   return (
@@ -42,9 +48,9 @@ function RegistrModal() {
           <img alt="img" src={isModal == 1 ? img1 : img2}/>
           <div className={classes.blockText}>
           <span className={classes.descr}>
-              {isModal === 1 && language == 1 && "Вы успешно отправили данные"}
-              {isModal === 1 && language == 2 && "You have successfully submitted data"}
-              {isModal === 1 && language == 3 && "Вы успешно отправили данные"}
+              {isModal === 1 && language == 1 && "Инструкция была отправлена на почту"}
+              {isModal === 1 && language == 2 && "You have successfully edited data"}
+              {isModal === 1 && language == 3 && "Вы успешно отправили данныеДайындарды ийгиликтүү тапшырдыңыз"}
               {isModal === 2 && language == 1 &&  "Произошла ошибка! Попробуйте снова"}
               {isModal === 2 && language == 2 &&  "An error has occurred! Try again"}
               {isModal === 2 && language == 3 &&  "Ката кетти! Кайра аракет кылыңыз"}
@@ -53,12 +59,12 @@ function RegistrModal() {
         </div>
         {
                   isModal === 1 &&  
-                  <Link to="/" onClick={afterPosted1} >
+                  <Link to="/" onClick={recoveryAfter1} >
                     <span className={classes.ok}>OK</span>
                   </Link>
         }
               {
-                  isModal === 2 &&  <div onClick={afterPosted1} >
+                  isModal === 2 &&  <div onClick={recoveryAfter1} >
                   <span className={classes.ok}>OK</span>
                 </div>
               }

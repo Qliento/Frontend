@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { recoveryPassword } from '../../redux/actions/actions';
+import Modal from './modal_window/modal';
 
 const RecoveryPassword = () =>{
     const { handleSubmit, register, errors } = useForm();
@@ -14,6 +15,7 @@ const RecoveryPassword = () =>{
     }
     return(
         <div className={st.recoveryBlock}>
+            <Modal />
             <div className={st.recoveryBlock_content}>
                 <Link to = '/' className = {st.strikeLink} >
                     <div className={st.strike}></div>

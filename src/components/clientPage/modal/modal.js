@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import st from './modal.module.css';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,8 +10,24 @@ const Modal = ({offModal, changeModal, data}) =>{
     const { handleSubmit, register, errors } = useForm();
     const language = useSelector(state => state.langReducer.lang)
     const dispatch = useDispatch();
-    const onSubmit = (values) =>{
-        dispatch(updateClient(values))
+    const [file, setFile] = useState([]);
+    const [image, setImage] = useState('');
+    const onSubmit = () =>{
+        let formClient = document.getElementById('formClient')
+        let form = new FormData(formClient);
+        // console.log(image)
+        form.append('photo', image);
+        dispatch(updateClient(form));
+    }
+    const setProfile = e =>{
+      setImage(e.target.files[0]);
+            const reader = new FileReader();
+            reader.onload = () => {
+                if(reader.readyState === 2){
+                    setFile(reader.result)
+                }
+            }
+            reader.readAsDataURL(e.target.files[0])
     }
 
     return(
@@ -24,13 +40,15 @@ const Modal = ({offModal, changeModal, data}) =>{
                         {language === 2 && <h3>Profile</h3>}
                         {language === 3 && <h3>Профиль</h3>}
                         <div className={st.profile_img}>
-                            <img src={noPhoto} alt="3
-                            img"></img>
+                            <label for="file">                          
+                            <img src={file == '' ? noPhoto : file} alt="img"></img>
+                            </label>  
+                            <input type="file" accept="image/*" id="file" className={st.input_photo} onChange={setProfile}></input>
                         </div>
                         <h2>{data && data.surname + ' ' + data.name}</h2>
                         <span>{data && data.email}</span>
                     </div>
-                    <form className={st.form}>
+                    <form className={st.form} id="formClient">
                         {language === 1 && <>
                           <label>Имя</label>
                         <input defaultValue={data && data.name} name="name" placeholder="Ваше имя"
@@ -106,7 +124,7 @@ const Modal = ({offModal, changeModal, data}) =>{
                         {language === 2 &&<><button className={st.changePass} onClick={changeModal}>Change password</button>
                         <button onClick={handleSubmit(onSubmit)}>Save</button></>}
                         {language === 3 &&<><button className={st.changePass} onClick={changeModal}>Сыр сөздү өзгөртүү</button>
-                        <button onClick={handleSubmit(onSubmit)}>Cfrnjj</button></>}
+                        <button onClick={handleSubmit(onSubmit)}>Сактоо</button></>}
                     </form>
             </div>
         </div>
