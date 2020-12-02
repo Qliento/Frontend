@@ -28,7 +28,7 @@ const Auth = () => {
             {language === 3 && <h2>Кирүү</h2>}
             <div className={st.form}>
                 <label for="email">E-mail</label>
-                {language == 1 && <input name="email" id="email" placeholder="Ваш e-mail"  ref={register({
+                {language == 1 && <input name="email" id="email" placeholder="e-mail"  ref={register({
                 required: "Это поле обязательное",
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -49,9 +49,28 @@ const Auth = () => {
                     message: "Неверный адрес электронной почты",
                     },
                 })}/>}
-              {errors.email && (
+            {
+                language === 1 &&<>
+                {errors.email && (
               <span className={st.error}>Неверный адрес электронной почты</span>
-            )}
+                )}
+                </>
+            }
+            {
+                language === 2 &&<>
+                {errors.email && (
+              <span className={st.error}>Invalid email</span>
+                )}
+                </>
+            }
+            {
+                language === 3 &&<>
+                {errors.email && (
+              <span className={st.error}>Электрондук почта жараксыз</span>
+                )}
+                </>
+            }
+            
                 {language === 1 && <label>Пароль</label>}
                 {language === 2 && <label>Password</label>}
                 {language === 3 && <label>Сыр сөз</label>}
@@ -85,8 +104,14 @@ const Auth = () => {
                     />}
                     <img className={st.imgVisib} alt="img" onClick={()=>setVisibility(!visibility)} src={visibility? vis : noVis} />
                 </div>
-                {errors.password && (
+                {language === 1 && errors.password && (
               <span className={st.error}>Пароль менее 8 символов</span>
+            )}
+            {language === 2 && errors.password && (
+              <span className={st.error}>Password less than 8 characters</span>
+            )}
+            {language === 3 && errors.password && (
+              <span className={st.error}>8 белгиден кем пароль</span>
             )}
             </div>
             {language === 1 && <Link to="/recovery-password" className={st.forgetPass}>Забыл пароль</Link>}

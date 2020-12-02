@@ -20,8 +20,8 @@ const Order=()=>{
             <div className={classes.content}>
                 <div className={classes.blockPrice}>
                 {language === 1 && <span className={classes.titlePrice}>Итоговоя сумма</span>}
-                {language === 1 && <span className={classes.titlePrice}>Total cost</span>}
-                {language === 1 && <span className={classes.titlePrice}>Итоговоя сумма</span>}
+                {language === 2 && <span className={classes.titlePrice}>Total cost</span>}
+                {language === 3 && <span className={classes.titlePrice}>Итоговоя сумма</span>}
                 <span className={classes.price}>{total} сом </span>
                 </div>
                 <div className={classes.blockChecket}>

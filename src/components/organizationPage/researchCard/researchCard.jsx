@@ -91,8 +91,8 @@ const ResearchCard = ({ data }) => {
               </>) : null}
               {data && data.status === 4 ? (<>
                 {language === 1 && <span className={classes.status_desc4}>Запросить скидочную цену</span>}
-                {language === 2 && <span className={classes.status_desc4}>Запросить скидочную цену</span>}
-                {language === 3 && <span className={classes.status_desc4}>Запросить скидочную цену</span>}
+                {language === 2 && <span className={classes.status_desc4}>Request a discount price</span>}
+                {language === 3 && <span className={classes.status_desc4}>Арзандатуу баасын сураңыз</span>}
               </>) : null}
             </div>
           </div>

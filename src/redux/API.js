@@ -1,22 +1,51 @@
 import Axios from "axios";
 
-const httpUpadate = Axios.create({
-  baseURL: "https://qliento.com",
-  headers: {
-    // Accept: "application/json",
-    "Content-Type": "multipart/form-data",
-    "Accept-Language": "ru",
-  },
-});
 
-const http = Axios.create({
-  baseURL: "https://qliento.com",
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-    "Accept-Language": "ru",
-  },
-});
+let lang = localStorage.getItem('lang');
+let http;
+
+if(lang == 2){
+  http = Axios.create({
+    baseURL: "https://qliento.com",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "Accept-Language": "en",
+    },
+  });
+}
+
+else if(lang == 3){
+  http = Axios.create({
+    baseURL: "https://qliento.com",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "Accept-Language": "kg",
+    },
+  });
+}
+else{
+  http = Axios.create({
+    baseURL: "https://qliento.com",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "Accept-Language": "ru",
+    },
+  });
+}
+
+// const httpUpadate = Axios.create({
+//   baseURL: "https://qliento.com",
+//   headers: {
+//     // Accept: "application/json",
+//     "Content-Type": "multipart/form-data",
+//     "Accept-Language": "ru",
+//   },
+// });
+
+
 
 export default {
   url: () => "http://207.154.250.71",

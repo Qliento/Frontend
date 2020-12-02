@@ -80,8 +80,8 @@ const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
           />
           {errors.name && (<>
             {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
-            {language === 2 && <span className={classes.error}>Не корректно велли данные</span>}
-            {language === 3 && <span className={classes.error}>Не корректно велли данные</span>}
+            {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
+            {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
           </>)}
         </div>
         <div className={classes.blockInput}>
@@ -99,8 +99,8 @@ const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
           />
           {errors.surname && (<>
             {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
-            {language === 2 && <span className={classes.error}>Не корректно велли данные</span>}
-            {language === 3 && <span className={classes.error}>Не корректно велли данные</span>}
+            {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
+            {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
           </>)}
         </div>
         <div className={classes.blockInput}>
@@ -118,8 +118,8 @@ const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
           />
           {errors.position && (<>
             {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
-            {language === 2 && <span className={classes.error}>Не корректно велли данные</span>}
-            {language === 3 && <span className={classes.error}>Не корректно велли данные</span>}
+            {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
+            {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
           </>)}
           
         </div>
@@ -139,8 +139,8 @@ const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
           />
           {errors.phone && (<>
             {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
-            {language === 2 && <span className={classes.error}>Не корректно велли данные</span>}
-            {language === 3 && <span className={classes.error}>Не корректно велли данные</span>}
+            {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
+            {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
           </>)}
           
         </div>
@@ -159,8 +159,8 @@ const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
           />
           {errors.about && (<>
             {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
-            {language === 2 && <span className={classes.error}>Не корректно велли данные</span>}
-            {language === 3 && <span className={classes.error}>Не корректно велли данные</span>}
+            {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
+            {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
           </>)}
         </div>
         <button

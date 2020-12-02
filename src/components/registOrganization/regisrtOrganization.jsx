@@ -90,7 +90,7 @@ const RegistOrganization = () => {
                   validate: (name2) => name2 && name2.length > 2,
                 })}/>
               {errors.name2 && (
-                <span className={classes.error}>Не корректно велли данные</span>
+                <span className={classes.error}>Data incorrectly entered</span>
               )}</>}
               {language === 3 && <><label>Уюмдун аталышы*</label>
               <input name="name2" className={classes.inputs} placeholder="Уюмдун аталышы"
@@ -98,7 +98,7 @@ const RegistOrganization = () => {
                   validate: (name2) => name2 && name2.length > 2,
                 })}/>
               {errors.name2 && (
-                <span className={classes.error}>Не корректно велли данные</span>
+                <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>
               )}</>}
             </div>
             <div className={classes.blockInput}>
@@ -122,14 +122,14 @@ const RegistOrganization = () => {
                   validate: (name) => name && name.length > 2,
                 })}/>
               {errors.name && (
-                <span className={classes.error}>Не корректно велли данные</span>
+                <span className={classes.error}>Data incorrectly entered</span>
               )}</>}
               {language === 3 && <><label>Сиздин атыңыз*</label>
               <input name="name" className={classes.inputs} placeholder="Сиздин атыңыз" ref={register({
                   validate: (name) => name && name.length > 2,
                 })}/>
               {errors.name && (
-                <span className={classes.error}>Не корректно велли данные</span>
+                <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>
               )}</>}
             </div>
             <div className={classes.blockInput}>
@@ -147,7 +147,7 @@ const RegistOrganization = () => {
                   validate: (lastName) => lastName && lastName.length > 2,
                 })}/>
               {errors.lastName && (
-                <span className={classes.error}>Не корректно велли данные</span>)}
+                <span className={classes.error}>Data incorrectly entered</span>)}
               </>}
               {language === 3 && <>
                 <label>Сиздин фамилияңыз*</label>
@@ -155,7 +155,7 @@ const RegistOrganization = () => {
                   validate: (lastName) => lastName && lastName.length > 2,
                 })}/>
               {errors.lastName && (
-                <span className={classes.error}>Не корректно велли данные</span>)}
+                <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>)}
               </>}
             </div>
             <div className={classes.blockInput}>
@@ -187,8 +187,8 @@ const RegistOrganization = () => {
                 })}/>
               {errors.phone && (<>
                 {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
-                {language === 2 && <span className={classes.error}>Не корректно велли данные</span>}
-                {language === 3 && <span className={classes.error}>Не корректно велли данные</span>}
+                {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
+                {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
               </>)}
             </div>
             <div className={classes.blockInput}>

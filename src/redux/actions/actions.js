@@ -182,10 +182,11 @@ export function authClient({email, password}){
       if( res.status == 200){
         dispatch(createToken(email, password));
       }
-      else{
-        dispatch({ type: 'POSTED__ERROR_AUTH'})
-      }
-    });
+    })
+    .catch(err =>{
+      dispatch({ type: 'POSTED__ERROR_AUTH'})
+    }
+    );
 }}
 
 

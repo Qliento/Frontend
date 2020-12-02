@@ -19,10 +19,12 @@ const Header = () => {
     localStorage.removeItem('user');
   }
   const change = (elem) =>{
-    // localStorage.setItem('lang', elem)
+    localStorage.setItem('lang', elem)
     dispatch(changeLang(elem))
   }
   const language = useSelector(state => state.langReducer.lang)
+  const basket = useSelector(state => state.ListBasket.listResearch)
+  console.log(basket);
   return (
     <nav className={st.header}>
       <Link to="/">
@@ -83,7 +85,7 @@ const Header = () => {
         </Link>
         <Link to="/about-us">
           {language === 1 && <span>О нас</span>}
-          {language === 2 && <span>About</span>}
+          {language === 2 && <span>About us</span>}
           {language === 3 && <span>Биз жөнүндө</span>}
         </Link>
         <Link to="/analitic">

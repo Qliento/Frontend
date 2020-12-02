@@ -47,10 +47,10 @@ const DetailMarket = () => {
               <div className={classes.descrip}>
                 {language === 1 && <><span>Дата выпуска: {data && data.date}</span>
                 <span>Количество страниц: {data && data.pages}</span></>}
-                {language === 2 && <><span>Дата выпуска: {data && data.date}</span>
-                <span>Количество страниц: {data && data.pages}</span></>}
-                {language === 3 && <><span>Дата выпуска: {data && data.date}</span>
-                <span>Количество страниц: {data && data.pages}</span></>}
+                {language === 2 && <><span>Release date: {data && data.date}</span>
+                <span>Number of pages: {data && data.pages}</span></>}
+                {language === 3 && <><span>Чыккан датасы: {data && data.date}</span>
+                <span>Барактардын саны: {data && data.pages}</span></>}
                 <span>ID: {data && data.id}</span>
               </div>
               <div className={classes.price}>

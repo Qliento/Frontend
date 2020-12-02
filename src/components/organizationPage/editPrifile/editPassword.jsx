@@ -89,14 +89,14 @@ const EditPassword = ({ edit, changeState2,offModal }) => {
             </div>
             {errors.old_password && (<>
               {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
-              {language === 2 && <span className={classes.error}>Не корректно велли данные</span>}
-              {language === 3 && <span className={classes.error}>Не корректно велли данные</span>}
+              {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
+              {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
             </>)}
           </div>
           <div className={classes.blockInput}>
             {language === 1 && <span className={classes.title}>Новый пароль</span>}
             {language === 2 && <span className={classes.title}>New password</span>}
-            {language === 3 && <span className={classes.title}>Новый пароль</span>}
+            {language === 3 && <span className={classes.title}>Жаны сыр соз</span>}
             <div className={classes.inputWrapper}>
               {language === 1 && <input name="new_password" type={visibility2 ? "text" : "password"} placeholder="Придумайте пароль"
                 className={classes.input}
@@ -128,34 +128,34 @@ const EditPassword = ({ edit, changeState2,offModal }) => {
             </div>
             {errors.new_password && (<>
               {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
-              {language === 2 && <span className={classes.error}>Не корректно велли данные</span>}
-              {language === 3 && <span className={classes.error}>Не корректно велли данные</span>}
+              {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
+              {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
             </>)}
           </div>
           <div className={classes.blockInput}>
             {language === 1 &&<span className={classes.title}>Повторите пароль</span>}
-            {language === 2 &&<span className={classes.title}>Повторите пароль</span>}
-            {language === 3 &&<span className={classes.title}>Повторите пароль</span>}
+            {language === 2 &&<span className={classes.title}>Repeat password</span>}
+            {language === 3 &&<span className={classes.title}>Сыр соз</span>}
             <div className={classes.inputWrapper}>
              {language === 1 && <input name="password_check" type={visibility ? "text" : "password"}  placeholder="Повторите пароль"
                 className={classes.input}
                 ref={register({
                   validate: (password_check) =>
-                    password_check && password_check.length > 6,
+                    password_check && password_check.length > 8,
                 })}
               />}
-               {language === 2 && <input name="password_check" type={visibility ? "text" : "password"}  placeholder="Повторите пароль"
+               {language === 2 && <input name="password_check" type={visibility ? "text" : "password"}  placeholder="Repeat password"
                 className={classes.input}
                 ref={register({
                   validate: (password_check) =>
-                    password_check && password_check.length > 6,
+                    password_check && password_check.length > 8,
                 })}
               />}
-               {language === 3 && <input name="password_check" type={visibility ? "text" : "password"}  placeholder="Повторите пароль"
+               {language === 3 && <input name="password_check" type={visibility ? "text" : "password"}  placeholder="Сыр соз"
                 className={classes.input}
                 ref={register({
                   validate: (password_check) =>
-                    password_check && password_check.length > 6,
+                    password_check && password_check.length > 8,
                 })}
               />}
               <img
@@ -167,8 +167,8 @@ const EditPassword = ({ edit, changeState2,offModal }) => {
             </div>
             {errors.password_check && (<>
               {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
-              {language === 2 && <span className={classes.error}>Не корректно велли данные</span>}
-              {language === 3 && <span className={classes.error}>Не корректно велли данные</span>}
+              {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
+              {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
             </>)}
           </div>
           {language === 1 && <button type="submit" className={classes.btn}>Сохранить</button>}

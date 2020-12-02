@@ -14,6 +14,8 @@ const AnaliticCard = () => {
     const language = useSelector(state => state.langReducer.lang);
     useEffect(() => {dispatch(blogCardData(id))}, []);
     const month = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентабрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+    const monthEng = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const monthKg = ['Үчтүн айы', 'Бирдин айы', 'Жалган Куран', 'Чын Куран', 'Бугу', 'Кулжа', 'Теке', 'Баш Оона', 'Аяк Оона', 'Тогуздун айы', 'Жетинин айы', 'Бештин айы'];
     
     useEffect(() => {
     window.Ya.share2('ya', {
@@ -79,7 +81,9 @@ const AnaliticCard = () => {
                 <div className={st.card_description}>
                     <span>
                         <span>{ data && data.date.match(/\d+/g)[2] } </span>
-                        <span>{ data && month[Number(data.date.match(/\d+/g)[1] - 1)] } </span>
+                        {language === 1 && <span>{ data && month[Number(data.date.match(/\d+/g)[1] - 1)] } </span>}
+                        {language === 2 && <span>{ data && monthEng[Number(data.date.match(/\d+/g)[1] - 1)] } </span>}
+                        {language === 3 && <span>{ data && monthKg[Number(data.date.match(/\d+/g)[1] - 1)] } </span>}
                         <span>{ data && data.date.match(/\d+/g)[0] }</span>
                     </span>
                     <h4>{ data && data.header }</h4>

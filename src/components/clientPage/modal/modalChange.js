@@ -86,7 +86,7 @@ const ModalChange = ({offModal}) =>{
                             validate: (password) => password && password.length > 8,
                             })} />
                             {errors.old_password && (
-                                <span className={st.error}>6 белгиден кем пароль</span>
+                                <span className={st.error}>8 белгиден кем пароль</span>
                                 )} 
                         <label>Жаны сыр сөз</label>
                         <input name="new_password" placeholder="Жаны сыр сөз"
@@ -94,7 +94,7 @@ const ModalChange = ({offModal}) =>{
                             validate: (password) => password && password.length > 8,
                             })} />
                             {errors.new_password && (
-                                <span className={st.error}>6 белгиден кем пароль</span>
+                                <span className={st.error}>8 белгиден кем пароль</span>
                                 )} 
                         <label>Сыр сөз кайталныз</label>
                         <input name="password_check" placeholder="Сыр сөз кайталныз"
@@ -102,15 +102,15 @@ const ModalChange = ({offModal}) =>{
                             validate: (password) => password && password.length > 8,
                             })} />
                             {errors.password_check && (
-                                <span className={st.error}>6 белгиден кем пароль</span>
+                                <span className={st.error}>8 белгиден кем пароль</span>
                                 )}
                         </>}
                             {err && language === 1 && <span className={st.error}>Пароли не совпадают</span>}
-                            {err && language === 1 && <span className={st.error}>Пароли не совпадают</span>}
-                            {err && language === 1 && <span className={st.error}>Пароли не совпадают</span>}
+                            {err && language === 1 && <span className={st.error}>Passwords do not match</span>}
+                            {err && language === 1 && <span className={st.error}>Сырсөздөр дал келген жок</span>}
                             {language === 1 &&<button className={st.change_btn} onClick={handleSubmit(onSubmit)}>Сохранить</button>}
                             {language === 2 &&<button className={st.change_btn} onClick={handleSubmit(onSubmit)}>Save</button>}
-                            {language === 3 &&<button className={st.change_btn} onClick={handleSubmit(onSubmit)}>Сохранить</button>}
+                            {language === 3 &&<button className={st.change_btn} onClick={handleSubmit(onSubmit)}>Сактоо</button>}
                     </form>
             </div>
         </div>

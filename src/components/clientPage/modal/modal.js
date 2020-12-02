@@ -74,7 +74,7 @@ const Modal = ({offModal, changeModal, data}) =>{
                             validate: (name) => name && name.length > 2,
                           })}></input>
                           {errors.name && (
-                          <span className={st.error}>Заполните поле</span>
+                          <span className={st.error}>Fill in the field</span>
                         )}
                         <label>Last name</label>
                         <input defaultValue={data && data.surname} name="surname" placeholder="Last name"
@@ -82,7 +82,7 @@ const Modal = ({offModal, changeModal, data}) =>{
                             validate: (surname) => surname && surname.length > 2,
                           })}></input>
                           {errors.surname && (
-                          <span className={st.error}>Заполните поле</span>
+                          <span className={st.error}>Fill in the field</span>
                         )}
                         </>}
                         {language === 3 && <>
@@ -92,7 +92,7 @@ const Modal = ({offModal, changeModal, data}) =>{
                             validate: (name) => name && name.length > 2,
                           })}></input>
                           {errors.name && (
-                          <span className={st.error}>Заполните поле</span>
+                          <span className={st.error}>Талааны толтуруңуз</span>
                         )}
                         <label>Сиздин фамилияңыз</label>
                         <input defaultValue={data && data.surname} name="surname" placeholder="Сиздин фамилияңыз"
@@ -100,7 +100,7 @@ const Modal = ({offModal, changeModal, data}) =>{
                             validate: (surname) => surname && surname.length > 2,
                           })}></input>
                           {errors.surname && (
-                          <span className={st.error}>Заполните поле</span>
+                          <span className={st.error}>Талааны толтуруңуз</span>
                         )}
                         </>}
                 {language === 1 && <label>Номер телефона</label>}

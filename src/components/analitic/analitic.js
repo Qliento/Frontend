@@ -12,6 +12,8 @@ const Analitic = () => {
     useEffect(() => {dispatch(blogData())}, []);
 
     const month = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентабрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+    const monthEng = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const monthKg = ['Үчтүн айы', 'Бирдин айы', 'Жалган Куран', 'Чын Куран', 'Бугу', 'Кулжа', 'Теке', 'Баш Оона', 'Аяк Оона', 'Тогуздун айы', 'Жетинин айы', 'Бештин айы'];
 
     return (
     <div className={st.analitic_container}>
@@ -43,7 +45,9 @@ const Analitic = () => {
                         <div className={st.card_info}>
                             <span className={st.card_date}>
                                 <span>{ elem.date.match(/\d+/g)[2] } </span>
-                                <span>{ month[Number(elem.date.match(/\d+/g)[1] - 1)] }</span>
+                                {language === 1 && <span>{ month[Number(elem.date.match(/\d+/g)[1] - 1)] }</span>}
+                                {language === 2 && <span>{ monthEng[Number(elem.date.match(/\d+/g)[1] - 1)] }</span>}
+                                {language === 3 && <span>{ monthKg[Number(elem.date.match(/\d+/g)[1] - 1)] }</span>}
                                 <span>{ elem.date.match(/\d+/g)[0] }</span>
                             </span>
                             <h5 className={st.card_title}>{elem.header}</h5>

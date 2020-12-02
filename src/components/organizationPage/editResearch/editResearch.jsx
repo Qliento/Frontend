@@ -59,14 +59,14 @@ const EditModal = ({ edit, changeState, id }) => {
                 validate: (new_price) => new_price && new_price.length > 0,
               })}
             />
-            {errors.new_price && (<span className={classes.error}>Это поле не может быть пустым</span>)}</>}
+            {errors.new_price && (<span className={classes.error}>Fill in the field</span>)}</>}
             {language === 3 && <><span className={classes.title}>Арзандатылган баа</span>
             <input className={classes.input} type="number" name="new_price" placeholder="Баа"
               ref={register({
                 validate: (new_price) => new_price && new_price.length > 0,
               })}
             />
-            {errors.new_price && (<span className={classes.error}>Это поле не может быть пустым</span>)}</>}
+            {errors.new_price && (<span className={classes.error}>Талааны толтуруңуз</span>)}</>}
           </div>
           {language === 1 && <button type="submit" className={classes.btn}>Сохранить</button>}
           {language === 2 && <button type="submit" className={classes.btn}>Save</button>}
