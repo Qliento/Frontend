@@ -58,17 +58,17 @@ const DetailMarket = ({ data }) => {
               {data.old_price && data.new_price ? (
                 <>
                   <span className={classes.oldPrice}>
-                    {data && data.old_price} сом
+                    {data && data.old_price} $
                   </span>
                   <span className={classes.newPrice}>
-                    {data && data.new_price} сом
+                    {data && data.new_price} $
                   </span>
                 </>
               ) : (
                 <>
                   <span></span>
                   <span className={classes.newPrice}>
-                    {data && data.old_price} сом
+                    {data && data.old_price} $
                   </span>
                 </>
               )}

@@ -41,7 +41,7 @@ const Tabs1 = ({ dataText, clickBtn }) => {
           ) : null}
           {active === 2 ? <span>{dataText.content && dataText.content}</span> : null}
           {active === 3 ? (
-            <span>{dataText.author.logo ? dataText.author.logo : "Автора нет"}</span>
+            <span>{dataText.author.about_me ? dataText.author.about_me : "Автора нет"}</span>
           ) : null}
         </div>
 

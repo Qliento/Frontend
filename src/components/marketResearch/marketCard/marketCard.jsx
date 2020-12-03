@@ -73,13 +73,13 @@ const MarketCard = ({ data, addFlyEfyf }) => {
           <div className={classes.blockPrace}>
             {data.old_price && data.new_price ? (
               <>
-                <span className={classes.discounts}>{data.old_price} сом</span>
-                <span className={classes.newPrace}>{data.new_price} сом</span>
+                <span className={classes.discounts}>{data.old_price} $</span>
+                <span className={classes.newPrace}>{data.new_price} $</span>
               </>
             ) : (
               <>
               <span></span>
-              <span className={classes.newPrace}>{data.old_price} сом</span>
+              <span className={classes.newPrace}>{data.old_price} $</span>
               </>
             )}
           </div>

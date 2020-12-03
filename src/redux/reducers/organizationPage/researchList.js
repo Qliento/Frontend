@@ -2,6 +2,7 @@ const initialState = {
   ResearchList: [],
   detailData: {},
   ubdateResearch: false,
+  dataStep2:{}
 };
 
 export function ResearchList(state = initialState, action) {
@@ -26,6 +27,11 @@ export function ResearchList(state = initialState, action) {
         ...state,
         ubdateResearch: false,
       };
+      case "UPLOAD_DATA_STEP_2":
+        return {
+          ...state,
+          dataStep2: action.payload,
+        };
     default:
       return state;
   }

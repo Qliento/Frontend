@@ -145,7 +145,7 @@ export default {
       headers: { Authorization: "Bearer " + token },
     }),
   detailResearchOrg: (token, id) =>
-    http.get(`/research-update/${id}/`, {
+    http.get(`/my-research/${id}/`, {
       headers: { Authorization: "Bearer " + token },
     }),
   UbdateResearch: (price, id,token) =>

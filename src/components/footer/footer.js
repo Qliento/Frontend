@@ -12,10 +12,10 @@ const Footer = () => {
     dispatch(mainData());
   }, []);
   let arrContacts = [];
-  if (data.сontacts) {
-      arrContacts = [...data.сontacts.contacts];
+  // if (data.сontacts) {
+  //     arrContacts = [...data.сontacts.contacts];
     
-  }
+  // }
 
   return (
     <footer>

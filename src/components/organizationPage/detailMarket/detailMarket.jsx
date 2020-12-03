@@ -22,6 +22,7 @@ const DetailMarket = () => {
     setIsClose(!isClose);
     console.log(isClose);
   };
+  console.log(data)
   return (
     <>
       <div className={isClose ? classes.blockDetail1 : classes.blockDetail}>
@@ -29,7 +30,7 @@ const DetailMarket = () => {
           <div className={classes.blockImg}>
             <img
               alt="img"
-              src={data.image ? data.image : img1}
+              src={ img1}
               className={classes.img}
             />
           </div>
@@ -45,8 +46,8 @@ const DetailMarket = () => {
             <div className={classes.blockdDescrip}>
               <div className={classes.descrip}>
                 <span>Дата выпуска: {data && data.date}</span>
-                <span>Количество страниц: {data && data.pages}</span>
-                <span>ID: {data && data.id}</span>
+                <span>Количество страниц: {data&&data.pages}</span>
+                <span>ID: </span>
               </div>
               <div className={classes.price}>
         
@@ -102,7 +103,7 @@ const DetailMarket = () => {
           </div>
         </div>
       </div>
-      {<EditModal edit={edit} changeState={(e) => setEdit(e)} />}
+      { edit &&<EditModal edit={edit} changeState={(e) => setEdit(e)} />}
     </>
   );
 };

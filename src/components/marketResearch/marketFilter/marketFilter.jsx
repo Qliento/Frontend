@@ -72,7 +72,7 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
         </div>
         <div className={classes.inputs}>
           <Category
-            name="Подкотегории"
+            name="Подкатегории"
             subCategory={subCategory && subCategory[0]}
             ubdateData={ubdateData}
           />
