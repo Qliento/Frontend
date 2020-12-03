@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6b087f7ec66d8d2c236d0836670859df",
+    "revision": "e274e547bc7a2e75184d672988bb052f",
     "url": "/index.html"
   },
   {
-    "revision": "60261ef79f156ad517eb",
+    "revision": "6df9f2a0d7aaa3090ddc",
     "url": "/static/css/2.fd971cca.chunk.css"
   },
   {
-    "revision": "62e6cc9c5a67c01f7ac3",
-    "url": "/static/css/main.ea18296a.chunk.css"
+    "revision": "ddbe3833b288d5b5b944",
+    "url": "/static/css/main.e115bc84.chunk.css"
   },
   {
-    "revision": "60261ef79f156ad517eb",
-    "url": "/static/js/2.9820027b.chunk.js"
+    "revision": "6df9f2a0d7aaa3090ddc",
+    "url": "/static/js/2.ed2519a4.chunk.js"
   },
   {
     "revision": "ab40d9aa0e6fc6976e4503799ee3716e",
-    "url": "/static/js/2.9820027b.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.ed2519a4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "62e6cc9c5a67c01f7ac3",
-    "url": "/static/js/main.558fbc2a.chunk.js"
+    "revision": "ddbe3833b288d5b5b944",
+    "url": "/static/js/main.a09bb431.chunk.js"
   },
   {
     "revision": "8bcd737825a34486dd02",
@@ -50,30 +50,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7dbdf481fcf4c233bf66d38ca9078e89",
     "url": "/static/media/bePartner.7dbdf481.png"
-  },
-  {
-    "revision": "1e5207ce4e24a1e92945cd108044b514",
-    "url": "/static/media/bg.1e5207ce.png"
-  },
-  {
-    "revision": "9de9a68017832c4b58a63a8e3ff34a80",
-    "url": "/static/media/card1.9de9a680.png"
-  },
-  {
-    "revision": "37c60e502507a0613afa8e46f214fa36",
-    "url": "/static/media/card2.37c60e50.png"
-  },
-  {
-    "revision": "46f155e7e744e39dc80a552cddd59a32",
-    "url": "/static/media/card3.46f155e7.png"
-  },
-  {
-    "revision": "a1375b0f9821ddd00db8fcf76b184990",
-    "url": "/static/media/img.a1375b0f.png"
-  },
-  {
-    "revision": "d1b40c92da81836dcce19134ac040de1",
-    "url": "/static/media/mainImag.d1b40c92.png"
   },
   {
     "revision": "a87783469ae5d389282713cf0471eca2",

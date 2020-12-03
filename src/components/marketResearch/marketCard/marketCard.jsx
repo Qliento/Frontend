@@ -1,34 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import classes from "./marketCard.module.css";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { researchPushBasket } from "../../../redux/actions/pushResearch/pushResearch";
 
 const MarketCard = ({ data, addFlyEfyf }) => {
-  console.log("String", data);
   const dispatch = useDispatch();
+  const language = useSelector(state => state.langReducer.lang)
   const orders = (e) => {
     dispatch(researchPushBasket(e));
     addFlyEfyf()
   };
-
-  //   useEffect(() => {
-  //     const cursor = document.querySelector('.add_fly');
-  //     const editCursor = e => {
-  //       const { clientX: x, clientY: y } = e;
-  //       cursor.style.left = x + 'px';
-  //       cursor.style.top = y + 'px';
-  //   };
-  //   window.addEventListener('mousemove', editCursor);
-
-  // });
-
-  // const addFlyEfyf = () => {
-  //   const cursor = document.querySelector('.add_fly');
-  //   console.log('test')
-  //   cursor.classList.add('add_fly_anim');
-  //   setTimeout(function () { cursor.classList.remove('add_fly_anim') }, 1000);
-  // }
 
   return (
     <>
@@ -53,7 +35,9 @@ const MarketCard = ({ data, addFlyEfyf }) => {
                 <span>{data.pages} стр</span>
                 <span>ID: {data.id}</span>
                 <div className={classes.country}>
-                  <span>Страны: </span>
+                  {language === 1 && <span>Страны: </span>}
+                  {language === 2 && <span>Countries: </span>}
+                  {language === 3 && <span>Мамлекеттер: </span>}
                   {data.country &&
                     data.country.map((item) => {
                       return <span key={item.id}> {item.name}</span>;
@@ -84,23 +68,12 @@ const MarketCard = ({ data, addFlyEfyf }) => {
             )}
           </div>
           <div className={classes.blockBtn}>
-            <button
-              className={classes.toBasket}
-              id={data.id}
-        
-              onClick={(e)=>orders(e.target.id)}
-              type="button"
-            >
-              В корзину
-            </button>
-            <a
-              href={data.demo && data.demo}
-              target="_blank"
-              className={classes.demo}
-              download
-            >
-              Демо версия
-            </a>
+            {language === 1 && <button className={classes.toBasket} id={data.id} onClick={(e)=>orders(e.target.id)}>В корзину</button>}
+            {language === 2 && <button className={classes.toBasket} id={data.id} onClick={(e)=>orders(e.target.id)}>Shopping cart</button>}
+            {language === 3 && <button className={classes.toBasket} id={data.id} onClick={(e)=>orders(e.target.id)}>Корзинага</button>}
+            {language === 1 && <a href={data.demo && data.demo} target="_blank" className={classes.demo} download>Демо версия</a>}
+            {language === 2 && <a href={data.demo && data.demo} target="_blank" className={classes.demo} download>Demo version</a>}
+            {language === 3 && <a href={data.demo && data.demo} target="_blank" className={classes.demo} download>Демо версия</a>}
           </div>
         </div>
       </div>

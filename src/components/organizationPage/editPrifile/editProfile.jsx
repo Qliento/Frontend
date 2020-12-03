@@ -32,10 +32,10 @@ const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
   //   dispatch(errorMesseg());
   // }, []);
   const dispatch=useDispatch();
+  const language = useSelector(state => state.langReducer.lang)
   const { handleSubmit, register, errors } = useForm();
   const [isModal, SetIsModal] = useState(true);
   const onSubmit = (values) => {
-    console.log(values);
     dispatch(updateOrganization(values));
   };
   return (
@@ -44,7 +44,9 @@ const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
       <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={classes.blockImg}>
           <div className={classes.left}></div>
-          <span className={classes.title}>Профиль</span>
+          {language === 1 && <span className={classes.title}>Профиль</span>}
+          {language === 2 && <span className={classes.title}>Profile</span>}
+          {language === 3 && <span className={classes.title}>Профиль</span>}
           <img
             alt="img"
             className={classes.img}
@@ -64,7 +66,9 @@ const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
           </span>
         </div>
         <div className={classes.blockInput}>
-          <span className={classes.titleInput}>Имя</span>
+          {language === 1 && <span className={classes.titleInput}>Имя</span>}
+          {language === 2 && <span className={classes.titleInput}>Name</span>}
+          {language === 3 && <span className={classes.titleInput}>Сиздин атыңыз</span>}
           <input
             name="name"
             className={classes.input}
@@ -74,12 +78,16 @@ const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
               validate: (name) => name && name.length > 2,
             })}
           />
-          {errors.name && (
-            <span className={classes.error}>Не корректно велли данные</span>
-          )}
+          {errors.name && (<>
+            {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
+            {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
+            {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
+          </>)}
         </div>
         <div className={classes.blockInput}>
-          <span className={classes.titleInput}>Фамилия</span>
+          {language === 1 && <span className={classes.titleInput}>Фамилия</span>}
+          {language === 2 && <span className={classes.titleInput}>Surname</span>}
+          {language === 3 && <span className={classes.titleInput}>Сиздин фамилияңыз</span>}
           <input
             name="surname"
             className={classes.input}
@@ -89,13 +97,16 @@ const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
               validate: (surname) => surname && surname.length > 2,
             })}
           />
-          {errors.surname && (
-            <span className={classes.error}>Не корректно велли данные</span>
-          )}
+          {errors.surname && (<>
+            {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
+            {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
+            {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
+          </>)}
         </div>
         <div className={classes.blockInput}>
-          <span className={classes.titleInput}>Должность</span>
-         
+          {language === 1 && <span className={classes.titleInput}>Должность</span>}
+          {language === 2 && <span className={classes.titleInput}>Position</span>}
+          {language === 3 && <span className={classes.titleInput}>Кызмат</span>}
           <input
             name="position"
             className={classes.input}
@@ -105,15 +116,18 @@ const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
               validate: (position) => position && position.length > 4,
             })}
           />
-          {errors.position && (
-            <span className={classes.error}>Не корректно велли данные</span>
-          )}
+          {errors.position && (<>
+            {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
+            {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
+            {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
+          </>)}
           
         </div>
        
         <div className={classes.blockInput}>
-          <span className={classes.titleInput}>Номер телефона</span>
-         
+          {language === 1 && <span className={classes.titleInput}>Номер телефона</span>}
+          {language === 2 && <span className={classes.titleInput}>Phone number</span>}
+          {language === 3 && <span className={classes.titleInput}>Телефон номуру</span>}
           <input
             name="phone"
             className={classes.input}
@@ -123,13 +137,17 @@ const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
               validate: (phone) => phone && phone.length > 4,
             })}
           />
-          {errors.phone && (
-            <span className={classes.error}>Не корректно велли данные</span>
-          )}
+          {errors.phone && (<>
+            {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
+            {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
+            {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
+          </>)}
           
         </div>
         <div className={classes.blockInput}>
-          <span className={classes.titleInput}>О компании</span>
+          {language === 1 && <span className={classes.titleInput}>О компании</span>}
+          {language === 2 && <span className={classes.titleInput}>About the company</span>}
+          {language === 3 && <span className={classes.titleInput}>Компания жөнүндө</span>}
           <textarea
             name="about"
             className={classes.input2}
@@ -139,9 +157,11 @@ const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
               validate: (about) => about && about.length > 4,
             })}
           />
-          {errors.about && (
-            <span className={classes.error}>Не корректно велли данные</span>
-          )}
+          {errors.about && (<>
+            {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
+            {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
+            {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
+          </>)}
         </div>
         <button
           className={classes.changeBtn}
@@ -152,9 +172,9 @@ const EditProfile = ({  changeModal, onModalPassword, data ,offModal}) => {
         >
           Сменить пароль
         </button>
-        <button type="submit" className={classes.saveBtn}>
-          Сохранить
-        </button>
+        {language === 1 && <button type="submit" className={classes.saveBtn}>Сохранить</button>}
+        {language === 2 && <button type="submit" className={classes.saveBtn}>Save</button>}
+        {language === 3 && <button type="submit" className={classes.saveBtn}>Сактоо</button>}
       </form>
     </div>
   );

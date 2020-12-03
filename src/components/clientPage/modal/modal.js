@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import st from './modal.module.css';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,8 +10,24 @@ const Modal = ({offModal, changeModal, data}) =>{
     const { handleSubmit, register, errors } = useForm();
     const language = useSelector(state => state.langReducer.lang)
     const dispatch = useDispatch();
-    const onSubmit = (values) =>{
-        dispatch(updateClient(values))
+    const [file, setFile] = useState([]);
+    const [image, setImage] = useState('');
+    const onSubmit = () =>{
+        let formClient = document.getElementById('formClient')
+        let form = new FormData(formClient);
+        // console.log(image)
+        form.append('photo', image);
+        dispatch(updateClient(form));
+    }
+    const setProfile = e =>{
+      setImage(e.target.files[0]);
+            const reader = new FileReader();
+            reader.onload = () => {
+                if(reader.readyState === 2){
+                    setFile(reader.result)
+                }
+            }
+            reader.readAsDataURL(e.target.files[0])
     }
 
     return(
@@ -20,20 +36,22 @@ const Modal = ({offModal, changeModal, data}) =>{
             <div className={st.modal_content}>
                 <span className={st.strike} onClick={offModal}></span>
                     <div className={st.profile}>
-                        {language === 1 || 3 && <h3>Профиль</h3>}
+                        {language === 1 && <h3>Профиль</h3>}
                         {language === 2 && <h3>Profile</h3>}
+                        {language === 3 && <h3>Профиль</h3>}
                         <div className={st.profile_img}>
-                            <img src={noPhoto} alt="3
-                            img"></img>
+                            <label for="file">                          
+                            <img src={file == '' ? noPhoto : file} alt="img"></img>
+                            </label>  
+                            <input type="file" accept="image/*" id="file" className={st.input_photo} onChange={setProfile}></input>
                         </div>
                         <h2>{data && data.surname + ' ' + data.name}</h2>
                         <span>{data && data.email}</span>
                     </div>
-                    <form className={st.form}>
-                        <label>Имя</label>
-                        <input defaultValue={data && data.name} name="name"
-                          placeholder="Ваше имя"
-                          type="text"
+                    <form className={st.form} id="formClient">
+                        {language === 1 && <>
+                          <label>Имя</label>
+                        <input defaultValue={data && data.name} name="name" placeholder="Ваше имя"
                           ref={register({
                             validate: (name) => name && name.length > 2,
                           })}></input>
@@ -41,27 +59,72 @@ const Modal = ({offModal, changeModal, data}) =>{
                           <span className={st.error}>Заполните поле</span>
                         )}
                         <label>Фамилия</label>
-                        <input defaultValue={data && data.surname} name="surname"
-              placeholder="Ваша фамилия"
-              type="text"
-              ref={register({
-                validate: (surname) => surname && surname.length > 2,
-              })}></input>
-              {errors.surname && (
-              <span className={st.error}>Заполните поле</span>
-            )}
-                        <label>Номер телефона</label>
-                        <input defaultValue={data && data.phone_number} name="phone_number"
+                        <input defaultValue={data && data.surname} name="surname" placeholder="Ваша фамилия"
+                          ref={register({
+                            validate: (surname) => surname && surname.length > 2,
+                          })}></input>
+                          {errors.surname && (
+                          <span className={st.error}>Заполните поле</span>
+                        )}
+                        </>}
+                        {language === 2 && <>
+                          <label>Name</label>
+                        <input defaultValue={data && data.name} name="name" placeholder="Name"
+                          ref={register({
+                            validate: (name) => name && name.length > 2,
+                          })}></input>
+                          {errors.name && (
+                          <span className={st.error}>Fill in the field</span>
+                        )}
+                        <label>Last name</label>
+                        <input defaultValue={data && data.surname} name="surname" placeholder="Last name"
+                          ref={register({
+                            validate: (surname) => surname && surname.length > 2,
+                          })}></input>
+                          {errors.surname && (
+                          <span className={st.error}>Fill in the field</span>
+                        )}
+                        </>}
+                        {language === 3 && <>
+                          <label>Сиздин атыңыз</label>
+                        <input defaultValue={data && data.name} name="name" placeholder="Сиздин атыңыз"
+                          ref={register({
+                            validate: (name) => name && name.length > 2,
+                          })}></input>
+                          {errors.name && (
+                          <span className={st.error}>Талааны толтуруңуз</span>
+                        )}
+                        <label>Сиздин фамилияңыз</label>
+                        <input defaultValue={data && data.surname} name="surname" placeholder="Сиздин фамилияңыз"
+                          ref={register({
+                            validate: (surname) => surname && surname.length > 2,
+                          })}></input>
+                          {errors.surname && (
+                          <span className={st.error}>Талааны толтуруңуз</span>
+                        )}
+                        </>}
+                {language === 1 && <label>Номер телефона</label>}
+                {language === 2 && <label>Phone number</label>}
+                {language === 3 && <label>Телефон номуру</label>}
+                <input defaultValue={data && data.phone_number} name="phone_number"
               placeholder="+996 (___) __ - __ - __"
               type="text"
               ref={register({
                 validate: (phone_number) => phone_number && phone_number.length > 6,
               })}></input>
-              {errors.phone_number && (
-              <span className={st.error}>Более 6-ти символов</span>
+              {errors.phone_number && (<>
+                {language === 1 && <span className={st.error}>Более 6-ти символов</span>}
+                {language === 2 && <span className={st.error}>Less than 6 characters</span>}
+                {language === 3 && <span className={st.error}>6 белгиден кем</span>}
+              </>
+              
             )}
-                        <button className={st.changePass} onClick={changeModal}>Сменить пароль</button>
-                        <button onClick={handleSubmit(onSubmit)}>Сохранить</button>
+                        {language === 1 &&<><button className={st.changePass} onClick={changeModal}>Сменить пароль</button>
+                        <button onClick={handleSubmit(onSubmit)}>Сохранить</button></>}
+                        {language === 2 &&<><button className={st.changePass} onClick={changeModal}>Change password</button>
+                        <button onClick={handleSubmit(onSubmit)}>Save</button></>}
+                        {language === 3 &&<><button className={st.changePass} onClick={changeModal}>Сыр сөздү өзгөртүү</button>
+                        <button onClick={handleSubmit(onSubmit)}>Сактоо</button></>}
                     </form>
             </div>
         </div>

@@ -12,6 +12,10 @@ const Footer = () => {
     dispatch(mainData());
   }, []);
   let arrContacts = [];
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5fdae023206923fbf0eac931c2d42486ac39f4bd
   // if (data.сontacts) {
   //     arrContacts = [...data.сontacts.contacts];
     
@@ -69,40 +73,48 @@ const Footer = () => {
       </svg>
       <div className={st.navbar}>
          {language === 1 && <span className={st.footer_title}>Разделы</span>}
-         {language === 2 && <span className={st.footer_title}>sections</span>}
+         {language === 2 && <span className={st.footer_title}>Sections</span>}
          {language === 3 && <span className={st.footer_title}>Бөлүмдөр</span>}
-        <Link to="/about-us">
-          {language === 1 && <span>Новости</span>}
-          {language === 2 && <span>News</span>}
-          {language === 3 && <span>Жаңылыктар</span>}
-        </Link>
-        <Link to="/analitic">
-          {language === 1 || 2 && <span>Блог</span>}
-          {language === 3 && <span>Blog</span>}
-        </Link>
-        <Link to="/news">
+         <Link to="/news">
           {language === 1 && <span>О нас</span>}
           {language === 2 && <span>About</span>}
           {language === 3 && <span>Биз жөнүндө</span>}
-        </Link>
-        <Link to="/order-research">
-          {language === 1 && <span>Заказать исследования</span>}
-          {language === 2 && <span>Order research</span>}
-          {language === 3 && <span>Изилдөөгө заказ берүү</span>}
         </Link>
         <Link to="/market-research">
           {language === 1 && <span>Маркет исследований</span>}
           {language === 2 && <span>Research market</span>}
           {language === 3 && <span>Изилдөөлөр</span>}
         </Link>
-        <Link to="/">
-          {language === 1 && <span>Продать исследования</span>}
-          {language === 2 && <span>Продать исследования</span>}
-          {language === 3 && <span>Продать исследования</span>}
+        <Link to="/about-us">
+          {language === 1 && <span>Новости</span>}
+          {language === 2 && <span>News</span>}
+          {language === 3 && <span>Жаңылыктар</span>}
         </Link>
+        <Link to="/analitic">
+          {language === 1 && <span>Блог</span>}
+          {language === 2 && <span>Blog</span>}
+          {language === 3 && <span>Блог</span>}
+        </Link>
+        <Link to="/be-partner" >
+          {language === 1 && <span>Партнерство</span>}
+          {language === 2 && <span>Partnership</span>}
+          {language === 3 && <span>Өнөктөштүк</span>}
+        </Link>
+        <Link to="/order-research">
+          {language === 1 && <span>Заказать исследования</span>}
+          {language === 2 && <span>Order research</span>}
+          {language === 3 && <span>Изилдөөгө заказ берүү</span>}
+        </Link>
+        {/* <Link to="/questions">
+          {language === 1 && <span>Вопросы и ответы</span>}
+          {language === 2 && <span>Q&A</span>}
+          {language === 3 && <span>Суроолор жана жооптор</span>}
+        </Link> */}
       </div>
       <div className={st.contacts}>
-        <span className={st.footer_title}>Контакты</span>
+        {language === 1 && <span className={st.footer_title}>Контакты</span>}
+        {language === 2 && <span className={st.footer_title}>Contacts</span>}
+        {language === 3 && <span className={st.footer_title}>Байланыштар</span>}
         {arrContacts &&
           arrContacts.map((item) => {
             return (
@@ -114,7 +126,9 @@ const Footer = () => {
       </div>
       <div className={st.socialQuest}>
         <div className={st.social}>
-          <span className={st.footer_title}>Социальные сети</span>
+          {language === 1 && <span className={st.footer_title}>Социальные сети</span>}
+          {language === 2 && <span className={st.footer_title}>Social networks</span>}
+          {language === 3 && <span className={st.footer_title}>Социалдык тармактар</span>}
           <div className={st.socialIcons}>
             <a
               href="https://www.facebook.com"
@@ -154,14 +168,18 @@ const Footer = () => {
           </div>
         </div>
         <div className={st.quest}>
+            {language === 1 &&<span className={st.footer_title}>Вопросы и ответы</span>}
+            {language === 2 &&<span className={st.footer_title}>Q&A</span>}
+            {language === 3 &&<span className={st.footer_title}>Суроолор жана жооптор</span>}
           <Link to="/questions">
-            <span className={st.footer_title}>Вопросы и ответы</span>
+            {language === 1 &&<span>Часто задаваемые вопросы</span>}
+            {language === 2 &&<span>FAQ</span>}
+            {language === 3 &&<span>Көп берилүүчү суроолор</span>}
           </Link>
           <Link to="/questions">
-            <span>Часто задаваемые вопросы</span>
-          </Link>
-          <Link to="/questions">
-            <span>Задать вопрос</span>
+            {language === 1 &&<span>Задать вопрос</span>}
+            {language === 2 &&<span>Your question</span>}
+            {language === 3 &&<span>Сиздин сурооңуз</span>}
           </Link>
         </div>
       </div>

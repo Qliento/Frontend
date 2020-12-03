@@ -12,7 +12,6 @@ const OrderResearch = () =>{
     const dispatch = useDispatch();
     const data = useSelector((state) => state.orderResearchData.data.data);
     const language = useSelector(state => state.langReducer.lang)
-    console.log(data);
     useEffect(() => {
         dispatch(orderResearchData());
     }, []);
@@ -79,12 +78,7 @@ const OrderResearch = () =>{
                             <span className={st.errorString}>Не корректно ввели данные</span>
                         )}
                         <label for="companyName">Название организации</label>
-                        <input id="companyName" placeholder="Название организации" name="logo" ref={register({
-                        validate: (logo) => logo && logo.length > 2,
-                        })}></input>
-                         {errors.logo && (
-                            <span className={st.errorString}>Заполните это поле (Более 2 символов)</span>
-                        )}
+                        <input id="companyName" placeholder="Название организации" name="logo" ></input>
                         <label for="mail">Почта*</label>
                         <input id="mail" placeholder="Ваш email" name="email" ref={register({
                         pattern: {
@@ -109,22 +103,17 @@ const OrderResearch = () =>{
                         validate: (name) => name && name.length > 3,
                         })}></input>
                         {errors.name && (
-                            <span className={st.errorString}>Не корректно ввели данные</span>
+                            <span className={st.errorString}>Data incorrectly entered</span>
                         )}
                         <label for="surname">Surname*</label>
                         <input id="surname" placeholder="Your surname" name="surname" ref={register({
                         validate: (surname) => surname && surname.length > 3,
                         })}></input>
                         {errors.surname && (
-                            <span className={st.errorString}>Не корректно ввели данные</span>
+                            <span className={st.errorString}>Data incorrectly entered</span>
                         )}
                         <label for="companyName">Name of the organization</label>
-                        <input id="companyName" placeholder="Name of the organization" name="logo" ref={register({
-                        validate: (logo) => logo && logo.length > 2,
-                        })}></input>
-                         {errors.logo && (
-                            <span className={st.errorString}>Name less than 2 characters</span>
-                        )}
+                        <input id="companyName" placeholder="Name of the organization" name="logo"></input>
                         <label for="mail">Email*</label>
                         <input id="mail" placeholder="email" name="email" ref={register({
                         pattern: {
@@ -140,31 +129,26 @@ const OrderResearch = () =>{
                         validate: (phone_number) => phone_number && phone_number > 6
                         })}></input>
                         {errors.phone_number && (
-                            <span className={st.errorString}>Заполните поле корректно</span>
+                            <span className={st.errorString}>Data incorrectly entered</span>
                         )}
                     </div>}
-                    {language === 1 && <div className={st.form_input_block}>
+                    {language === 3 && <div className={st.form_input_block}>
                         <label for="name">Сиздин атыңыз*</label>
                         <input id="name" placeholder="Сиздин атыңыз" name="name" ref={register({
                         validate: (name) => name && name.length > 4,
                         })}></input>
                         {errors.name && (
-                            <span className={st.errorString}>Не корректно ввели данные</span>
+                            <span className={st.errorString}>Маалыматтар туура эмес киргизилген</span>
                         )}
                         <label for="surname">Сиздин фамилияңыз*</label>
                         <input id="surname" placeholder="Сиздин фамилияңыз" name="surname" ref={register({
                         validate: (surname) => surname && surname.length > 4,
                         })}></input>
                         {errors.surname && (
-                            <span className={st.errorString}>Не корректно ввели данные</span>
+                            <span className={st.errorString}>Маалыматтар туура эмес киргизилген</span>
                         )}
                         <label for="companyName">Уюмдун аталышы</label>
-                        <input id="companyName" placeholder="Уюмдун аталышы" name="logo" ref={register({
-                        validate: (logo) => logo && logo.length > 2,
-                        })}></input>
-                         {errors.logo && (
-                            <span className={st.errorString}>Заполните это поле (Более 2 символов)</span>
-                        )}
+                        <input id="companyName" placeholder="Уюмдун аталышы" name="logo"></input>
                         <label for="mail">Email*</label>
                         <input id="mail" placeholder="email" name="email" ref={register({
                         pattern: {
@@ -180,7 +164,7 @@ const OrderResearch = () =>{
                         validate: (phone_number) => phone_number && phone_number > 6
                         })}></input>
                         {errors.phone_number && (
-                            <span className={st.errorString}>Заполните поле корректно</span>
+                            <span className={st.errorString}>Маалыматтар туура эмес киргизилген</span>
                         )}
                     </div>}
                     <div className={st.form_textarea_block}>
@@ -198,7 +182,7 @@ const OrderResearch = () =>{
                         validate: (description) => description && description.length > 10
                         })}></textarea>
                         {errors.description && (
-                            <span className={st.errorString}>Заполните поле (Более 10 символов)</span>
+                            <span className={st.errorString}>Less than 10 characters</span>
                         )}</>}
                         {language === 3 && <>
                             <label for="description">Кошумча маалымат*</label>
@@ -206,7 +190,7 @@ const OrderResearch = () =>{
                         validate: (description) => description && description.length > 10
                         })}></textarea>
                         {errors.description && (
-                            <span className={st.errorString}>Заполните поле (Более 10 символов)</span>
+                            <span className={st.errorString}>10 белгиден кем</span>
                         )}</>}
                         
                         

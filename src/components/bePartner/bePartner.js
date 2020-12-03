@@ -47,19 +47,9 @@ const BePartner = () =>{
                             <span className={st.errorString}>Не корректно ввели данные</span>
                         )}
                         <label for="name_of_organization">Название организации</label>
-                        <input id="name_of_organization" placeholder="Название организации" name="name_of_organization" ref={register({
-                        validate: (name_of_organization) => name_of_organization && name_of_organization.length > 2,
-                        })}></input>
-                        {errors.name_of_organization && (
-                            <span className={st.errorString}>Не корректно ввели данные</span>
-                        )}
+                        <input id="name_of_organization" placeholder="Название организации" name="name_of_organization"></input>
                         <label for="position">Должность</label>
-                        <input id="position" placeholder="Должность" name="position" ref={register({
-                        validate: (position) => position && position.length > 2,
-                        })}></input>
-                        {errors.position && (
-                            <span className={st.errorString}>Не корректно ввели данные</span>
-                        )}
+                        <input id="position" placeholder="Должность" name="position"></input>
                         <label for="mail">Почта*</label>
                         <input id="mail" placeholder="Ваш email" name="email" ref={register({
                         pattern: {
@@ -80,27 +70,17 @@ const BePartner = () =>{
                     </div>}
 
                     {language === 2 && <div className={st.form_input_block}>
-                        <label for="name">ФИО*</label>
-                        <input id="name" placeholder="Ваш Ф.И.О" name="name" ref={register({
+                        <label for="name">Full name*</label>
+                        <input id="name" placeholder="Full name" name="name" ref={register({
                         validate: (name) => name && name.length > 3,
                         })}></input>
                         {errors.name && (
-                            <span className={st.errorString}>Не корректно ввели данные(более 3 символов)</span>
+                            <span className={st.errorString}>Less than 8 characters</span>
                         )}
                         <label for="name_of_organization">Name of the organization</label>
-                        <input id="name_of_organization" placeholder="Name of the organization" name="name_of_organization" ref={register({
-                        validate: (name_of_organization) => name_of_organization && name_of_organization.length > 2,
-                        })}></input>
-                        {errors.name_of_organization && (
-                            <span className={st.errorString}>Не корректно ввели данные</span>
-                        )}
+                        <input id="name_of_organization" placeholder="Name of the organization" name="name_of_organization"></input>
                         <label for="position">Position</label>
-                        <input id="position" placeholder="Position" name="position" ref={register({
-                        validate: (position) => position && position.length > 2,
-                        })}></input>
-                        {errors.position && (
-                            <span className={st.errorString}>Не корректно ввели данные</span>
-                        )}
+                        <input id="position" placeholder="Position" name="position"></input>
                         <label for="mail">Email*</label>
                         <input id="mail" placeholder="email" name="email" ref={register({
                         pattern: {
@@ -116,31 +96,21 @@ const BePartner = () =>{
                         validate: (phone) => phone && phone > 6
                         })}></input>
                         {errors.phone && (
-                            <span className={st.errorString}>Заполните поле корректно</span>
+                            <span className={st.errorString}>Data incorrectly entered</span>
                         )}
                     </div>}
                     {language === 3 && <div className={st.form_input_block}>
-                        <label for="name">ФИО*</label>
-                        <input id="name" placeholder="Ваш Ф.И.О" name="name" ref={register({
+                        <label for="name">Аты-жөнүңүз*</label>
+                        <input id="name" placeholder="Аты-жөнүңүз" name="name" ref={register({
                         validate: (name) => name && name.length > 3,
                         })}></input>
                         {errors.name && (
-                            <span className={st.errorString}>Не корректно ввели данные(более 3 символов)</span>
+                            <span className={st.errorString}>3 белгиден кем</span>
                         )}
                         <label for="name_of_organization">Уюмдун аталышы</label>
-                        <input id="name_of_organization" placeholder="Уюмдун аталышы" name="name_of_organization" ref={register({
-                        validate: (name_of_organization) => name_of_organization && name_of_organization.length > 2,
-                        })}></input>
-                        {errors.name_of_organization && (
-                            <span className={st.errorString}>Не корректно ввели данные</span>
-                        )}
+                        <input id="name_of_organization" placeholder="Уюмдун аталышы" name="name_of_organization"></input>
                         <label for="position">Кызмат</label>
-                        <input id="position" placeholder="Кызмат" name="position" ref={register({
-                        validate: (position) => position && position.length > 2,
-                        })}></input>
-                        {errors.position && (
-                            <span className={st.errorString}>Не корректно ввели данные</span>
-                        )}
+                        <input id="position" placeholder="Кызмат" name="position"></input>
                         <label for="mail">Сиздин электрондук почтаңыз*</label>
                         <input id="mail" placeholder="Сиздин электрондук почтаңыз" name="email" ref={register({
                         pattern: {
@@ -156,7 +126,7 @@ const BePartner = () =>{
                         validate: (phone) => phone && phone > 6
                         })}></input>
                         {errors.phone && (
-                            <span className={st.errorString}>Заполните поле корректно</span>
+                            <span className={st.errorString}>Маалыматтар туура эмес киргизилген</span>
                         )}
                     </div>}
                     
@@ -187,7 +157,7 @@ const BePartner = () =>{
                         validate: (extra) => extra && extra.length > 10
                         })}></textarea>
                         {errors.extra && (
-                            <span className={st.errorString}>Заполните поле</span>
+                            <span className={st.errorString}>Талааны толтуруңуз</span>
                         )}
                         <button onClick={handleSubmit(onSubmit)}>Жөнөтүү</button></>}
                     </div>

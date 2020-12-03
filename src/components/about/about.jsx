@@ -21,13 +21,13 @@ const About = () => {
         {language === 1 && <><Link to="/">Главная / </Link>
         <Link to="/about-us">О нас</Link></>}
         {language === 2 && <><Link to="/">Home / </Link>
-        <Link to="/about-us">About</Link></>}
+        <Link to="/about-us">About us</Link></>}
         {language === 3 && <><Link to="/">Башкы бет / </Link>
-        <Link to="/about-us">Биз</Link></>}
+        <Link to="/about-us">Биз жөнүндө</Link></>}
       </div>
       {language === 1 && <span className={classes.title}>О нас</span>}
-      {language === 2 && <span className={classes.title}>About</span>}
-      {language === 3 && <span className={classes.title}>Биз</span>}
+      {language === 2 && <span className={classes.title}>About us</span>}
+      {language === 3 && <span className={classes.title}>Биз жөнүндө</span>}
 
       {data &&
         data.map((item, index) => {

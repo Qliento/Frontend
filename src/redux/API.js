@@ -1,13 +1,51 @@
 import Axios from "axios";
 
-const http = Axios.create({
-  baseURL: "https://qliento.com",
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-    "Accept-Language": "ru",
-  },
-});
+
+let lang = localStorage.getItem('lang');
+let http;
+
+if(lang == 2){
+  http = Axios.create({
+    baseURL: "https://qliento.com",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "Accept-Language": "en",
+    },
+  });
+}
+
+else if(lang == 3){
+  http = Axios.create({
+    baseURL: "https://qliento.com",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "Accept-Language": "kg",
+    },
+  });
+}
+else{
+  http = Axios.create({
+    baseURL: "https://qliento.com",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "Accept-Language": "ru",
+    },
+  });
+}
+
+// const httpUpadate = Axios.create({
+//   baseURL: "https://qliento.com",
+//   headers: {
+//     // Accept: "application/json",
+//     "Content-Type": "multipart/form-data",
+//     "Accept-Language": "ru",
+//   },
+// });
+
+
 
 export default {
   url: () => "http://207.154.250.71",
@@ -109,11 +147,11 @@ export default {
       },
     }),
   changePassword: (data) => http.post("/users/password-update/", data),
-  updateClient: (data, token) =>
-    http.post("/users/update/partners/", {
-      headers: { Authorization: "Bearer " + token },
-      data,
-    }),
+  // updateClient: (data, token) =>
+  //     httpUpadate.patch("/users/update/users", {
+  //     headers: { Authorization: "Bearer " + token},
+  //     data,
+  //   }),
   updateDataOrganization: (data, token) =>
     http.patch(
       "/users/update/partners/",
@@ -137,7 +175,7 @@ export default {
       headers: { Authorization: "Bearer " + token },
     }),
   updateClient: (data, token) =>
-    http.patch("/users/update/users", data, {
+    http.put("/users/update/users", data, {
       headers: { Authorization: "Bearer " + token },
     }),
   getResearchListOrgn: (token) =>

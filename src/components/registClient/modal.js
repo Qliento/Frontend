@@ -2,7 +2,6 @@ import React from "react";
 import Modal from "react-modal";
 import classes from "./registClient.module.css";
 import {  useSelector } from "react-redux";
-// import { errorMesseg } from "../../redux/actions/registrationOrg/registrationOrg";
 import img1 from "./img/1.png"
 import img2 from "./img/2.png"
 import { Link } from "react-router-dom";
@@ -22,36 +21,32 @@ const customStyles = {
   },
 };
 
-
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement("#root");
 
 function RegistrModal() {
-  // useEffect(() => {
-  //   dispatch(errorMesseg());
-  // }, []);
   const dispatch = useDispatch();
   const registSuccess = () =>{
     dispatch(registrationClientSuccess())
 }
 
   const isModal = useSelector((state) => state.RegistrationClient.isModal);
-
+  const language = useSelector(state => state.langReducer.lang);
   return (
     <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
       <div className={classes.modal}>
-        <span className={classes.title}>Регистрация</span>
+        {language === 1 && <span className={classes.title}>Регистрация</span>}
+        {language === 2 && <span className={classes.title}>Registration</span>}
+        {language === 3 && <span className={classes.title}>Каттоо</span>}
         <div className={classes.content}>
           <img alt="img" src={isModal == 1 ? img1 : img2}/>
           <div className={classes.blockText}>
           <span className={classes.descr}>
-              {
-                  isModal === 1 &&  "Прошла успешно. На почту отправлена ссылка для подтверждения"
-              }
-              {
-                  isModal === 2 &&  "Произошла ошибка попробуйте снова"
-              }
-           
+              {language === 1 && isModal === 1 &&  "Прошла успешно. На почту отправлена ссылка для подтверждения"}
+              {language === 2 && isModal === 1 &&  "Прошла успешно. На почту отправлена ссылка для подтверждения"}
+              {language === 3 && isModal === 1 &&  "Прошла успешно. На почту отправлена ссылка для подтверждения"}
+              {language === 1 && isModal === 2 &&  "Произошла ошибка попробуйте снова"}
+              {language === 2 && isModal === 2 &&  "An error has occurred! Try again"}
+              {language === 3 && isModal === 2 &&  "Ката кетти! Кайра аракет кылыңыз"}
           </span>
           </div>
         </div>

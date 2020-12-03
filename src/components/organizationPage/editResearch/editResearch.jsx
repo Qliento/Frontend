@@ -25,15 +25,12 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 const EditModal = ({ edit, changeState, id }) => {
-  // useEffect(() => {
-  //   dispatch(errorMesseg());
-  // }, []);
+  const language = useSelector(state => state.langReducer.lang)
   const { handleSubmit, register, errors } = useForm();
   const [isModal, SetIsModal] = useState(true);
 
   const dispatch = useDispatch();
   const onSubmit = (values) => {
-    console.log(values);
     dispatch(UbdateResearch(values, id));
   };
   return (
@@ -49,25 +46,31 @@ const EditModal = ({ edit, changeState, id }) => {
             />
           </div>
           <div className={classes.blockInputs}>
-            <span className={classes.title}>Скидочная цена</span>
-            <input
-              className={classes.input}
-              type="number"
-              name="new_price"
-              placeholder="Цена"
+            {language === 1 && <><span className={classes.title}>Скидочная цена</span>
+            <input className={classes.input} type="number" name="new_price" placeholder="Цена"
               ref={register({
                 validate: (new_price) => new_price && new_price.length > 0,
               })}
             />
-            {errors.new_price && (
-              <span className={classes.error}>
-                Это поле не может быть пустым
-              </span>
-            )}
+            {errors.new_price && (<span className={classes.error}>Это поле не может быть пустым</span>)}</>}
+            {language === 2 && <><span className={classes.title}>Discount price</span>
+            <input className={classes.input} type="number" name="new_price" placeholder="Price"
+              ref={register({
+                validate: (new_price) => new_price && new_price.length > 0,
+              })}
+            />
+            {errors.new_price && (<span className={classes.error}>Fill in the field</span>)}</>}
+            {language === 3 && <><span className={classes.title}>Арзандатылган баа</span>
+            <input className={classes.input} type="number" name="new_price" placeholder="Баа"
+              ref={register({
+                validate: (new_price) => new_price && new_price.length > 0,
+              })}
+            />
+            {errors.new_price && (<span className={classes.error}>Талааны толтуруңуз</span>)}</>}
           </div>
-          <button type="submit" className={classes.btn}>
-            Сохранить
-          </button>
+          {language === 1 && <button type="submit" className={classes.btn}>Сохранить</button>}
+          {language === 2 && <button type="submit" className={classes.btn}>Save</button>}
+          {language === 3 && <button type="submit" className={classes.btn}>Cактоо</button>}
         </form>
       </div>
       <ModalChangeResearch />

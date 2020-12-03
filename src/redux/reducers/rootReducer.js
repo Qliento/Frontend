@@ -23,6 +23,7 @@ import {changePassword} from './clientPage/changePassword';
 import {updateClient} from './clientPage/updateClient';
 import {ResearchList} from "./organizationPage/researchList"
 import {langReducer} from './lang/lang';
+import {recoveryPass} from './recoveryPass/recoveryPass'
 
 export const rootReducer = combineReducers({
     AboutUs,
@@ -48,5 +49,6 @@ export const rootReducer = combineReducers({
     changePassword,
     updateClient,
     ResearchList,
-    langReducer
+    langReducer,
+    recoveryPass
 });

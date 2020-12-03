@@ -89,7 +89,6 @@ export function registrationClient(data){
 export function updateClient(data){
   return async (dispatch)=>{
     let token = localStorage.getItem("user");
-    console.log(data);
     await API.updateClient(data, token)
     .then(res => {
       if( res.status == 200){
@@ -105,7 +104,6 @@ export function updateClient(data){
 export function updateOrganization(data){
   return async (dispatch)=>{
     let token = localStorage.getItem("user");
-    console.log(data);
     await API.updateDataOrganization(data, token)
     .then(res => {
       if( res.status == 200){
@@ -130,20 +128,30 @@ export function changePassword(data){
     })
     .catch(err =>{
       dispatch({ type: 'POSTED__ERROR_CHANGE_PASS'});
-      console.log(err.response.data)
     })
 
 }
 }
 
 export function recoveryPassword(data){
-  return async ()=>{
+  return async (dispatch)=>{
     const data1 = JSON.stringify(data)
     await API.recoveryPassword(data1)
-      .then(res => {
-        console.log(res);
-      })
+    .then(res => {
+      if( res.status == 200){
+        dispatch({ type: 'POSTED_SUCCES_RECOVERY'})
+      }
+    })
+    .catch(err =>{
+      dispatch({ type: 'POSTED__ERROR_RECOVERY'});
+    })
 }
+}
+
+export function recoveryAfter(){
+  return {
+    type: 'POSTED__AFTER_RECOVERY'
+  }
 }
 
 export function authAfter() {
@@ -174,10 +182,11 @@ export function authClient({email, password}){
       if( res.status == 200){
         dispatch(createToken(email, password));
       }
-      else{
-        dispatch({ type: 'POSTED__ERROR_AUTH'})
-      }
-    });
+    })
+    .catch(err =>{
+      dispatch({ type: 'POSTED__ERROR_AUTH'})
+    }
+    );
 }}
 
 
