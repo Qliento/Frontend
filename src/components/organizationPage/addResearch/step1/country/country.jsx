@@ -3,12 +3,12 @@ import "./country.scss";
 
 import CreatableSelect from "react-select/creatable";
 
-const Country = ({ name }) => {
+const Country = ({ name ,changeCountry,lang,data}) => {
   const handleChange = (newValue, actionMeta) => {
-    console.group("Value Changed");
-    console.log(newValue);
-    console.log(`action: ${actionMeta.action}`);
-    console.groupEnd();
+      
+        changeCountry(newValue)
+      
+
   };
   const colourOptions = [
     { value: "ocean", label: "Ocean"},
@@ -27,6 +27,7 @@ const Country = ({ name }) => {
       <CreatableSelect
         placeholder={name}
         isMulti
+        defaultValue={data?data:""}
         onChange={handleChange}
         options={colourOptions}
       />

@@ -1,5 +1,5 @@
 .country{
-    height: 42px;
+    min-height: 42px;
     width: 100%;
     .css-2b097c-container{
         width: 100% !important;
@@ -16,5 +16,16 @@
     .css-tlfecz-indicatorContainer{
         color: #FFFFFF !important;
         height: 100% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
+    .css-1gtu0rj-indicatorContainer{
+        height: 100% !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
 }

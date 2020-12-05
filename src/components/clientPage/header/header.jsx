@@ -7,7 +7,6 @@ import {useSelector} from 'react-redux';
 const Header=({onModal, data})=>{
     // const language = useSelector(state => state.langReducer.lang)
     const language = localStorage.getItem('lang');
-
     return(
         <div className={classes.blockWrapp}>
             <div className={classes.topItem}>

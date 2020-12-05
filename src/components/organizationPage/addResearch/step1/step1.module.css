@@ -25,6 +25,10 @@
   flex-direction: row;
   justify-content: space-between;
 }
+.err {
+  color: red;
+  font-size: 11px;
+}
 .step {
   font-size: 24px;
   line-height: 29px;
@@ -138,8 +142,8 @@
   margin-top: 40px;
 }
 .btn {
-  height: 100%;
-  width: 100%;
+  height: 42px;
+  width: 45%;
   background: #76b73e;
   font-weight: bold;
   font-size: 18px;
@@ -147,7 +151,4 @@
   color: #ffffff;
   border: 1px solid #76b73e;
 }
-.link{
-    height: 42px;
-    width: 45%;
-}
+

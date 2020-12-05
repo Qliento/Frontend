@@ -16,7 +16,8 @@ export function detailResearch(id) {
     let token = localStorage.getItem("user");
     await API.detailResearchOrg(token, id)
       .then((res) => {
-        dispatch(dataDetail(res.data[0]));
+        dispatch(dataDetail(res.data));
+    
       })
       .catch((err) => {});
   };
@@ -48,3 +49,10 @@ export function dataDetail(data) {
     payload: data,
   };
 }
+
+export function dataStep2(data) {
+    return {
+      type: "UPLOAD_DATA_STEP_2",
+      payload: data,
+    };
+  }
