@@ -6,7 +6,8 @@ import { researchPushBasket } from "../../../redux/actions/pushResearch/pushRese
 
 const MarketCard = ({ data, addFlyEfyf }) => {
   const dispatch = useDispatch();
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
+  const language = localStorage.getItem('lang');
   const orders = (e) => {
     dispatch(researchPushBasket(e));
     addFlyEfyf()
@@ -35,9 +36,9 @@ const MarketCard = ({ data, addFlyEfyf }) => {
                 <span>{data.pages} стр</span>
                 <span>ID: {data.id}</span>
                 <div className={classes.country}>
-                  {language === 1 && <span>Страны: </span>}
-                  {language === 2 && <span>Countries: </span>}
-                  {language === 3 && <span>Мамлекеттер: </span>}
+                  {(language == 1 || language == undefined) && <span>Страны: </span>}
+                  {language == 2 && <span>Countries: </span>}
+                  {language == 3 && <span>Мамлекеттер: </span>}
                   {data.country &&
                     data.country.map((item) => {
                       return <span key={item.id}> {item.name}</span>;
@@ -68,12 +69,12 @@ const MarketCard = ({ data, addFlyEfyf }) => {
             )}
           </div>
           <div className={classes.blockBtn}>
-            {language === 1 && <button className={classes.toBasket} id={data.id} onClick={(e)=>orders(e.target.id)}>В корзину</button>}
-            {language === 2 && <button className={classes.toBasket} id={data.id} onClick={(e)=>orders(e.target.id)}>Shopping cart</button>}
-            {language === 3 && <button className={classes.toBasket} id={data.id} onClick={(e)=>orders(e.target.id)}>Корзинага</button>}
-            {language === 1 && <a href={data.demo && data.demo} target="_blank" className={classes.demo} download>Демо версия</a>}
-            {language === 2 && <a href={data.demo && data.demo} target="_blank" className={classes.demo} download>Demo version</a>}
-            {language === 3 && <a href={data.demo && data.demo} target="_blank" className={classes.demo} download>Демо версия</a>}
+            {(language == 1 || language == undefined) && <button className={classes.toBasket} id={data.id} onClick={(e)=>orders(e.target.id)}>В корзину</button>}
+            {language == 2 && <button className={classes.toBasket} id={data.id} onClick={(e)=>orders(e.target.id)}>Shopping cart</button>}
+            {language == 3 && <button className={classes.toBasket} id={data.id} onClick={(e)=>orders(e.target.id)}>Корзинага</button>}
+            {(language == 1 || language == undefined) && <a href={data.demo && data.demo} target="_blank" className={classes.demo} download>Демо версия</a>}
+            {language == 2 && <a href={data.demo && data.demo} target="_blank" className={classes.demo} download>Demo version</a>}
+            {language == 3 && <a href={data.demo && data.demo} target="_blank" className={classes.demo} download>Демо версия</a>}
           </div>
         </div>
       </div>

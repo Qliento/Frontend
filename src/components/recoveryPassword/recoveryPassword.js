@@ -8,7 +8,8 @@ import Modal from './modal_window/modal';
 
 const RecoveryPassword = () =>{
     const { handleSubmit, register, errors } = useForm();
-    const language = useSelector(state => state.langReducer.lang)
+    // const language = useSelector(state => state.langReducer.lang)
+    const language = localStorage.getItem('lang');
     const dispatch = useDispatch();
     const onSubmit = (data) =>{
         dispatch(recoveryPassword(data));
@@ -20,9 +21,9 @@ const RecoveryPassword = () =>{
                 <Link to = '/' className = {st.strikeLink} >
                     <div className={st.strike}></div>
                 </Link>
-                {language === 1 &&<h2>Восстановление пароля</h2>}
-                {language === 2 &&<h2>Recovery password</h2>}
-                {language === 3 &&<h2>Восстановление пароля</h2>}
+                {(language == 1 || language == undefined) &&<h2>Восстановление пароля</h2>}
+                {language == 2 &&<h2>Recovery password</h2>}
+                {language == 3 &&<h2>Восстановление пароля</h2>}
                 <form>
                     <label>E-mail</label>
                     <input placeholder="e-mail" name="email" ref={register({
@@ -33,14 +34,14 @@ const RecoveryPassword = () =>{
                         })}></input>
                      {errors.email && (
                          <>
-                            {language === 1 &&<span className={st.errorString}>Неверный адрес электронной почты</span>}
-                            {language === 2 &&<span className={st.errorString}>Invalid email</span>}
-                            {language === 3 &&<span className={st.errorString}>Электрондук почта жараксыз</span>}
+                            {(language == 1 || language == undefined) &&<span className={st.errorString}>Неверный адрес электронной почты</span>}
+                            {language == 2 &&<span className={st.errorString}>Invalid email</span>}
+                            {language == 3 &&<span className={st.errorString}>Электрондук почта жараксыз</span>}
                         </>
                         )}
-                    {language === 1 &&<button onClick={handleSubmit(onSubmit)}>Отправить письмо</button>}
-                    {language === 2 &&<button onClick={handleSubmit(onSubmit)}>Send a messege</button>}
-                    {language === 3 &&<button onClick={handleSubmit(onSubmit)}>Жөнөтүү</button>}
+                    {(language == 1 || language == undefined) &&<button onClick={handleSubmit(onSubmit)}>Отправить письмо</button>}
+                    {language == 2 &&<button onClick={handleSubmit(onSubmit)}>Send a messege</button>}
+                    {language == 3 &&<button onClick={handleSubmit(onSubmit)}>Жөнөтүү</button>}
                 </form>
             </div>
         </div>

@@ -11,7 +11,8 @@ const AnaliticCard = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const data = useSelector((state) => state.blogCardData.data.data);
-    const language = useSelector(state => state.langReducer.lang);
+    // const language = useSelector(state => state.langReducer.lang);
+    const language = localStorage.getItem('lang');
     useEffect(() => {dispatch(blogCardData(id))}, []);
     const month = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентабрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
     const monthEng = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -28,11 +29,11 @@ const AnaliticCard = () => {
     return(
         <div className={st.container}>
             <span className={st.analiticCard_way}>
-                {language === 1 && <><Link to="/">Главная</Link><span> / </span>
+                {(language == 1 || language == undefined) && <><Link to="/">Главная</Link><span> / </span>
                 <Link to="/analitic">Блог</Link></>}
-                {language === 2 && <><Link to="/">Home</Link><span> / </span>
+                {language == 2 && <><Link to="/">Home</Link><span> / </span>
                 <Link to="/analitic">Blog</Link></>}
-                {language === 3 && <><Link to="/">Башкы бет</Link><span> / </span>
+                {language == 3 && <><Link to="/">Башкы бет</Link><span> / </span>
                 <Link to="/analitic">Блог</Link></>}
                 <span> / </span>
                 {data && <Link to={`/analiticCard/${data.id}`}>{data.header}</Link>}
@@ -41,9 +42,9 @@ const AnaliticCard = () => {
                 <div className={st.card_img}>
                     <img src={data && data.images[0].url} alt="img" />
                     <div className={st.shareIt}>
-                        {language === 1 && <span>Поделиться в соц сетях</span>}
-                        {language === 2 && <span>Share in social networks</span>}
-                        {language === 3 && <span>Социалдык тармактарда бөлүшүү</span>}
+                        {(language == 1 || language == undefined) && <span>Поделиться в соц сетях</span>}
+                        {language == 2 && <span>Share in social networks</span>}
+                        {language == 3 && <span>Социалдык тармактарда бөлүшүү</span>}
                         <div className={st.shareIt_icons}>
                         <div id="ya"></div>
                         </div>
@@ -81,9 +82,9 @@ const AnaliticCard = () => {
                 <div className={st.card_description}>
                     <span>
                         <span>{ data && data.date.match(/\d+/g)[2] } </span>
-                        {language === 1 && <span>{ data && month[Number(data.date.match(/\d+/g)[1] - 1)] } </span>}
-                        {language === 2 && <span>{ data && monthEng[Number(data.date.match(/\d+/g)[1] - 1)] } </span>}
-                        {language === 3 && <span>{ data && monthKg[Number(data.date.match(/\d+/g)[1] - 1)] } </span>}
+                        {(language == 1 || language == undefined) && <span>{ data && month[Number(data.date.match(/\d+/g)[1] - 1)] } </span>}
+                        {language == 2 && <span>{ data && monthEng[Number(data.date.match(/\d+/g)[1] - 1)] } </span>}
+                        {language == 3 && <span>{ data && monthKg[Number(data.date.match(/\d+/g)[1] - 1)] } </span>}
                         <span>{ data && data.date.match(/\d+/g)[0] }</span>
                     </span>
                     <h4>{ data && data.header }</h4>

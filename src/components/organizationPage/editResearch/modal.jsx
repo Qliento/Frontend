@@ -30,7 +30,8 @@ Modal.setAppElement("#root");
 function ModalChangeResearch() {
   const [edit, setedit] = useState(true);
   const isModal = useSelector((state) => state.ResearchList.ubdateResearch);
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
+  const language = localStorage.getItem('lang');
 
   return (
     <Modal isOpen={isModal && edit} style={customStyles}>
@@ -44,12 +45,12 @@ function ModalChangeResearch() {
           />
         </div>
         <img alt="img" src={galka} className={classes.galka1} />
-        {language === 1 && <span className={classes.text}>Скидочная цена </span>}
-        {language === 2 && <span className={classes.text}>Discount price </span>}
-        {language === 3 && <span className={classes.text}>Aрзандатылган баа </span>}
-        {language === 1 && <span className={classes.text}>отправлена на рассмотрение.</span>}
-        {language === 2 && <span className={classes.text}>sent for review.</span>}
-        {language === 3 && <span className={classes.text}>кароого жиберилген.</span>}
+        {(language == 1 || language == undefined) && <span className={classes.text}>Скидочная цена </span>}
+        {language == 2 && <span className={classes.text}>Discount price </span>}
+        {language == 3 && <span className={classes.text}>Aрзандатылган баа </span>}
+        {(language == 1 || language == undefined) && <span className={classes.text}>отправлена на рассмотрение.</span>}
+        {language == 2 && <span className={classes.text}>sent for review.</span>}
+        {language == 3 && <span className={classes.text}>кароого жиберилген.</span>}
       </div>
     </Modal>
   );

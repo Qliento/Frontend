@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { aboutData } from "../../redux/actions/about/getAboutText";
-import { AboutUs } from "../../redux/reducers/about/about";
+// import { AboutUs } from "../../redux/reducers/about/about";
 import classes from "./about.module.css";
 import img1 from "./img/1.png";
 import img2 from "./img/2.png";
@@ -13,21 +13,21 @@ const About = () => {
   useEffect(() => {
     dispatch(aboutData());
   }, []);
-  const language = useSelector(state => state.langReducer.lang);
-
+  // const language = useSelector(state => state.langReducer.lang);
+  const language = localStorage.getItem('lang');
   return (
     <div className={classes.aboutPage}>
       <div className={classes.blockCrumbs}>
-        {language === 1 && <><Link to="/">Главная / </Link>
+        {(language == 1 || language == undefined)   && <><Link to="/">Главная / </Link>
         <Link to="/about-us">О нас</Link></>}
-        {language === 2 && <><Link to="/">Home / </Link>
+        {language == 2 && <><Link to="/">Home / </Link>
         <Link to="/about-us">About us</Link></>}
-        {language === 3 && <><Link to="/">Башкы бет / </Link>
+        {language == 3 && <><Link to="/">Башкы бет / </Link>
         <Link to="/about-us">Биз жөнүндө</Link></>}
       </div>
-      {language === 1 && <span className={classes.title}>О нас</span>}
-      {language === 2 && <span className={classes.title}>About us</span>}
-      {language === 3 && <span className={classes.title}>Биз жөнүндө</span>}
+      {(language == 1 || language == undefined)  && <span className={classes.title}>О нас</span>}
+      {language == 2 && <span className={classes.title}>About us</span>}
+      {language == 3 && <span className={classes.title}>Биз жөнүндө</span>}
 
       {data &&
         data.map((item, index) => {

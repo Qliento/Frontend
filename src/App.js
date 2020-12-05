@@ -24,7 +24,7 @@ import OrgPage from "./components/organizationPage/organizationPage";
 import ClientPage from './components/clientPage/clientPage';
 
 function App() {
-
+  // localStorage.setItem('lang', 1)
   return (
     <div className="App">
       <Header />

@@ -5,7 +5,8 @@ import logo from "./img/logo.png"
 import {useSelector} from 'react-redux';
 
 const Header=({onModal, data})=>{
-    const language = useSelector(state => state.langReducer.lang)
+    // const language = useSelector(state => state.langReducer.lang)
+    const language = localStorage.getItem('lang');
 
     return(
         <div className={classes.blockWrapp}>
@@ -23,14 +24,14 @@ const Header=({onModal, data})=>{
                         <span></span>
                     </div>
                     <div className={classes.rightBlock}>
-                        {language === 1 &&<span className={classes.redact} onClick={() => onModal()}>Редактировать</span>}
-                        {language === 2 &&<span className={classes.redact} onClick={() => onModal()}>Edit</span>}
-                        {language === 3 &&<span className={classes.redact} onClick={() => onModal()}>Түзөтүү</span>}
+                        {(language == 1 || language == undefined) &&<span className={classes.redact} onClick={() => onModal()}>Редактировать</span>}
+                        {language == 2 &&<span className={classes.redact} onClick={() => onModal()}>Edit</span>}
+                        {language == 3 &&<span className={classes.redact} onClick={() => onModal()}>Түзөтүү</span>}
                     </div>
                 </div>
             </div>
             <div className={classes.photo}>
-                <img alt="img" src={noPhoto} />
+                <img alt="img" src={data && data.photo ? 'https://qliento.com' + data.photo : noPhoto} />
             </div>
         </div>
     )

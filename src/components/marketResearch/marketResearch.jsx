@@ -11,7 +11,8 @@ import {useSelector} from 'react-redux';
 
 const MarketResearch = ({ filter }) => {
   const params = useParams();
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
+  const language = localStorage.getItem('lang');
   const [sort1, setSort1] = useState(false);
   const [sort2, setSort2] = useState(false);
   const [dataFilter, setDataFilter] = useState({
@@ -27,17 +28,17 @@ const MarketResearch = ({ filter }) => {
   return (
     <div className={classes.marketPage}>
       <div className={classes.breadLink}>
-        {language === 1 && <>
+        {(language == 1 || language == undefined) && <>
           <Link to="/">Главная</Link>
           <span>{" / "}</span>
           <Link to="/market-research">Маркет исследований</Link>
         </>}
-        {language === 2 && <>
+        {language == 2 && <>
           <Link to="/">Home</Link>
           <span>{" / "}</span>
           <Link to="/market-research">Research market</Link>
         </>}
-        {language === 3 && <>
+        {language == 3 && <>
           <Link to="/">Башкы бет</Link>
           <span>{" / "}</span>
           <Link to="/market-research">Изилдөөлөр</Link>

@@ -5,7 +5,8 @@ import {Link} from "react-router-dom"
 
 const Order=()=>{
     const data = useSelector((state) => state.ListBasket.listResearch);
-    const language = useSelector(state => state.langReducer.lang)
+    // const language = useSelector(state => state.langReducer.lang)
+    const language = localStorage.getItem('lang');
     let total=0;
     {
         data&&
@@ -19,10 +20,10 @@ const Order=()=>{
         <form className={classes.orderCard}>
             <div className={classes.content}>
                 <div className={classes.blockPrice}>
-                {language === 1 && <span className={classes.titlePrice}>Итоговоя сумма</span>}
-                {language === 2 && <span className={classes.titlePrice}>Total cost</span>}
+                {(language == 1 || language == undefined) && <span className={classes.titlePrice}>Итоговоя сумма</span>}
+                {language == 2 && <span className={classes.titlePrice}>Total cost</span>}
                 {language === 3 && <span className={classes.titlePrice}>Итоговоя сумма</span>}
-                <span className={classes.price}>{total} сом </span>
+                <span classame={classes.price}>{total} сом </span>
                 </div>
                 <div className={classes.blockChecket}>
               <input
@@ -32,15 +33,15 @@ const Order=()=>{
                 required
               />
               <div className={classes.text}>
-                {language === 1 && <>
+                {(language == 1 || language == undefined) &&<>
                     <span>Подтверждаю, что ознакомлен и согласен с </span>
                     <Link to='/agreement'>Пользовательским соглашением</Link>
                 </>}
-                {language === 2 && <>
+                {language == 2 && <>
                     <span>I confirm that I have read and agree with the </span>
                     <Link to='/agreement'>User Agreement</Link>
                 </>}
-                {language === 3 && <>
+                {language == 3 && <>
                     <Link to='/agreement'>Колдонуучунун келишимин</Link>
                     <span> окуп чыкканымды жана аны менен макул экенимди ырастайм</span>
                 </>}
@@ -48,9 +49,9 @@ const Order=()=>{
             </div>
              
             </div>
-            {language === 1 && <button  className={classes.btn}>Оформить заказ</button>}
-            {language === 2 && <button  className={classes.btn}>Checkout order</button>}
-            {language === 3 && <button  className={classes.btn}>Каттоо</button>}
+            {(language == 1 || language == undefined) && <button  className={classes.btn}>Оформить заказ</button>}
+            {language == 2 && <button  className={classes.btn}>Checkout order</button>}
+            {language == 3 && <button  className={classes.btn}>Каттоо</button>}
         </form>
     )
 }

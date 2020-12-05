@@ -18,7 +18,8 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
   const [inputAuthor, setInputAuthor] = useState("");
   const [inputCountry, setInputCountry] = useState("");
   const [inputText, setInputText] = useState(text ? text : "");
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
+  const language = localStorage.getItem('lang');
   useEffect(() => {
     dispatch(listDataFilter());
   }, []);
@@ -71,28 +72,28 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
           />
         </div>
 
-        {language === 1 &&<input className={classes.inputSearch} placeholder="Поиск по ключевым словам"
+        {(language == 1 || language == undefined) &&<input className={classes.inputSearch} placeholder="Поиск по ключевым словам"
           onChange={(e) => {
             setInputText(e.target.value);
           }}
           value={inputText}
         />}
-        {language === 2 &&<input className={classes.inputSearch} placeholder="Keyword search"
+        {language == 2 &&<input className={classes.inputSearch} placeholder="Keyword search"
           onChange={(e) => {
             setInputText(e.target.value);
           }}
           value={inputText}
         />}
-        {language === 3 &&<input className={classes.inputSearch} placeholder="Негизги сөз боюнча издөө"
+        {language == 3 &&<input className={classes.inputSearch} placeholder="Негизги сөз боюнча издөө"
           onChange={(e) => {
             setInputText(e.target.value);
           }}
           value={inputText}
         />}
         <Link className={classes.linkBtn} to={`/market-research-filter`}>
-          {language === 1 && <button className={classes.btn} onClick={search}>Поиск</button>}
-          {language === 2 && <button className={classes.btn} onClick={search}>Search</button>}
-          {language === 3 && <button className={classes.btn} onClick={search}>Издөө</button>}
+          {(language == 1 || language == undefined) && <button className={classes.btn} onClick={search}>Поиск</button>}
+          {language == 2 && <button className={classes.btn} onClick={search}>Search</button>}
+          {language == 3 && <button className={classes.btn} onClick={search}>Издөө</button>}
         </Link>
       </div>
       <div className={classes.blockRow}>
@@ -110,7 +111,7 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
             ubdateData={ubdateData}
           />
         </div>
-        {language === 1 && <>
+        {(language == 1 || language == undefined) && <>
           <button className={ sort11? classes.btnSort1 : classes.btnSort} onClick={() => {
             sort1();
             setSort11(!sort11);
@@ -123,7 +124,7 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
           }}
         >Сортировка по дате <img alt="img" src={sort} /></button>
         </>}
-        {language === 2 && <>
+        {language == 2 && <>
           <button className={ sort11? classes.btnSort1 : classes.btnSort} onClick={() => {
             sort1();
             setSort11(!sort11);
@@ -136,7 +137,7 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
           }}
         >Sort by data <img alt="img" src={sort} /></button>
         </>}
-        {language === 3 && <>
+        {language == 3 && <>
           <button className={ sort11? classes.btnSort1 : classes.btnSort} onClick={() => {
             sort1();
             setSort11(!sort11);

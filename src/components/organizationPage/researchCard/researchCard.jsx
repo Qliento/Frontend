@@ -8,7 +8,8 @@ import {useSelector} from 'react-redux';
 
 const ResearchCard = ({ data }) => {
   const [edit, setEdit] = useState(false);
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
+  const language = localStorage.getItem('lang');
   return (
     <>
       <div className={classes.marketCard}>
@@ -28,9 +29,9 @@ const ResearchCard = ({ data }) => {
                 <span>{data && data.name}</span>
               </div>
               <div className={classes.description}>
-                {language === 1 && <span>{data && data.pages} стр</span>}
-                {language === 2 && <span>{data && data.pages} рages</span>}
-                {language === 3 && <span>{data && data.pages} бет</span>}
+                {(language == 1 || language == undefined) && <span>{data && data.pages} стр</span>}
+                {language == 2 && <span>{data && data.pages} рages</span>}
+                {language == 3 && <span>{data && data.pages} бет</span>}
                 <span>ID: {data && data.id}</span>
                 <div className={classes.country}>
                   <span>Страны: </span>
@@ -64,35 +65,35 @@ const ResearchCard = ({ data }) => {
             )}
           </div>
           <div className={classes.blockBtn}>
-            {language === 1 && <button className={classes.toBasket} onClick={() => setEdit(true)}>Редактировать</button>}
-            {language === 2 && <button className={classes.toBasket} onClick={() => setEdit(true)}>Edit</button>}
-            {language === 3 && <button className={classes.toBasket} onClick={() => setEdit(true)}>Түзөтүү</button>}
+            {(language == 1 || language == undefined) && <button className={classes.toBasket} onClick={() => setEdit(true)}>Редактировать</button>}
+            {language == 2 && <button className={classes.toBasket} onClick={() => setEdit(true)}>Edit</button>}
+            {language == 3 && <button className={classes.toBasket} onClick={() => setEdit(true)}>Түзөтүү</button>}
             <div className={classes.blockStatus}>
-              {language === 1 && <span className={classes.status_title}>Статус</span>}
-              {language === 2 && <span className={classes.status_title}>Status</span>}
-              {language === 3 && <span className={classes.status_title}>Статус</span>}
+              {(language == 1 || language == undefined) && <span className={classes.status_title}>Статус</span>}
+              {language == 2 && <span className={classes.status_title}>Status</span>}
+              {language == 3 && <span className={classes.status_title}>Статус</span>}
               {data && data.status === 1 ? (
                 <>
-                  {language === 1 && <span className={classes.status_desc}>На рассмотрении</span>}
-                  {language === 2 && <span className={classes.status_desc}>Pending</span>}
-                  {language === 3 && <span className={classes.status_desc}>Күтүлүүдө</span>}
+                  {(language == 1 || language == undefined) && <span className={classes.status_desc}>На рассмотрении</span>}
+                  {language == 2 && <span className={classes.status_desc}>Pending</span>}
+                  {language == 3 && <span className={classes.status_desc}>Күтүлүүдө</span>}
                 </>
               ) : null}
 
               {data && data.status === 2 ? (
-                <>{language === 1 && <span className={classes.status_desc2}>Одобрено</span>}
-                {language === 2 && <span className={classes.status_desc2}>Approved</span>}
-                {language === 3 && <span className={classes.status_desc2}>Бекитилген</span>}
+                <>{(language == 1 || language == undefined) && <span className={classes.status_desc2}>Одобрено</span>}
+                {language == 2 && <span className={classes.status_desc2}>Approved</span>}
+                {language == 3 && <span className={classes.status_desc2}>Бекитилген</span>}
               </>) : null}
               {data && data.status === 3 ? (<>
-                {language === 1 && <span className={classes.status_desc3}>Отказано</span>}
-                {language === 2 && <span className={classes.status_desc3}>Denied</span>}
-                {language === 3 && <span className={classes.status_desc3}>Четке кагылды</span>}
+                {(language == 1 || language == undefined) && <span className={classes.status_desc3}>Отказано</span>}
+                {language == 2 && <span className={classes.status_desc3}>Denied</span>}
+                {language == 3 && <span className={classes.status_desc3}>Четке кагылды</span>}
               </>) : null}
               {data && data.status === 4 ? (<>
-                {language === 1 && <span className={classes.status_desc4}>Запросить скидочную цену</span>}
-                {language === 2 && <span className={classes.status_desc4}>Request a discount price</span>}
-                {language === 3 && <span className={classes.status_desc4}>Арзандатуу баасын сураңыз</span>}
+                {(language == 1 || language == undefined) && <span className={classes.status_desc4}>Запросить скидочную цену</span>}
+                {language == 2 && <span className={classes.status_desc4}>Request a discount price</span>}
+                {language == 3 && <span className={classes.status_desc4}>Арзандатуу баасын сураңыз</span>}
               </>) : null}
             </div>
           </div>

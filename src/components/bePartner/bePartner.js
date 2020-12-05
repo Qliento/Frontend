@@ -10,7 +10,8 @@ const BePartner = () =>{
 
     const dispatch = useDispatch();
     const data = useSelector((state) => state.BePartnerData.data.data);
-    const language = useSelector(state => state.langReducer.lang);
+    // const language = useSelector(state => state.langReducer.lang);
+    const language = localStorage.getItem('lang');
     useEffect(() => {
         dispatch(BePartnerData());
     }, []);
@@ -34,11 +35,11 @@ const BePartner = () =>{
                 )))}
             </div>
             <div className={st.order_form}>
-                {language === 1 && <h3>Обратная связь</h3>}
-                {language === 2 && <h3>Feedback form</h3>}
-                {language === 3 && <h3>Байланыш формасы</h3>}
+                {(language == 1 || language == undefined) && <h3>Обратная связь</h3>}
+                {language == 2 && <h3>Feedback form</h3>}
+                {language == 3 && <h3>Байланыш формасы</h3>}
                 <form>
-                    {language === 1 && <div className={st.form_input_block}>
+                    {(language == 1 || language == undefined) && <div className={st.form_input_block}>
                         <label for="name">ФИО*</label>
                         <input id="name" placeholder="Ваш Ф.И.О" name="name" ref={register({
                         validate: (name) => name && name.length > 4,
@@ -69,7 +70,7 @@ const BePartner = () =>{
                         )}
                     </div>}
 
-                    {language === 2 && <div className={st.form_input_block}>
+                    {language == 2 && <div className={st.form_input_block}>
                         <label for="name">Full name*</label>
                         <input id="name" placeholder="Full name" name="name" ref={register({
                         validate: (name) => name && name.length > 3,
@@ -99,7 +100,7 @@ const BePartner = () =>{
                             <span className={st.errorString}>Data incorrectly entered</span>
                         )}
                     </div>}
-                    {language === 3 && <div className={st.form_input_block}>
+                    {language == 3 && <div className={st.form_input_block}>
                         <label for="name">Аты-жөнүңүз*</label>
                         <input id="name" placeholder="Аты-жөнүңүз" name="name" ref={register({
                         validate: (name) => name && name.length > 3,
@@ -131,7 +132,7 @@ const BePartner = () =>{
                     </div>}
                     
                     <div className={st.form_textarea_block}>
-                        {language === 1 &&<>
+                        {(language == 1 || language == undefined) &&<>
                             <label for="description">Дополнительная информация*</label>
                         <textarea id="description" placeholder="Допольнительная информация"  name="extra" ref={register({
                         validate: (extra) => extra && extra.length > 10
@@ -141,7 +142,7 @@ const BePartner = () =>{
                         )}
                         <button onClick={handleSubmit(onSubmit)}>Отправить</button></>}
 
-                        {language === 2 &&<>
+                        {language == 2 &&<>
                             <label for="description">Additional Information*</label>
                         <textarea id="description" placeholder="Additional Information"  name="extra" ref={register({
                         validate: (extra) => extra && extra.length > 8
@@ -151,7 +152,7 @@ const BePartner = () =>{
                         )}
                         <button onClick={handleSubmit(onSubmit)}>Send</button></>}
 
-                        {language === 3 &&<>
+                        {language == 3 &&<>
                             <label for="description">Кошумча маалымат*</label>
                         <textarea id="description" placeholder="Кошумча маалымат"  name="extra" ref={register({
                         validate: (extra) => extra && extra.length > 10

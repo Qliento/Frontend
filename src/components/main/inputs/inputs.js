@@ -10,7 +10,8 @@ const Inputs = ({ arrCategory }) => {
     category: "",
     text: "",
   });
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
+  const language = localStorage.getItem('lang');
   const [market, setMarket] = useState();
   const upadateData = (e) => {
     setDataSearch({
@@ -63,19 +64,19 @@ const Inputs = ({ arrCategory }) => {
             installCategory={upadateData}
           />
         </div>
-        {language === 1 && <><input className={classes.search} placeholder="Поиск" value={dataSearch.text}
+        {(language == 1 || language == undefined) && <><input className={classes.search} placeholder="Поиск" value={dataSearch.text}
           onChange={(e) =>
             setDataSearch({ ...dataSearch, text: e.target.value })
           }
         />
         <button className={classes.btn} onClick={() => btnSearch()}>Найти</button></>}
-        {language === 2 && <><input className={classes.search} placeholder="Search" value={dataSearch.text}
+        {language == 2 && <><input className={classes.search} placeholder="Search" value={dataSearch.text}
           onChange={(e) =>
             setDataSearch({ ...dataSearch, text: e.target.value })
           }
         />
         <button className={classes.btn} onClick={() => btnSearch()}>Find</button></>}
-        {language === 3 && <><input className={classes.search} placeholder="Издөө" value={dataSearch.text}
+        {language == 3 && <><input className={classes.search} placeholder="Издөө" value={dataSearch.text}
           onChange={(e) =>
             setDataSearch({ ...dataSearch, text: e.target.value })
           }

@@ -25,7 +25,8 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 const EditModal = ({ edit, changeState, id }) => {
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
+  const language = localStorage.getItem('lang');
   const { handleSubmit, register, errors } = useForm();
   const [isModal, SetIsModal] = useState(true);
 
@@ -46,21 +47,21 @@ const EditModal = ({ edit, changeState, id }) => {
             />
           </div>
           <div className={classes.blockInputs}>
-            {language === 1 && <><span className={classes.title}>Скидочная цена</span>
+            {(language == 1 || language == undefined) && <><span className={classes.title}>Скидочная цена</span>
             <input className={classes.input} type="number" name="new_price" placeholder="Цена"
               ref={register({
                 validate: (new_price) => new_price && new_price.length > 0,
               })}
             />
             {errors.new_price && (<span className={classes.error}>Это поле не может быть пустым</span>)}</>}
-            {language === 2 && <><span className={classes.title}>Discount price</span>
+            {language == 2 && <><span className={classes.title}>Discount price</span>
             <input className={classes.input} type="number" name="new_price" placeholder="Price"
               ref={register({
                 validate: (new_price) => new_price && new_price.length > 0,
               })}
             />
             {errors.new_price && (<span className={classes.error}>Fill in the field</span>)}</>}
-            {language === 3 && <><span className={classes.title}>Арзандатылган баа</span>
+            {language == 3 && <><span className={classes.title}>Арзандатылган баа</span>
             <input className={classes.input} type="number" name="new_price" placeholder="Баа"
               ref={register({
                 validate: (new_price) => new_price && new_price.length > 0,
@@ -68,9 +69,9 @@ const EditModal = ({ edit, changeState, id }) => {
             />
             {errors.new_price && (<span className={classes.error}>Талааны толтуруңуз</span>)}</>}
           </div>
-          {language === 1 && <button type="submit" className={classes.btn}>Сохранить</button>}
-          {language === 2 && <button type="submit" className={classes.btn}>Save</button>}
-          {language === 3 && <button type="submit" className={classes.btn}>Cактоо</button>}
+          {(language == 1 || language == undefined) && <button type="submit" className={classes.btn}>Сохранить</button>}
+          {language == 2 && <button type="submit" className={classes.btn}>Save</button>}
+          {language == 3 && <button type="submit" className={classes.btn}>Cактоо</button>}
         </form>
       </div>
       <ModalChangeResearch />
