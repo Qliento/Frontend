@@ -50,6 +50,7 @@
 .img {
   width: 48%;
   height: 100%;
+  object-fit: cover;
 }
 .rightBlock {
   width: 48%;
@@ -94,6 +95,20 @@
   color: #1b8e3d;
   width: 50%;
   height: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btnDelete{
+  background: #ffffff;
+  border: 1px solid #E00000;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color:  #E00000;
+  width: 50%;
+  height: 42px;
 }
 .titlePrice {
   font-weight: 600;
@@ -119,6 +134,9 @@
   line-height: 20px;
   color: #828282;
   padding: 10px;
+}
+.inputFile{
+  display: none;
 }
 .btn2 {
   width: 45%;

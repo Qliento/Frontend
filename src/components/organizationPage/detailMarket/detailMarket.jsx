@@ -46,11 +46,6 @@ const DetailMarket = () => {
             </div>
             <div className={classes.blockdDescrip}>
               <div className={classes.descrip}>
-<<<<<<< HEAD
-                <span>Дата выпуска: {data && data.date}</span>
-                <span>Количество страниц: {data&&data.pages}</span>
-                <span>ID: </span>
-=======
                 {language === 1 && <><span>Дата выпуска: {data && data.date}</span>
                 <span>Количество страниц: {data && data.pages}</span></>}
                 {language === 2 && <><span>Release date: {data && data.date}</span>
@@ -58,7 +53,6 @@ const DetailMarket = () => {
                 {language === 3 && <><span>Чыккан датасы: {data && data.date}</span>
                 <span>Барактардын саны: {data && data.pages}</span></>}
                 <span>ID: {data && data.id}</span>
->>>>>>> 5fdae023206923fbf0eac931c2d42486ac39f4bd
               </div>
               <div className={classes.price}>
         

@@ -36,7 +36,7 @@ const Step2Kg = ({
             Шаг 1
           </span>
           <span className={classes.step11}>Шаг 2</span>
-          <span className={classes.step}>Шаг 3</span>
+          <span className={classes.step} onClick={() => further(3,true)}>Шаг 3</span>
         </div>
       </div>
       <div className={classes.topBlock}>

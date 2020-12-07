@@ -13,6 +13,10 @@ const Step1Kg = ({
   changeHashtag,
   further,
   arrErrRu,
+  hashtag,
+  errHashtag,
+  dataList,
+  subCategory
 }) => {
   return (
     <div className={classes.form}>
@@ -72,6 +76,7 @@ const Step1Kg = ({
           <Dropdown
             name="Выберите категорию"
             lang="kg"
+              dataList={dataList}
             dataSubRu={data.category_kg}
             changeData={(e, category) => changeData(e, category)}
           />
@@ -89,6 +94,8 @@ const Step1Kg = ({
           <Dropdown
             name="Выберите подкатегорию"
             lang="kg"
+            sub={true}
+            subCategory={subCategory}
             dataSubRu={data.subCategory_kg}
             changeData={(e, category) => changeData(e, category)}
           />
@@ -125,16 +132,12 @@ const Step1Kg = ({
           <CreatableInputOnly
             lang="kg"
             changeHashtag={(e) => changeHashtag(e)}
-            data={data.hashtag_kg}
+            data={hashtag}
           />
-          {arrErrRu &&
-            arrErrRu.map((item) => {
-              if (item == "hashtag_kg") {
-                return (
+          {errHashtag &&
+          
                   <span className={classes.err}>Заполинте это поле!!!</span>
-                );
-              }
-            })}
+      }
         </div>
       </div>
       <div className={classes.blockBtn}>

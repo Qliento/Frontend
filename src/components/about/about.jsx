@@ -48,7 +48,7 @@ const About = () => {
                   <span className={classes.blockTitle}>{item.header}</span>
                   <span>{item.description}</span>
                 </div>
-                <img alt="img" className={classes.img}  src={img1} />
+                <img alt="img" className={classes.img}  src={item.images[0].url} />
               </div>
             );
           }

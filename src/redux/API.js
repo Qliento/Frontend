@@ -112,12 +112,12 @@ export default {
       client_status: { ...data },
     }),
   resultSearchList: (text) =>
-    http.get(`/researches/?hashtag__name__icontains=${text}`),
+    http.get(`/researches/?name_icontains=${text}`),
   listResearchCategory: (category) =>
     http.get(`/researches/?&category=${category}`),
   searchCategoryText: (category, text) =>
     http.get(
-      `/researches/?hashtag__name__icontains=${text}&category=${category}`
+      `/researches/?name_icontains=${text}&category=${category}`
     ),
   dataFilter: () => http.get(`/filters/`),
   allListResearch: () => http.get(`/researches/`),
@@ -190,4 +190,11 @@ export default {
     http.patch(`/research-update/${id}/`, price, {
       headers: { Authorization: "Bearer " + token },
     }),
+    UploadResearch:(dataStep3,token)=>http.post(`/research-upload/`,{
+
+    }
+    ,{
+    headers: { Authorization: "Bearer " + token },
+  }
+    )
 };

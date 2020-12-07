@@ -56,3 +56,22 @@ export function dataStep2(data) {
       payload: data,
     };
   }
+  export function dataStep1(data) {
+    return {
+      type: "UPLOAD_DATA_STEP_1",
+      payload: data,
+    };
+  }
+  export function uploadResearch(dataStep3) {
+    return async (dispatch) => {
+        let token = localStorage.getItem("user");
+        await API.UploadResearch(dataStep3,token)
+          .then((res) => {
+           console.log(res)
+    
+          })
+          .catch((err) => {
+            console.log(err)
+          });
+      };
+  }
