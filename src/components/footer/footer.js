@@ -3,20 +3,23 @@ import st from "./footer.module.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { mainData } from "../../redux/actions/main/getMain";
+import {networkData} from '../../redux/actions/actions';
 
 const Footer = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.mainGet.mainData);
+  const networks = useSelector((state) => state.networkData.data.data);
   // const language = useSelector(state => state.langReducer.lang)
   const language = localStorage.getItem('lang');
   useEffect(() => {
     dispatch(mainData());
+    dispatch(networkData());
   }, []);
   let arrContacts = [];
-  // if (data.сontacts) {
-  //     arrContacts = [...data.сontacts.contacts];
+  if (data.сontacts) {
+      arrContacts = [...data.сontacts.contacts];
     
-  // }
+  }
 
   return (
     <footer>
@@ -126,42 +129,19 @@ const Footer = () => {
           {(language == 1 || language == undefined) && <span className={st.footer_title}>Социальные сети</span>}
           {language == 2 && <span className={st.footer_title}>Social networks</span>}
           {language == 3 && <span className={st.footer_title}>Социалдык тармактар</span>}
-          <div className={st.socialIcons}>
-            <a
-              href="https://www.facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={require("./image/facebook.png")} alt="img" />
-            </a>
-            <a
-              href="https://www.youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={require("./image/008-youtube.png")} alt="img" />
-            </a>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={require("./image/instagram.png")} alt="img" />
-            </a>
-            <a
-              href="https://www.telegram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={require("./image/telegram.png")} alt="img" />
-            </a>
-            <a
-              href="https://www.whatsapp.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={require("./image/whatsapp.png")} alt="img" />
-            </a>
+          <div className={st.socialIcons}>{
+            networks && networks.map(elem =>(
+              <>
+               <a
+                  href={elem.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={elem.image} alt="img" />
+                </a>
+              </>
+            ))
+          }
           </div>
         </div>
         <div className={st.quest}>

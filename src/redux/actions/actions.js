@@ -1,4 +1,4 @@
-import { BE_PARTNER_DATA, REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, AGREEMENT_DATA, ORDER_RESEARCH_DATA, BLOG_DATA, REGISTRATION_CLIENT_SUCCESS, REGISTRATION_CLIENT_EMAIL, BLOG_CARD_DATA, CLIENT_PAGE, CLIENT_DATA} from './constants';
+import { BE_PARTNER_DATA, REGISTRATION_CLIENT, REGISTRATION_CLIENT_ERROR, LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, AGREEMENT_DATA, ORDER_RESEARCH_DATA, BLOG_DATA, REGISTRATION_CLIENT_SUCCESS, REGISTRATION_CLIENT_EMAIL, BLOG_CARD_DATA, CLIENT_PAGE, CLIENT_DATA, NETWORK_DATA} from './constants';
 import API from '../API';
 
 
@@ -13,6 +13,14 @@ export function AgreementData(){
     await API.agreementData()
     .then(res => {
       dispatch({ type: AGREEMENT_DATA, payload: res })
+    })}
+}
+
+export function networkData(){
+  return async (dispatch)=>{
+    await API.networkData()
+    .then(res => {
+      dispatch({ type: NETWORK_DATA, payload: res })
     })}
 }
 
