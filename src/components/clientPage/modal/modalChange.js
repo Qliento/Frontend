@@ -9,7 +9,8 @@ const ModalChange = ({offModal}) =>{
     const { handleSubmit, register, errors } = useForm();
     const dispatch = useDispatch();
     const[err,setErr]=useState(false);
-    const language = useSelector(state => state.langReducer.lang)
+    // const language = useSelector(state => state.langReducer.lang)
+    const language = localStorage.getItem('lang');
 
     const onSubmit = (values) =>{
         if(values.password_check != values.new_password){
@@ -27,7 +28,7 @@ const ModalChange = ({offModal}) =>{
             <div className={st.modal_content}>
                 <span className={st.strike} onClick={offModal}></span>
                     <form className={st.form}>
-                        {language === 1 &&<>
+                        {(language == 1 || language == undefined) &&<>
                             <label>Старый пароль</label>
                         <input name="old_password" placeholder="Ваш пароль"
                             ref={register({
@@ -53,7 +54,7 @@ const ModalChange = ({offModal}) =>{
                                 <span className={st.error}>Пароль менее 8 символов</span>
                                 )}
                         </>}
-                        {language === 2 &&<>
+                        {language == 2 &&<>
                         <label>Old password</label>
                         <input name="old_password" placeholder="Old password"
                             ref={register({
@@ -79,7 +80,7 @@ const ModalChange = ({offModal}) =>{
                                 <span className={st.error}>Password less than 8 characters</span>
                                 )}
                         </>}
-                        {language === 3 &&<>
+                        {language == 3 &&<>
                             <label>Эски сыр сөз</label>
                         <input name="old_password" placeholder="Эски сыр сөз"
                             ref={register({
@@ -105,12 +106,12 @@ const ModalChange = ({offModal}) =>{
                                 <span className={st.error}>8 белгиден кем пароль</span>
                                 )}
                         </>}
-                            {err && language === 1 && <span className={st.error}>Пароли не совпадают</span>}
-                            {err && language === 1 && <span className={st.error}>Passwords do not match</span>}
-                            {err && language === 1 && <span className={st.error}>Сырсөздөр дал келген жок</span>}
-                            {language === 1 &&<button className={st.change_btn} onClick={handleSubmit(onSubmit)}>Сохранить</button>}
-                            {language === 2 &&<button className={st.change_btn} onClick={handleSubmit(onSubmit)}>Save</button>}
-                            {language === 3 &&<button className={st.change_btn} onClick={handleSubmit(onSubmit)}>Сактоо</button>}
+                            {err && (language == 1 || language == undefined) && <span className={st.error}>Пароли не совпадают</span>}
+                            {err && language == 2 && <span className={st.error}>Passwords do not match</span>}
+                            {err && language == 3 && <span className={st.error}>Сырсөздөр дал келген жок</span>}
+                            {(language == 1 || language == undefined) &&<button className={st.change_btn} onClick={handleSubmit(onSubmit)}>Сохранить</button>}
+                            {language == 2 &&<button className={st.change_btn} onClick={handleSubmit(onSubmit)}>Save</button>}
+                            {language == 3 &&<button className={st.change_btn} onClick={handleSubmit(onSubmit)}>Сактоо</button>}
                     </form>
             </div>
         </div>

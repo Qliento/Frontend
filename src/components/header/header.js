@@ -2,11 +2,11 @@ import React,{useEffect} from "react";
 import st from "./header.module.css";
 import { Link } from "react-router-dom";
 import Select from 'react-select';
-import {changeLang} from '../../redux/actions/actions';
+// import {changeLang} from '../../redux/actions/actions';
 import { useDispatch , useSelector } from "react-redux";
 
 const Header = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const userInfo = localStorage.getItem("user");
 
   const options = [
@@ -17,17 +17,16 @@ const Header = () => {
   const type = localStorage.getItem('type');
   const logout = () =>{
     localStorage.removeItem('user');
+    window.location.reload()
   }
+  const language = localStorage.getItem('lang');
   const change = (elem) =>{
-    localStorage.setItem('lang', elem)
-    dispatch(changeLang(elem))
+    localStorage.setItem('lang', elem);
+    // dispatch(changeLang(elem))
+    window.location.reload()
   }
-  useEffect(()=>{
-
-  },[localStorage.getItem('user')])
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
   const basket = useSelector(state => state.ListBasket.listResearch)
-  console.log(basket);
   return (
     <nav className={st.header}>
       <Link to="/">
@@ -82,37 +81,41 @@ const Header = () => {
       </Link>
       <div className={st.navbar}>
         <Link to="/news">
-          {language === 1 && <span>Новости</span>}
-          {language === 2 && <span>News</span>}
-          {language === 3 && <span>Жаңылыктар</span>}
+          {(language == 1 || language == undefined) && <span>Новости</span>}
+          {language == 2 && <span>News</span>}
+          {language == 3 && <span>Жаңылыктар</span>}
         </Link>
         <Link to="/about-us">
-          {language === 1 && <span>О нас</span>}
-          {language === 2 && <span>About us</span>}
-          {language === 3 && <span>Биз жөнүндө</span>}
+          {language == undefined && <span>О нас</span>}
+          {language == 1 && <span>О нас</span>}
+          {language == 2 && <span>About us</span>}
+          {language == 3 && <span>Биз жөнүндө</span>}
         </Link>
         <Link to="/analitic">
-          {language === 1 && <span>Блог</span>}
-          {language === 2 && <span>Blog</span>}
-          {language === 3 && <span>Блог</span>}
+        {language == undefined && <span>Блог</span>}
+          {language == 1 && <span>Блог</span>}
+          {language == 2 && <span>Blog</span>}
+          {language == 3 && <span>Блог</span>}
         </Link>
         <Link to="/market-research">
-          {language === 1 && <span>Маркет</span>}
-          {language === 2 && <span>Market</span>}
-          {language === 3 && <span>Изилдөөлөр</span>}
+        {language == undefined && <span>Маркет</span>}
+          {language == 1 && <span>Маркет</span>}
+          {language == 2 && <span>Market</span>}
+          {language == 3 && <span>Изилдөөлөр</span>}
         </Link>
         <Link to="/be-partner">
-          {language === 1 && <span>Партнёрство</span>}
-          {language === 2 && <span>Partnership</span>}
-          {language === 3 && <span>Өнөктөштүк</span>}
+        {language == undefined && <span>Партнёрство</span>}
+          {language == 1 && <span>Партнёрство</span>}
+          {language == 2 && <span>Partnership</span>}
+          {language == 3 && <span>Өнөктөштүк</span>}
         </Link>
       </div>
       <div className={st.local_basket}>
         <div className={st.localiz}>
-            <Select 
-            options={options}
-            defaultValue={options[0]}
-            onChange={(e) => change(e.value)} />
+            {language == undefined && <Select options={options} defaultValue={options[0]} onChange={(e) => change(e.value)} />}
+            {language == 1 && <Select options={options} defaultValue={options[0]} onChange={(e) => change(e.value)} />}
+            {language == 2 && <Select options={options} defaultValue={options[1]} onChange={(e) => change(e.value)} />}
+            {language == 3 && <Select options={options} defaultValue={options[2]} onChange={(e) => change(e.value)} />}
         </div>
         <div className={st.basket}>
           {userInfo ? (
@@ -153,35 +156,41 @@ const Header = () => {
         {userInfo == null ? (
           <>
           <Link to="/auth">
-            {language === 1 && <button className={st.Lk}>Вход</button>}
-            {language === 2 && <button className={st.Lk}>Login</button>}
+          {language == undefined && <button className={st.Lk}>Вход</button>}
+            {language == 1 && <button className={st.Lk}>Вход</button>}
+            {language == 2 && <button className={st.Lk}>Login</button>}
             {language == 3 && <button className={st.Lk}>Кирүү</button>}
           </Link>
           <Link to="/registration">
-          {language === 1 && <button className={st.regisrationBtn}>Регистрация</button>}
-          {language === 2 && <button className={st.regisrationBtn}>Sign up</button>}
-          {language === 3 && <button className={st.regisrationBtn}>Каттоо</button>}
+          {language == undefined && <button className={st.regisrationBtn}>Регистрация</button>}
+          {language == 1 && <button className={st.regisrationBtn}>Регистрация</button>}
+          {language == 2 && <button className={st.regisrationBtn}>Sign up</button>}
+          {language == 3 && <button className={st.regisrationBtn}>Каттоо</button>}
         </Link>
         </>
         ) : (
         <div>{type == 'client' ? <>
           <Link to="/client-page" className={st.Lk}>
-              {language === 1 && <span>Личный кабинет</span>}
-              {language === 2 && <span>Account</span>}
-              {language === 3 && <span>Жеке бөлмө</span>}
+          {language == undefined && <span>Личный кабинет</span>}
+              {language == 1 && <span>Личный кабинет</span>}
+              {language == 2 && <span>Account</span>}
+              {language == 3 && <span>Жеке бөлмө</span>}
             </Link>
-            {language === 1 && <span onClick={logout} className={st.logout}>Выйти</span>}
-            {language === 2 && <span onClick={logout} className={st.logout}>Logout</span>}
-            {language === 3 && <span onClick={logout} className={st.logout}>Чыгуу</span>}
+            {language == undefined && <span onClick={logout} className={st.logout}>Выйти</span>}
+            {language == 1 && <span onClick={logout} className={st.logout}>Выйти</span>}
+            {language == 2 && <span onClick={logout} className={st.logout}>Logout</span>}
+            {language == 3 && <span onClick={logout} className={st.logout}>Чыгуу</span>}
         </> : <>
         <Link to="/organization-page" className={st.Lk}>
-              {language === 1 && <span>Личный кабинет</span>}
-              {language === 2 && <span>Account</span>}
-              {language === 3 && <span>Жеке бөлмө</span>}
+        {language == undefined && <span>Личный кабинет</span>}
+              {language == 1 && <span>Личный кабинет</span>}
+              {language == 2 && <span>Account</span>}
+              {language == 3 && <span>Жеке бөлмө</span>}
             </Link>
-              {language === 1 && <span onClick={logout} className={st.logout}>Выйти</span>}
-              {language === 2 && <span onClick={logout} className={st.logout}>Logout</span>}
-              {language === 3 && <span onClick={logout} className={st.logout}>Чыгуу</span>}
+            {language == undefined && <span onClick={logout} className={st.logout}>Выйти</span>}
+              {language == 1 && <span onClick={logout} className={st.logout}>Выйти</span>}
+              {language == 2 && <span onClick={logout} className={st.logout}>Logout</span>}
+              {language == 3 && <span onClick={logout} className={st.logout}>Чыгуу</span>}
         </>}</div>
             )}
       </div>

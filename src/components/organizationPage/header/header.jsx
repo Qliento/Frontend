@@ -10,7 +10,8 @@ import {useSelector} from 'react-redux';
 const Header=({data,onModal})=>{
     const [edit,setEdit]=useState(false)
     const [edit2,setEdit2]=useState(false)
-    const language = useSelector(state => state.langReducer.lang)
+    // const language = useSelector(state => state.langReducer.lang)
+    const language = localStorage.getItem('lang');
     return(
         <>
         <div className={classes.blockWrapp}>
@@ -30,9 +31,9 @@ const Header=({data,onModal})=>{
                         <span></span>
                     </div>
                     <div className={classes.rightBlock}>
-                        {language === 1 &&<span className={classes.redact} onClick={()=>onModal()}>Редактировать</span>}
-                        {language === 2 &&<span className={classes.redact} onClick={()=>onModal()}>Edit</span>}
-                        {language === 3 &&<span className={classes.redact} onClick={()=>onModal()}>Түзөтүү</span>}
+                        {(language == 1 || language == undefined) &&<span className={classes.redact} onClick={()=>onModal()}>Редактировать</span>}
+                        {language == 2 &&<span className={classes.redact} onClick={()=>onModal()}>Edit</span>}
+                        {language == 3 &&<span className={classes.redact} onClick={()=>onModal()}>Түзөтүү</span>}
                     </div>
                 </div>
             </div>

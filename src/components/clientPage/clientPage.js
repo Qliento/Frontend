@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {Redirect} from "react-router-dom"
 import Header from "./header/header";
 import classes from "./clientPage.module.css"
 import Content from "./content/content";
@@ -9,6 +10,7 @@ import { clientData } from '../../redux/actions/actions';
 import { useDispatch, useSelector } from "react-redux";
 
 const ClientPage=()=>{
+    const [isAuthorized, setIsAuthorized] = useState(!!window.localStorage.getItem("user"))
     const [modal, setModal] = useState(0);
 
     const token = localStorage.getItem("user");
@@ -30,7 +32,9 @@ const ClientPage=()=>{
         setModal(2)
     }
 
-
+    if(!isAuthorized)
+    return (<Redirect to="/auth"/>)
+  else
     return(
         <div className={classes.clientPage}>
             <Header onModal={onModal} data={data} />

@@ -36,14 +36,13 @@ else{
   });
 }
 
-// const httpUpadate = Axios.create({
-//   baseURL: "https://qliento.com",
-//   headers: {
-//     // Accept: "application/json",
-//     "Content-Type": "multipart/form-data",
-//     "Accept-Language": "ru",
-//   },
-// });
+const httpUpadate = Axios.create({
+  baseURL: "https://qliento.com",
+  headers: {
+    // Accept: "application/json",
+    "Accept-Language": "ru",
+  },
+});
 
 
 
@@ -175,7 +174,7 @@ export default {
       headers: { Authorization: "Bearer " + token },
     }),
   updateClient: (data, token) =>
-    http.put("/users/update/users", data, {
+      httpUpadate.put("/users/update/users", data, {
       headers: { Authorization: "Bearer " + token },
     }),
   getResearchListOrgn: (token) =>

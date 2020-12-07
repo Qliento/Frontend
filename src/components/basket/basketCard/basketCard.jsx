@@ -7,7 +7,8 @@ import { deleteBasket } from "../../../redux/actions/deleteBasket/deleteBasket";
 
 const BasketCard = ({ id, data }) => {
   const dispatch=useDispatch();
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
+  const language = localStorage.getItem('lang');
   const deleteBtn = (e) => {
     dispatch(deleteBasket(e.target.id));
   };
@@ -66,9 +67,9 @@ const BasketCard = ({ id, data }) => {
             {data && data.ordered_item.new_price}
           </span>
         </div>
-        {language === 1 && <button className={classes.demo} id={data.id} onClick={(e) => deleteBtn(e)}>Удалить</button>}
-        {language === 2 && <button className={classes.demo} id={data.id} onClick={(e) => deleteBtn(e)}>Delete</button>}
-        {language === 3 && <button className={classes.demo} id={data.id} onClick={(e) => deleteBtn(e)}>Очуруу</button>}
+        {(language == 1 || language == undefined) && <button className={classes.demo} id={data.id} onClick={(e) => deleteBtn(e)}>Удалить</button>}
+        {language == 2 && <button className={classes.demo} id={data.id} onClick={(e) => deleteBtn(e)}>Delete</button>}
+        {language == 3 && <button className={classes.demo} id={data.id} onClick={(e) => deleteBtn(e)}>Очуруу</button>}
       </div>
     </div>
   );

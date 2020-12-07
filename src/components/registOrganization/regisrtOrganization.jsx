@@ -14,7 +14,8 @@ import {
 } from "../../redux/actions/registrationOrg/registrationOrg";
 import RegistrModal from "./modal";
 const RegistOrganization = () => {
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
+  const language = localStorage.getItem('lang');
   const { handleSubmit, register, errors } = useForm();
   const dispatch = useDispatch();
   const isModal = useSelector((state) => state.RegistrOrg.isModal);
@@ -60,15 +61,15 @@ const RegistOrganization = () => {
               </Link>
             </div>
             <div className={classes.blockTitle}>
-              {language === 1 && <>
+              {(language == 1 || language == undefined) && <>
                 <span className={classes.title}>Регистрация</span>
                 <span className={classes.step}>Шаг 2</span>
               </>}
-              {language === 2 && <>
+              {language == 2 && <>
                 <span className={classes.title}>Registration</span>
                 <span className={classes.step}>Step 2</span>
               </>}
-              {language === 3 && <>
+              {language == 3 && <>
                 <span className={classes.title}>Катто</span>
                 <span className={classes.step}>1 кадам</span>
               </>}
@@ -76,7 +77,7 @@ const RegistOrganization = () => {
           </div>
           <form className={classes.blockForm} onSubmit={handleSubmit(onSubmit)}>
             <div className={classes.blockInput}>
-              {language === 1 && <><label>Название организации*</label>
+              {(language == 1 || language == undefined) && <><label>Название организации*</label>
               <input name="name2" className={classes.inputs} placeholder="Название"
                 ref={register({
                   validate: (name2) => name2 && name2.length > 2,
@@ -84,7 +85,7 @@ const RegistOrganization = () => {
               {errors.name2 && (
                 <span className={classes.error}>Не корректно велли данные</span>
               )}</>}
-              {language === 2 && <><label>*Name of the organization</label>
+              {language == 2 && <><label>*Name of the organization</label>
               <input name="name2" className={classes.inputs} placeholder="Name of the organization"
                 ref={register({
                   validate: (name2) => name2 && name2.length > 2,
@@ -92,7 +93,7 @@ const RegistOrganization = () => {
               {errors.name2 && (
                 <span className={classes.error}>Data incorrectly entered</span>
               )}</>}
-              {language === 3 && <><label>Уюмдун аталышы*</label>
+              {language == 3 && <><label>Уюмдун аталышы*</label>
               <input name="name2" className={classes.inputs} placeholder="Уюмдун аталышы"
                 ref={register({
                   validate: (name2) => name2 && name2.length > 2,
@@ -102,29 +103,29 @@ const RegistOrganization = () => {
               )}</>}
             </div>
             <div className={classes.blockInput}>
-              {language === 1 && <><label>Должность</label>
+              {(language == 1 || language == undefined) && <><label>Должность</label>
               <input name="position" className={classes.inputs} placeholder="Должность" ref={register}/></>}
-              {language === 2 && <><label>Position</label>
+              {language == 2 && <><label>Position</label>
               <input name="position" className={classes.inputs} placeholder="Position" ref={register}/></>}
-              {language === 3 && <><label>Кызмат</label>
+              {language == 3 && <><label>Кызмат</label>
               <input name="position" className={classes.inputs} placeholder="Кызмат" ref={register}/></>}
             </div>
             <div className={classes.blockInput}>
-              {language === 1 && <><label>Имя*</label>
+              {(language == 1 || language == undefined) && <><label>Имя*</label>
               <input name="name" className={classes.inputs} placeholder="Ваше имя" ref={register({
                   validate: (name) => name && name.length > 2,
                 })}/>
               {errors.name && (
                 <span className={classes.error}>Не корректно велли данные</span>
               )}</>}
-              {language === 2 && <><label>Name*</label>
+              {language == 2 && <><label>Name*</label>
               <input name="name" className={classes.inputs} placeholder="Name" ref={register({
                   validate: (name) => name && name.length > 2,
                 })}/>
               {errors.name && (
                 <span className={classes.error}>Data incorrectly entered</span>
               )}</>}
-              {language === 3 && <><label>Сиздин атыңыз*</label>
+              {language == 3 && <><label>Сиздин атыңыз*</label>
               <input name="name" className={classes.inputs} placeholder="Сиздин атыңыз" ref={register({
                   validate: (name) => name && name.length > 2,
                 })}/>
@@ -133,7 +134,7 @@ const RegistOrganization = () => {
               )}</>}
             </div>
             <div className={classes.blockInput}>
-              {language === 1 && <>
+              {(language == 1 || language == undefined) && <>
                 <label>Фамилия*</label>
               <input name="lastName" className={classes.inputs} placeholder="Ваша фамилия" ref={register({
                   validate: (lastName) => lastName && lastName.length > 2,
@@ -141,7 +142,7 @@ const RegistOrganization = () => {
               {errors.lastName && (
                 <span className={classes.error}>Не корректно велли данные</span>)}
               </>}
-              {language === 2 && <>
+              {language == 2 && <>
                 <label>Surname*</label>
               <input name="lastName" className={classes.inputs} placeholder="Surname" ref={register({
                   validate: (lastName) => lastName && lastName.length > 2,
@@ -149,7 +150,7 @@ const RegistOrganization = () => {
               {errors.lastName && (
                 <span className={classes.error}>Data incorrectly entered</span>)}
               </>}
-              {language === 3 && <>
+              {language == 3 && <>
                 <label>Сиздин фамилияңыз*</label>
               <input name="lastName" className={classes.inputs} placeholder="Сиздин фамилияңыз" ref={register({
                   validate: (lastName) => lastName && lastName.length > 2,
@@ -178,33 +179,33 @@ const RegistOrganization = () => {
               )}
             </div>
             <div className={classes.blockInput}>
-              {language === 1 && <label>Номер телефона*</label>}
-              {language === 2 && <label>Phone number*</label>}
-              {language === 3 && <label>Телефон номуру*</label>}
+              {(language == 1 || language == undefined) && <label>Номер телефона*</label>}
+              {language == 2 && <label>Phone number*</label>}
+              {language == 3 && <label>Телефон номуру*</label>}
               <input name="phone" className={classes.inputs} placeholder="+996 (___) __ - __ - __" type="number"
                 ref={register({
                   validate: (phone) => phone && phone.length > 2,
                 })}/>
               {errors.phone && (<>
-                {language === 1 && <span className={classes.error}>Не корректно велли данные</span>}
-                {language === 2 && <span className={classes.error}>Data incorrectly entered</span>}
-                {language === 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
+                {(language == 1 || language == undefined) && <span className={classes.error}>Не корректно велли данные</span>}
+                {language == 2 && <span className={classes.error}>Data incorrectly entered</span>}
+                {language == 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
               </>)}
             </div>
             <div className={classes.blockInput}>
-              {language === 1 && <label>Пароль*</label>}
-              {language === 2 && <label>Password*</label>}
-              {language === 3 && <label>Сыр сөз*</label>}
+              {(language == 1 || language == undefined) && <label>Пароль*</label>}
+              {language == 2 && <label>Password*</label>}
+              {language == 3 && <label>Сыр сөз*</label>}
               <div className={classes.blockVisibil}>
-                {language === 1 && <input name="password" className={classes.inputs1} placeholder="Ваш пароль" type={visibility ? "text" : "password"}
+                {(language == 1 || language == undefined) && <input name="password" className={classes.inputs1} placeholder="Ваш пароль" type={visibility ? "text" : "password"}
                   ref={register({
                     validate: (password) => password && password.length > 8,
                   })} />}
-                {language === 2 && <input name="password" className={classes.inputs1} placeholder="Password" type={visibility ? "text" : "password"}
+                {language == 2 && <input name="password" className={classes.inputs1} placeholder="Password" type={visibility ? "text" : "password"}
                   ref={register({
                     validate: (password) => password && password.length > 8,
                   })} />}
-                  {language === 3 && <input name="password" className={classes.inputs1} placeholder="Сыр сөз" type={visibility ? "text" : "password"}
+                  {language == 3 && <input name="password" className={classes.inputs1} placeholder="Сыр сөз" type={visibility ? "text" : "password"}
                   ref={register({
                     validate: (password) => password && password.length > 8,
                   })} />}
@@ -215,21 +216,21 @@ const RegistOrganization = () => {
                   src={visibility ? vis : noVis}
                 />
               </div>
-              {language === 1 && <>
+              {(language == 1 || language == undefined) && <>
                 {errors.password && (
                 <span className={classes.error}>Пароль менее 8 символов</span>
               )}
               {err && (
                 <span className={classes.error}>Пароли не совподают</span>
               )}</>}
-              {language === 2 && <>
+              {language == 2 && <>
                 {errors.password && (
                 <span className={classes.error}>Password less than 8 characters</span>
               )}
               {err && (
                 <span className={classes.error}>Пароли не совподают</span>
               )}</>}
-              {language === 3 && <>
+              {language == 3 && <>
                 {errors.password && (
                 <span className={classes.error}>8 белгиден кем пароль</span>
               )}
@@ -238,21 +239,21 @@ const RegistOrganization = () => {
               )}</>}
             </div>
             <div className={classes.blockInput}>
-              {language === 1 && <label>Повторите пароль*</label>}
-              {language === 2 && <label>Repeat password*</label>}
-              {language === 3 && <label>Паролду кайталаңыз*</label>}
+              {(language == 1 || language == undefined) && <label>Повторите пароль*</label>}
+              {language == 2 && <label>Repeat password*</label>}
+              {language == 3 && <label>Паролду кайталаңыз*</label>}
               <div className={classes.blockVisibil}>
-                {language === 1 && <input name="repeatPassword" className={classes.inputs1} placeholder="Ваш пароль" type={visibility2 ? "text" : "password"}
+                {(language == 1 || language == undefined) && <input name="repeatPassword" className={classes.inputs1} placeholder="Ваш пароль" type={visibility2 ? "text" : "password"}
                   ref={register({
                     validate: (repeatPassword) =>
                       repeatPassword && repeatPassword.length > 8,
                   })}/>}
-                  {language === 2 && <input name="repeatPassword" className={classes.inputs1} placeholder="Password" type={visibility2 ? "text" : "password"}
+                  {language == 2 && <input name="repeatPassword" className={classes.inputs1} placeholder="Password" type={visibility2 ? "text" : "password"}
                   ref={register({
                     validate: (repeatPassword) =>
                       repeatPassword && repeatPassword.length > 8,
                   })}/>}
-                  {language === 3 && <input name="repeatPassword" className={classes.inputs1} placeholder="Сыр соз" type={visibility2 ? "text" : "password"}
+                  {language == 3 && <input name="repeatPassword" className={classes.inputs1} placeholder="Сыр соз" type={visibility2 ? "text" : "password"}
                   ref={register({
                     validate: (repeatPassword) =>
                       repeatPassword && repeatPassword.length > 8,
@@ -264,19 +265,19 @@ const RegistOrganization = () => {
                   src={visibility2 ? vis : noVis}
                 />
               </div>
-              {language === 1 && <>{errors.repeatPassword && (
+              {(language == 1 || language == undefined) && <>{errors.repeatPassword && (
                 <span className={classes.error}>Пароль менее 6 символов</span>
               )}
               {err && (
                 <span className={classes.error}>Пароли не совподают</span>
               )}</>}
-              {language === 2 && <>{errors.repeatPassword && (
+              {language == 2 && <>{errors.repeatPassword && (
                 <span className={classes.error}>Password less than 8 characters</span>
               )}
               {err && (
                 <span className={classes.error}>Пароли не совподают</span>
               )}</>}
-              {language === 3 && <>{errors.repeatPassword && (
+              {language == 3 && <>{errors.repeatPassword && (
                 <span className={classes.error}>8 белгиден кем пароль</span>
               )}
               {err && (
@@ -291,13 +292,13 @@ const RegistOrganization = () => {
                 required
               />
               <div className={classes.text}>
-                {language === 1 && <>
+                {(language == 1 || language == undefined) && <>
                   <span>Подтверждаю, что ознакомлен и согласен с </span>
                 <Link to='/agreement'>Пользовательским соглашением</Link></>}
-                {language === 2 && <>
+                {language == 2 && <>
                   <span>I confirm that I have read and agree with the</span>
                 <Link to='/agreement'>User Agreement</Link></>}
-                {language === 3 && <>
+                {language == 3 && <>
                   <Link to='/agreement'>Колдонуучунун келишимин</Link>
                   <span> окуп чыкканымды жана аны менен макул экенимди ырастайм</span></>}
               </div>
@@ -310,16 +311,16 @@ const RegistOrganization = () => {
             />
             {
               verified=== false ?  (<>
-                {language === 1 &&<span className={classes.error}>Подтвердите что вы не бот</span>}
-                {language === 2 &&<span className={classes.error}>Сonfirm that you are not a robot</span>}
-                {language === 3 &&<span className={classes.error}>Бот эмес экениңизди тастыктаңыз</span>}
+                {(language == 1 || language == undefined) &&<span className={classes.error}>Подтвердите что вы не бот</span>}
+                {language == 2 &&<span className={classes.error}>Сonfirm that you are not a robot</span>}
+                {language == 3 &&<span className={classes.error}>Бот эмес экениңизди тастыктаңыз</span>}
               </>)
               : <></>
             }
           </div>
-            {language === 1 && <button type="submit" className={classes.btnRegist}>Зарегистрироваться</button>}
-            {language === 2 && <button type="submit" className={classes.btnRegist}>Registration</button>}
-            {language === 3 && <button type="submit" className={classes.btnRegist}>Катто</button>}
+            {(language == 1 || language == undefined) && <button type="submit" className={classes.btnRegist}>Зарегистрироваться</button>}
+            {language == 2 && <button type="submit" className={classes.btnRegist}>Registration</button>}
+            {language == 3 && <button type="submit" className={classes.btnRegist}>Катто</button>}
           </form>
         </div>
       </div>

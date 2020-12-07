@@ -7,13 +7,14 @@ import { useDispatch, useSelector } from "react-redux";
 const Form = () => {
   const { handleSubmit, register, errors } = useForm();
   const dispatch = useDispatch();
-  const language = useSelector(state => state.langReducer.lang);
+  // const language = useSelector(state => state.langReducer.lang);
+  const language = localStorage.getItem('lang');
   const onSubmit = (values) => dispatch(sendQuestions(values));
   return (
     <form className={classes.form} onSubmit={handleSubmit(onSubmit)} MutationObserverunregister shouldUnregister>
       <div className={classes.leftColumn}>
         <div className={classes.inputs}>
-          {language === 1 && <><label>ФИО*</label>
+          {(language == 1 || language == undefined) && <><label>ФИО*</label>
           <input
             type="text"
             className={classes.input}
@@ -26,7 +27,7 @@ const Form = () => {
           {errors.fio && (
             <span className={classes.error}>Не корректно велли данные</span>
           )}</>}
-            {language === 2 && <><label>Full name*</label>
+            {language == 2 && <><label>Full name*</label>
           <input
             type="text"
             className={classes.input}
@@ -39,7 +40,7 @@ const Form = () => {
           {errors.fio && (
             <span className={classes.error}>Data incorrectly entered</span>
           )}</>}
-          {language === 3 && <><label>ФИО*</label>
+          {language == 3 && <><label>ФИО*</label>
           <input
             type="text"
             className={classes.input}
@@ -54,7 +55,7 @@ const Form = () => {
           )}</>}
         </div>
         <div className={classes.inputs}>
-          {language === 1 &&<>
+          {(language == 1 || language == undefined) &&<>
             <label>Название организации</label>
           <input
             type="text"
@@ -70,7 +71,7 @@ const Form = () => {
               Название огранизации меньше 2 символов
             </span>
           )}</>}
-          {language === 2 &&<>
+          {language == 2 &&<>
             <label>Name of the organization</label>
           <input
             type="text"
@@ -86,7 +87,7 @@ const Form = () => {
               Less then 2 characters
             </span>
           )}</>}
-          {language === 3 &&<>
+          {language == 3 &&<>
             <label>Уюм аты</label>
           <input
             type="text"
@@ -123,9 +124,9 @@ const Form = () => {
           )}
         </div>
         <div className={classes.inputs}>
-          {language === 1 && <label>Телефон*</label>}
-          {language === 2 && <label>Phone_number*</label>}
-          {language === 3 && <label>Телефон*</label>}
+          {(language == 1 || language == undefined) && <label>Телефон*</label>}
+          {language == 2 && <label>Phone_number*</label>}
+          {language == 3 && <label>Телефон*</label>}
           <input
             type="text"
             className={classes.input}
@@ -151,7 +152,7 @@ const Form = () => {
       </div>
       <div className={classes.rightColumn}>
         <div className={classes.inputs}>
-          {language === 1 && <>
+          {(language == 1 || language == undefined) && <>
             <label>Ваш вопрос</label>
           <textarea className={classes.inputTextarea}  placeholder="Ваш вопрос" name="question" ref={register({
               required: "Это поле обязательное",
@@ -160,7 +161,7 @@ const Form = () => {
               },
             })}/>
           </>}
-          {language === 2 && <>
+          {language == 2 && <>
             <label>Your question</label>
           <textarea className={classes.inputTextarea}  placeholder="Ваш вопрос" name="question" ref={register({
               required: "Это поле обязательное",
@@ -169,7 +170,7 @@ const Form = () => {
               },
             })}/>
           </>}
-          {language === 3 && <>
+          {language == 3 && <>
             <label>Сиздин сурооңуз</label>
           <textarea className={classes.inputTextarea}  placeholder="Ваш вопрос" name="question" ref={register({
               required: "Это поле обязательное",
@@ -182,9 +183,9 @@ const Form = () => {
             <span className={classes.error}>{errors.question.message}</span>
           )}
         </div>
-        {language === 1 && <button type="submit" className={classes.btn}>Отправить</button>}
-        {language === 2 && <button type="submit" className={classes.btn}>Send</button>}
-        {language === 3 && <button type="submit" className={classes.btn}>Жөнөтүү</button>}
+        {(language == 1 || language == undefined) && <button type="submit" className={classes.btn}>Отправить</button>}
+        {language == 2 && <button type="submit" className={classes.btn}>Send</button>}
+        {language == 3 && <button type="submit" className={classes.btn}>Жөнөтүү</button>}
       </div>
     </form>
   );

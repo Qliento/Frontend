@@ -8,14 +8,15 @@ import AddReseach from "./addResearch"
 import {useSelector} from 'react-redux';
 
 const Content=()=>{
-    const language = useSelector(state => state.langReducer.lang)
+    // const language = useSelector(state => state.langReducer.lang)
+    const language = localStorage.getItem('lang');
     return(
         <Switch>
             <Route exact path="/organization-page">
             <SubmitBtn/>    <div className={classes.cardTitle}>
-                {language === 1 && <span>Мои исследования</span>}
-                {language === 2 && <span>My products</span>}
-                {language === 3 && <span>Менин изилдөөлөрүм</span>}
+                {(language == 1 || language == undefined) && <span>Мои исследования</span>}
+                {language == 2 && <span>My products</span>}
+                {language == 3 && <span>Менин изилдөөлөрүм</span>}
             </div>
             <ResearchCards/>
             </Route>

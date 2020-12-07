@@ -8,7 +8,8 @@ const MarketCard = ({ data }) => {
   data = {
     id: "cdcscsd",
   }
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
+  const language = localStorage.getItem('lang');
 
   return (
     <>
@@ -30,14 +31,14 @@ const MarketCard = ({ data }) => {
                 <span>{data.name}</span>
               </div>
               <div className={classes.description}>
-                {language === 1 && <span>{data.pages} стр</span>}
-                {language === 2 && <span>{data.pages} р</span>}
-                {language === 3 && <span>{data.pages} бет</span>}
+                {(language == 1 || language == undefined) && <span>{data.pages} стр</span>}
+                {language == 2 && <span>{data.pages} р</span>}
+                {language == 3 && <span>{data.pages} бет</span>}
                 <span>ID: {data.id}</span>
                 <div className={classes.country}>
-                  {language === 1 && <span>Страны: </span>}
-                  {language === 1 && <span>Countries: </span>}
-                  {language === 1 && <span>Мамлекеттер: </span>}
+                  {(language == 1 || language == undefined) && <span>Страны: </span>}
+                  {language == 2 && <span>Countries: </span>}
+                  {language == 3 && <span>Мамлекеттер: </span>}
                   {data.country &&
                     data.country.map((item) => {
                       return <span key={item.id}>{item.name}</span>;
@@ -58,13 +59,13 @@ const MarketCard = ({ data }) => {
             <span className={classes.newPrace}>{data.new_price}17 000 сом</span>
           </div>
           <div className={classes.blockBtn}>
-            {language === 1 && <button className={classes.toBasket} id={data.id} >Скачать</button>}
-            {language === 2 && <button className={classes.toBasket} id={data.id} >Download</button>}
-            {language === 3 && <button className={classes.toBasket} id={data.id} >Жүктөө</button>}
+            {(language == 1 || language == undefined) && <button className={classes.toBasket} id={data.id} >Скачать</button>}
+            {language == 2 && <button className={classes.toBasket} id={data.id} >Download</button>}
+            {language == 3 && <button className={classes.toBasket} id={data.id} >Жүктөө</button>}
             <div className={classes.details}>
-              {language === 1 && <span>Время покупки</span>}
-              {language === 2 && <span>Purchase time</span>}
-              {language === 3 && <span>Сатып алуу убактысы</span>}
+              {(language == 1 || language == undefined) && <span>Время покупки</span>}
+              {language == 2 && <span>Purchase time</span>}
+              {language == 3 && <span>Сатып алуу убактысы</span>}
               <span>21.11.2020</span>
               <span>12:50</span>
             </div>

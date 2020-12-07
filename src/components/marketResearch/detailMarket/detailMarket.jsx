@@ -7,7 +7,8 @@ import Tabs1 from "./tabs/tabs";
 
 const DetailMarket = ({ data }) => {
   const dispatch = useDispatch();
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
+  const language = localStorage.getItem('lang');
   const [isClose, setIsClose] = useState(false);
   const clickBtn = () => {
     setIsClose(!isClose);
@@ -38,14 +39,14 @@ const DetailMarket = ({ data }) => {
           </div>
           <div className={classes.blockdDescrip}>
             <div className={classes.descrip}>
-              {language === 1 && <span>{data && data.pages} стр</span>}
-              {language === 2 && <span>{data && data.pages} рages</span>}
-              {language === 3 && <span>{data && data.pages} бет</span>}
+              {(language == 1 || language == undefined) && <span>{data && data.pages} стр</span>}
+              {language == 2 && <span>{data && data.pages} рages</span>}
+              {language == 3 && <span>{data && data.pages} бет</span>}
               <span>ID: {data && data.id}</span>
               <div className={classes.country}>
-                {language === 1 && <span>Страны: &#160; </span>}
-                {language === 2 && <span>Сountries: &#160; </span>}
-                {language === 3 && <span>Мамлекеттер: &#160; </span>}
+                {(language == 1 || language == undefined) && <span>Страны: &#160; </span>}
+                {language == 2 && <span>Сountries: &#160; </span>}
+                {language == 3 && <span>Мамлекеттер: &#160; </span>}
                 {data.country &&
                   data.country.map((item, index) => {
                     return (
@@ -78,18 +79,18 @@ const DetailMarket = ({ data }) => {
             </div>
           </div>
           <div className={classes.blockBtn}>
-           {language === 1 && <button className={classes.crash} id={data.id} onClick={(e) => orders(e.target.id)}>
+           {(language == 1 || language == undefined) && <button className={classes.crash} id={data.id} onClick={(e) => orders(e.target.id)}>
               В корзину
             </button>} 
-            {language === 2 && <button className={classes.crash} id={data.id} onClick={(e) => orders(e.target.id)}>
+            {language == 2 && <button className={classes.crash} id={data.id} onClick={(e) => orders(e.target.id)}>
             Shopping cart
             </button>} 
-            {language === 3 && <button className={classes.crash} id={data.id} onClick={(e) => orders(e.target.id)}>
+            {language == 3 && <button className={classes.crash} id={data.id} onClick={(e) => orders(e.target.id)}>
             Корзинага
             </button>} 
-            {language === 1 && <a href={data.demo && data.demo} target="_blank" className={classes.demo}download>Демо версия</a>}
-            {language === 2 && <a href={data.demo && data.demo} target="_blank" className={classes.demo}download>Demo version</a>}
-            {language === 3 && <a href={data.demo && data.demo} target="_blank" className={classes.demo}download>Демо версия</a>}
+            {(language == 1 || language == undefined) && <a href={data.demo && data.demo} target="_blank" className={classes.demo}download>Демо версия</a>}
+            {language == 2 && <a href={data.demo && data.demo} target="_blank" className={classes.demo}download>Demo version</a>}
+            {language == 3 && <a href={data.demo && data.demo} target="_blank" className={classes.demo}download>Демо версия</a>}
           </div>
         </div>
       </div>

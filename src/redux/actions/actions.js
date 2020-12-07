@@ -89,6 +89,7 @@ export function registrationClient(data){
 export function updateClient(data){
   return async (dispatch)=>{
     let token = localStorage.getItem("user");
+    console.log(data);
     await API.updateClient(data, token)
     .then(res => {
       if( res.status == 200){

@@ -7,12 +7,16 @@ import { mainData } from "../../redux/actions/main/getMain";
 const Footer = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.mainGet.mainData);
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
+  const language = localStorage.getItem('lang');
   useEffect(() => {
     dispatch(mainData());
   }, []);
   let arrContacts = [];
+<<<<<<< HEAD
 
+=======
+>>>>>>> bd9d0a428137a367c8b72e5e7633185c7d54af16
   // if (data.сontacts) {
   //     arrContacts = [...data.сontacts.contacts];
     
@@ -69,38 +73,38 @@ const Footer = () => {
         />
       </svg>
       <div className={st.navbar}>
-         {language === 1 && <span className={st.footer_title}>Разделы</span>}
-         {language === 2 && <span className={st.footer_title}>Sections</span>}
-         {language === 3 && <span className={st.footer_title}>Бөлүмдөр</span>}
+         {(language == 1 || language == undefined) && <span className={st.footer_title}>Разделы</span>}
+         {language == 2 && <span className={st.footer_title}>Sections</span>}
+         {language == 3 && <span className={st.footer_title}>Бөлүмдөр</span>}
          <Link to="/news">
-          {language === 1 && <span>О нас</span>}
-          {language === 2 && <span>About</span>}
-          {language === 3 && <span>Биз жөнүндө</span>}
+          {(language == 1 || language == undefined) && <span>О нас</span>}
+          {language == 2 && <span>About</span>}
+          {language == 3 && <span>Биз жөнүндө</span>}
         </Link>
         <Link to="/market-research">
-          {language === 1 && <span>Маркет исследований</span>}
-          {language === 2 && <span>Research market</span>}
-          {language === 3 && <span>Изилдөөлөр</span>}
+          {(language == 1 || language == undefined) && <span>Маркет исследований</span>}
+          {language == 2 && <span>Research market</span>}
+          {language == 3 && <span>Изилдөөлөр</span>}
         </Link>
         <Link to="/about-us">
-          {language === 1 && <span>Новости</span>}
-          {language === 2 && <span>News</span>}
-          {language === 3 && <span>Жаңылыктар</span>}
+          {(language == 1 || language == undefined) && <span>Новости</span>}
+          {language == 2 && <span>News</span>}
+          {language == 3 && <span>Жаңылыктар</span>}
         </Link>
         <Link to="/analitic">
-          {language === 1 && <span>Блог</span>}
-          {language === 2 && <span>Blog</span>}
-          {language === 3 && <span>Блог</span>}
+          {(language == 1 || language == undefined) && <span>Блог</span>}
+          {language == 2 && <span>Blog</span>}
+          {language == 3 && <span>Блог</span>}
         </Link>
         <Link to="/be-partner" >
-          {language === 1 && <span>Партнерство</span>}
-          {language === 2 && <span>Partnership</span>}
-          {language === 3 && <span>Өнөктөштүк</span>}
+          {(language == 1 || language == undefined) && <span>Партнерство</span>}
+          {language == 2 && <span>Partnership</span>}
+          {language == 3 && <span>Өнөктөштүк</span>}
         </Link>
         <Link to="/order-research">
-          {language === 1 && <span>Заказать исследования</span>}
-          {language === 2 && <span>Order research</span>}
-          {language === 3 && <span>Изилдөөгө заказ берүү</span>}
+          {(language == 1 || language == undefined) && <span>Заказать исследования</span>}
+          {language == 2 && <span>Order research</span>}
+          {language == 3 && <span>Изилдөөгө заказ берүү</span>}
         </Link>
         {/* <Link to="/questions">
           {language === 1 && <span>Вопросы и ответы</span>}
@@ -109,9 +113,9 @@ const Footer = () => {
         </Link> */}
       </div>
       <div className={st.contacts}>
-        {language === 1 && <span className={st.footer_title}>Контакты</span>}
-        {language === 2 && <span className={st.footer_title}>Contacts</span>}
-        {language === 3 && <span className={st.footer_title}>Байланыштар</span>}
+        {(language == 1 || language == undefined) && <span className={st.footer_title}>Контакты</span>}
+        {language == 2 && <span className={st.footer_title}>Contacts</span>}
+        {language == 3 && <span className={st.footer_title}>Байланыштар</span>}
         {arrContacts &&
           arrContacts.map((item) => {
             return (
@@ -123,9 +127,9 @@ const Footer = () => {
       </div>
       <div className={st.socialQuest}>
         <div className={st.social}>
-          {language === 1 && <span className={st.footer_title}>Социальные сети</span>}
-          {language === 2 && <span className={st.footer_title}>Social networks</span>}
-          {language === 3 && <span className={st.footer_title}>Социалдык тармактар</span>}
+          {(language == 1 || language == undefined) && <span className={st.footer_title}>Социальные сети</span>}
+          {language == 2 && <span className={st.footer_title}>Social networks</span>}
+          {language == 3 && <span className={st.footer_title}>Социалдык тармактар</span>}
           <div className={st.socialIcons}>
             <a
               href="https://www.facebook.com"
@@ -165,18 +169,18 @@ const Footer = () => {
           </div>
         </div>
         <div className={st.quest}>
-            {language === 1 &&<span className={st.footer_title}>Вопросы и ответы</span>}
-            {language === 2 &&<span className={st.footer_title}>Q&A</span>}
-            {language === 3 &&<span className={st.footer_title}>Суроолор жана жооптор</span>}
+            {(language == 1 || language == undefined) &&<span className={st.footer_title}>Вопросы и ответы</span>}
+            {language == 2 &&<span className={st.footer_title}>Q&A</span>}
+            {language == 3 &&<span className={st.footer_title}>Суроолор жана жооптор</span>}
           <Link to="/questions">
-            {language === 1 &&<span>Часто задаваемые вопросы</span>}
-            {language === 2 &&<span>FAQ</span>}
-            {language === 3 &&<span>Көп берилүүчү суроолор</span>}
+            {(language == 1 || language == undefined) &&<span>Часто задаваемые вопросы</span>}
+            {language == 2 &&<span>FAQ</span>}
+            {language == 3 &&<span>Көп берилүүчү суроолор</span>}
           </Link>
           <Link to="/questions">
-            {language === 1 &&<span>Задать вопрос</span>}
-            {language === 2 &&<span>Your question</span>}
-            {language === 3 &&<span>Сиздин сурооңуз</span>}
+            {(language == 1 || language == undefined) &&<span>Задать вопрос</span>}
+            {language == 2 &&<span>Your question</span>}
+            {language == 3 &&<span>Сиздин сурооңуз</span>}
           </Link>
         </div>
       </div>

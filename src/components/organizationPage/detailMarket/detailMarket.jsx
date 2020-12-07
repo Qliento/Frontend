@@ -14,7 +14,8 @@ const DetailMarket = () => {
   const params = useParams();
 
   const dispatch = useDispatch();
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
+  const language = localStorage.getItem('lang');
   useEffect(() => {
     dispatch(detailResearch(params.id));
   }, []);
@@ -46,11 +47,15 @@ const DetailMarket = () => {
             </div>
             <div className={classes.blockdDescrip}>
               <div className={classes.descrip}>
+<<<<<<< HEAD
                 {language === 1 && <><span>Дата выпуска: {data && data.date}</span>
+=======
+                {(language == 1 || language == undefined) && <><span>Дата выпуска: {data && data.date}</span>
+>>>>>>> bd9d0a428137a367c8b72e5e7633185c7d54af16
                 <span>Количество страниц: {data && data.pages}</span></>}
-                {language === 2 && <><span>Release date: {data && data.date}</span>
+                {language == 2 && <><span>Release date: {data && data.date}</span>
                 <span>Number of pages: {data && data.pages}</span></>}
-                {language === 3 && <><span>Чыккан датасы: {data && data.date}</span>
+                {language == 3 && <><span>Чыккан датасы: {data && data.date}</span>
                 <span>Барактардын саны: {data && data.pages}</span></>}
                 <span>ID: {data && data.id}</span>
               </div>
@@ -76,9 +81,9 @@ const DetailMarket = () => {
               </div>
             </div>
             <div className={classes.blockBtn}>
-              {language === 1 && <button className={classes.demo} onClick={() => setEdit(true)}>Редактировать</button>}
-              {language === 2 && <button className={classes.demo} onClick={() => setEdit(true)}>Edit</button>}
-              {language === 3 && <button className={classes.demo} onClick={() => setEdit(true)}>Түзөтүү</button>}
+              {(language == 1 || language == undefined) && <button className={classes.demo} onClick={() => setEdit(true)}>Редактировать</button>}
+              {language == 2 && <button className={classes.demo} onClick={() => setEdit(true)}>Edit</button>}
+              {language == 3 && <button className={classes.demo} onClick={() => setEdit(true)}>Түзөтүү</button>}
             </div>
           </div>
         </div>
@@ -88,30 +93,30 @@ const DetailMarket = () => {
       </div>
       <div className={classes.statistic}>
         <div className={classes.blockTitle}>
-          {language === 1 && <span className={classes.title}>Статистика</span>}
-          {language === 2 && <span className={classes.title}>Statistics</span>}
-          {language === 3 && <span className={classes.title}>Статистика</span>}
+          {(language == 1 || language == undefined) && <span className={classes.title}>Статистика</span>}
+          {language == 2 && <span className={classes.title}>Statistics</span>}
+          {language == 3 && <span className={classes.title}>Статистика</span>}
           <div className={classes.input}>
             <Dropdown />
           </div>
         </div>
         <div className={classes.buttomBlock}>
           <div className={classes.column}>
-            {language === 1 && <span className={classes.column_title}>Просмотры</span>}
-            {language === 2 && <span className={classes.column_title}>Views</span>}
-            {language === 3 && <span className={classes.column_title}>Демо версиясын көрүү</span>}
+            {(language == 1 || language == undefined) && <span className={classes.column_title}>Просмотры</span>}
+            {language == 2 && <span className={classes.column_title}>Views</span>}
+            {language == 3 && <span className={classes.column_title}>Демо версиясын көрүү</span>}
             <span className={classes.column_data}>4200</span>
           </div>
           <div className={classes.column}>
-            {language === 1 && <span className={classes.column_title}>Скачивание демо версии</span>}
-            {language === 2 && <span className={classes.column_title}></span>}
-            {language === 3 && <span className={classes.column_title}>Download demo version</span>}
+            {(language == 1 || language == undefined) && <span className={classes.column_title}>Скачивание демо версии</span>}
+            {language == 2 && <span className={classes.column_title}></span>}
+            {language == 3 && <span className={classes.column_title}>Download demo version</span>}
             <span className={classes.column_data}>2100</span>
           </div>
           <div className={classes.column}>
-            {language === 1 && <span className={classes.column_title}>Куплено</span>}
-            {language === 2 && <span className={classes.column_title}>Purchased</span>}
-            {language === 3 && <span className={classes.column_title}>Cатып алуу</span>}
+            {(language == 1 || language == undefined) && <span className={classes.column_title}>Куплено</span>}
+            {language == 2 && <span className={classes.column_title}>Purchased</span>}
+            {language == 3 && <span className={classes.column_title}>Cатып алуу</span>}
             <span className={classes.column_data}>150</span>
           </div>
         </div>

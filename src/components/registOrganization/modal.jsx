@@ -23,23 +23,24 @@ Modal.setAppElement("#root");
 function RegistrModal() {
 
   const isModal = useSelector((state) => state.RegistrOrg.isModal);
-  const language = useSelector(state => state.langReducer.lang)
+  // const language = useSelector(state => state.langReducer.lang)
+  const language = localStorage.getItem('lang');
 
   return (
     <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
       <div className={classes.modal}>
-        {language === 1 && <span className={classes.title}>Регистрация</span>}
-        {language === 2 && <span className={classes.title}>Registration</span>}
-        {language === 3 && <span className={classes.title}>Каттоо</span>}
+        {(language == 1 || language == undefined) && <span className={classes.title}>Регистрация</span>}
+        {language == 2 && <span className={classes.title}>Registration</span>}
+        {language == 3 && <span className={classes.title}>Каттоо</span>}
         <div className={classes.content}>
           <img alt="img" src={isModal ===1 ? img1 : img2}/>
           <div className={classes.blockText}>
           <span className={classes.descr}>
-              {language === 1 && isModal ===1 ?  "Прошла успешно. На почту отправлена ссылка для подтверждения"
+              {(language == 1 || language == undefined) && isModal ===1 ?  "Прошла успешно. На почту отправлена ссылка для подтверждения"
                   : "Ошибка регистрации"}
-              {language === 2 && isModal ===1 ?  "Прошла успешно. На почту отправлена ссылка для подтверждения"
+              {language == 2 && isModal ===1 ?  "Прошла успешно. На почту отправлена ссылка для подтверждения"
                   : "An error has occurred! Try again"}
-              {language === 3 && isModal ===1 ?  "Прошла успешно. На почту отправлена ссылка для подтверждения"
+              {language == 3 && isModal ===1 ?  "Прошла успешно. На почту отправлена ссылка для подтверждения"
                   : "Ката кетти! Кайра аракет кылыңыз"}
           </span>
           </div>
