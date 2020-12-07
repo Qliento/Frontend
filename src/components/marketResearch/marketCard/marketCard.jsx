@@ -48,8 +48,8 @@ const MarketCard = ({ data, addFlyEfyf }) => {
             </div>
             <div className={classes.blockHeshteg}>
               {data.hashtag &&
-                data.hashtag.map((items) => {
-                  return <div key={items.id}>#{items.name}</div>;
+                data.hashtag.map((items,index) => {
+                  return <div className={index>0?classes.hashtags:classes.hashtags2} key={items.id}>#{items.name}</div>;
                 })}
             </div>
           </div>

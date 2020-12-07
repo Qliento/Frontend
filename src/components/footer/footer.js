@@ -18,7 +18,6 @@ const Footer = () => {
   let arrContacts = [];
   if (data.сontacts) {
       arrContacts = [...data.сontacts.contacts];
-    
   }
 
   return (

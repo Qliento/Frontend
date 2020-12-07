@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./country.scss";
+import {useSelector} from "react-redux"
 
 import CreatableSelect from "react-select/creatable";
 
@@ -10,18 +11,18 @@ const Country = ({ name ,changeCountry,lang,data}) => {
       
 
   };
-  const colourOptions = [
-    { value: "ocean", label: "Ocean"},
-    { value: "blue", label: "Blue"},
-    { value: "purple", label: "Purple" },
-    { value: "red", label: "Red" },
-    { value: "orange", label: "Orange"},
-    { value: "yellow", label: "Yellow"},
-    { value: "green", label: "Green" },
-    { value: "forest", label: "Forest" },
-    { value: "slate", label: "Slate" },
-    { value: "silver", label: "Silver" },
-  ];
+  const dataCountry=useSelector((state)=>state.FilterMarket.listData);
+  console.log(dataCountry)
+  let colourOptions=[];
+  if(dataCountry.Country){
+    colourOptions=dataCountry.Country.map((item)=>{
+        return{
+            value:item.name,
+            label:item.name
+        }
+    })
+  }
+  
   return (
     <div className="country">
       <CreatableSelect

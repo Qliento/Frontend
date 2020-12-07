@@ -5,6 +5,8 @@ import logo from "./img/logo.png"
 import {useSelector} from 'react-redux';
 
 const Header=({onModal, data})=>{
+    
+   
     // const language = useSelector(state => state.langReducer.lang)
     const language = localStorage.getItem('lang');
     return(
