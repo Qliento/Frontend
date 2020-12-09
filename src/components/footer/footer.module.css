@@ -42,3 +42,9 @@ footer > div a{
     display: flex;
     justify-content: space-between;
 }
+
+.socialIcons img{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}

@@ -21,7 +21,7 @@ else if(lang == 3){
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      "Accept-Language": "kg",
+      "Accept-Language": "ky",
     },
   });
 }
@@ -189,7 +189,8 @@ export default {
     http.patch(`/research-update/${id}/`, price, {
       headers: { Authorization: "Bearer " + token },
     }),
-    UploadResearch:(data,token)=>httpUpadate.post(`/research-upload/`,data
+  networkData: ()=> http.get('/social-networks/'),
+    UploadResearch:(data,token)=>http.post(`/research-upload/`,data
     ,{
     headers: { Authorization: "Bearer " + token },
   }
