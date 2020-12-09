@@ -82,7 +82,7 @@ export default {
     http.post(
       `/purchase/add-to-cart/`,
       {
-        ordered_items: id,
+        ordered_item: [id],
       },
       {
         headers: {
@@ -189,9 +189,7 @@ export default {
     http.patch(`/research-update/${id}/`, price, {
       headers: { Authorization: "Bearer " + token },
     }),
-    UploadResearch:(dataStep3,token)=>http.post(`/research-upload/`,{
-
-    }
+    UploadResearch:(data,token)=>httpUpadate.post(`/research-upload/`,data
     ,{
     headers: { Authorization: "Bearer " + token },
   }

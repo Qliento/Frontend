@@ -60,7 +60,7 @@ const Form = () => {
           <input
             type="text"
             className={classes.input}
-            placeholder="Название организации"
+            placeholder="Название организации*"
             name="name"
             ref={register({
               validate: (name) => name && name.length > 2,
@@ -76,7 +76,7 @@ const Form = () => {
           <input
             type="text"
             className={classes.input}
-            placeholder="Name of the organization"
+            placeholder="Name of the organization*"
             name="name"
             ref={register({
               validate: (name) => name && name.length > 2,
@@ -92,7 +92,7 @@ const Form = () => {
           <input
             type="text"
             className={classes.input}
-            placeholder="Уюм аты"
+            placeholder="Уюм аты*"
             name="name"
             ref={register({
               validate: (name) => name && name.length > 2,
@@ -136,6 +136,9 @@ const Form = () => {
               validate: (phone) => phone && phone.length > 6,
             })}
           />
+          {errors.phone && (
+            <span className={classes.error}>Это поле обязательно</span>
+          )}
           {errors.phone && language === 1 &&  (
             <span className={classes.error}>
               Название огранизации меньше 6 символов
@@ -153,7 +156,7 @@ const Form = () => {
       <div className={classes.rightColumn}>
         <div className={classes.inputs}>
           {(language == 1 || language == undefined) && <>
-            <label>Ваш вопрос</label>
+            <label>Ваш вопрос*</label>
           <textarea className={classes.inputTextarea}  placeholder="Ваш вопрос" name="question" ref={register({
               required: "Это поле обязательное",
               pattern: {
@@ -162,7 +165,7 @@ const Form = () => {
             })}/>
           </>}
           {language == 2 && <>
-            <label>Your question</label>
+            <label>Your question*</label>
           <textarea className={classes.inputTextarea}  placeholder="Ваш вопрос" name="question" ref={register({
               required: "Это поле обязательное",
               pattern: {
@@ -171,7 +174,7 @@ const Form = () => {
             })}/>
           </>}
           {language == 3 && <>
-            <label>Сиздин сурооңуз</label>
+            <label>Сиздин сурооңуз*</label>
           <textarea className={classes.inputTextarea}  placeholder="Ваш вопрос" name="question" ref={register({
               required: "Это поле обязательное",
               pattern: {

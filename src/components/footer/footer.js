@@ -13,10 +13,6 @@ const Footer = () => {
     dispatch(mainData());
   }, []);
   let arrContacts = [];
-<<<<<<< HEAD
-
-=======
->>>>>>> bd9d0a428137a367c8b72e5e7633185c7d54af16
   // if (data.сontacts) {
   //     arrContacts = [...data.сontacts.contacts];
     

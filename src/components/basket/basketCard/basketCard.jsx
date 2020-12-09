@@ -18,7 +18,7 @@ const BasketCard = ({ id, data }) => {
       <Link to={`/market-research-detail/${data.ordered_item.id}`}  className={classes.link}>
         <img
           alt="img"
-          src={data.ordered_item.image && data.ordered_item.image}
+          src={data.ordered_item.image && data.ordered_item[0].image.image}
           className={classes.img}
         />
         <div className={classes.content}>
@@ -61,10 +61,10 @@ const BasketCard = ({ id, data }) => {
       <div className={classes.blockAct}>
         <div className={classes.blockPrace}>
           <span className={classes.discounts}>
-            {data && data.ordered_item.old_price}
+            {data && data.ordered_item.old_price}$
           </span>
           <span className={classes.newPrace}>
-            {data && data.ordered_item.new_price}
+            {data && data.ordered_item.new_price}$
           </span>
         </div>
         {(language == 1 || language == undefined) && <button className={classes.demo} id={data.id} onClick={(e) => deleteBtn(e)}>Удалить</button>}
