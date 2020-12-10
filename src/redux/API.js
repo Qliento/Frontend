@@ -111,7 +111,7 @@ export default {
       client_status: { ...data },
     }),
   resultSearchList: (text) =>
-    http.get(`/researches/?name_icontains=${text}`),
+    http.get(`/researches/?name__icontains=${text}`),
   listResearchCategory: (category) =>
     http.get(`/researches/?&category=${category}`),
   searchCategoryText: (category, text) =>
@@ -152,17 +152,9 @@ export default {
   //     data,
   //   }),
   updateDataOrganization: (data, token) =>
-    http.patch(
+  httpUpadate.patch(
       "/users/update/partners/",
-      {
-        position: data.position && data.position,
-        about_me: data.about,
-        admin_status: {
-          name: data.name,
-          surname: data.surname,
-          phone_number: data.phone,
-        },
-      },
+     data,
       {
         headers: {
           Authorization: "Bearer " + token,

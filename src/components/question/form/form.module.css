@@ -15,8 +15,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.inputs {
-}
+
 .inputs label {
   font-weight: 600;
   font-size: 16px;
@@ -71,4 +70,28 @@
 .error{
   color: red;
   font-size: 11px;
+}
+
+.modal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal .ok{
+  padding: 10px 20px;
+  background-color:  #76b73e;
+  border-radius: 10px;
+  color: #fff;
+}
+.content{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.blockText{
+  width: 50%;
+  height: auto;
 }

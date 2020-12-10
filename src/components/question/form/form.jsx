@@ -3,6 +3,7 @@ import classes from "./form.module.css";
 import { useForm } from "react-hook-form";
 import { sendQuestions } from "../../../redux/actions/sendQuestion/question";
 import { useDispatch, useSelector } from "react-redux";
+import RegistrModal from "./modal";
 
 const Form = () => {
   const { handleSubmit, register, errors } = useForm();
@@ -11,6 +12,7 @@ const Form = () => {
   const language = localStorage.getItem('lang');
   const onSubmit = (values) => dispatch(sendQuestions(values));
   return (
+    <>
     <form className={classes.form} onSubmit={handleSubmit(onSubmit)} MutationObserverunregister shouldUnregister>
       <div className={classes.leftColumn}>
         <div className={classes.inputs}>
@@ -60,11 +62,9 @@ const Form = () => {
           <input
             type="text"
             className={classes.input}
-            placeholder="Название организации*"
+            placeholder="Название организации"
             name="name"
-            ref={register({
-              validate: (name) => name && name.length > 2,
-            })}
+            ref={register}
           />
           {errors.name && (
             <span className={classes.error}>
@@ -191,6 +191,8 @@ const Form = () => {
         {language == 3 && <button type="submit" className={classes.btn}>Жөнөтүү</button>}
       </div>
     </form>
+    {<RegistrModal/>}
+    </>
   );
 };
 export default Form;

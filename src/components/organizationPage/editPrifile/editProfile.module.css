@@ -18,7 +18,27 @@
   justify-content: center;
   align-items: center;overflow-y: scroll;
 }
+.input_photo{
+    display: none;
+}
+.profile_img{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.img_photo{
+  border-radius: 50%;
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+}
 .blockImg {
   width: 100%;
   height: auto;

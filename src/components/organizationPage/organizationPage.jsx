@@ -20,6 +20,7 @@ const OrgPage=()=>{
         dispatch(organData(token));
     }, []);
     console.log(modal)
+    console.log(data)
     const onModal = () =>{
         setModal(1)
         console.log("hi")

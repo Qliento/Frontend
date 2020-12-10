@@ -15,7 +15,7 @@ const MarketCards = ({ params, sort1, sort2 }) => {
   const dispatch = useDispatch();
 
   let arrResearch = useSelector((state) => state.mainResultSearch.researchList);
-
+console.log(params)
   useEffect(() => {
     const cursor = document.querySelector('.add_fly');
     const editCursor = e => {

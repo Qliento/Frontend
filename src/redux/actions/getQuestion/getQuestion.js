@@ -7,6 +7,19 @@ export function seccess(data){
 
     }
 }
+export function TrigerFalse(){
+  return{
+      type:"TRIGER_FALSE"
+
+
+  }
+}
+
+export function seccesPost(){
+  return {
+    type: "UPDATE_STATE_QUESTION"
+  };
+}
 
 export function getQuestion(){
     return async (dispatch)=>{
@@ -14,7 +27,8 @@ export function getQuestion(){
       .then(res => {
     dispatch(seccess(res.data))
 
-      });
+      })
+  
 
 }
 }

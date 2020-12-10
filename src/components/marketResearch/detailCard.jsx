@@ -16,7 +16,7 @@ const DetailCard = ({ params }) => {
   return (
     <>
       <DetailMarket data={data && data} />
-      {data.similars && data.similars.lenght   ? <SimilarResearch /> : <></>}
+      {data.similars && data.similars.lenght!==0   ? <SimilarResearch /> : <></>}
 
       {data.similars && data.similars.lenght !== 0 ? (
         data.similars.map((item) => {
