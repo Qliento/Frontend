@@ -43,19 +43,19 @@ function UbdateModal() {
   return (
     <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
       <div className={classes.modal}>
-        {(language == 1 || language == undefined) && <span className={classes.title}>Поздравляю</span>}
-        {language == 2 && <span className={classes.title}>Congratulations</span>}
-        {language == 3 && <span className={classes.title}>Куттуктайм</span>}
+        {isModal == 1 && (language == 1 || language == undefined) && <span className={classes.title}>Поздравляю</span>}
+        {isModal == 1 && language == 2 && <span className={classes.title}>Congratulations</span>}
+        {isModal == 1 && language == 3 && <span className={classes.title}>Куттуктайм</span>}
         <div className={classes.content}>
           <img alt="img" src={isModal == 1 ? img1 : img2}/>
           <div className={classes.blockText}>
           <span className={classes.descr}>
-              {isModal === 1,(language == 1 || language == undefined) && "Вы успешно изменили данные"}
-              {isModal === 1,language == 2 && "You have successfully edited data"}
-              {isModal === 1,language == 3 && "Вы успешно отправили данныеДайындарды ийгиликтүү тапшырдыңыз"}
-              {isModal === 2,(language == 1 || language == undefined) &&  "Произошла ошибка! Попробуйте снова"}
-              {isModal === 2,language == 2 &&  "An error has occurred! Try again"}
-              {isModal === 2,language == 3 &&  "Ката кетти! Кайра аракет кылыңыз"}
+              {isModal === 1 && (language == 1 || language == undefined) && "Вы успешно изменили данные"}
+              {isModal === 1 && language == 2 && "You have successfully edited data"}
+              {isModal === 1 && language == 3 && "Вы успешно отправили данныеДайындарды ийгиликтүү тапшырдыңыз"}
+              {isModal === 2 && (language == 1 || language == undefined) &&  "Произошла ошибка! Попробуйте снова"}
+              {isModal === 2 && language == 2 &&  "An error has occurred! Try again"}
+              {isModal === 2 && language == 3 &&  "Ката кетти! Кайра аракет кылыңыз"}
           </span>
           </div>
         </div>

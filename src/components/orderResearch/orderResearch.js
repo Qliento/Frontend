@@ -49,7 +49,7 @@ const OrderResearch = () =>{
                     <div className={st.order_instruct_block}>
                     <img src={elem.picture1} alt="img"></img>
                     <div className={st.order_instruct_descrip}>
-                        <h2>Краткая инструкция</h2>
+                        <h2>{elem.title}</h2>
                         <p>{elem.text1}</p>
                     </div>
                     </div>

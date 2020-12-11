@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { aboutData } from "../../redux/actions/about/getAboutText";
 // import { AboutUs } from "../../redux/reducers/about/about";
 import classes from "./about.module.css";
-import img1 from "./img/1.png";
-import img2 from "./img/2.png";
 import { Link } from "react-router-dom";
 
 const About = () => {

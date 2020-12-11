@@ -74,7 +74,7 @@ const Footer = () => {
          {(language == 1 || language == undefined) && <span className={st.footer_title}>Разделы</span>}
          {language == 2 && <span className={st.footer_title}>Sections</span>}
          {language == 3 && <span className={st.footer_title}>Бөлүмдөр</span>}
-         <Link to="/news">
+         <Link to="/about-us">
           {(language == 1 || language == undefined) && <span>О нас</span>}
           {language == 2 && <span>About</span>}
           {language == 3 && <span>Биз жөнүндө</span>}
@@ -84,7 +84,7 @@ const Footer = () => {
           {language == 2 && <span>Research market</span>}
           {language == 3 && <span>Изилдөөлөр</span>}
         </Link>
-        <Link to="/about-us">
+        <Link to="/news">
           {(language == 1 || language == undefined) && <span>Новости</span>}
           {language == 2 && <span>News</span>}
           {language == 3 && <span>Жаңылыктар</span>}

@@ -185,5 +185,9 @@ export default {
     ,{
     headers: { Authorization: "Bearer " + token },
   }
-    )
+    ),
+  authSocial: (user, token) => http.post('/users/google/',{
+    auth_token : token,
+    user: user
+  })
 };

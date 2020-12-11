@@ -42,9 +42,9 @@ function RegistrModal() {
   return (
     <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
       <div className={classes.modal}>
-        {(language == 1 || language == undefined) && <span className={classes.title}>Поздравляю</span>}
-        {language == 2 && <span className={classes.title}>Congratulations</span>}
-        {language == 3 && <span className={classes.title}>Куттуктайм</span>}
+        {isModal && (language == 1 || language == undefined) && <span className={classes.title}>Поздравляю</span>}
+        {isModal && language == 2 && <span className={classes.title}>Congratulations</span>}
+        {isModal && language == 3 && <span className={classes.title}>Куттуктайм</span>}
         <div className={classes.content}>
           <img alt="img" src={isModal == 1 ? img1 : img2}/>
           <div className={classes.blockText}>
