@@ -31,7 +31,7 @@ function PostResearchModal() {
   // const language = useSelector(state => state.langReducer.lang)
   const language = localStorage.getItem("lang");
   const dispatch = useDispatch();
-  const secces = () => {dispatch(Spiner(0))};
+  const secces = () => {dispatch(Spiner(""))};
 
   return (
     <Modal isOpen={isModal !== "" ? true : false} style={customStyles}>
