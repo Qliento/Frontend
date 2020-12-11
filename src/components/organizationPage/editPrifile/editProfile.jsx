@@ -188,9 +188,7 @@ const EditProfile = ({ changeModal, onModalPassword, data, offModal }) => {
             className={classes.input}
             defaultValue={data && data.position}
             type="text"
-            ref={register({
-              validate: (position) => position && position.length > 4,
-            })}
+            ref={register}
           />
           {errors.position && (
             <>

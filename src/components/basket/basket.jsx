@@ -9,21 +9,21 @@ const Basket = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.ListBasket.listResearch);
   // const language = useSelector(state => state.langReducer.lang);
-  console.log(data)
+
   const language = localStorage.getItem('lang');
   useEffect(() => {
     dispatch(getBasketActions());
   }, []);
- 
+ console.log(data)
   return (
     <div className={classes.basketPage}>
       {(language == 1 || language == undefined) && <span className={classes.title}>Корзина</span>}
       {language == 2 && <span className={classes.title}>Basket</span>}
       {language == 3 && <span className={classes.title}>Корзина</span>}
       <div className={classes.cards}>
-        { data.length!==0 ?
-          data.map((item) => {
-            return <BasketCard id={item.ordered_item.id} data={item} key={item.id}/>;
+        { data.length!==0 && data[0].ordered_items.length!==0 ?
+          data[0].ordered_items.map((item) => {
+            return <BasketCard id={item.id} data={item} key={item.id}/>;
           })
         :
         <div className={classes.noResearch}>

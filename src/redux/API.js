@@ -82,7 +82,7 @@ export default {
     http.post(
       `/purchase/add-to-cart/`,
       {
-        ordered_item: [id],
+        ordered_item: id,
       },
       {
         headers: {
@@ -135,7 +135,6 @@ export default {
     http.post(`/users/registration/researchers/`, {
       logo: data.name2,
       position: data.position && data.position,
-      about_me: "vdsvdsvsvs",
       admin_status: {
         name: data.name,
         surname: data.lastName,
