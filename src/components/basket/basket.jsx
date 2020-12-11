@@ -9,6 +9,7 @@ const Basket = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.ListBasket.listResearch);
   // const language = useSelector(state => state.langReducer.lang);
+  console.log(data)
   const language = localStorage.getItem('lang');
   useEffect(() => {
     dispatch(getBasketActions());

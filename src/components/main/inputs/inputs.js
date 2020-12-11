@@ -20,7 +20,7 @@ const Inputs = ({ arrCategory }) => {
     });
   };
 
-
+  console.log(dataSearch.text)
   const btnSearch = () => {
     if (dataSearch.category) {
       if(dataSearch.text===""){
@@ -47,6 +47,7 @@ const Inputs = ({ arrCategory }) => {
         />
       ) : null}
       {market ===2? (
+     
         <Redirect
           to={`/market-research-search/${dataSearch.text}`}
         />

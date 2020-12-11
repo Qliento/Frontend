@@ -82,7 +82,7 @@ export default {
     http.post(
       `/purchase/add-to-cart/`,
       {
-        ordered_items: id,
+        ordered_item: [id],
       },
       {
         headers: {
@@ -111,7 +111,7 @@ export default {
       client_status: { ...data },
     }),
   resultSearchList: (text) =>
-    http.get(`/researches/?name_icontains=${text}`),
+    http.get(`/researches/?name__icontains=${text}`),
   listResearchCategory: (category) =>
     http.get(`/researches/?&category=${category}`),
   searchCategoryText: (category, text) =>
@@ -152,17 +152,9 @@ export default {
   //     data,
   //   }),
   updateDataOrganization: (data, token) =>
-    http.patch(
+  httpUpadate.patch(
       "/users/update/partners/",
-      {
-        position: data.position && data.position,
-        about_me: data.about,
-        admin_status: {
-          name: data.name,
-          surname: data.surname,
-          phone_number: data.phone,
-        },
-      },
+     data,
       {
         headers: {
           Authorization: "Bearer " + token,
@@ -190,9 +182,7 @@ export default {
       headers: { Authorization: "Bearer " + token },
     }),
   networkData: ()=> http.get('/social-networks/'),
-    UploadResearch:(dataStep3,token)=>http.post(`/research-upload/`,{
-
-    }
+    UploadResearch:(data,token)=>http.post(`/research-upload/`,data
     ,{
     headers: { Authorization: "Bearer " + token },
   }

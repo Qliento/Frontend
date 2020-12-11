@@ -218,21 +218,21 @@ const RegistOrganization = () => {
               </div>
               {(language == 1 || language == undefined) && <>
                 {errors.password && (
-                <span className={classes.error}>Пароль менее 8 символов</span>
+                <span className={classes.error}>Пароль менее 9 символов</span>
               )}
               {err && (
                 <span className={classes.error}>Пароли не совподают</span>
               )}</>}
               {language == 2 && <>
                 {errors.password && (
-                <span className={classes.error}>Password less than 8 characters</span>
+                <span className={classes.error}>Password less than 9 characters</span>
               )}
               {err && (
                 <span className={classes.error}>Пароли не совподают</span>
               )}</>}
               {language == 3 && <>
                 {errors.password && (
-                <span className={classes.error}>8 белгиден кем пароль</span>
+                <span className={classes.error}>9 белгиден кем пароль</span>
               )}
               {err && (
                 <span className={classes.error}>Пароли не совподают</span>
@@ -266,7 +266,7 @@ const RegistOrganization = () => {
                 />
               </div>
               {(language == 1 || language == undefined) && <>{errors.repeatPassword && (
-                <span className={classes.error}>Пароль менее 8 символов</span>
+                <span className={classes.error}>Пароль менее 9 символов</span>
               )}
               {err && (
                 <span className={classes.error}>Пароли не совподают</span>

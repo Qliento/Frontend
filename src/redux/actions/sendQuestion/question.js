@@ -1,19 +1,19 @@
 import API from '../../API';
+import {TrigerFalse} from "../getQuestion/getQuestion"
 
-export function seccess(data){
-    return{
-        type:"ABOUT_DATA",
-        payload:data,
-
-    }
-}
 
 export function sendQuestions(data){
     return async (dispatch)=>{
       await API.sendQuestions(data)
       .then(res => {
-        console.log(res)
-      });
+        if( res.status == 201){
+        dispatch({type:"SECCESS_POST_QUESTION"})
+        }
+      })
+      .catch(err =>{
+        dispatch(TrigerFalse())
+      })
+      ;
 
 }
 }

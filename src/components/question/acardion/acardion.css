@@ -15,8 +15,8 @@
   border-radius: 2px;
 }
 .btnGreen {
-  height: 42px;
-  width: 42px;
+  min-height: 42px;
+  min-width: 42px;
   background: #76b73e;
   display: flex;
   flex-direction: row;

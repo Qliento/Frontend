@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import classes from "./step3.module.css";
 import img from "./img/Rectangle 47.png";
 import { useDispatch, useSelector } from "react-redux";
+import {uploadResearchAction} from "../../../../redux/actions/organizationPage/action"
 
 const Step3 = ({ isStep3 }) => {
+  let dispatch=useDispatch();
   const [data, setData] = useState({
     photo: null,
     price: null,
@@ -45,8 +47,32 @@ const Step3 = ({ isStep3 }) => {
     let file_research_ru = [];
     let file_research_kg = [];
     let file_research_en = [];
+
+    let country = "";
+    let hashtags=""
     if (dataRedux) {
       researchData = dataRedux;
+      //console.log(researchData.data.subCategory)
+      let arr = [];
+      country =
+        (researchData.dataStep1.data.country &&
+          researchData.dataStep1.data.country
+            .map((item) => item.value)
+            .join(",")) ||
+        (researchData.dataStep1.dataKg.country_kg &&
+          researchData.dataStep1.dataKg.country_kg
+            .map((item) => item.value)
+            .join(",")) ||
+        (researchData.dataStep1.data_en.country_en &&
+          researchData.dataStep1.data_en.country_en
+            .map((item) => item.value)
+            .join(","));
+
+            hashtags =
+            (researchData.dataStep1.hashtag 
+                .map((item) => item.value)
+                .join(","))
+
       if (researchData.dataStep2.data.files_research) {
         file_research_ru = researchData.dataStep2.data.files_research.map(
           (item) => {
@@ -69,48 +95,77 @@ const Step3 = ({ isStep3 }) => {
         );
       }
     }
+    console.log("join", hashtags);
     let formData = new FormData();
-    formData.append("name_ru", researchData.dataStep1.data.name);
-    formData.append("description_ru", researchData.dataStep1.data.description);
+    if (researchData.dataStep1.data.name) {
+      formData.append("name_ru", researchData.dataStep1.data.name);
+      formData.append(
+        "description_ru",
+        researchData.dataStep1.data.description
+      );
+      formData.append("demo_ru", researchData.dataStep2.data.file_demo);
+      file_research_ru.map((item)=>  formData.append("research_data_ru",item))
+       
+    }
+    if (researchData.dataStep1.dataKg.name_kg) {
+      formData.append("name_ky", researchData.dataStep1.dataKg.name_kg);
+      formData.append(
+        "description_ky",
+        researchData.dataStep1.dataKg.description_kg
+      );
+      formData.append("demo_ky", researchData.dataStep2.dataKg.file_demo_kg);
+
+      file_research_kg.map((item)=>  formData.append("research_data_ky",item))
+    }
+
+    if (researchData.dataStep1.data_en.name_en) {
+      formData.append("name_en", researchData.dataStep1.data_en.name_en);
+      formData.append(
+        "description_en",
+        researchData.dataStep1.data_en.description_en
+      );
+      formData.append("demo_en", researchData.dataStep2.data_en.file_demo_en);
+      file_research_en.map((item)=>  formData.append("research_data_en",item))
+    }
+
+    formData.append(
+      "pages",
+      researchData.dataStep2.data.pages ||
+        researchData.dataStep2.dataKg.pages_kg ||
+        researchData.dataStep2.data_en.pages_en
+    );
     formData.append(
       "category",
-      researchData.dataStep1.data.subCategory ||
-        researchData.dataStep1.dataKg.subCategory_kg ||
-        researchData.dataStep1.data_en.subCategory_kg
+      (researchData.dataStep1.data.subCategory &&
+        researchData.dataStep1.data.subCategory.id) ||
+        (researchData.dataStep1.dataKg.subCategory_kg &&
+          researchData.dataStep1.dataKg.subCategory_kg.id) ||
+        (researchData.dataStep1.data_en.subCategory_en &&
+          researchData.dataStep1.data_en.subCategory_en.id)
     );
-    formData.append("demo_ru", researchData.dataStep2.data.file_demo);
-    formData.append("hashtag", researchData.dataStep1.hashtag);
+
+    formData.append("hashtag", hashtags);
     formData.append("old_price", data.price);
     formData.append("image", data.photo);
-    formData.append("research_data_ru", file_research_ru?file_research_ru:[]);
-    formData.append("research_data_en", file_research_en?file_research_en:[]);
-    formData.append("research_data_ky", file_research_kg?file_research_kg:[]);
-    formData.append(
-      "country",
-      researchData.dataStep1.data.country ||
-        researchData.dataStep1.dataKg.country_kg ||
-        researchData.dataStep1.data_en.country_en
-    );
-    let hashtag = researchData.dataStep1.hashtag;
-    for (let i = 0; i < hashtag.length; i++) {
-      formData.append("hashtag", hashtag[i]);
-    }
+    formData.append("country", country);
+   
+   
     for (let [key, value] of formData.entries()) {
       console.log(`${key}: ${value}`);
     }
+    dispatch(uploadResearchAction(formData));
   };
 
   const isData = () => {
-
     let count = 0;
     for (var item in data) {
-      if (data[item]==null || data[item]=="") {
+      if (data[item] == null || data[item] == "") {
         count++;
       }
     }
     if (count == 0) {
       uploadResearch();
-      console.log('vfdvfdvdf')
+
     }
   };
 

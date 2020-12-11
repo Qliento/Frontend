@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from "./tabs.module.css";
 
 const Tabs = ({ changeLang, triger, isModal, isLang }) => {
-  const [active, setAtive] = useState(1);
+  const [active, setAtive] = useState(isLang.filter((item)=>item>0)[0]);
   const activeBtn = (e) => {
     if (triger) {
       setAtive(e);

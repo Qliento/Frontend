@@ -38,20 +38,22 @@ const Dropdown = ({ name,lang,changeData,dataSubRu ,dataList,subCategory}) => {
   const chengeData = (e) => {
     if(lang==="ru"){
       if(name==="Выберите категорию"){
-        changeData(e.value,"category")
+        changeData(e,"category")
       }
       if(name==="Выберите подкатегорию"){
-        changeData(e.value,"subCategory")
+        changeData(e,"subCategory")
+        console.log(e)
       }
 
   
     }
     if(lang==="kg"){
       if(name==="Выберите категорию"){
-        changeData(e.value,"category_kg")
+        changeData(e,"category_kg")
       }
       if(name==="Выберите подкатегорию"){
-        changeData(e.value,"subCategory_kg")
+        changeData(e,"subCategory_kg")
+      
       }
       
 
@@ -59,10 +61,10 @@ const Dropdown = ({ name,lang,changeData,dataSubRu ,dataList,subCategory}) => {
     }
     if(lang==="en"){
       if(name==="Выберите категорию"){
-        changeData(e.value,"category_en")
+        changeData(e,"category_en")
       }
       if(name==="Выберите подкатегорию"){
-        changeData(e.value,"subCategory_en")
+        changeData(e,"subCategory_en")
       }
     }
  
@@ -73,7 +75,7 @@ const Dropdown = ({ name,lang,changeData,dataSubRu ,dataList,subCategory}) => {
         options={arr}
         placeholder={name}
         defaultValue={
-          dataSubRu ? { value: dataSubRu, label: dataSubRu } : ""
+          dataSubRu ? dataSubRu : ""
         }
         onChange={(e) => chengeData(e)}
       />

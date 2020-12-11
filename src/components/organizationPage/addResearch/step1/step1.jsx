@@ -21,7 +21,7 @@ const Step1 = ({ langChange }) => {
   const [isStep, setIsStep] = useState(1);
   const [arrLang, setArrLang] = useState([1, 2, 3]);
   const [hashtag, setHashtag] = useState([]);
-  const [errHashtag, setErrHashtag] = useState(false);
+  const [errHashtag, setErrHashtag] = useState();
   const [subCategory,setSubCategory]= useState([])
   const [data, setData] = useState({
     name: null,
@@ -115,7 +115,7 @@ console.log(dataList)
    
     if (dataList.Category) {
       setSubCategory(dataList.Category.filter((item) => {
-        return item.name == e;
+        return item.name == e.value;
       }))
     }
     if (lang === 1) {
@@ -159,16 +159,16 @@ console.log(dataList)
   };
   const changeHashtag = (e) => {
     setHashtag(e);
-    setErrHashtag(true);
+    setErrHashtag(false);
   };
   const pushErr = (e) => {
     setObjErr(e);
   };
   const isHashtag = () => {
     if (hashtag.length !== 0) {
-      setErrHashtag(true);
-    } else {
       setErrHashtag(false);
+    } else {
+      setErrHashtag(true);
     }
   };
   console.log(triger);
@@ -208,7 +208,7 @@ console.log(dataList)
     const arrLang1 = [];
 
     let from = 0;
-    from += Object.values(data).every((o) => o !== null && o !== "" && o !== [])
+    from += Object.values(data).every((o) => o !== null || o !== "" || o !== [])
       ? 1
       : 0;
     from += Object.values(dataKg).every(
@@ -240,9 +240,10 @@ console.log(dataList)
     console.log(from);
     console.log(arrLang);
 console.log(errHashtag)
-    if (triger && from > 0 && errHashtag) {
+
+    if (triger && from > 0 && !errHashtag) {
       setIsStep(2);
-      isModal(true);
+      isModal(false);
       setArrLang(arrLang1);
       langChange(arrLang1);
     } else {
