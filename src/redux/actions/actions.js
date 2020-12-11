@@ -183,6 +183,21 @@ export function updateClientAfter() {
   };
 }
 
+export function authSocial(user, token){
+  return async (dispatch)=>{
+    // const data = JSON.stringify({email, password})
+    await API.authSocial(user, token)
+    .then(res => {
+      if( res.status == 200){
+        // dispatch(createToken(email, password));
+      }
+    })
+    .catch(err =>{
+      // dispatch({ type: 'POSTED__ERROR_AUTH'})
+    }
+    );
+}}
+
 export function authClient({email, password}){
   return async (dispatch)=>{
     const data = JSON.stringify({email, password})

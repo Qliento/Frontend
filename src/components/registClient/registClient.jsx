@@ -219,7 +219,7 @@ const RegistClient = () => {
               <img className={classes.imgVisib} alt="img" onClick={()=>setVisibility(!visibility)} src={visibility? vis : noVis} />
             </div>
             {(language == 1 || language == undefined) && errors.password && (
-              <span className={classes.error}>Пароль менее 6 символов</span>
+              <span className={classes.error}>Пароль менее 8 символов</span>
             )}
             {language == 2 && errors.password && (
               <span className={classes.error}>Less than 8 characters</span>

@@ -37,7 +37,7 @@ const Basket = () => {
       <div className={classes.blockTitle2}>
         {(language == 1 || language == undefined) && <span className={classes.title2}>Ваш заказ</span>}
         {language == 2 && <span className={classes.title2}>Your order</span>}
-        {language == 3 && <span className={classes.title2}>Ваш заказ</span>}
+        {language == 3 && <span className={classes.title2}>Сиздин заказ</span>}
       </div>
       <Order />
     </div>

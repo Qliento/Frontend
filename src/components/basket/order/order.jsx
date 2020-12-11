@@ -22,7 +22,7 @@ const Order=()=>{
                 <div className={classes.blockPrice}>
                 {(language == 1 || language == undefined) && <span className={classes.titlePrice}>Итоговоя сумма</span>}
                 {language == 2 && <span className={classes.titlePrice}>Total cost</span>}
-                {language === 3 && <span className={classes.titlePrice}>Итоговоя сумма</span>}
+                {language == 3 && <span className={classes.titlePrice}>Жалпы баа</span>}
                 <span classame={classes.price}>{total} сом </span>
                 </div>
                 <div className={classes.blockChecket}>

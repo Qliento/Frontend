@@ -22,9 +22,8 @@ const DetailMarket = () => {
   const data = useSelector((state) => state.ResearchList.detailData);
   const clickBtn = () => {
     setIsClose(!isClose);
-    console.log(isClose);
   };
-  console.log(data)
+  
   return (
     <>
       <div className={isClose ? classes.blockDetail1 : classes.blockDetail}>

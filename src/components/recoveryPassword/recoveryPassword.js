@@ -23,7 +23,7 @@ const RecoveryPassword = () =>{
                 </Link>
                 {(language == 1 || language == undefined) &&<h2>Восстановление пароля</h2>}
                 {language == 2 &&<h2>Recovery password</h2>}
-                {language == 3 &&<h2>Восстановление пароля</h2>}
+                {language == 3 &&<h2>Паролду калыбына келтирүү</h2>}
                 <form>
                     <label>E-mail</label>
                     <input placeholder="e-mail" name="email" ref={register({

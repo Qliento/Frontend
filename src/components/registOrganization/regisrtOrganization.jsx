@@ -266,7 +266,7 @@ const RegistOrganization = () => {
                 />
               </div>
               {(language == 1 || language == undefined) && <>{errors.repeatPassword && (
-                <span className={classes.error}>Пароль менее 6 символов</span>
+                <span className={classes.error}>Пароль менее 8 символов</span>
               )}
               {err && (
                 <span className={classes.error}>Пароли не совподают</span>

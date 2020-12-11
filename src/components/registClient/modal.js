@@ -35,9 +35,9 @@ function RegistrModal() {
   return (
     <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
       <div className={classes.modal}>
-        {(language == 1 || language == undefined) && <span className={classes.title}>Регистрация</span>}
-        {language == 2 && <span className={classes.title}>Registration</span>}
-        {language == 3 && <span className={classes.title}>Каттоо</span>}
+        {isModal == 1 && (language == 1 || language == undefined) && <span className={classes.title}>Регистрация</span>}
+        {isModal == 1 && language == 2 && <span className={classes.title}>Registration</span>}
+        {isModal == 1 && language == 3 && <span className={classes.title}>Каттоо</span>}
         <div className={classes.content}>
           <img alt="img" src={isModal == 1 ? img1 : img2}/>
           <div className={classes.blockText}>
