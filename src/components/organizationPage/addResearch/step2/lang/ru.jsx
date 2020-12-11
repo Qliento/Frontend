@@ -90,7 +90,7 @@ const Step2Ru = ({
       <div className={classes.files}>
         {data.file_demo ? (
           <>
-            <img alt="img" src={jpeg} />
+            <img alt="img" src={pdf} />
             <span className={classes.fileName}>{data.file_demo.name}</span>
             <img
               alt="img"
