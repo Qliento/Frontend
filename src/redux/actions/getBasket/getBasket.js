@@ -12,6 +12,7 @@ export function getBasketActions() {
   return async (dispatch) => {
     await API.getBasket(token).then((res) => {
       dispatch(seccess(res.data));
+   
     });
   };
 }

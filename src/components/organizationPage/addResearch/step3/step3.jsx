@@ -3,6 +3,7 @@ import classes from "./step3.module.css";
 import img from "./img/Rectangle 47.png";
 import { useDispatch, useSelector } from "react-redux";
 import {uploadResearchAction} from "../../../../redux/actions/organizationPage/action"
+import PostResearchModal from "./modal";
 
 const Step3 = ({ isStep3 }) => {
   let dispatch=useDispatch();
@@ -58,20 +59,20 @@ const Step3 = ({ isStep3 }) => {
         (researchData.dataStep1.data.country &&
           researchData.dataStep1.data.country
             .map((item) => item.value)
-            .join(",")) ||
+            .join(", ")) ||
         (researchData.dataStep1.dataKg.country_kg &&
           researchData.dataStep1.dataKg.country_kg
             .map((item) => item.value)
-            .join(",")) ||
+            .join(", ")) ||
         (researchData.dataStep1.data_en.country_en &&
           researchData.dataStep1.data_en.country_en
             .map((item) => item.value)
-            .join(","));
+            .join(", "));
 
             hashtags =
             (researchData.dataStep1.hashtag 
                 .map((item) => item.value)
-                .join(","))
+                .join(", "))
 
       if (researchData.dataStep2.data.files_research) {
         file_research_ru = researchData.dataStep2.data.files_research.map(
@@ -95,6 +96,9 @@ const Step3 = ({ isStep3 }) => {
         );
       }
     }
+    let arr_content_ru=[];
+    let arr_content_ky=[];
+    let arr_content_en=[];
     console.log("join", hashtags);
     let formData = new FormData();
     if (researchData.dataStep1.data.name) {
@@ -104,7 +108,13 @@ const Step3 = ({ isStep3 }) => {
         researchData.dataStep1.data.description
       );
       formData.append("demo_ru", researchData.dataStep2.data.file_demo);
-      file_research_ru.map((item)=>  formData.append("research_data_ru",item))
+      file_research_ru.map((item)=>  formData.append("file_ru",item))
+   arr_content_ru=researchData.dataStep2.data.content.map((item)=>{
+         return{
+          content:item.value,
+          page:item.page
+         }
+       })
        
     }
     if (researchData.dataStep1.dataKg.name_kg) {
@@ -115,7 +125,14 @@ const Step3 = ({ isStep3 }) => {
       );
       formData.append("demo_ky", researchData.dataStep2.dataKg.file_demo_kg);
 
-      file_research_kg.map((item)=>  formData.append("research_data_ky",item))
+      file_research_kg.map((item)=>  formData.append("file_ky",item))
+    arr_content_ky=researchData.dataStep2.dataKg.content_kg.map((item)=>{
+        return{
+         content_ky:item.value,
+         page_ky:item.page
+        }
+      })
+     
     }
 
     if (researchData.dataStep1.data_en.name_en) {
@@ -125,9 +142,16 @@ const Step3 = ({ isStep3 }) => {
         researchData.dataStep1.data_en.description_en
       );
       formData.append("demo_en", researchData.dataStep2.data_en.file_demo_en);
-      file_research_en.map((item)=>  formData.append("research_data_en",item))
+      file_research_en.map((item)=>  formData.append("file_en",item))
+       arr_content_en=researchData.dataStep2.data_en.content_en.map((item)=>{
+        return{
+         content_en:item.value,
+         page_en:item.page
+        }
+      })
+  
     }
-
+    formData.append("content_data", JSON.stringify([...arr_content_ru,...arr_content_ky,...arr_content_en]))
     formData.append(
       "pages",
       researchData.dataStep2.data.pages ||
@@ -171,6 +195,7 @@ const Step3 = ({ isStep3 }) => {
 
   console.log(data);
   return (
+    <>
     <div className={classes.step3}>
       <div className={classes.form}>
         <div className={classes.blockTitle}>
@@ -236,6 +261,8 @@ const Step3 = ({ isStep3 }) => {
         </div>
       </div>
     </div>
+<PostResearchModal/>
+    </>
   );
 };
 export default Step3;

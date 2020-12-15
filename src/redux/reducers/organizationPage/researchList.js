@@ -4,6 +4,7 @@ const initialState = {
   ubdateResearch: false,
   dataStep2: {},
   dataStep1: {},
+  isModal:"",
 };
 
 export function ResearchList(state = initialState, action) {
@@ -38,6 +39,11 @@ export function ResearchList(state = initialState, action) {
         ...state,
         dataStep1: action.payload,
       };
+      case "UPLOAD_RESEARCH_SPINER":
+        return {
+          ...state,
+          isModal: action.isModal,
+        };
     default:
       return state;
   }

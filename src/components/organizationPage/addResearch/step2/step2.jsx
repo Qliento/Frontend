@@ -255,19 +255,19 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
     let file = e.target.files[0];
     let filetype = file.name.split(".").pop();
     reader.onloadend = () => {
-      if (lang === 1) {
+      if (lang === 1 && filetype=="pdf") {
         setData({
           ...data,
           file_demo: file,
         });
       }
-      if (lang === 2) {
+      if (lang === 2 && filetype=="pdf") {
         setDataKg({
           ...dataKg,
           file_demo_kg: file,
         });
       }
-      if (lang === 3) {
+      if (lang === 3 && filetype=="pdf") {
         setData_en({
           ...data_en,
           file_demo_en: file,

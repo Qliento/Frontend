@@ -33,7 +33,7 @@
   line-height: 22px;
   color: #333333;
 }
-.price {
+.price1 {
   font-weight: bold;
   font-size: 36px;
   line-height: 44px;
@@ -47,6 +47,9 @@
   line-height: 29px;
   color: #ffffff;
   margin-top: 0px !important;
+}
+a{
+  color: #1B8E3D;
 }
 .checkbox {
   width: 100px;
