@@ -183,17 +183,34 @@ export function updateClientAfter() {
   };
 }
 
-export function authSocial(user, token){
+export function authSocial(token){
   return async (dispatch)=>{
-    // const data = JSON.stringify({email, password})
-    await API.authSocial(user, token)
+    await API.authSocial('client', token)
     .then(res => {
       if( res.status == 200){
-        // dispatch(createToken(email, password));
+        localStorage.setItem('user', res.data.access);
+        localStorage.setItem('type', 'client');
+        dispatch({ type: 'POSTED_SUCCES_AUTH'})
       }
     })
     .catch(err =>{
-      // dispatch({ type: 'POSTED__ERROR_AUTH'})
+        dispatch({ type: 'POSTED__ERROR_AUTH'})
+    }
+    );
+}}
+
+export function authSocialFace(token){
+  return async (dispatch)=>{
+    await API.authSocialFace('client', token)
+    .then(res => {
+      if( res.status == 200){
+        localStorage.setItem('user', res.data.access);
+        localStorage.setItem('type', 'client');
+        dispatch({ type: 'POSTED_SUCCES_AUTH'})
+      }
+    })
+    .catch(err =>{
+        dispatch({ type: 'POSTED__ERROR_AUTH'})
     }
     );
 }}

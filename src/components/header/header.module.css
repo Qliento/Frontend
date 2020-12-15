@@ -21,25 +21,6 @@
 }
 
 
-@media screen and (max-width: 930px)
-{
-    .navbar{
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        margin-left: 0;
-        max-width: 100%;
-        width: 100%;
-        background: var(--green);
-        z-index: 10;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        display: none;
-    }
-}
-
 .navbar a{
     color: #000;
 }
@@ -139,4 +120,71 @@
 
 .regisrationBtn:hover{
     text-decoration: underline;
+}
+
+@media screen and (max-width: 1070px)
+{
+    .navbar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        margin-left: 0;
+        max-width: 100%;
+        width: 100%;
+        background: #cacaca;
+        z-index: 10;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: ease-out 0.3s;
+        transform: translateX(100%);
+        font-size: 20px;
+    }
+
+    .navbar span{
+        line-height: 60px;
+    }
+
+    .navbar_active{
+        transform: translateX(0);
+    }
+
+    .menuBtn{
+        width: 44px;
+        height: 44px;
+        margin-left: 3em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        z-index: 10;
+    }
+
+    .menuBtn_active .burger{
+        background-color: #fff;
+    }
+
+    .burger{
+        width: 30px;
+        height: 3px;
+        background-color: var(--green);
+        transition: ease-in 0.3s;
+    }
+
+    .menuBtn .burger:nth-child(1){
+        margin-bottom: 6px;
+    }
+
+    .menuBtn .burger:nth-child(3){
+        margin-top: 6px;
+    }
+}
+
+@media screen and (max-width: 670px){
+    .header{
+        padding: 0 5%;
+    }
 }

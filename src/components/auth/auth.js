@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import st from './auth.module.css';
 import { Link } from "react-router-dom";
 import { authClient } from '../../redux/actions/actions';
-import { useDispatch, useSelector } from "react-redux";
+import { authSocialFace } from '../../redux/actions/actions';
+import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import Modal from './modal';
-import ReactDOM from 'react-dom';
-
+import FacebookLogin from 'react-facebook-login';
+import {authSocial} from '../../redux/actions/actions';
 import noVis from "./image/noVisibility.png"
 import vis from "./image/visibility 1.png"
-import Auth_network from "./auth_network/auth_network";
-import NetworkChoose from './auth_network/networks_choose';
+import GoogleLogin from 'react-google-login';
 
 const Auth = () => {
     const dispatch = useDispatch();
@@ -20,17 +20,15 @@ const Auth = () => {
     const language = localStorage.getItem('lang');
     const [modal, setModal] = useState(1);
     const [network, setNetwork] = useState();
-    const onModal = (elem) =>{
-        setModal(1);
-        setNetwork(elem);
+    const responseFacebook = (response) => {
+        console.log(response)
+        dispatch(authSocialFace(response.accessToken))
+      }
+    const success = (res) =>{
+        dispatch(authSocial(res.tokenId))
     }
-
-    const chooseModal = () =>{
-        setModal(2);
-    }
-
-    const offModal = () =>{
-        setModal(0)
+    const failure = (res) =>{
+        console.log(res)
     }
 
     return(
@@ -148,23 +146,28 @@ const Auth = () => {
                     Каттоо
                 </Link></>}
             </div>
-            {modal == 1 && ReactDOM.createPortal(
-                <Auth_network offModal={offModal} network={network} chooseModal={chooseModal} />,
-                document.getElementById('portal')
-            )}
-            {modal == 2 && ReactDOM.createPortal(
-                <NetworkChoose offModal={offModal} network={network} />,
-                document.getElementById('portal')
-            )}
             <div className={st.social_auth}>
                 {(language == 1 || language == undefined) && <span>Войти через</span>}
                 {language == 2 && <span>Login with</span>}
                 {language == 3 && <span>Аркылуу кирүү</span>}
                 <div className={st.social_auth_icons}>
-                    <img src={require('./image/vk.png')} alt="icon" onClick={() => onModal('vk')} />
-                    <img src={require('./image/fc_icon.png')} alt="icon" onClick={() => onModal('fc')} />
-                    <img src={require('./image/Group 59.png')} alt="icon" onClick={() => onModal('google')} />
-                    <img src={require('./image/twitter.png')} alt="icon" onClick={() => onModal('tw')} />
+                <GoogleLogin 
+                    clientId="1032556798687-6427pbbpse1jm5ho5is64cja01bad94u.apps.googleusercontent.com"
+                    buttonText=""
+                    onSuccess={success}
+                    onFailure={failure}
+                    cookiePolicy={'single_host_origin'}
+                    />
+                <FacebookLogin
+                    appId="845882496211969"
+                    // autoLoad={true}
+                    fields="name,email,picture"
+                    icon="fa-facebook"
+                    textButton=""
+                    // onClick={componentClicked}
+                    callback={responseFacebook} />
+                    <img src={require('./image/vk.png')} alt="icon" />
+                    <img src={require('./image/twitter.png')} alt="icon" />
                 </div>
             </div>
             

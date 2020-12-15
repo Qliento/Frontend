@@ -48,3 +48,23 @@ footer > div a{
     height: 36px;
     border-radius: 50%;
 }
+
+@media screen and (max-width: 900px){
+    footer svg{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 770px){
+    footer{
+        flex-wrap: wrap;
+    }
+
+    .socialQuest{
+        margin-top: 2em;
+    }
+
+    .navbar{
+        margin-bottom: 2em;
+    }
+}

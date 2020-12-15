@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React,{useEffect, useState} from "react";
 import st from "./header.module.css";
 import { Link } from "react-router-dom";
 import Select from 'react-select';
@@ -18,6 +18,12 @@ const Header = () => {
   const logout = () =>{
     localStorage.removeItem('user');
     window.location.reload()
+  }
+  const [burger, setBurger] = useState(false);
+  const toggleBurger = () =>{
+    setBurger(!burger);
+    let nav = document.querySelector('.' + st.navbar);
+    nav.classList.toggle(st.navbar_active);
   }
   const language = localStorage.getItem('lang');
   const change = (elem) =>{
@@ -193,6 +199,11 @@ const Header = () => {
               {language == 3 && <span onClick={logout} className={st.logout}>Чыгуу</span>}
         </>}</div>
             )}
+      </div>
+      <div className={burger ? st.menuBtn + ' ' + st.menuBtn_active : st.menuBtn} onClick={toggleBurger}>
+        <div className={st.burger}></div>
+        <div className={st.burger}></div>
+        <div className={st.burger}></div>
       </div>
     </nav>
   );

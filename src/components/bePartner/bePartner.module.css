@@ -96,3 +96,69 @@
     color: #fff;
     border: none;
 }
+
+@media screen and (max-width: 900px){
+    .be_partner_container{
+        padding: 0 15%;
+    }
+
+    .order_form{
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .be_partner_container h2{
+        font-size: 40px;
+    }
+
+    .be_partner_container p{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .order_form form{
+        flex-direction: column;
+    }
+
+    .order_form form > div{
+        width: 100%;
+    }
+    .be_partner{
+        overflow: hidden;
+    }
+    .be_partner img{
+        width: 150%;
+        height: 100%;
+        margin-left: -25%;
+    }
+    
+}
+
+@media screen and (max-width: 700px){
+    .be_partner_container{
+        padding: 0 10%;
+    }
+    .be_partner_container h2{
+        font-size: 35px;
+    }
+
+    .be_partner_container p{
+        font-size: 13px;
+    }
+
+    .order_form{
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .order_form h3{
+        font-size: 25px;
+    }
+    .form_input_block label, .form_textarea_block label{
+        font-size: 13px;
+    }
+    .order_form{
+        padding: 30px 35px;
+    }
+}

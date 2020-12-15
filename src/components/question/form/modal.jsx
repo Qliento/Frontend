@@ -44,8 +44,8 @@ const registSuccess=()=>{
           <div className={classes.blockText}>
           <span className={classes.descr}>
               {(language == 1 || language == undefined) && isModal === 1 &&  "Вопрос отправлен!! Ожидайте ответа!"}
-              {language == 2 && isModal === 1 &&  "Прошла успешно. На почту отправлена ссылка для подтверждения"}
-              {language == 3 && isModal === 1 &&  "Прошла успешно. На почту отправлена ссылка для подтверждения"}
+              {language == 2 && isModal === 1 &&  "You have successfully submitted data"}
+              {language == 3 && isModal === 1 &&  "Дайындарды ийгиликтүү тапшырдыңыз"}
               {(language == 1 || language == undefined) && isModal === 2 &&  "Произошла ошибка попробуйте снова"}
               {language == 2 && isModal === 2 &&  "An error has occurred! Try again"}
               {language == 3 && isModal === 2 &&  "Ката кетти! Кайра аракет кылыңыз"}

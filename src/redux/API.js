@@ -190,5 +190,9 @@ export default {
   authSocial: (user, token) => http.post('/users/google/',{
     auth_token : token,
     user: user
+  }),
+  authSocialFace: (user, token) => http.post('/users/facebook/',{
+    auth_token : token,
+    user: user
   })
 };
