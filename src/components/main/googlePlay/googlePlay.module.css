@@ -29,10 +29,45 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    width: 400px;
+    width: 40%;
+    text-overflow: auto;
+    overflow: hidden;
+
 }
 .btnGoogle{
     position: absolute;
     bottom: 17%;
     right: 15%;
+}
+.btnGoogle2{
+  position: absolute;
+  bottom: 17%;
+  right: 15%;
+  display: none;
+}
+
+@media screen and (max-width : 670px) {
+.googlePlay{
+  height: 285px;
+}
+.title {
+  font-size: 12px;
+}
+.description{
+  font-size: 10px;
+  margin-top: 5px;
+
+}
+.blockText{
+
+  height: 100px;
+
+
+}
+.btnGoogle{
+display: none;
+}
+.btnGoogle2{
+  display: block;
+}
 }

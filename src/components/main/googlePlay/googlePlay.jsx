@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./googlePlay.module.css";
 import phone from "./img/phone.png";
 import google from "./img/google-play-badge 1.png";
+import img1 from "./img/1.png";
 
 const GooglePlay = ({ data }) => {
   let image;
@@ -27,6 +28,15 @@ const GooglePlay = ({ data }) => {
           window.open(data && data.url);
         }}
         className={classes.btnGoogle}
+      />
+      <img
+        alt="img"
+        src={img1}
+        onClick={(event) => {
+          event.preventDefault();
+          window.open(data && data.url);
+        }}
+        className={classes.btnGoogle2}
       />
     </div>
   );

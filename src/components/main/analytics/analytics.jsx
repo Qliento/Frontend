@@ -6,6 +6,7 @@ const Analytics = ({ data }) => {
   return (
     <div className={classes.blockAnalytic}>
       <div className={classes.analytic}>
+      <span className={classes.titleV}>{data && data.header}</span>
         <div className={classes.blockImg}>
           <img
             alt="img"

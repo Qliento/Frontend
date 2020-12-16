@@ -7,6 +7,7 @@ import classes from "./aboutUs.module.css";
 const AboutUs = ({ data }) => {
   return (
     <div className={classes.blockAbout}>
+      <span className={classes.titleV}>{data && data.header}</span>
       <div className={classes.blockImg}>
       
         <img

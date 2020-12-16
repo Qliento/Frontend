@@ -14,6 +14,7 @@ const NetworkChoose = ({offModal, network}) =>{
     const failure = (res) =>{
         console.log(res)
     }
+
     return(
         <div className={st.modal}>
             <div className={st.modal_content}>

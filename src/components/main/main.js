@@ -14,29 +14,29 @@ import { ListNews } from "../../redux/actions/getListNews/getNews";
 
 const Main = () => {
   const dispatch = useDispatch();
-  const data=useSelector((state)=>state.mainGet.mainData)
+  const data = useSelector((state) => state.mainGet.mainData);
 
-useEffect(()=>{
-  dispatch(mainData());
-  dispatch(ListNews())
-},[])
+  useEffect(() => {
+    dispatch(mainData());
+    dispatch(ListNews());
+  }, []);
 
-//iravolv7
+  //iravolv7
   return (
-    <>
+    <div className={classes.wrapperMain}>
       <div className={classes.wrapper}>
         <img alt="img" src={banner} className={classes.banner} />
         <div className={classes.blockSearch}>
-          <Inputs arrCategory={data && data.category}/>
+          <Inputs arrCategory={data && data.category} />
         </div>
       </div>
       <Tabs category={data && data.category} />
       <Order />
-      <AboutUs data={data&& data.info} />
+      <AboutUs data={data && data.info} />
       <News />
-      <Analytics data={ data &&data.post} />
-      <GooglePlay data ={data && data.mob_app} />
-    </>
+      <Analytics data={data && data.post} />
+      <GooglePlay data={data && data.mob_app} />
+    </div>
   );
 };
 

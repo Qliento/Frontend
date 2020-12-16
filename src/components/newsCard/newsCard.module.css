@@ -156,3 +156,119 @@
 .fixed{
     position: fixed;
 }
+
+@media only screen and (max-width:1140px){
+  .buttomBlock{
+    display: none;
+  }
+}
+@media only screen and (max-width:768px){
+  .analitic_card,.analitic_card1 {
+    width: 100%;
+    height: 990px;
+  
+    margin-top: 60px;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    
+  }
+  .analitic_card1{
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+  }
+  .blockImg {
+    width: 100%;
+    height: 495px;
+  
+  }
+  .blockImg1 {
+    width: 100%;
+    height: 495px;
+    position: unset;
+
+  
+  }
+  .img{
+    width: 100%;
+    height: 100%;
+  }
+  .content {
+    width: 100%;
+    height: 495px;
+
+  }
+  .content1{
+    width: 100%;
+    height: auto;
+  }
+  .description1 {
+    font-size: 14px;
+    color: #000000;
+    margin-top: 15px;
+    height: auto;
+    text-overflow: auto;
+    overflow: none;
+    height: 90%;
+    line-height: 1.6;
+  
+  }
+}
+@media only screen and (max-width:500px){
+  .blockImg {
+    width: 100%;
+    height: 245px;
+  
+  }
+  .blockImg1 {
+    width: 100%;
+    height: 245px;
+    position: unset;
+
+  
+  }
+  .btn {
+
+    width: 50%;
+
+  }
+  .img{
+    width: 100%;
+    height: 100%;
+  }
+  .analitic_card,.analitic_card1 {
+    width: 100%;
+    height: 740px;
+  
+    margin-top: 60px;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    
+  }
+  .analitic_card1{
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+  }
+  .title {
+    font-size: 18px;
+
+  }
+  .description {
+    font-size: 10px;
+  
+  }
+}
+@media only screen and(max-width:400px){
+  .title{
+    font-size: 14px;
+  }
+}

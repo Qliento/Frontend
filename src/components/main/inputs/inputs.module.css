@@ -35,13 +35,29 @@
   line-height: 22px;
   color: #ffffff;
 }
-.btn2{
-    background: #76b73e;
-    border: 1px solid #76b73e;
-    height: 100%;
+
+@media screen and (max-width: 610px) {
+  .blockInputs {
     width: 100%;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 22px;
-    color: #ffffff;
-}
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .categories{
+    height: 42px;
+    width: 100%;
+  }
+  .btn{
+    height: 42px;
+    width: 100%;
+  }
+  .search{
+    height: 42px;
+    width: 100%;
+  }
+  }
+
+
+
+
