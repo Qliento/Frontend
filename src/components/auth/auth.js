@@ -6,11 +6,12 @@ import { authSocialFace } from '../../redux/actions/actions';
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import Modal from './modal';
-import FacebookLogin from 'react-facebook-login';
+// import FacebookLogin from 'react-facebook-login';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import {authSocial} from '../../redux/actions/actions';
 import noVis from "./image/noVisibility.png"
 import vis from "./image/visibility 1.png"
-import GoogleLogin from 'react-google-login';
+import {useGoogleLogin} from 'react-google-login';
 
 const Auth = () => {
     const dispatch = useDispatch();
@@ -24,12 +25,20 @@ const Auth = () => {
         console.log(response)
         dispatch(authSocialFace(response.accessToken))
       }
-    const success = (res) =>{
+      const onSuccess = (res) =>{
         dispatch(authSocial(res.tokenId))
     }
-    const failure = (res) =>{
+    const onFailure = (res) =>{
         console.log(res)
     }
+    const clientId = "1032556798687-6427pbbpse1jm5ho5is64cja01bad94u.apps.googleusercontent.com"
+    const {signIn} = useGoogleLogin({
+        clientId,
+        onSuccess,
+        onFailure,
+        cookiePolicy: 'single_host_origin'
+    })
+    
 
     return(
     <div className={st.auth_bg}>
@@ -151,23 +160,21 @@ const Auth = () => {
                 {language == 2 && <span>Login with</span>}
                 {language == 3 && <span>Аркылуу кирүү</span>}
                 <div className={st.social_auth_icons}>
-                <GoogleLogin 
+                <img src={require('./image/Group 59.png')} alt="img" onClick={signIn} />
+                {/* <GoogleLogin 
                     clientId="1032556798687-6427pbbpse1jm5ho5is64cja01bad94u.apps.googleusercontent.com"
                     buttonText=""
+                    style={{fontSize: "18px"}}
                     onSuccess={success}
                     onFailure={failure}
                     cookiePolicy={'single_host_origin'}
-                    />
+                    /> */}
                 <FacebookLogin
                     appId="845882496211969"
-                    // autoLoad={true}
-                    fields="name,email,picture"
-                    icon="fa-facebook"
-                    textButton=""
-                    // onClick={componentClicked}
-                    callback={responseFacebook} />
-                    <img src={require('./image/vk.png')} alt="icon" />
-                    <img src={require('./image/twitter.png')} alt="icon" />
+                    callback={responseFacebook}
+                    render={renderProps =>(
+                        <img src={require('./image/fc_icon.png')} onClick={renderProps.onClick} alt="img"></img>
+                      )} />
                 </div>
             </div>
             

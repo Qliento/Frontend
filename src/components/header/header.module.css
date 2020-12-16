@@ -132,14 +132,25 @@
         margin-left: 0;
         max-width: 100%;
         width: 100%;
-        background: #cacaca;
+        background: #fff;
         z-index: 10;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        /* align-items: center; */
+        /* justify-content: center; */
         transition: ease-out 0.3s;
         transform: translateX(100%);
         font-size: 20px;
+        padding-left: 50px;
+        padding-top: 100px;
+    }
+
+    .navbar a{
+        transition: ease-out 0.3s;
+    }
+
+    .navbar a:hover{
+        background-color: var(--green);
+        color: #fff;
     }
 
     .navbar span{
@@ -164,7 +175,17 @@
     }
 
     .menuBtn_active .burger{
-        background-color: #fff;
+        background-color: #cacaca;
+    }
+
+    .menuBtn_active .burger:nth-child(1){
+        width: 15px;
+        transform: translateY(5px) translateX(8px) rotate(40deg);
+    }
+
+    .menuBtn_active .burger:nth-child(3){
+        width: 15px;
+        transform: translateY(-5px) translateX(8px) rotate(-40deg);
     }
 
     .burger{
@@ -181,10 +202,30 @@
     .menuBtn .burger:nth-child(3){
         margin-top: 6px;
     }
+    .regisration{
+        position: absolute;
+        z-index: 10;
+        top: 20px;
+        left: 50px;
+        transform: translateX(-200%);
+        transition: ease-out 0.3s;
+    }
+
+    .basket{
+        margin: 0 25px;
+    }
+
+    .regisration_active{
+        transform: translateX(0);
+    }
 }
 
 @media screen and (max-width: 670px){
+    
     .header{
         padding: 0 5%;
+    }
+    .menuBtn{
+        margin-left: 0.5em;
     }
 }

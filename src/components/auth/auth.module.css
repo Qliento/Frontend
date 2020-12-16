@@ -134,10 +134,11 @@
 .social_auth_icons{
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 20px;
 }
 
 .social_auth_icons img{
     cursor: pointer;
+    margin-left: 10px;
 }

@@ -17,13 +17,16 @@ const Header = () => {
   const type = localStorage.getItem('type');
   const logout = () =>{
     localStorage.removeItem('user');
-    window.location.reload()
+    window.location.reload();
+    console.log('ВЫ МЕНЯ ТАК ЗАЕБАЛИ С ЭТИМ ПРОЕКТОМ, А ПМ ВООБЩЕ ДУШНЫЙ ПИДАРАС');
   }
   const [burger, setBurger] = useState(false);
   const toggleBurger = () =>{
     setBurger(!burger);
     let nav = document.querySelector('.' + st.navbar);
+    let res = document.querySelector('.' + st.regisration);
     nav.classList.toggle(st.navbar_active);
+    res.classList.toggle(st.regisration_active);
   }
   const language = localStorage.getItem('lang');
   const change = (elem) =>{
@@ -86,30 +89,30 @@ const Header = () => {
         </svg>
       </Link>
       <div className={st.navbar}>
-        <Link to="/news">
+        <Link to="/news" onClick={toggleBurger}>
           {(language == 1 || language == undefined) && <span>Новости</span>}
           {language == 2 && <span>News</span>}
           {language == 3 && <span>Жаңылыктар</span>}
         </Link>
-        <Link to="/about-us">
+        <Link to="/about-us" onClick={toggleBurger}>
           {language == undefined && <span>О нас</span>}
           {language == 1 && <span>О нас</span>}
           {language == 2 && <span>About us</span>}
           {language == 3 && <span>Биз жөнүндө</span>}
         </Link>
-        <Link to="/analitic">
+        <Link to="/analitic" onClick={toggleBurger}>
         {language == undefined && <span>Блог</span>}
           {language == 1 && <span>Блог</span>}
           {language == 2 && <span>Blog</span>}
           {language == 3 && <span>Блог</span>}
         </Link>
-        <Link to="/market-research">
+        <Link to="/market-research" onClick={toggleBurger}>
         {language == undefined && <span>Маркет</span>}
           {language == 1 && <span>Маркет</span>}
           {language == 2 && <span>Market</span>}
           {language == 3 && <span>Изилдөөлөр</span>}
         </Link>
-        <Link to="/be-partner">
+        <Link to="/be-partner" onClick={toggleBurger}>
         {language == undefined && <span>Партнёрство</span>}
           {language == 1 && <span>Партнёрство</span>}
           {language == 2 && <span>Partnership</span>}
@@ -161,13 +164,13 @@ const Header = () => {
       <div className={st.regisration}>
         {userInfo == null ? (
           <>
-          <Link to="/auth">
+          <Link to="/auth" onClick={toggleBurger}>
           {language == undefined && <button className={st.Lk}>Вход</button>}
             {language == 1 && <button className={st.Lk}>Вход</button>}
             {language == 2 && <button className={st.Lk}>Login</button>}
             {language == 3 && <button className={st.Lk}>Кирүү</button>}
           </Link>
-          <Link to="/registration">
+          <Link to="/registration" onClick={toggleBurger}>
           {language == undefined && <button className={st.regisrationBtn}>Регистрация</button>}
           {language == 1 && <button className={st.regisrationBtn}>Регистрация</button>}
           {language == 2 && <button className={st.regisrationBtn}>Sign up</button>}
@@ -176,7 +179,7 @@ const Header = () => {
         </>
         ) : (
         <div>{type == 'client' ? <>
-          <Link to="/client-page" className={st.Lk}>
+          <Link to="/client-page" className={st.Lk} onClick={toggleBurger}>
           {language == undefined && <span>Личный кабинет</span>}
               {language == 1 && <span>Личный кабинет</span>}
               {language == 2 && <span>Account</span>}
@@ -187,7 +190,7 @@ const Header = () => {
             {language == 2 && <span onClick={logout} className={st.logout}>Logout</span>}
             {language == 3 && <span onClick={logout} className={st.logout}>Чыгуу</span>}
         </> : <>
-        <Link to="/organization-page" className={st.Lk}>
+        <Link to="/organization-page" className={st.Lk} onClick={toggleBurger}>
         {language == undefined && <span>Личный кабинет</span>}
               {language == 1 && <span>Личный кабинет</span>}
               {language == 2 && <span>Account</span>}
