@@ -28,3 +28,9 @@ top: -38px;
     height: 570px;
     
 }
+ @media only screen and (max-width:1000px){
+  .content{
+    min-width: 100%;
+    height: 374px;
+  }
+ }

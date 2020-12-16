@@ -11,8 +11,8 @@ const OrderCard = () => {
   return (
     <div className={classes.card}>
       <div className={classes.blockImg}>
-      <img alt="img" src={strela2} />
-        <img alt="img" src={strela} />
+      <img alt="img" className={classes.img1} src={strela2} />
+        <img alt="img" className={classes.img1} src={strela} />
         <img alt="img" src={strela2} />
       </div>
       <div className={classes.blockContent}>

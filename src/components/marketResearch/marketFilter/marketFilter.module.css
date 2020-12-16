@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
 .inputs {
   width: 24%;
   height: 42px;
@@ -33,6 +34,18 @@
   font-size: 14px;
   border: 1px solid #828282;
 }
+.inputSearchNone{
+  width: 36%;
+  height: 42px;
+  outline: none;
+  background-image: url(./img/lupa.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-position: 10px;
+  padding-left: 55px;
+  font-size: 14px;
+  border: 1px solid #828282;
+}
 .btn {
   width: 100%;
   height: 100%;
@@ -43,6 +56,7 @@
   color: #ffffff;
   border: 1px solid #1b8e3d;
 }
+
 .btnSort {
   width: 24%;
   height: 42px;
@@ -76,7 +90,7 @@
   padding-left: 10px;
 }
 
-.linkBtn{
+.linkBtn,.btnNone{
   width: 12%;
   height: 42px;
   background: #1b8e3d;
@@ -85,4 +99,123 @@
   line-height: 22px;
   color: #ffffff;
   border: 1px solid #1b8e3d;
+}
+.blockRow11{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.blockRow1{
+display: none;
+}
+@media screen and (max-width: 1100px) {
+  .blockFilter{
+    height: auto;
+
+  }
+  .blockRow,.blockRow11{
+    width: 100%;
+    height: 110px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: space-between;
+  }
+  .inputs{
+    min-width: 48.5%;
+  }
+  .inputSearch,.inputSearchNone{
+    width: 48.5%;
+  }
+  .linkBtn,.btnNone{
+    width: 48.5%;
+  }
+  .btnSort{
+    width: 48.5%;
+  }
+  .btnSort1{
+    width: 48.5px;
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+  .blockRow{
+  height: 210px;
+  }
+  .inputs{
+    width: 100%;
+  }
+  .inputSearch{
+    width: 100%;
+  }
+  .inputSearchNone{
+    display: none;
+  }
+  .inputSearch1 {
+    width: 100%;
+    height: 42px;
+    outline: none;
+    background-image: url(./img/lupa.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-position: 10px;
+    padding-left: 55px;
+    font-size: 14px;
+    border: 1px solid #828282;
+  }
+  .btn1 {
+    width: 100%;
+    height: 100%;
+    background: #1b8e3d;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #ffffff;
+    border: 1px solid #1b8e3d;
+  }
+.linkBtn1{
+  width: 100%;
+  height: 42px;
+  background: #1b8e3d;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+  border: 1px solid #1b8e3d;
+}  .blockRow1{
+  width: 100%;
+  height: 140px;
+  
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: space-between;
+}
+.blockRow11{
+  width: 100%;
+  height: 140px;
+  
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: space-between;
+}
+  .btnSort{
+    width: 48.5%;
+    font-size: 10px;
+  }
+  .btnSort1{
+    width: 48.5%;
+    font-size: 10px;
+  }
+  .btnNone{
+    display: none;
+  }
 }

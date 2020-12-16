@@ -19,7 +19,7 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
   const [inputCountry, setInputCountry] = useState("");
   const [inputText, setInputText] = useState(text ? text : "");
   // const language = useSelector(state => state.langReducer.lang)
-  const language = localStorage.getItem('lang');
+  const language = localStorage.getItem("lang");
   useEffect(() => {
     dispatch(listDataFilter());
   }, []);
@@ -54,7 +54,7 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
   };
   return (
     <div className={classes.blockFilter}>
-      <div className={classes.blockRow}>
+      <div className={classes.blockRow,classes.blockRow11}>
         <div className={classes.inputs}>
           <Category
             name="Все категории"
@@ -72,28 +72,55 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
           />
         </div>
 
-        {(language == 1 || language == undefined) &&<input className={classes.inputSearch} placeholder="Поиск по ключевым словам"
-          onChange={(e) => {
-            setInputText(e.target.value);
-          }}
-          value={inputText}
-        />}
-        {language == 2 &&<input className={classes.inputSearch} placeholder="Keyword search"
-          onChange={(e) => {
-            setInputText(e.target.value);
-          }}
-          value={inputText}
-        />}
-        {language == 3 &&<input className={classes.inputSearch} placeholder="Негизги сөз боюнча издөө"
-          onChange={(e) => {
-            setInputText(e.target.value);
-          }}
-          value={inputText}
-        />}
-        <Link className={classes.linkBtn} to={`/market-research-filter`}>
-          {(language == 1 || language == undefined) && <button className={classes.btn} onClick={search}>Поиск</button>}
-          {language == 2 && <button className={classes.btn} onClick={search}>Search</button>}
-          {language == 3 && <button className={classes.btn} onClick={search}>Издөө</button>}
+        {(language == 1 || language == undefined) && (
+          <input
+            className={(classes.inputSearch, classes.inputSearchNone)}
+            placeholder="Поиск по ключевым словам"
+            onChange={(e) => {
+              setInputText(e.target.value);
+            }}
+            value={inputText}
+          />
+        )}
+        {language == 2 && (
+          <input
+            className={classes.inputSearch , classes.inputSearchNone}
+            placeholder="Keyword search"
+            onChange={(e) => {
+              setInputText(e.target.value);
+            }}
+            value={inputText}
+          />
+        )}
+        {language == 3 && (
+          <input
+            className={classes.inputSearch, classes.inputSearchNone}
+            placeholder="Негизги сөз боюнча издөө"
+            onChange={(e) => {
+              setInputText(e.target.value);
+            }}
+            value={inputText}
+          />
+        )}
+        <Link
+          className={(classes.linkBtn, classes.btnNone)}
+          to={`/market-research-filter`}
+        >
+          {(language == 1 || language == undefined) && (
+            <button className={classes.btn} onClick={search}>
+              Поиск
+            </button>
+          )}
+          {language == 2 && (
+            <button className={classes.btn} onClick={search}>
+              Search
+            </button>
+          )}
+          {language == 3 && (
+            <button className={classes.btn} onClick={search}>
+              Издөө
+            </button>
+          )}
         </Link>
       </div>
       <div className={classes.blockRow}>
@@ -111,45 +138,121 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
             ubdateData={ubdateData}
           />
         </div>
-        {(language == 1 || language == undefined) && <>
-          <button className={ sort11? classes.btnSort1 : classes.btnSort} onClick={() => {
-            sort1();
-            setSort11(!sort11);
-          }}
-        >Сортировка по цене <img alt="img" src={sort} />
-        </button>
-        <button className={sort22? classes.btnSort1 : classes.btnSort}onClick={() => {
-            sort2();
-            setSort22(!sort22);
-          }}
-        >Сортировка по дате <img alt="img" src={sort} /></button>
-        </>}
-        {language == 2 && <>
-          <button className={ sort11? classes.btnSort1 : classes.btnSort} onClick={() => {
-            sort1();
-            setSort11(!sort11);
-          }}
-        >Sort by price <img alt="img" src={sort} />
-        </button>
-        <button className={sort22? classes.btnSort1 : classes.btnSort}onClick={() => {
-            sort2();
-            setSort22(!sort22);
-          }}
-        >Sort by data <img alt="img" src={sort} /></button>
-        </>}
-        {language == 3 && <>
-          <button className={ sort11? classes.btnSort1 : classes.btnSort} onClick={() => {
-            sort1();
-            setSort11(!sort11);
-          }}
-        >Баа боюнча иреттөө <img alt="img" src={sort} />
-        </button>
-        <button className={sort22? classes.btnSort1 : classes.btnSort}onClick={() => {
-            sort2();
-            setSort22(!sort22);
-          }}
-        >Дата боюнча иреттөө <img alt="img" src={sort} /></button>
-        </>}
+        {(language == 1 || language == undefined) && (
+          <>
+            <button
+              className={sort11 ? classes.btnSort1 : classes.btnSort}
+              onClick={() => {
+                sort1();
+                setSort11(!sort11);
+              }}
+            >
+              Сортировка по цене <img alt="img" src={sort} />
+            </button>
+            <button
+              className={sort22 ? classes.btnSort1 : classes.btnSort}
+              onClick={() => {
+                sort2();
+                setSort22(!sort22);
+              }}
+            >
+              Сортировка по дате <img alt="img" src={sort} />
+            </button>
+          </>
+        )}
+        {language == 2 && (
+          <>
+            <button
+              className={sort11 ? classes.btnSort1 : classes.btnSort}
+              onClick={() => {
+                sort1();
+                setSort11(!sort11);
+              }}
+            >
+              Sort by price <img alt="img" src={sort} />
+            </button>
+            <button
+              className={sort22 ? classes.btnSort1 : classes.btnSort}
+              onClick={() => {
+                sort2();
+                setSort22(!sort22);
+              }}
+            >
+              Sort by data <img alt="img" src={sort} />
+            </button>
+          </>
+        )}
+        {language == 3 && (
+          <>
+            <button
+              className={sort11 ? classes.btnSort1 : classes.btnSort}
+              onClick={() => {
+                sort1();
+                setSort11(!sort11);
+              }}
+            >
+              Баа боюнча иреттөө <img alt="img" src={sort} />
+            </button>
+            <button
+              className={sort22 ? classes.btnSort1 : classes.btnSort}
+              onClick={() => {
+                sort2();
+                setSort22(!sort22);
+              }}
+            >
+              Дата боюнча иреттөө <img alt="img" src={sort} />
+            </button>
+          </>
+        )}
+      </div>
+      <div className={classes.blockRow1}>
+        {(language == 1 || language == undefined) && (
+          <input
+            className={classes.inputSearch1}
+            placeholder="Поиск по ключевым словам"
+            onChange={(e) => {
+              setInputText(e.target.value);
+            }}
+            value={inputText}
+          />
+        )}
+        {language == 2 && (
+          <input
+            className={classes.inputSearch1}
+            placeholder="Keyword search"
+            onChange={(e) => {
+              setInputText(e.target.value);
+            }}
+            value={inputText}
+          />
+        )}
+        {language == 3 && (
+          <input
+            className={classes.inputSearch1}
+            placeholder="Негизги сөз боюнча издөө"
+            onChange={(e) => {
+              setInputText(e.target.value);
+            }}
+            value={inputText}
+          />
+        )}
+        <Link className={classes.linkBtn1} to={`/market-research-filter`}>
+          {(language == 1 || language == undefined) && (
+            <button className={classes.btn1} onClick={search}>
+              Поиск
+            </button>
+          )}
+          {language == 2 && (
+            <button className={classes.btn1} onClick={search}>
+              Search
+            </button>
+          )}
+          {language == 3 && (
+            <button className={classes.btn1} onClick={search}>
+              Издөө
+            </button>
+          )}
+        </Link>
       </div>
     </div>
   );

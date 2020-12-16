@@ -8,3 +8,13 @@
 
   border-radius: 0px;
 }
+@media screen and (max-width: 940px) {
+  .blockOrder {
+    height: 448px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .blockOrder {
+    height: 224px;
+  }
+}

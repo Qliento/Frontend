@@ -41,7 +41,7 @@ const About = () => {
             );
           } else {
             return (
-              <div className={classes.block1} key={item.id}>
+              <div className={classes.block2} key={item.id}>
                 <div className={classes.text1}>
                   <span className={classes.blockTitle}>{item.header}</span>
                   <span>{item.description}</span>

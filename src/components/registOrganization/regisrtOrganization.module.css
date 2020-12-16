@@ -197,3 +197,13 @@ margin-top: 10px;
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 920px) {
+.blockRegist{
+  width: 50%;
+}
+  }
+  @media screen and (max-width: 760px) {
+    .blockRegist{
+      width: 100%;
+    }
+      }
