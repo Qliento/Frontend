@@ -206,8 +206,13 @@ export default {
   payResearchApi: (data,token)=> http.post(`/purchase/orders/`,{
     items_ordered:data
   },{
-    headers: { Authorization: "Bearer " + token },
-  })
+    headers: { Authorization: "Bearer " + token }
+  }),
+  authSocialTwit: (user, token) => http.post('/users/twitter/',{
+    auth_token : token,
+    user: user
+  }),
+
 };
 
 
