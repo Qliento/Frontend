@@ -21,19 +21,19 @@ const Step1Kg = ({
   return (
     <div className={classes.form}>
       <div className={classes.blockTitle}>
-        <span className={classes.title}>Исследование</span>
+        <span className={classes.title}>Изилдөө</span>
 
         <div className={classes.blockStep}>
-          <span className={classes.step11}>Шаг 1</span>
-          <span className={classes.step} onClick={() => further()}>Шаг 2</span>
-          <span className={classes.step}>Шаг 3</span>
+          <span className={classes.step11}>1 кадам</span>
+          <span className={classes.step} onClick={() => further()}>2 кадам</span>
+          <span className={classes.step}>3 кадам</span>
         </div>
       </div>
       <div className={classes.blockInput}>
-        <span className={classes.inputTitle}>Название для исследования</span>
+        <span className={classes.inputTitle}>Изилдөө аталышы</span>
         <input
           className={classes.input1}
-          placeholder="Ваш ФИО"
+          placeholder="Аталыш"
           name="name_kg"
           value={data.name_kg}
           onChange={inputValue}
@@ -41,18 +41,18 @@ const Step1Kg = ({
         {arrErrRu &&
           arrErrRu.map((item) => {
             if (item == "name_kg") {
-              return <span className={classes.err}>Заполинте это поле!!!</span>;
+              return <span className={classes.err}>Талааны толтуруңуз!!!</span>;
             }
           })}
       </div>
       <div className={classes.blockInput}>
         <div className={classes.titleBlock}>
-          <span className={classes.inputTitle}>Описание</span>
+          <span className={classes.inputTitle}>Сүрөттөө</span>
           <span className={classes.text}>2000</span>
         </div>
         <textarea
           className={classes.inputDescrip}
-          placeholder="Описание"
+          placeholder="Сүрөттөө"
           name="description_kg"
           value={data.description_kg}
           onChange={inputValue}
@@ -60,21 +60,21 @@ const Step1Kg = ({
         {arrErrRu &&
           arrErrRu.map((item) => {
             if (item == "description_kg") {
-              return <span className={classes.err}>Заполинте это поле!!!</span>;
+              return <span className={classes.err}>Талааны толтуруңуз!!!</span>;
             }
           })}
       </div>
       <div className={classes.blockInput}>
-        <span className={classes.inputTitle}>О компании</span>
+        <span className={classes.inputTitle}>Компания жөнүндө</span>
         <div className={classes.blockDescrip}>
-          <span>О компании</span>
+          <span>Компания жөнүндө</span>
         </div>
       </div>
       <div className={classes.blockDropdown}>
         <div className={classes.dropdown}>
-          <span className={classes.dropdownTitle}>Категоря</span>
+          <span className={classes.dropdownTitle}>Категория</span>
           <Dropdown
-            name="Выберите категорию"
+            name="Категория"
             lang="kg"
               dataList={dataList}
             dataSubRu={data.category_kg}
@@ -84,15 +84,15 @@ const Step1Kg = ({
             arrErrRu.map((item) => {
               if (item == "category_kg") {
                 return (
-                  <span className={classes.err}>Заполинте это поле!!!</span>
+                  <span className={classes.err}>Талааны толтуруңуз!!!</span>
                 );
               }
             })}
         </div>
         <div className={classes.dropdown}>
-          <span className={classes.dropdownTitle}>Подкатегорию</span>
+          <span className={classes.dropdownTitle}>Подкатегориялар</span>
           <Dropdown
-            name="Выберите подкатегорию"
+            name="Подкатегориялар"
             lang="kg"
             sub={true}
             subCategory={subCategory}
@@ -103,7 +103,7 @@ const Step1Kg = ({
             arrErrRu.map((item) => {
               if (item == "subCategory_kg") {
                 return (
-                  <span className={classes.err}>Заполинте это поле!!!</span>
+                  <span className={classes.err}>Талааны толтуруңуз!!!</span>
                 );
               }
             })}
@@ -111,9 +111,9 @@ const Step1Kg = ({
       </div>
       <div className={classes.blockDropdown}>
         <div className={classes.dropdown}>
-          <span className={classes.dropdownTitle}>Страны</span>
+          <span className={classes.dropdownTitle}>Мамлекеттер</span>
           <Country
-            name="Выберите страны"
+            name="Мамлекеттер"
             lang="kg"
             data={data.country_kg}
             changeCountry={(e) => changeCountry(e)}
@@ -122,13 +122,13 @@ const Step1Kg = ({
             arrErrRu.map((item) => {
               if (item == "country_kg") {
                 return (
-                  <span className={classes.err}>Заполинте это поле!!!</span>
+                  <span className={classes.err}>Талааны толтуруңуз!!!</span>
                 );
               }
             })}
         </div>
         <div className={classes.dropdown}>
-          <span className={classes.dropdownTitle}>Ключевые слова</span>
+          <span className={classes.dropdownTitle}>Сиздин изилдөөңүздү сүрөттөгөн сөздөр</span>
           <CreatableInputOnly
             lang="kg"
             changeHashtag={(e) => changeHashtag(e)}
@@ -136,13 +136,13 @@ const Step1Kg = ({
           />
           {errHashtag &&
           
-                  <span className={classes.err}>Заполинте это поле!!!</span>
+                  <span className={classes.err}>Талааны толтуруңуз!!!</span>
       }
         </div>
       </div>
       <div className={classes.blockBtn}>
         <button className={classes.btn} onClick={() => further()}>
-          Далее
+          Кийин
         </button>
       </div>
     </div>

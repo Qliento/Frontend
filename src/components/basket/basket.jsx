@@ -21,7 +21,7 @@ const Basket = () => {
       {language == 2 && <span className={classes.title}>Basket</span>}
       {language == 3 && <span className={classes.title}>Корзина</span>}
       <div className={classes.cards}>
-        { data.length!==0 && data[0].ordered_items.length!==0 ?
+        { data.length!==0 && data[0].ordered_items.length !== 0 ?
           data[0].ordered_items.map((item) => {
             return <BasketCard id={item.id} data={item} key={item.id}/>;
           })

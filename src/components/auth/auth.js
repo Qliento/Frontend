@@ -14,6 +14,7 @@ import vis from "./image/visibility 1.png"
 import {useGoogleLogin} from 'react-google-login';
 import {authSocialTwit}  from '../../redux/actions/actions';
 import TwitterLogin from "react-twitter-login";
+import {authSocialGetData} from '../../redux/actions/actions'
 
 const Auth = () => {
     const dispatch = useDispatch();
@@ -28,7 +29,6 @@ const Auth = () => {
         dispatch(authSocialFace(response.accessToken))
       }
       const onSuccess = (res) =>{
-          console.log(res);
         dispatch(authSocial(res.tokenId))
     }
     const onFailure = (res) =>{

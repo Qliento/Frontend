@@ -2,13 +2,10 @@ import React,{useEffect, useState} from "react";
 import st from "./header.module.css";
 import { Link } from "react-router-dom";
 import Select from 'react-select';
-// import {changeLang} from '../../redux/actions/actions';
 import { useDispatch , useSelector } from "react-redux";
-
+import {getBasketActions} from '../../redux/actions/getBasket/getBasket';
 const Header = () => {
-  // const dispatch = useDispatch();
   const userInfo = localStorage.getItem("user");
-
   const options = [
     { value: 1, label: 'Рус' },
     { value: 2, label: 'Eng' },
@@ -17,8 +14,8 @@ const Header = () => {
   const type = localStorage.getItem('type');
   const logout = () =>{
     localStorage.removeItem('user');
+    localStorage.removeItem('auth');
     window.location.reload();
-    console.log('ВЫ МЕНЯ ТАК ЗАЕБАЛИ С ЭТИМ ПРОЕКТОМ, А ПМ ВООБЩЕ ДУШНЫЙ ПИДАРАС');
   }
   const [burger, setBurger] = useState(false);
   const toggleBurger = () =>{
@@ -28,14 +25,16 @@ const Header = () => {
     nav.classList.toggle(st.navbar_active);
     res.classList.toggle(st.regisration_active);
   }
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBasketActions());
+  }, []);
   const language = localStorage.getItem('lang');
   const change = (elem) =>{
     localStorage.setItem('lang', elem);
-    // dispatch(changeLang(elem))
     window.location.reload()
   }
-  // const language = useSelector(state => state.langReducer.lang)
-  const basket = useSelector(state => state.ListBasket.listResearch)
+  const basket = useSelector(state => state.ListBasket.listResearch);
   return (
     <nav className={st.header}>
       <Link to="/">
@@ -141,7 +140,7 @@ const Header = () => {
                   fill="#090509"
                 />
               </svg>
-              <span className={st.basket_amount}>0</span>
+              <span className={st.basket_amount}>{basket[0] && basket[0].ordered_items.length}</span>
             </Link>
           ) : (
             <Link to="/auth">

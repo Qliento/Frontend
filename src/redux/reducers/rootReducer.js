@@ -24,7 +24,8 @@ import {updateClient} from './clientPage/updateClient';
 import {ResearchList} from "./organizationPage/researchList"
 import {langReducer} from './lang/lang';
 import {recoveryPass} from './recoveryPass/recoveryPass';
-import {networkData} from './networks/networks'
+import {networkData} from './networks/networks';
+import {authSocialNetwork} from './authClient/authSocial';
 
 export const rootReducer = combineReducers({
     AboutUs,
@@ -52,5 +53,6 @@ export const rootReducer = combineReducers({
     ResearchList,
     langReducer,
     recoveryPass,
-    networkData
+    networkData,
+    authSocialNetwork
 });

@@ -30,17 +30,17 @@ const Step2Kg = ({
   return (
     <div className={classes.form}>
       <div className={classes.blockTitle}>
-        <span className={classes.title}>Исследование</span>
+        <span className={classes.title}>Изилдөө</span>
         <div className={classes.blockStep}>
           <span className={classes.step11} onClick={() => further(1)}>
-            Шаг 1
+            1 кадам
           </span>
-          <span className={classes.step11}>Шаг 2</span>
-          <span className={classes.step} onClick={() => further(3,true)}>Шаг 3</span>
+          <span className={classes.step11}>2 кадам</span>
+          <span className={classes.step} onClick={() => further(3,true)}>3 кадам</span>
         </div>
       </div>
       <div className={classes.topBlock}>
-        <span>Файл исследования Кырг</span>
+        <span>Изилдөө файлы Кырг</span>
       </div>
       <div className={classes.blockFiles}>
         {data.files_research_kg &&
@@ -65,7 +65,7 @@ const Step2Kg = ({
             if (item == "files_research_kg") {
               return (
                 <span className={classes.err}>
-                  Загрузите хотя-бы одно исследование!!!
+                  Жок дегенде бир изилдөө жүктөп алыңыз!!!
                 </span>
               );
             }
@@ -80,12 +80,12 @@ const Step2Kg = ({
             multiple
           ></input>
           <label for="input__file" className={classes.addFiles}>
-            Добавить документ
+            Документ кошуу
           </label>
         </div>
       </div>
       <div className={classes.topBlock}>
-        <span>Файл демо версии исследования</span>
+        <span>Изилдөө демо файлы</span>
       </div>
       <div className={classes.files}>
         {data.file_demo_kg ? (
@@ -111,7 +111,7 @@ const Step2Kg = ({
               multiple
             ></input>
             <label for="input__file2" className={classes.fileName}>
-              Добавить документ
+              Документ кошуу
             </label>
           </>
         )}
@@ -121,18 +121,18 @@ const Step2Kg = ({
           if (item == "file_demo_kg") {
             return (
               <span className={classes.err}>
-                Загрузите хотя-бы одно исследование!!!
+                Жок дегенде бир изилдөө жүктөп алыңыз!!!
               </span>
             );
           }
         })}
       <div className={classes.topBlock}>
-        <span>Количество страниц</span>
+        <span>Барактар саны</span>
       </div>
       <input
         type="text"
         className={classes.inputNumberPage}
-        placeholder="количество страниц"
+        placeholder="Барактар саны"
         value={data.pages_kg || ""}
         onChange={(e) => changePage(e)}
       />
@@ -141,23 +141,23 @@ const Step2Kg = ({
           if (item == "pages_kg") {
             return (
               <span className={classes.err}>
-                Загрузите хотя-бы одно исследование!!!
+                Жок дегенде бир изилдөө жүктөп алыңыз!!!
               </span>
             );
           }
         })}
       <div className={classes.topBlock}>
-        <span>Оглавление</span>
+        <span>Мазмунун</span>
       </div>
       <div className={classes.titleContent}>
         <div className={classes.leftBlock}>
           <span className={classes.contentTitle}>№</span>
         </div>
         <div className={classes.centerBlock}>
-          <span className={classes.contentTitle}>Название главы</span>
+          <span className={classes.contentTitle}>Бөлүмдүн аталышы</span>
         </div>
         <div className={classes.rightBlock}>
-          <span className={classes.contentTitle}>Страница</span>
+          <span className={classes.contentTitle}>Барак</span>
         </div>
       </div>
 
@@ -199,7 +199,7 @@ const Step2Kg = ({
 
       <div className={classes.blockBtn1}>
         <button className={classes.btn} onClick={() => further(3,true)}>
-          Далее
+          Кийинки
         </button>
       </div>
     </div>
