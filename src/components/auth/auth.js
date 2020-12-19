@@ -28,6 +28,7 @@ const Auth = () => {
         dispatch(authSocialFace(response.accessToken))
       }
       const onSuccess = (res) =>{
+          console.log(res);
         dispatch(authSocial(res.tokenId))
     }
     const onFailure = (res) =>{
@@ -174,7 +175,7 @@ const Auth = () => {
                       )} />
                       <TwitterLogin
                             authCallback={authHandler}
-                            consumerKey={'rlU1YpC1rivVwH3LdXGYLhHDSWzTICDqi0yvUDiMbwlU03Jkwg'}
+                            consumerKey={'tsT9tmc9IM7Yyoos2vcPBQa5w'}
                             consumerSecret={'rlU1YpC1rivVwH3LdXGYLhHDSWzTICDqi0yvUDiMbwlU03Jkwg'}
                             children={(<img src={require('./image/twitter.png')} alt='image' className={st.twitter} />)}/>
                 {/* <img src={require('./image/twitter.png')} alt='image' /> */}
