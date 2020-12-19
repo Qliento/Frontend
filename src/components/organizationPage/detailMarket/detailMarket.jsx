@@ -15,15 +15,17 @@ const DetailMarket = () => {
 
   const dispatch = useDispatch();
   // const language = useSelector(state => state.langReducer.lang)
-  const language = localStorage.getItem('lang');
+  const language = localStorage.getItem("lang");
   useEffect(() => {
     dispatch(detailResearch(params.id));
   }, []);
   const data = useSelector((state) => state.ResearchList.detailData);
+  const dataStatic = useSelector((state)=> state.ResearchList.static)
+  let leng = data.country && data.country.length;
   const clickBtn = () => {
     setIsClose(!isClose);
   };
-  
+
   return (
     <>
       <div className={isClose ? classes.blockDetail1 : classes.blockDetail}>
@@ -31,92 +33,141 @@ const DetailMarket = () => {
           <div className={classes.blockImg}>
             <img
               alt="img"
-              src={ img1}
+              src={data.image && data.image}
               className={classes.img}
             />
           </div>
           <div className={classes.container}>
             <div className={classes.blockHeshteg}>
-              <div>#медициа</div>
-              <div>#медициа</div>
-              <div>#медициа</div>
+              {data.hashtag &&
+                data.hashtag.map((item) => {
+                  return (
+                    <div className={classes.hashtag} key={item.id}>
+                      #{item.name}
+                    </div>
+                  );
+                })}
             </div>
             <div className={classes.blockText}>
               <span className={classes.title}>{data && data.name}</span>
             </div>
             <div className={classes.blockdDescrip}>
-              <div className={classes.descrip}>
-                {(language == 1 || language == undefined) && <><span>Дата выпуска: {data && data.date}</span>
-                <span>Количество страниц: {data && data.pages}</span></>}
-                {language == 2 && <><span>Release date: {data && data.date}</span>
-                <span>Number of pages: {data && data.pages}</span></>}
-                {language == 3 && <><span>Чыккан датасы: {data && data.date}</span>
-                <span>Барактардын саны: {data && data.pages}</span></>}
-                <span>ID: {data && data.id}</span>
+            <div className={classes.descrip}>
+              {(language == 1 || language == undefined) && <span>{data && data.pages} стр</span>}
+              {language == 2 && <span>{data && data.pages} рages</span>}
+              {language == 3 && <span>{data && data.pages} бет</span>}
+              <span>ID: {data && data.id}</span>
+              <div className={classes.country}>
+                {(language == 1 || language == undefined) && <span>Страны: &#160; </span>}
+                {language == 2 && <span>Сountries: &#160; </span>}
+                {language == 3 && <span>Мамлекеттер: &#160; </span>}
+                {data.country &&
+                  data.country.map((item, index) => {
+                    return (
+                      <span key={item.id}>
+                        {item.name}
+                        {index < leng - 1 ? "," : null}
+                      </span>
+                    );
+                  })}
+              </div>
               </div>
               <div className={classes.price}>
-        
                 {data.old_price && data.new_price ? (
-                <>
-                  <span className={classes.oldPrice}>
-                    {data && data.old_price} сом
-                  </span>
-                  <span className={classes.newPrice}>
-                    {data && data.new_price} сом
-                  </span>
-                </>
-              ) : (
-                <>
-                  <span></span>
-                  <span className={classes.newPrice}>
-                    {data && data.old_price} сом
-                  </span>
-                </>
-              )}
+                  <>
+                    <span className={classes.oldPrice}>
+                      {data && data.old_price} $
+                    </span>
+                    <span className={classes.newPrice}>
+                      {data && data.new_price} $
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span></span>
+                    <span className={classes.newPrice}>
+                      {data && data.old_price} $
+                    </span>
+                  </>
+                )}
               </div>
             </div>
             <div className={classes.blockBtn}>
-              {(language == 1 || language == undefined) && <button className={classes.demo} onClick={() => setEdit(true)}>Редактировать</button>}
-              {language == 2 && <button className={classes.demo} onClick={() => setEdit(true)}>Edit</button>}
-              {language == 3 && <button className={classes.demo} onClick={() => setEdit(true)}>Түзөтүү</button>}
+              {(language == 1 || language == undefined) && (
+                <button className={classes.demo} onClick={() => setEdit(true)}>
+                  Редактировать
+                </button>
+              )}
+              {language == 2 && (
+                <button className={classes.demo} onClick={() => setEdit(true)}>
+                  Edit
+                </button>
+              )}
+              {language == 3 && (
+                <button className={classes.demo} onClick={() => setEdit(true)}>
+                  Түзөтүү
+                </button>
+              )}
             </div>
           </div>
         </div>
         <div className={classes.rightCard}>
-          <Tabs1 data={data&&data} clickBtn={clickBtn} />
+          <Tabs1 data={data && data} clickBtn={clickBtn} />
         </div>
       </div>
       <div className={classes.statistic}>
         <div className={classes.blockTitle}>
-          {(language == 1 || language == undefined) && <span className={classes.title}>Статистика</span>}
+          {(language == 1 || language == undefined) && (
+            <span className={classes.title}>Статистика</span>
+          )}
           {language == 2 && <span className={classes.title}>Statistics</span>}
           {language == 3 && <span className={classes.title}>Статистика</span>}
           <div className={classes.input}>
-            <Dropdown />
+            <Dropdown id={params.id} />
           </div>
         </div>
         <div className={classes.buttomBlock}>
           <div className={classes.column}>
-            {(language == 1 || language == undefined) && <span className={classes.column_title}>Просмотры</span>}
-            {language == 2 && <span className={classes.column_title}>Views</span>}
-            {language == 3 && <span className={classes.column_title}>Демо версиясын көрүү</span>}
-            <span className={classes.column_data}>4200</span>
+            {(language == 1 || language == undefined) && (
+              <span className={classes.column_title}>Просмотры</span>
+            )}
+            {language == 2 && (
+              <span className={classes.column_title}>Views</span>
+            )}
+            {language == 3 && (
+              <span className={classes.column_title}>Демо версиясын көрүү</span>
+            )}
+            <span className={classes.column_data}>{dataStatic&& dataStatic.watches}</span>
           </div>
           <div className={classes.column}>
-            {(language == 1 || language == undefined) && <span className={classes.column_title}>Скачивание демо версии</span>}
+            {(language == 1 || language == undefined) && (
+              <span className={classes.column_title}>
+                Скачивание демо версии
+              </span>
+            )}
             {language == 2 && <span className={classes.column_title}></span>}
-            {language == 3 && <span className={classes.column_title}>Download demo version</span>}
-            <span className={classes.column_data}>2100</span>
+            {language == 3 && (
+              <span className={classes.column_title}>
+                Download demo version
+              </span>
+            )}
+            <span className={classes.column_data}>{dataStatic&& dataStatic.demos_downloaded}</span>
           </div>
           <div className={classes.column}>
-            {(language == 1 || language == undefined) && <span className={classes.column_title}>Куплено</span>}
-            {language == 2 && <span className={classes.column_title}>Purchased</span>}
-            {language == 3 && <span className={classes.column_title}>Cатып алуу</span>}
-            <span className={classes.column_data}>150</span>
+            {(language == 1 || language == undefined) && (
+              <span className={classes.column_title}>Куплено</span>
+            )}
+            {language == 2 && (
+              <span className={classes.column_title}>Purchased</span>
+            )}
+            {language == 3 && (
+              <span className={classes.column_title}>Cатып алуу</span>
+            )}
+            <span className={classes.column_data}>{dataStatic&& dataStatic.bought}</span>
           </div>
         </div>
       </div>
-      { edit &&<EditModal edit={edit} changeState={(e) => setEdit(e)} />}
+      {edit && <EditModal edit={edit} changeState={(e) => setEdit(e)} />}
     </>
   );
 };

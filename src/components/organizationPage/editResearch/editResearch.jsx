@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 // import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import classes from "./edirResearch.module.css";
@@ -26,11 +26,14 @@ Modal.setAppElement("#root");
 
 const EditModal = ({ edit, changeState, id }) => {
   // const language = useSelector(state => state.langReducer.lang)
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch({ type: "ERR_UBDATE_RESEARCH" });
+  }, []);
   const language = localStorage.getItem('lang');
   const { handleSubmit, register, errors } = useForm();
   const [isModal, SetIsModal] = useState(true);
 
-  const dispatch = useDispatch();
   const onSubmit = (values) => {
     dispatch(UbdateResearch(values, id));
   };

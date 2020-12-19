@@ -37,7 +37,7 @@ const Step1Ru = ({
         <span className={classes.inputTitle}>Название для исследования</span>
         <input
           className={classes.input1}
-          placeholder="Ваш ФИО"
+          placeholder="Название для исследования"
           name="name"
           value={data.name}
           onChange={inputValue}

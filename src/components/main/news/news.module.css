@@ -25,12 +25,12 @@ top: -38px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 117px;
-    height: 570px;
+    height: auto;
     
 }
  @media only screen and (max-width:1000px){
   .content{
     min-width: 100%;
-    height: 374px;
+    height: auto;
   }
  }

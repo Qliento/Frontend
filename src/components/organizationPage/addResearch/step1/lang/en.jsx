@@ -35,7 +35,7 @@ const Step1En = ({
         <span className={classes.inputTitle}>Название для исследования</span>
         <input
           className={classes.input1}
-          placeholder="Ваш ФИО"
+          placeholder="Название для исследования"
           name="name_en"
           value={data.name_en}
           onChange={inputValue}

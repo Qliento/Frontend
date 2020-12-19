@@ -15,7 +15,7 @@
     align-items: center;
 }
 .blockImg {
-  width: 58%;
+  width: 55%;
   height: 100%;
   position: relative;
 }
@@ -40,7 +40,7 @@
 }
 .content{
     height: 100%;
-    width: 40%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     text-overflow: auto;

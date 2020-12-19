@@ -1,0 +1,147 @@
+.modal {
+  width: 100%;
+  height: auto;
+  z-index: 100;
+  top: 0;
+  z-index: 5;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  height: 100%;
+}
+.blockModal {
+  width: 440px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: auto;
+  position: relative;
+  top: 100px;
+
+}
+.blockKrest {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.krest {
+  cursor: pointer;
+}
+.wrapper {
+  width: 100%;
+  height: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.blockText {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.blockText2 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+}
+.desc {
+  font-size: 16px;
+  line-height: 20px;
+  color: #828282;
+  margin-top: 10px;
+}
+.auth {
+  width: 100%;
+  height: 42px;
+  background: #76b73e;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+.regist {
+  width: 100%;
+  height: 42px;
+  background: #bdbdbd;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.blockInputs {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.inputTitle {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.inputs {
+  width: 100%;
+  height: 42px;
+  margin-top: 10px;
+  background: #ffffff;
+  border: 1px solid #BDBDBD;
+  font-size: 16px;
+  line-height: 20px;
+  color: #828282;
+  padding: 10px;
+}
+.form{
+    width: 100%;
+}
+.btnSubmit{
+    background: #76B73E;
+    width: 100%;
+    height: 42px;
+    font-weight: bold;
+font-size: 18px;
+line-height: 22px;
+color: #FFFFFF;
+margin-top: 30px;
+margin-bottom: 45px;
+}
+.error{
+    color: red;
+    font-size: 11px;
+}

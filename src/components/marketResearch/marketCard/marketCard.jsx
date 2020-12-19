@@ -1,13 +1,19 @@
-import React from "react";
+import React,{useState} from "react";
 import classes from "./marketCard.module.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { researchPushBasket } from "../../../redux/actions/pushResearch/pushResearch";
+import ReactDOM from 'react-dom';
+import ModalRegist from "../modalRegistr/modalRegistr";
+import RegistrModalDemo from "../modalRegistr/modal";
 
 const MarketCard = ({ data, addFlyEfyf }) => {
   const dispatch = useDispatch();
+  const [edit,setEdit]= useState(false)
+  const [idResearch,setIdResearch]=useState();
   // const language = useSelector(state => state.langReducer.lang)
   const language = localStorage.getItem("lang");
+  const user = localStorage.getItem("user")
   const orders = (e) => {
     dispatch(researchPushBasket(e));
     addFlyEfyf();
@@ -107,36 +113,73 @@ const MarketCard = ({ data, addFlyEfyf }) => {
                 Корзинага
               </button>
             )}
-            {(language == 1 || language == undefined) && (
-              <a
-                href={data.demo && data.demo}
-                target="_blank"
-                className={classes.demo}
-                download
-              >
-                Демо версия
-              </a>
-            )}
-            {language == 2 && (
-              <a
-                href={data.demo && data.demo}
-                target="_blank"
-                className={classes.demo}
-                download
-              >
-                Demo version
-              </a>
-            )}
-            {language == 3 && (
-              <a
-                href={data.demo && data.demo}
-                target="_blank"
-                className={classes.demo}
-                download
-              >
-                Демо версия
-              </a>
-            )}
+            {
+              user ? <>
+                {(language == 1 || language == undefined) && (
+                  <a
+                    href={data.demo && data.demo}
+                    target="_blank"
+                    className={classes.demo}
+                    download
+                  >
+                    Демо версия
+                  </a>
+                )}
+                {language == 2 && (
+                  <a
+                    href={data.demo && data.demo}
+                    target="_blank"
+                    className={classes.demo}
+                    download
+                  >
+                    Demo version
+                  </a>
+                )}
+                {language == 3 && (
+                  <a
+                    href={data.demo && data.demo}
+                    target="_blank"
+                    className={classes.demo}
+                    download
+                  >
+                    Демо версия
+                  </a>
+                )}
+              </>
+              :
+              <>
+              {(language == 1 || language == undefined) && (
+                  <button
+                  className={classes.userNo}
+                  id={data.id}
+                  onClick={(e) => {setIdResearch(e.target.id);setEdit(true)}}
+                >
+                  Демо версия
+                </button>
+                )}
+                {language == 2 && (
+                  <button
+                  className={classes.userNo}
+                  id={data.id}
+                  onClick={(e) => {setIdResearch(e.target.id);setEdit(true)}}
+                  >
+                    Demo version
+                  </button>
+                )}
+                {language == 3 && (
+                  <button
+                  className={classes.userNo}
+                  id={data.id}
+                  onClick={(e) => {setIdResearch(e.target.id);setEdit(true)}}
+                   
+                  >
+                    Демо версия
+                  </button>
+                )}
+              </>
+             
+            }
+            
           </div>
         </div>
       </div>
@@ -261,9 +304,6 @@ const MarketCard = ({ data, addFlyEfyf }) => {
                 data.hashtag.map((items, index) => {
                   return (
                     <div
-                      className={
-                        index > 0 ? classes.hashtags : classes.hashtags2
-                      }
                       key={items.id}
                     >
                       #{items.name}
@@ -274,6 +314,11 @@ const MarketCard = ({ data, addFlyEfyf }) => {
           </div>
         </Link>
       </div>
+      {edit == true && ReactDOM.createPortal(
+                <ModalRegist changeState={() => setEdit(false)} idResearch={idResearch}/>,
+                document.getElementById('portal')
+            )}
+                  <RegistrModalDemo />
     </>
   );
 };

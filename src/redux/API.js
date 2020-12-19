@@ -6,7 +6,7 @@ let http;
 
 if(lang == 2){
   http = Axios.create({
-    baseURL: "https://qliento.com",
+    baseURL: "https://back.qliento.com",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -17,7 +17,7 @@ if(lang == 2){
 
 else if(lang == 3){
   http = Axios.create({
-    baseURL: "https://qliento.com",
+    baseURL: "https://back.qliento.com",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -27,7 +27,7 @@ else if(lang == 3){
 }
 else{
   http = Axios.create({
-    baseURL: "https://qliento.com",
+    baseURL: "https://back.qliento.com",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -37,7 +37,7 @@ else{
 }
 
 const httpUpadate = Axios.create({
-  baseURL: "https://qliento.com",
+  baseURL: "https://back.qliento.com",
   headers: {
     // Accept: "application/json",
     "Accept-Language": "ru",
@@ -177,7 +177,7 @@ export default {
       headers: { Authorization: "Bearer " + token },
     }),
   UbdateResearch: (price, id,token) =>
-    http.patch(`/research-update/${id}/`, price, {
+    http.put(`/update-discount/${id}/`, price, {
       headers: { Authorization: "Bearer " + token },
     }),
   networkData: ()=> http.get('/social-networks/'),
@@ -193,5 +193,21 @@ export default {
   authSocialFace: (user, token) => http.post('/users/facebook/',{
     auth_token : token,
     user: user
+  }),
+  sendDemoVersionApi:(data,id)=>http.post(`purchase/send-demo/`,{
+    desired_research:id ,
+    name: data.name,
+    phone_number: data.phone ,
+    email: data.email
+  }),
+  staticResearchApi: (id,key,token)=>http.get(`/purchase/statistics/${id}/${key}/`,{
+    headers: { Authorization: "Bearer " + token },
+  }),
+  payResearchApi: (data,token)=> http.post(`/purchase/orders/`,{
+    items_ordered:data
+  },{
+    headers: { Authorization: "Bearer " + token },
   })
 };
+
+
