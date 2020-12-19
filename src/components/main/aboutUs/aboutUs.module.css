@@ -15,7 +15,7 @@
     margin-bottom: 20px;
 }
 .blockImg{
-    width: 55%;
+    width: 47%;
     height: 100%;
     position: relative;
 }
@@ -25,11 +25,11 @@ height: 100%;
 object-fit: cover;
 }
 .content{
-width: 45%;
+width: 47%;
 height: 100%;
 display: flex;
 flex-direction: column;
-margin-left: 80px;
+
 text-overflow: auto;
 overflow: hidden;
 }
