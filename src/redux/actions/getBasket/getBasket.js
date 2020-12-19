@@ -16,3 +16,16 @@ export function getBasketActions() {
     });
   };
 }
+
+export function payResearch(data) {
+  let token = localStorage.getItem("user");
+  return async (dispatch) => {
+    await API.payResearchApi(data,token).then((res) => {
+      console.log(res)
+      var win = window.open(res.data, '_blank');
+      win.focus();
+   
+    });
+  };
+}
+

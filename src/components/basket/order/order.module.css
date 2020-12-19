@@ -25,7 +25,6 @@
 .btn {
   flex: 1;
   height: 100%;
-  background: brown;
 }
 .titlePrice {
   font-weight: 500;
@@ -66,4 +65,57 @@ a{
   flex-direction: row;
   justify-content: space-between;
   align-items: center
+}
+
+@media only screen and (max-width: 1000px) {
+  .orderCard{
+    width: 100%;
+    height: 318px;
+  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+  }
+  .content{
+    width: 100%;
+    height: 159px;
+  }
+  .blockChecket{
+    height: 159px;
+
+  }
+  .btn {
+   min-width: 100%;
+    height: 159px;
+
+  }
+  .text span, a{
+    font-size: 12px;
+      }
+}
+
+@media only screen and (max-width: 600px) {
+  .orderCard{
+    width: 100%;
+    height: 477px;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .blockChecket{
+    width: 100%;
+  }
+  .content{
+    width: 100%;
+    height: 358px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .price1{
+    margin-top: 40px;
+
+  }
 }

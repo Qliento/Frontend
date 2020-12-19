@@ -177,7 +177,7 @@ export default {
       headers: { Authorization: "Bearer " + token },
     }),
   UbdateResearch: (price, id,token) =>
-    http.patch(`/research-update/${id}/`, price, {
+    http.put(`/update-discount/${id}/`, price, {
       headers: { Authorization: "Bearer " + token },
     }),
   networkData: ()=> http.get('/social-networks/'),
@@ -194,8 +194,25 @@ export default {
     auth_token : token,
     user: user
   }),
+  sendDemoVersionApi:(data,id)=>http.post(`purchase/send-demo/`,{
+    desired_research:id ,
+    name: data.name,
+    phone_number: data.phone ,
+    email: data.email
+  }),
+  staticResearchApi: (id,key,token)=>http.get(`/purchase/statistics/${id}/${key}/`,{
+    headers: { Authorization: "Bearer " + token },
+  }),
+  payResearchApi: (data,token)=> http.post(`/purchase/orders/`,{
+    items_ordered:data
+  },{
+    headers: { Authorization: "Bearer " + token }
+  }),
   authSocialTwit: (user, token) => http.post('/users/twitter/',{
     auth_token : token,
     user: user
-  })
+  }),
+
 };
+
+

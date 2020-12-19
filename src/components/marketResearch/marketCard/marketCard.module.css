@@ -113,6 +113,7 @@
   color: #ffffff;
   background: #bdbdbd;
 }
+
 .blockPrace {
   width: 100%;
   height: 57px;
@@ -160,6 +161,16 @@
 .toBasket:hover {
   background: #ffffff;
   border: 1px solid #1b8e3d;
+  color: #1b8e3d;
+}
+.userNo{
+  width: 100%;
+  height: 42px;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
   color: #1b8e3d;
 }
 .demo {

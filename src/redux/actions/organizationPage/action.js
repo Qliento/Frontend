@@ -86,3 +86,22 @@ export function uploadResearchAction(dataStep3) {
       });
   };
 }
+
+
+export function StaticSaccess(data) {
+  return {
+    type: "SECCESS_STATIC",
+    data: data,
+  };
+}
+
+export function StaticResearch(id,key) {
+  return async (dispatch) => {
+    let token = localStorage.getItem("user");
+    await API.staticResearchApi(id, key ,token)
+      .then((res) => {
+        console.log(res.data)
+        dispatch(StaticSaccess(res.data))
+      })
+  };
+}

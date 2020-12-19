@@ -38,12 +38,15 @@ const EditProfile = ({ changeModal, onModalPassword, data, offModal }) => {
   const { handleSubmit, register, errors } = useForm();
   const [isModal, SetIsModal] = useState(true);
   const [imageUrl,setImageUrl]=useState("")
-  const [file, setFile] = useState([]);
+  const [file, setFile] = useState("");
   const [image, setImage] = useState('');
   const onSubmit = (values) => {
     let formClient = document.getElementById('formOrganization')
     let form = new FormData(formClient);
-    form.append('photo', image);
+    if(file !== ""){
+      form.append('photo', image);
+    }
+    
     dispatch(updateOrganization(form));
   };
   const setProfile = (e) => {
@@ -57,6 +60,7 @@ const EditProfile = ({ changeModal, onModalPassword, data, offModal }) => {
 
     reader.readAsDataURL(e.target.files[0]);
   };
+
 
   return (
     <div className={classes.modal}>
@@ -81,7 +85,7 @@ const EditProfile = ({ changeModal, onModalPassword, data, offModal }) => {
             <img
               src={
                 data.admin_status.photo
-                  ? "https://qliento.com" + data.admin_status.photo
+                  ? "https://back.qliento.com" + data.admin_status.photo
                   : file == ""
                   ? noPhoto
                   : file
@@ -253,7 +257,7 @@ const EditProfile = ({ changeModal, onModalPassword, data, offModal }) => {
             <span className={classes.titleInput}>Компания жөнүндө</span>
           )}
           <textarea
-            name="about"
+            name="about_me"
             className={classes.input2}
             type="text"
             defaultValue={data && data.about_me}

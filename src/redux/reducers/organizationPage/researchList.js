@@ -5,6 +5,7 @@ const initialState = {
   dataStep2: {},
   dataStep1: {},
   isModal:"",
+  static:{}
 };
 
 export function ResearchList(state = initialState, action) {
@@ -44,6 +45,11 @@ export function ResearchList(state = initialState, action) {
           ...state,
           isModal: action.isModal,
         };
+        case "SECCESS_STATIC":
+          return {
+            ...state,
+            static: action.data,
+          };
     default:
       return state;
   }

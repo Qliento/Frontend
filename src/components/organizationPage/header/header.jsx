@@ -59,7 +59,7 @@ const Header = ({ data, onModal }) => {
             </div>
           </div>
         </div>
-        <img alt="img" className={classes.photo} src={data.admin_status.photo?'https://qliento.com' + data.admin_status.photo:noPhoto} />
+        <img alt="img" className={classes.photo} src={data.admin_status.photo?'https://back.qliento.com' + data.admin_status.photo:noPhoto} />
       </div>
 </>:<></>}
       

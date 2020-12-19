@@ -21,6 +21,20 @@
   color: #000000;
   cursor: pointer;
 }
+.blockSpan{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+.blockSpan span{
+  font-size: 14px;
+  color: #000000;
+
+}
 .activeTab {
     cursor: pointer;
   width: auto;
