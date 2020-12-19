@@ -12,6 +12,8 @@ import {authSocial} from '../../redux/actions/actions';
 import noVis from "./image/noVisibility.png"
 import vis from "./image/visibility 1.png"
 import {useGoogleLogin} from 'react-google-login';
+import {authSocialTwit}  from '../../redux/actions/actions';
+import TwitterLogin from "react-twitter-login";
 
 const Auth = () => {
     const dispatch = useDispatch();
@@ -39,6 +41,9 @@ const Auth = () => {
         cookiePolicy: 'single_host_origin'
     })
     
+    
+        const authHandler = (err, data) => {
+          console.log(err, data);}
 
     return(
     <div className={st.auth_bg}>
@@ -161,20 +166,18 @@ const Auth = () => {
                 {language == 3 && <span>Аркылуу кирүү</span>}
                 <div className={st.social_auth_icons}>
                 <img src={require('./image/Group 59.png')} alt="img" onClick={signIn} />
-                {/* <GoogleLogin 
-                    clientId="1032556798687-6427pbbpse1jm5ho5is64cja01bad94u.apps.googleusercontent.com"
-                    buttonText=""
-                    style={{fontSize: "18px"}}
-                    onSuccess={success}
-                    onFailure={failure}
-                    cookiePolicy={'single_host_origin'}
-                    /> */}
                 <FacebookLogin
                     appId="845882496211969"
                     callback={responseFacebook}
                     render={renderProps =>(
                         <img src={require('./image/fc_icon.png')} onClick={renderProps.onClick} alt="img"></img>
                       )} />
+                      <TwitterLogin
+                            authCallback={authHandler}
+                            consumerKey={'rlU1YpC1rivVwH3LdXGYLhHDSWzTICDqi0yvUDiMbwlU03Jkwg'}
+                            consumerSecret={'rlU1YpC1rivVwH3LdXGYLhHDSWzTICDqi0yvUDiMbwlU03Jkwg'}
+                            children={(<img src={require('./image/twitter.png')} alt='image' className={st.twitter} />)}/>
+                {/* <img src={require('./image/twitter.png')} alt='image' /> */}
                 </div>
             </div>
             

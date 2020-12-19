@@ -6,7 +6,7 @@ let http;
 
 if(lang == 2){
   http = Axios.create({
-    baseURL: "https://qliento.com",
+    baseURL: "https://back.qliento.com",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -17,7 +17,7 @@ if(lang == 2){
 
 else if(lang == 3){
   http = Axios.create({
-    baseURL: "https://qliento.com",
+    baseURL: "https://back.qliento.com",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -27,7 +27,7 @@ else if(lang == 3){
 }
 else{
   http = Axios.create({
-    baseURL: "https://qliento.com",
+    baseURL: "https://back.qliento.com",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -37,7 +37,7 @@ else{
 }
 
 const httpUpadate = Axios.create({
-  baseURL: "https://qliento.com",
+  baseURL: "https://back.qliento.com",
   headers: {
     // Accept: "application/json",
     "Accept-Language": "ru",
@@ -191,6 +191,10 @@ export default {
     user: user
   }),
   authSocialFace: (user, token) => http.post('/users/facebook/',{
+    auth_token : token,
+    user: user
+  }),
+  authSocialTwit: (user, token) => http.post('/users/twitter/',{
     auth_token : token,
     user: user
   })

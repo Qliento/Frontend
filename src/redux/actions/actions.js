@@ -215,6 +215,22 @@ export function authSocialFace(token){
     );
 }}
 
+export function authSocialTwit(token){
+  return async (dispatch)=>{
+    await API.authSocialTwit('client', token)
+    .then(res => {
+      if( res.status == 200){
+        localStorage.setItem('user', res.data.access);
+        localStorage.setItem('type', 'client');
+        dispatch({ type: 'POSTED_SUCCES_AUTH'})
+      }
+    })
+    .catch(err =>{
+        dispatch({ type: 'POSTED__ERROR_AUTH'})
+    }
+    );
+}}
+
 export function authClient({email, password}){
   return async (dispatch)=>{
     const data = JSON.stringify({email, password})
