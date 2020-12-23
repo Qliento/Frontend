@@ -3,7 +3,9 @@
   flex-direction: row-reverse !important;
   justify-content: space-between !important;
   align-items: center !important;
+
 }
+
 .accordion__button::before {
   content: none !important;
 }
@@ -13,6 +15,9 @@
 .accordion {
   border: none !important;
   border-radius: 2px;
+}
+.btnGreen{
+  min-height: 100% !important;
 }
 .btnGreen {
   min-height: 42px;
@@ -35,4 +40,13 @@
 }
 .accordion__panel {
   background: #f2f2f2 !important;
+}
+
+@media only screen and (max-width:1000px){
+  .accordion__panel{
+    font-size: 14px !important;
+  }
+  .accordion__button{
+    font-size: 14px !important;
+  }
 }

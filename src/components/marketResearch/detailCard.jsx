@@ -13,18 +13,17 @@ const DetailCard = ({ params }) => {
     dispatch(detailResearchAction(params));
   }, [params]);
   const data = useSelector((state) => state.detailDataResearch.detailData);
+  const lengsArr=data&&data.similars&&data.similars.lenght
   return (
     <>
       <DetailMarket data={data && data} />
-      {data.similars && data.similars.lenght!==0   ? <SimilarResearch /> : <></>}
-
-      {data.similars && data.similars.lenght !== 0 ? (
-        data.similars.map((item) => {
+{(lengsArr===0 || lengsArr===undefined)?<></>:<SimilarResearch />}
+ 
+ {
+        data.similars&&data.similars.map((item) => {
           return <MarketCard data={item} />;
         })
-      ) : (
-        <></>
-      )}
+      }
     </>
   );
 };

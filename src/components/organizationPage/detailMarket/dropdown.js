@@ -9,13 +9,13 @@ const options = [
   { value: "За неделю", label: "За неделю", key:"2" },
   { value: "За месяц", label: "За месяц" , key:"3"},
   { value: "За год", label: "За год", key:"4" },
-  { value: "Все время", label: "Все время", key:"5" },
+  { value: "За все время", label: "За все время", key:"5" },
 ];
 
 const Dropdown=({id})=>{
   const dispatch= useDispatch();
 useEffect(()=>{
-  dispatch(StaticResearch(id,1))
+  dispatch(StaticResearch(id,5))
 },[])
 
 const getStatic=(key)=>{
@@ -27,7 +27,7 @@ const getStatic=(key)=>{
         <Select
         options={options}
         onChange={(e)=>getStatic(e.key)}
-        defaultValue={options[0]}
+        defaultValue={options[4]}
       />
     )
 }

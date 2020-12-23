@@ -56,6 +56,7 @@
 flex-wrap: wrap;
 justify-content: flex-start;
 }
+
 .blockHeshteg div {
   width: auto;
   height: 25px;
@@ -140,3 +141,164 @@ justify-content: flex-start;
   align-items: center;
 }
 
+
+.topBlock{
+  padding: 0px 30px 10px 30px;
+  display: flex;
+  height: 147px;
+  width: 100%;
+  flex-direction: column;
+  background: #FFFFFF;
+}
+.blockDate{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #BDBDBD;
+}
+.container1{
+  display: none;
+}
+.blockDesc{
+  width: 100%;
+  height: 68px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.textAuthor{
+  font-weight: 500;
+font-size: 10px;
+line-height: 12px;
+
+color: #1B8E3D;
+}
+.textDate{
+  font-weight: 500;
+font-size: 10px;
+line-height: 12px;
+color: #4F4F4F;
+}
+.blockName1{
+  width: 50%;
+  height: 100%;
+}
+.blockName1 span{
+  font-weight: 600;
+font-size: 14px;
+line-height: 17px;
+
+color: #000000;
+}
+.buttomBlockH{
+  width: 100%;
+  height: 25px;
+  overflow-y: hidden;
+  margin-top: 10px;
+}
+.blockChange{
+  width: 100%;
+  height: auto;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #E0E0E0;
+}
+.blBtn{
+  width: 140px;
+  height: 62px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.blPrice{
+  width: 50%;
+  height: 41px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media only screen and (max-width:1000px){
+  .blockDetail{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .blockDetail1{
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .leftCard,.rightCard{
+    width: 100%;
+  }
+  .rightCard{
+  margin-top: 40px;
+  }
+
+}
+@media only screen and (max-width:600px){
+  .rightCard,.leftCard{
+    height: auto;
+  }
+}
+@media only screen and (max-width:500px){
+.container{
+  display: none;
+}
+.container1{
+  display: block;
+}
+.descrip span{
+  font-size: 10px;
+  line-height: 12px;
+
+  
+  color: #333333;
+
+
+}
+.descrip{
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.blockHeshteg div{
+  font-size: 12px;
+}
+.blockImg {
+
+  height: 260px;
+}
+
+.crash {
+  width: 100%;
+  height: 28px;
+  font-size: 12px;
+
+}
+.demo {
+  width: 100%;
+  height: 28px;
+border: 1px solid #E0E0E0;
+  font-size: 12px;
+
+}
+.oldPrice {
+  font-size: 12px;
+
+}
+.newPrice {
+
+  font-size: 16px;
+
+}
+}

@@ -7,6 +7,7 @@ import classes from "./aboutUs.module.css";
 const AboutUs = ({ data }) => {
   return (
     <div className={classes.blockAbout}>
+      
       <span className={classes.titleV}>{data && data.header}</span>
       <div className={classes.blockImg}>
       
@@ -19,8 +20,13 @@ const AboutUs = ({ data }) => {
       </div>
 
       <div className={classes.content}>
+        <div className={classes.blockTitle}>
         <span className={classes.title}>{data && data.header}</span>
+        </div>
+        <div className={classes.blockDescr}>
         <span className={classes.text}>{data && data.description}</span>
+        </div>
+        
       </div>
     </div>
   );

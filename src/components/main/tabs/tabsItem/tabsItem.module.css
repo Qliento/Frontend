@@ -1,5 +1,5 @@
 .card {
-  width: 250px;
+  width: 286px;
   height: 92px;
   background: #f2f2f2;
   padding: 10px;
@@ -44,13 +44,27 @@
 .BlockCount span:hover{
     color: #1B8E3D;
 }
-@media screen and (max-width: 644px) {
+@media only screen and (max-width:1460px){
+
+}
+@media only screen and (max-width:970px){
+  .card{
+    width: 48%;
+  }
+}
+@media only screen and (max-width: 644px) {
 .card{
-  width: 160px;
+  width: 45%;
   height:72px
 }
 .BlockTitle span{
   font-size: 12px;
 }
+}
+@media only screen and (max-width: 378px) {
+  .card{
+    width: 80%;
+  }
+
 }
 

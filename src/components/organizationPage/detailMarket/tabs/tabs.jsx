@@ -16,68 +16,90 @@ const Tabs1 = ({ dataText, clickBtn, data }) => {
     <div className={classes.blockInfo}>
       {(language == undefined || language == 1) && (
         <div className={classes.tabs}>
-          <div
-            className={active == 1 ? classes.activeTab : classes.tab}
-            onClick={() => setAtive(1)}
-          >
-            Описание
-          </div>
-          <div
-            className={active == 2 ? classes.activeTab : classes.tab}
-            onClick={() => setAtive(2)}
-          >
-            Содержание
-          </div>
-          <div
-            className={active == 3 ? classes.activeTab : classes.tab}
-            onClick={() => setAtive(3)}
-          >
-            Об авторе
-          </div>
+          {data.description && (
+            <div
+              className={active == 1 ? classes.activeTab : classes.tab}
+              onClick={() => setAtive(1)}
+            >
+              Описание
+            </div>
+          )}
+
+          {data.content_data&&data.content_data.length !== 0 && (
+            <div
+              className={active == 2 ? classes.activeTab : classes.tab}
+              onClick={() => setAtive(2)}
+            >
+              Содержание
+            </div>
+          )}
+
+          {data.author && (
+            <div
+              className={active == 3 ? classes.activeTab : classes.tab}
+              onClick={() => setAtive(3)}
+            >
+              Об авторе
+            </div>
+          )}
         </div>
       )}
       {language == 2 && (
         <div className={classes.tabs}>
-          <div
-            className={active == 1 ? classes.activeTab : classes.tab}
-            onClick={() => setAtive(1)}
-          >
-            Description{" "}
-          </div>
-          <div
-            className={active == 2 ? classes.activeTab : classes.tab}
-            onClick={() => setAtive(2)}
-          >
-            Content
-          </div>
-          <div
-            className={active == 3 ? classes.activeTab : classes.tab}
-            onClick={() => setAtive(3)}
-          >
-            About company
-          </div>
+          {data.description && (
+            <div
+              className={active == 1 ? classes.activeTab : classes.tab}
+              onClick={() => setAtive(1)}
+            >
+              Description
+            </div>
+          )}
+
+          {data.content_data&&data.content_data.length !== 0 && (
+            <div
+              className={active == 2 ? classes.activeTab : classes.tab}
+              onClick={() => setAtive(2)}
+            >
+              Content
+            </div>
+          )}
+
+          {data.author && (
+            <div
+              className={active == 3 ? classes.activeTab : classes.tab}
+              onClick={() => setAtive(3)}
+            >
+              About company
+            </div>
+          )}
         </div>
       )}
       {language == 3 && (
         <div className={classes.tabs}>
-          <div
-            className={active == 1 ? classes.activeTab : classes.tab}
-            onClick={() => setAtive(1)}
-          >
-            Сүрөттөө
-          </div>
-          <div
-            className={active == 2 ? classes.activeTab : classes.tab}
-            onClick={() => setAtive(2)}
-          >
-            Мазмун
-          </div>
-          <div
-            className={active == 3 ? classes.activeTab : classes.tab}
-            onClick={() => setAtive(3)}
-          >
-            Компания жөнүндө
-          </div>
+          {data.description && (
+            <div
+              className={active == 1 ? classes.activeTab : classes.tab}
+              onClick={() => setAtive(1)}
+            >
+              Сүрөттөө
+            </div>
+          )}
+          {data.content_data&&data.content_data.length !== 0 && (
+            <div
+              className={active == 2 ? classes.activeTab : classes.tab}
+              onClick={() => setAtive(2)}
+            >
+              Мазмун
+            </div>
+          )}
+          {data.author && (
+            <div
+              className={active == 3 ? classes.activeTab : classes.tab}
+              onClick={() => setAtive(3)}
+            >
+              Компания жөнүндө
+            </div>
+          )}
         </div>
       )}
       <div className={classes.content}>
@@ -89,7 +111,7 @@ const Tabs1 = ({ dataText, clickBtn, data }) => {
                 return (
                   <div className={classes.blockSpan}>
                     <span>{item.content}</span>
-                <span>{item.page}</span>
+                    <span>{item.page}</span>
                   </div>
                 );
               })
@@ -97,7 +119,9 @@ const Tabs1 = ({ dataText, clickBtn, data }) => {
               <></>
             )
           ) : null}
-          {active === 3 ? <span>{data.author&& data.author.abaut_me}</span> : null}
+          {active === 3 ? (
+            <span>{data.author && data.author.about_me}</span>
+          ) : null}
         </div>
 
         {isClose ? (

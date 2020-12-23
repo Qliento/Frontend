@@ -138,21 +138,21 @@ const EditPassword = ({ edit, changeState2,offModal }) => {
             {language == 2 &&<span className={classes.title}>Repeat password</span>}
             {language == 3 &&<span className={classes.title}>Сыр соз</span>}
             <div className={classes.inputWrapper}>
-             {(language == 1 || language == undefined) && <input name="password_check" type={visibility ? "text" : "password"}  placeholder="Повторите пароль"
+             {(language == 1 || language == undefined) && <input name="password_check" type={visibility3 ? "text" : "password"}  placeholder="Повторите пароль"
                 className={classes.input}
                 ref={register({
                   validate: (password_check) =>
                     password_check && password_check.length > 8,
                 })}
               />}
-               {language == 2 && <input name="password_check" type={visibility ? "text" : "password"}  placeholder="Repeat password"
+               {language == 2 && <input name="password_check" type={visibility3 ? "text" : "password"}  placeholder="Repeat password"
                 className={classes.input}
                 ref={register({
                   validate: (password_check) =>
                     password_check && password_check.length > 8,
                 })}
               />}
-               {language == 3 && <input name="password_check" type={visibility ? "text" : "password"}  placeholder="Сыр соз"
+               {language == 3 && <input name="password_check" type={visibility3 ? "text" : "password"}  placeholder="Сыр соз"
                 className={classes.input}
                 ref={register({
                   validate: (password_check) =>

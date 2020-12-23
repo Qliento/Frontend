@@ -32,3 +32,14 @@
     padding: 60px;
     background: #FFFFFF;
 }
+@media only screen and (max-width:1000px){
+  .title{
+    font-size: 24px;
+  }
+  .titleQuestion{
+    display: none;
+  }
+  .questionBlock{
+    padding: 30px 20px;
+  }
+}

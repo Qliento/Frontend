@@ -8,6 +8,11 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.blockTitle{
+    max-height: 50%;
+    overflow: hidden;
+    width: 100%;
+}
 .titleV{
     display: none;
     font-size: 36px;
@@ -29,9 +34,15 @@ width: 47%;
 height: 100%;
 display: flex;
 flex-direction: column;
-
+justify-content: space-between;
 text-overflow: auto;
 overflow: hidden;
+}
+.blockDescr{
+    width: 100%;
+    min-height: 70%;
+    max-height: 70%;
+    overflow: hidden;
 }
 .title{
     font-size: 36px;
@@ -40,11 +51,13 @@ color: #333333;
 .text{
     font-size: 16px;
 color: #333333;
-margin-top: 50px;
 }
 @media screen and (max-width: 908px) {
 .text{
     font-size: 14px;
+}
+.blockAbout{
+    height: 300px;
 }
 }
 @media screen and (max-width: 768px) {
@@ -63,12 +76,15 @@ margin-top: 50px;
         height:450px;
         margin-left: 0px;
     }
-    .title{
+    .blockTitle{
         display: none;
     }
     .titleV{
         display: block;
         margin-left: auto;
         margin-right: auto;
+    }
+    .blockDescr{
+        margin-top: 50px;
     }
     }
