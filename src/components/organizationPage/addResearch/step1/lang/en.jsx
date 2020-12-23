@@ -21,21 +21,21 @@ const Step1En = ({
   return (
     <div className={classes.form}>
       <div className={classes.blockTitle}>
-        <span className={classes.title}>Исследование</span>
+        <span className={classes.title}>Research</span>
 
         <div className={classes.blockStep}>
-          <span className={classes.step11}>Шаг 1</span>
+          <span className={classes.step11}>Step 1</span>
           <span className={classes.step} onClick={() => further()}>
-            Шаг 2
+            Step 2
           </span>
-          <span className={classes.step}>Шаг 3</span>
+          <span className={classes.step}>Step 3</span>
         </div>
       </div>
       <div className={classes.blockInput}>
-        <span className={classes.inputTitle}>Название для исследования</span>
+        <span className={classes.inputTitle}>Name of research</span>
         <input
           className={classes.input1}
-          placeholder="Название для исследования"
+          placeholder="Name"
           name="name_en"
           value={data.name_en}
           onChange={inputValue}
@@ -43,18 +43,18 @@ const Step1En = ({
         {arrErrRu &&
           arrErrRu.map((item) => {
             if (item == "name_en") {
-              return <span className={classes.err}>Заполинте это поле!!!</span>;
+              return <span className={classes.err}>Fill the field!!!</span>;
             }
           })}
       </div>
       <div className={classes.blockInput}>
         <div className={classes.titleBlock}>
-          <span className={classes.inputTitle}>Описание</span>
+          <span className={classes.inputTitle}>Description</span>
           <span className={classes.text}>2000</span>
         </div>
         <textarea
           className={classes.inputDescrip}
-          placeholder="Описание"
+          placeholder="Description"
           name="description_en"
           value={data.description_en}
           onChange={inputValue}
@@ -62,21 +62,21 @@ const Step1En = ({
         {arrErrRu &&
           arrErrRu.map((item) => {
             if (item == "description_en") {
-              return <span className={classes.err}>Заполинте это поле!!!</span>;
+              return <span className={classes.err}>Fill this field!!!</span>;
             }
           })}
       </div>
       <div className={classes.blockInput}>
-        <span className={classes.inputTitle}>О компании</span>
+        <span className={classes.inputTitle}>About company</span>
         <div className={classes.blockDescrip}>
-          <span>О компании</span>
+          <span>About Company</span>
         </div>
       </div>
       <div className={classes.blockDropdown}>
         <div className={classes.dropdown}>
-          <span className={classes.dropdownTitle}>Категоря</span>
+          <span className={classes.dropdownTitle}>Category</span>
           <Dropdown
-            name="Выберите категорию"
+            name="Choose category"
             lang="en"
             dataList={dataList}
             changeData={(e, category_en) => changeData(e, category_en)}
@@ -85,15 +85,15 @@ const Step1En = ({
             arrErrRu.map((item) => {
               if (item == "category_en") {
                 return (
-                  <span className={classes.err}>Заполинте это поле!!!</span>
+                  <span className={classes.err}>Fill this field!!!</span>
                 );
               }
             })}
         </div>
         <div className={classes.dropdown}>
-          <span className={classes.dropdownTitle}>Подкатегорию</span>
+          <span className={classes.dropdownTitle}>Subcategory</span>
           <Dropdown
-            name="Выберите подкатегорию"
+            name="Choose subcategory"
             lang="en"
             subCategory={subCategory}
             changeData={(e, subCategory_en) => changeData(e, subCategory_en)}
@@ -102,7 +102,7 @@ const Step1En = ({
             arrErrRu.map((item) => {
               if (item == "subCategory_en") {
                 return (
-                  <span className={classes.err}>Заполинте это поле!!!</span>
+                  <span className={classes.err}>Fill this field!!!</span>
                 );
               }
             })}
@@ -110,9 +110,9 @@ const Step1En = ({
       </div>
       <div className={classes.blockDropdown}>
         <div className={classes.dropdown}>
-          <span className={classes.dropdownTitle}>Страны</span>
+          <span className={classes.dropdownTitle}>Country</span>
           <Country
-            name="Выберите страны"
+            name="Choose country"
             lang="en"
             changeCountry={(e) => changeCountry(e)}
           />
@@ -120,13 +120,13 @@ const Step1En = ({
             arrErrRu.map((item) => {
               if (item == "country_en") {
                 return (
-                  <span className={classes.err}>Заполинте это поле!!!</span>
+                  <span className={classes.err}>Fill this field!!!</span>
                 );
               }
             })}
         </div>
         <div className={classes.dropdown}>
-          <span className={classes.dropdownTitle}>Ключевые слова</span>
+          <span className={classes.dropdownTitle}>Keywords</span>
           <CreatableInputOnly
             lang="en"
             data={hashtag}
@@ -134,13 +134,13 @@ const Step1En = ({
           />
           {errHashtag &&
 
-                  <span className={classes.err}>Заполинте это поле!!!</span>
+                  <span className={classes.err}>Fill this field!!!</span>
     }
         </div>
       </div>
       <div className={classes.blockBtn}>
         <button className={classes.btn} onClick={() => further()}>
-          Далее
+          Next
         </button>
       </div>
     </div>

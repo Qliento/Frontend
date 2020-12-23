@@ -169,6 +169,14 @@ export function authAfter() {
   };
 }
 
+// export function authSocialGetData(data) {
+//   console.log(data);
+//   return {
+//     type: 'AUTH_SOCIAL_NETWORK', payload: data
+//   };
+// }
+
+
 export function changeLang(data) {
   // let lang = localStorage.getItem('lang');
   return {
@@ -188,8 +196,9 @@ export function authSocial(token){
     await API.authSocial('client', token)
     .then(res => {
       if( res.status == 200){
-        localStorage.setItem('user', res.data.access);
+        localStorage.setItem('user', res.data.tokens.access);
         localStorage.setItem('type', 'client');
+        localStorage.setItem('auth', 'social');
         dispatch({ type: 'POSTED_SUCCES_AUTH'})
       }
     })

@@ -5,12 +5,15 @@ const initialState = {
     mail: ''
   }
   
-  export function authentication(state = initialState, action) {
+  export function authSocialNetwork(state = initialState, action) {
     switch (action.type) {
-      case "POSTED_SUCCES_AUTH":
+      case "AUTH_SOCIAL_NETWORK":
         return {
           ...state,
-          isModal: 1,
+          name: action.payload.name,
+          surname: action.payload.surname,
+          img: action.payload.img,
+          mail: action.payload.mail
         };
   
       default:

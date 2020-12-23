@@ -31,15 +31,15 @@ const Step2En = ({
   return (
     <div className={classes.form}>
       <div className={classes.blockTitle}>
-        <span className={classes.title}>Исследование</span>
+        <span className={classes.title}>Research</span>
         <div className={classes.blockStep}>
-          <span className={classes.step11} onClick={()=>further(1)}>Шаг 1</span>
-          <span className={classes.step11}>Шаг 2</span>
-          <span className={classes.step} onClick={() => further(3,true)}>Шаг 3</span>
+          <span className={classes.step11} onClick={()=>further(1)}>Step 1</span>
+          <span className={classes.step11}>Step 2</span>
+          <span className={classes.step} onClick={() => further(3,true)}>Step 3</span>
         </div>
       </div>
       <div className={classes.topBlock}>
-        <span>Файл исследования Eng</span>
+        <span>File of research Eng</span>
       </div>
       <div className={classes.blockFiles}>
         {data.files_research_en &&
@@ -64,7 +64,7 @@ const Step2En = ({
             if (item == "files_research_en") {
               return (
                 <span className={classes.err}>
-                  Загрузите хотя-бы одно исследование!!!
+                  Download at least one research!!!
                 </span>
               );
             }
@@ -79,12 +79,12 @@ const Step2En = ({
             multiple
           ></input>
           <label for="input__file" className={classes.addFiles}>
-            Добавить документ
+            Add document
           </label>
         </div>
       </div>
       <div className={classes.topBlock}>
-        <span>Файл демо версии исследования</span>
+        <span>File of the demo version of research</span>
       </div>
       <div className={classes.files}>
         {data.file_demo_en ? (
@@ -110,7 +110,7 @@ const Step2En = ({
               multiple
             ></input>
             <label for="input__file2" className={classes.fileName}>
-              Добавить документ
+              add document
             </label>
           </>
         )}
@@ -120,18 +120,18 @@ const Step2En = ({
             if (item == "file_demo_en") {
               return (
                 <span className={classes.err}>
-                  Загрузите хотя-бы одно исследование!!!
+                  Download at least one research!!!
                 </span>
               );
             }
           })}
       <div className={classes.topBlock}>
-        <span>Количество страниц</span>
+        <span>Number of pages</span>
       </div>
       <input
         type="text"
         className={classes.inputNumberPage}
-        placeholder="количество страниц"
+        placeholder="Amoung of pages"
         value={data.pages_en || ""}
         onChange={(e) => changePage(e)}
       />
@@ -140,23 +140,23 @@ const Step2En = ({
             if (item == "pages_en") {
               return (
                 <span className={classes.err}>
-                  Загрузите хотя-бы одно исследование!!!
+                  Download at least one research!!!
                 </span>
               );
             }
           })}
       <div className={classes.topBlock}>
-        <span>Оглавление</span>
+        <span>Title</span>
       </div>
       <div className={classes.titleContent}>
         <div className={classes.leftBlock}>
           <span className={classes.contentTitle}>№</span>
         </div>
         <div className={classes.centerBlock}>
-          <span className={classes.contentTitle}>Название главы</span>
+          <span className={classes.contentTitle}>Name of chapter</span>
         </div>
         <div className={classes.rightBlock}>
-          <span className={classes.contentTitle}>Страница</span>
+          <span className={classes.contentTitle}>Pages</span>
         </div>
       </div>
 
@@ -197,7 +197,7 @@ const Step2En = ({
       </button>
 
       <div className={classes.blockBtn1}>
-      <button className={classes.btn} onClick={() => further(3,true)}>Далее</button>
+      <button className={classes.btn} onClick={() => further(3,true)}>Next</button>
       </div>
     </div>
   );
