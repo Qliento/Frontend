@@ -58,3 +58,34 @@
   border: 1px solid #1B8E3D;
   transition: ease-in-out 0.2s;
 }
+
+@media screen and (max-width: 1150px){
+  .blockImg {
+    width: auto;
+  }
+  .blockContent {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .title {
+    font-size: 18px;
+  }
+  .btn1{
+    font-size: 15px;
+  }
+  .blockImg img{
+    width: 100px;
+  }
+  .blockImg{
+    padding-left: 15px;
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .blockImg{
+    display: none;
+  }
+}

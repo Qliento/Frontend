@@ -1,20 +1,26 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import classes from "./orderCard.module.css";
 import strela from "./img/strela.png";
 import strela2 from "./img/strela2.png";
 import {Link} from "react-router-dom";
-import {useSelector} from 'react-redux';
+import photoMobile from './img/target.png'
 
 const OrderCard = () => {
-  // const language = useSelector(state => state.langReducer.lang)
   const language = localStorage.getItem('lang');
-
+  const [mobile, setMobile] = useState(false);
+  let screen = document.documentElement.clientWidth;
+  useEffect(() => {
+    
+    if(screen < 1150){
+      setMobile(true);
+    }
+}, [screen]); 
   return (
     <div className={classes.card}>
       <div className={classes.blockImg}>
-      <img alt="img" src={strela2} />
+        {mobile ? <img src={photoMobile} alt="img" />: <><img alt="img" src={strela2} />
         <img alt="img" src={strela} />
-        <img alt="img" src={strela2} />
+        <img alt="img" src={strela2} /></>}
       </div>
       <div className={classes.blockContent}>
         {(language == 1 || language == undefined) && <><span className={classes.title}>Закажите исследование</span>

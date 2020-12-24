@@ -25,7 +25,6 @@ const Auth = () => {
     const [modal, setModal] = useState(1);
     const [network, setNetwork] = useState();
     const responseFacebook = (response) => {
-        console.log(response)
         dispatch(authSocialFace(response.accessToken))
       }
       const onSuccess = (res) =>{
@@ -44,7 +43,7 @@ const Auth = () => {
     
     
         const authHandler = (err, data) => {
-          console.log(err, data);}
+          console.log(err, data)}
 
     return(
     <div className={st.auth_bg}>

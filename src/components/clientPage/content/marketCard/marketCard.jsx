@@ -2,13 +2,12 @@ import React from "react";
 import classes from "./marketCard.module.css";
 import { Link } from "react-router-dom";
 import photo from './Rectangle 47.jpg';
-import {useSelector} from 'react-redux';
 
 const MarketCard = ({ data }) => {
   data = {
     id: "cdcscsd",
   }
-  // const language = useSelector(state => state.langReducer.lang)
+  
   const language = localStorage.getItem('lang');
 
   return (
@@ -18,7 +17,7 @@ const MarketCard = ({ data }) => {
           to={`/market-research-detail/${data && data.id}`}
           className={classes.link}
         >
-          <img alt="img" src={photo} className={classes.img} />
+         <img alt="img" src={photo} className={classes.img} />
           <div className={classes.content}>
             <div className={classes.nameCompany}>
               <span className={classes.name}>

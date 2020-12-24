@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-import classes from "./modal.module.css";
+import classes from "../bePartner/modal.module.css";
 import {  useSelector } from "react-redux";
 import img1 from "./1.png"
 import img2 from "./2.png"
@@ -8,18 +8,18 @@ import { Link } from "react-router-dom";
 import { afterPosted } from '../../redux/reducers/orderResearch/orderResearch';
 import { useDispatch } from "react-redux";
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    height:"auto",
-    width:"40%",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
+// const customStyles = {
+//   content: {
+//     top: "50%",
+//     left: "50%",
+//     right: "auto",
+//     bottom: "auto",
+//     height:"auto",
+//     width:"40%",
+//     marginRight: "-50%",
+//     transform: "translate(-50%, -50%)",
+//   },
+// };
 
 Modal.setAppElement("#root");
 
@@ -33,7 +33,7 @@ function RegistrModal() {
   // const language = useSelector(state => state.langReducer.lang)
   const language = localStorage.getItem('lang');
   return (
-    <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
+    <Modal isOpen={isModal !== "" ? true:false} className={classes.modal_main}>
       <div className={classes.modal}>
         {isModal == 1 && (language == 1 || language == undefined) && <span className={classes.title}>Поздравляю</span>}
         {isModal == 1 && language == 2 && <span className={classes.title}>Congratulations</span>}

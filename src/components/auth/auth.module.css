@@ -146,3 +146,39 @@
 .twitter{
     height: 100%;
 }
+
+
+@media screen and (max-width: 550px){
+    .auth_content{
+        width: 380px;
+    }
+
+    .form label{
+        width: 290px;
+    }
+    .auth_btn{
+        width: 290px;
+    }
+    .social_auth span{
+        margin-left: 35px;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .auth_content{
+        width: 340px;
+    }
+
+    .form label{
+        width: 250px;
+    }
+    .auth_btn{
+        width: 250px;
+    }
+    .auth_content h2{
+        margin-top: 30px;
+    }
+    .social_auth span{
+        margin-left: 40px;
+    }
+}

@@ -59,14 +59,19 @@ footer > div a{
     }
 }
 
-@media screen and (max-width: 770px){
+@media screen and (max-width: 830px){
     footer{
         flex-wrap: wrap;
     }
 
-    .socialQuest{
-        margin-top: 2em;
+    .contacts{
+        width: 160px;
+        margin-bottom: 2em;
     }
+
+    /* .socialQuest{
+        margin-top: 2em;
+    } */
 
     .navbar{
         margin-bottom: 2em;

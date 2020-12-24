@@ -89,3 +89,38 @@
   color: var(--green);
   cursor: pointer;
 }
+
+@media screen and (max-width: 850px){
+  .bloc {
+    flex-direction: column;
+    min-height: 180px;
+  }
+  .headerItem {
+    height: auto;
+  }
+  .topItem {
+    padding: 20px 40px;
+  }
+}
+
+@media screen and (max-width: 570px){
+  .headerItem {
+    padding-left: 150px;
+  }
+  .photo {
+    left: 20px;
+  }
+}
+
+@media screen and (max-width: 460px){
+  .title {
+    font-size: 18px;
+  }
+  .titleNumber {
+    font-size: 15px;
+  }
+  .headerItem {
+    padding-left: 20px;
+    padding-top: 50px;
+  }
+}
