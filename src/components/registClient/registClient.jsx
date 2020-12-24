@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { useForm } from "react-hook-form";
 import classes from "./registClient.module.css";
 import { useDispatch } from "react-redux";
@@ -7,7 +7,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 import cancel from "./img/cancel.png";
 import { Link } from "react-router-dom";
 import { registrationClient } from '../../redux/actions/actions';
-import { useSelector } from "react-redux";
 import noVis from "./img/noVisibility.png"
 import vis from "./img/visibility 1.png";
 import RegistrModal from "./modal";

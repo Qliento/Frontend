@@ -40,7 +40,9 @@ const AnaliticCard = () => {
             </span>
             <div className={st.card_content}>
                 <div className={st.card_img}>
-                    <img src={data && data.images[0].url} alt="img" />
+                    <div className={st.card_img_container}>
+                        <img src={data && data.images[0].url} alt="img" />
+                    </div>
                     <div className={st.shareIt}>
                         {(language == 1 || language == undefined) && <span>Поделиться в соц сетях</span>}
                         {language == 2 && <span>Share in social networks</span>}

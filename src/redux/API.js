@@ -145,11 +145,6 @@ export default {
       },
     }),
   changePassword: (data) => http.post("/users/password-update/", data),
-  // updateClient: (data, token) =>
-  //     httpUpadate.patch("/users/update/users", {
-  //     headers: { Authorization: "Bearer " + token},
-  //     data,
-  //   }),
   updateDataOrganization: (data, token) =>
   httpUpadate.patch(
       "/users/update/partners/",
@@ -212,7 +207,6 @@ export default {
     auth_token : token,
     user: user
   }),
-
 };
 
 

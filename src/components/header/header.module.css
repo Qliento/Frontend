@@ -122,6 +122,12 @@
     text-decoration: underline;
 }
 
+@media screen and (max-width: 1200px){
+    .header{
+        padding: 0 5%;
+    }
+}
+
 @media screen and (max-width: 1070px)
 {
     .navbar{

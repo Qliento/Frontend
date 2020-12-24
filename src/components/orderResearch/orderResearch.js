@@ -11,7 +11,6 @@ const OrderResearch = () =>{
     const { handleSubmit, register, errors } = useForm();
     const dispatch = useDispatch();
     const data = useSelector((state) => state.orderResearchData.data.data);
-    // const language = useSelector(state => state.langReducer.lang)
     const language = localStorage.getItem('lang');
     useEffect(() => {
         dispatch(orderResearchData());

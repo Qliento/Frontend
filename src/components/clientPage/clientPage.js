@@ -14,7 +14,6 @@ const ClientPage=()=>{
     const [modal, setModal] = useState(0);
 
     const token = localStorage.getItem("user");
-    console.log(token);
     const dispatch = useDispatch();
     const data = useSelector((state) => state.clientData.data.data);
     useEffect(() => {

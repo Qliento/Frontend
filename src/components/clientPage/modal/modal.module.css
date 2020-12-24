@@ -15,7 +15,7 @@
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: 70px;
 }
 
 .input_photo{
@@ -123,4 +123,10 @@
 
 .error{
     color: red;
+}
+
+@media screen and (max-width: 500px){
+    .modal_content{
+        width: 100%;
+    }
 }

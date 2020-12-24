@@ -24,3 +24,29 @@
     display: inline-block;
     width: 700px;
 }
+
+
+@media screen and (max-width: 750px){
+    .agreement{
+        padding: 60px;
+    }
+    .agreement h2{
+        font-size: 30px;
+        width: 100%;
+    }
+
+    .agreement p{
+        font-size: 15px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .agreement{
+        padding: 45px;
+    }
+    .agreement h2{
+        line-height: 35px;
+        font-size: 25px;
+    }
+}

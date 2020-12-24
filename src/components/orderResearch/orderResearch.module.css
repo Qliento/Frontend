@@ -153,3 +153,86 @@
     color: #fff;
     border: none;
 }
+
+@media screen and (max-width: 950px){
+    .order_block{
+        margin: 5% 10%;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .order_instruct_block{
+        flex-direction: column;
+    }
+    .order_instruct_block img{
+        width: 60%;
+        margin-bottom: 20px;
+    }
+    .order_instruct .order_instruct_block:nth-child(2n){
+        flex-direction: column;
+    }
+    .order_anchor_text h3{
+        font-size: 20px;
+    }
+    .order_instruct_descrip h2{
+        font-size: 24px;
+    }
+    .order_form h3{
+        font-size: 24px;
+    }
+    .order_block_anchor img{
+        width: 120px;
+    }
+    .order_block_anchor{
+        padding: 15px 20px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .order_anchor_text p{
+        line-height: 15px;
+        font-size: 14px;
+    }
+    .order_anchor_text{
+        margin-left: 20px;
+    }
+    .order_block{
+        margin: 5%;
+    }
+    .order_anchor_text h3{
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .order_instruct_block img{
+        width: 100%;
+        margin-right: 0!important;
+        margin-left: 0!important;
+    }
+    .order_form form{
+        flex-direction: column;
+    }
+    .order_form form > div{
+        width: 100%;
+    }
+    .order_form h3{
+        line-height: 25px;
+    }
+    .order_form{
+        padding: 35px 30px;
+    }
+    .order_form p{
+        font-size: 15px;
+    }
+    .form_textarea_block textarea{
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .order_instruct_descrip h2{
+        font-size: 20px;
+    }
+    .order_instruct_descrip p{
+        font-size: 16px;
+    }
+}
