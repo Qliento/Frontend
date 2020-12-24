@@ -24,8 +24,9 @@ const Order = () => {
       return  item.id
       
     })
-    dispatch(payResearch(arr))
-    console.log(arr)
+    if(data&&data[0].ordered_items.length!==0){
+      dispatch(payResearch(arr))
+    }
   }
 
   return (

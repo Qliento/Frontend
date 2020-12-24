@@ -61,7 +61,7 @@ function UbdateModal() {
         </div>
         {
                   isModal === 1 &&  
-                  <Link to="/" onClick={updateClientAfter1} >
+                  <Link to="/organization-page" onClick={updateClientAfter1} >
                     <span className={classes.ok}>OK</span>
                   </Link>
         }

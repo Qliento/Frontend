@@ -60,7 +60,7 @@ function ModalPassword() {
         </div>
         {
                   isModal === 1 &&  
-                  <Link to="/" onClick={changePasswordAfter1} >
+                  <Link to="/organization-page" onClick={changePasswordAfter1} >
                     <span className={classes.ok}>OK</span>
                   </Link>
         }

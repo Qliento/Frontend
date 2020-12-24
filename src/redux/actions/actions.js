@@ -131,7 +131,7 @@ export function changePassword(data){
     let token = localStorage.getItem("user");
     await API.changePassword(data, token)
     .then(res => {
-      if( res.status == 201){
+      if( res.status == 200){
         dispatch({ type: 'POSTED_SUCCES_CHANGE_PASS'})
       }
     })

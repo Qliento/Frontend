@@ -65,9 +65,26 @@
   background: #bdbdbd;
   margin-left: 5px;
 }
+.blockDate{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #BDBDBD;
+}
 .blockImg {
   width: 100%;
   height: 300px;
+}
+.topBlock{
+  padding: 0px 30px 10px 30px;
+  display: flex;
+  height: 147px;
+  width: 100%;
+  flex-direction: column;
+  background: #FFFFFF;
 }
 .img {
   width: 100%;
@@ -185,3 +202,126 @@
   color: #76b73e;
   margin-top: 5px;
 }
+
+
+.container1{
+  display: none;
+}
+.blockDesc{
+  width: 100%;
+  height: 68px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.textAuthor{
+  font-weight: 500;
+font-size: 10px;
+line-height: 12px;
+
+color: #1B8E3D;
+}
+.textDate{
+  font-weight: 500;
+font-size: 10px;
+line-height: 12px;
+color: #4F4F4F;
+}
+.blockName1{
+  width: 50%;
+  height: 100%;
+}
+.blockName1 span{
+  font-weight: 600;
+font-size: 14px;
+line-height: 17px;
+
+color: #000000;
+}
+.buttomBlockH{
+  width: 100%;
+  height: 25px;
+  overflow-y: hidden;
+  margin-top: 10px;
+}
+.blockChange{
+  width: 100%;
+  height: auto;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #E0E0E0;
+}
+@media only screen and (max-width:1000px){
+  .container1{
+    display: block;
+  }
+  .container{
+    display: none;
+  }
+  .blockDetail{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .blockDetail1{
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .leftCard,.rightCard{
+    width: 100%;
+  }
+  .rightCard{
+  margin-top: 40px;
+  }
+  .blockBtn{
+    width: 200px;
+  }
+  .demo{
+    width: 100%;
+  }
+  .descrip span {
+    font-size: 10px;
+    line-height: 150%;
+    color: #000000;
+  }
+  .statistic{
+    width: 100%;
+  }
+}
+@media only screen and (max-width:500px){
+  .statistic{
+    height: 300px;
+  }
+  .blockTitle {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .blockImg {
+
+    height: 260px;
+  }
+  .input{
+    width: 100%;
+  }
+  .column_title{
+    font-size: 10px;
+  }
+  .column_data{
+    font-size: 24px;
+  }
+}
+
+
+
+
