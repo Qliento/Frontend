@@ -26,6 +26,7 @@
   font-size: 24px;
   line-height: 29px;
   color: #828282;
+  cursor: pointer;
 }
 .step11 {
   font-size: 24px;
@@ -179,4 +180,84 @@
   font-size: 18px;
   line-height: 22px;
   color: #ffffff;
+}
+@media only screen and (max-width:830px){
+  .step {
+    font-size: 14px;
+  }
+  .step11 {
+    font-size: 14px;
+  }
+  .title{
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width:720px){
+  .content {
+    margin-top: 40px;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+
+  }
+  .img {
+    width: 100%;
+    height: 63%;
+    object-fit: cover;
+  }
+  .rightBlock {
+    width: 100%;
+    height: 35%;
+    margin-top: 20px;
+  }
+  .btn {
+
+    width: 100%;
+
+  }
+  .bottomBlock {
+    width: 100%;
+    height: 100px;
+    flex-direction: column;
+
+  }
+  .inputPrice {
+    width: 100%;
+    height: 42px;
+  }
+  .btn2 {
+    width: 100%;
+height: 42px;
+  }
+}
+@media only screen and (max-width:550px){
+  .img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+  .content {
+    margin-top: 40px;
+    height: 470px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+
+  }
+  .rightBlock {
+    width: 100%;
+    height: 50%;
+    margin-top: 20px;
+  }
+  .form {
+    width: 100%;
+    height: auto;
+    padding: 60px 20px;
+    background: #ffffff;
+  }
 }

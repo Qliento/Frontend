@@ -136,3 +136,11 @@
     margin-right: auto;
   }
 }
+@media only screen and (max-width:440px){
+  .photo{
+    top: 75px;
+    left: 30px;
+    width: 100px;
+    height: 100px;
+  }
+}

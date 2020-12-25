@@ -129,7 +129,7 @@ const Step2En = ({
         <span>Number of pages</span>
       </div>
       <input
-        type="text"
+        type="number"
         className={classes.inputNumberPage}
         placeholder="Amoung of pages"
         value={data.pages_en || ""}
@@ -156,7 +156,8 @@ const Step2En = ({
           <span className={classes.contentTitle}>Name of chapter</span>
         </div>
         <div className={classes.rightBlock}>
-          <span className={classes.contentTitle}>Pages</span>
+          <span className={classes.contentTitleNone}>Pag</span>
+          <span className={classes.contentTitle1}>Pages</span>
         </div>
       </div>
 
@@ -173,7 +174,7 @@ const Step2En = ({
             />
             <input
               className={classes.rightInput}
-              type="text"
+              type="number"
               placeholder="Enter text"
               value={field.page || ""}
               onChange={(e) => handleChangePage(idx, e)}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 // import MarketCard from "./marketCard/marketCard";
 import MarketFilter from "./marketFilter/marketFilter";
 import classes from "./marketResearch.module.css";
@@ -12,6 +12,9 @@ import {useSelector} from 'react-redux';
 const MarketResearch = ({ filter }) => {
   const params = useParams();
   // const language = useSelector(state => state.langReducer.lang)
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const language = localStorage.getItem('lang');
   const [sort1, setSort1] = useState(false);
   const [sort2, setSort2] = useState(false);

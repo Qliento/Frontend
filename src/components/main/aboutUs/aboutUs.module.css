@@ -88,3 +88,8 @@ color: #333333;
         margin-top: 50px;
     }
     }
+    @media only screen and (max-width:550px){
+        .blockAbout{
+            margin-top: 100px;
+        }
+    }
