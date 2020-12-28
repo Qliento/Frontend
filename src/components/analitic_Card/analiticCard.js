@@ -52,6 +52,7 @@ const AnaliticCard = () => {
                         </div>
                     </div>
                     {data && data.research && <div className={st.research_info}>
+                    <Link to={`/market-research-detail/${data.research && data.research.id}`} >
                         <div className={st.research_info_header}>
                             <span>{data.research.author && data.research.author.logo}</span>
                             <span>{data.research.date}</span>
@@ -78,6 +79,7 @@ const AnaliticCard = () => {
                                 ))
                             }
                         </div>
+                        </Link>
                     </div>}
                     
                 </div>

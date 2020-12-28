@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 import photo from './Rectangle 47.jpg';
 
 const MarketCard = ({ data }) => {
-  data = {
-    id: "cdcscsd",
-  }
   
   const language = localStorage.getItem('lang');
 
@@ -40,7 +37,7 @@ const MarketCard = ({ data }) => {
                   {language == 3 && <span>Мамлекеттер: </span>}
                   {data.country &&
                     data.country.map((item) => {
-                      return <span key={item.id}>{item.name}</span>;
+                      return <span key={item.id}> {item.name}</span>;
                     })}
                 </div>
               </div>
@@ -55,7 +52,7 @@ const MarketCard = ({ data }) => {
         </Link>
         <div className={classes.blockAct}>
           <div className={classes.blockPrace}>
-            <span className={classes.newPrace}>{data.new_price}17 000 сом</span>
+            <span className={classes.newPrace}>{data.old_price} сом</span>
           </div>
           <div className={classes.blockBtn}>
             {(language == 1 || language == undefined) && <button className={classes.toBasket} id={data.id} >Скачать</button>}
@@ -65,8 +62,7 @@ const MarketCard = ({ data }) => {
               {(language == 1 || language == undefined) && <span>Время покупки</span>}
               {language == 2 && <span>Purchase time</span>}
               {language == 3 && <span>Сатып алуу убактысы</span>}
-              <span>21.11.2020</span>
-              <span>12:50</span>
+              <span>{data.date}</span>
             </div>
           </div>
         </div>
