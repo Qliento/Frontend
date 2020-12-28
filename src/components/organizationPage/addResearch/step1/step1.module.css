@@ -33,6 +33,7 @@
   font-size: 24px;
   line-height: 29px;
   color: #828282;
+  cursor: pointer;
 }
 .step11 {
   font-size: 24px;
@@ -151,4 +152,49 @@
   color: #ffffff;
   border: 1px solid #76b73e;
 }
+@media only screen and (max-width:1000px){
+  .step1 {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+
+}
+@media only screen and (max-width:900px){
+  .blockDropdown{
+    width: 100%;
+    flex-direction: column;
+    margin-top: 0px;
+  }
+  .dropdown{
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+@media only screen and (max-width:830px){
+  .step {
+    font-size: 14px;
+  }
+  .step11 {
+    font-size: 14px;
+  }
+  .title{
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width:550px){
+  .form{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media only screen and (max-width:410px){
+
+  .input1, .inputDescrip{
+    font-size: 14px;
+  }
+}
+
 

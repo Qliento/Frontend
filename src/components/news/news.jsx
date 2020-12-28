@@ -14,7 +14,9 @@ const News = () => {
 const language = localStorage.getItem('lang');
 useEffect(() => {
   dispatch(ListNews());
+  window.scrollTo(0, 0)
 }, []);
+
   const [block, setBlock] = useState();
   const arr = [1, 2];
   return (

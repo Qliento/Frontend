@@ -8,10 +8,14 @@
 .tab {
     width: auto;
     height: 100%;
-    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-weight: 600;
     font-size: 14px;
     line-height: 150%;
+    padding: 0px 10px;
     color: #000000;
     cursor: pointer;
     background: #E0E0E0;
@@ -20,10 +24,19 @@
       cursor: pointer;
     width: auto;
     height: 100%;
-    padding: 10px 20px;
+    display: flex;
+    padding: 0px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-weight: 600;
     font-size: 14px;
     line-height: 150%;
     color: #000000;
     background: #ffffff;
+  }
+  @media only screen and (max-width:470px){
+    .tab, .activeTab{
+      font-size: 10px;
+    }
   }

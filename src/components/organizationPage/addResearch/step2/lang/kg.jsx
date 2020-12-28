@@ -130,7 +130,7 @@ const Step2Kg = ({
         <span>Барактар саны</span>
       </div>
       <input
-        type="text"
+        type="number"
         className={classes.inputNumberPage}
         placeholder="Барактар саны"
         value={data.pages_kg || ""}
@@ -157,7 +157,8 @@ const Step2Kg = ({
           <span className={classes.contentTitle}>Бөлүмдүн аталышы</span>
         </div>
         <div className={classes.rightBlock}>
-          <span className={classes.contentTitle}>Барак</span>
+        <span className={classes.contentTitleNone}>Бар</span>
+          <span className={classes.contentTitle1}>Барак</span>
         </div>
       </div>
 
@@ -174,7 +175,7 @@ const Step2Kg = ({
             />
             <input
               className={classes.rightInput}
-              type="text"
+              type="number"
               placeholder="Enter text"
               value={field.page || ""}
               onChange={(e) => handleChangePage(idx, e)}

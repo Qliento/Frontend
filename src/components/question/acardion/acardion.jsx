@@ -39,6 +39,7 @@ const Acardion = () => {
 
   useEffect(() => {
     dispatch(getQuestion());
+    window.scrollTo(0, 0)
   }, []);
 
   const [active, setActive] = useState(1);

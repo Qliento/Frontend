@@ -26,6 +26,7 @@
   font-size: 24px;
   line-height: 29px;
   color: #828282;
+  cursor: pointer;
 }
 .step11 {
   font-size: 24px;
@@ -163,6 +164,20 @@
 
   color: #000000;
 }
+.contentTitle1 {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #000000;
+}
+.contentTitleNone{
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  display: none;
+  color: #000000;
+}
 .rowInputs {
   width: 100%;
   height: 42px;
@@ -218,3 +233,48 @@
   color: red;
   font-size: 11px;
 }
+@media only screen and (max-width:830px){
+  .step {
+    font-size: 14px;
+  }
+  .step11 {
+    font-size: 14px;
+  }
+  .title{
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width:630px){
+.addFiles{
+  width: 100%;
+}
+.inputNumberPage{
+  width: 100%;
+}
+}
+@media only screen and (max-width:550px){
+  .form{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media only screen and (max-width:410px){
+
+  .topBlock span{
+    font-size: 14px;
+  }
+  .addInput{
+    font-size: 12px;
+  }
+  .fileName{
+    font-size: 10px;
+  }
+  .contentTitle1{
+    display: none;
+  }
+  .contentTitleNone, .contentTitle{
+    display: block;
+    font-size: 14px;
+  }
+}
+

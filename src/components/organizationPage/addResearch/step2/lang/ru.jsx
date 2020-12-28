@@ -128,7 +128,7 @@ const Step2Ru = ({
         <span>Количество страниц</span>
       </div>
       <input
-        type="text"
+        type="number"
         className={classes.inputNumberPage}
         placeholder="количество страниц"
         value={data.pages || ""}
@@ -151,7 +151,8 @@ const Step2Ru = ({
           <span className={classes.contentTitle}>Название главы</span>
         </div>
         <div className={classes.rightBlock}>
-          <span className={classes.contentTitle}>Страница</span>
+        <span className={classes.contentTitleNone}>Стр</span>
+          <span className={classes.contentTitle1}>Страница</span>
         </div>
       </div>
 
@@ -168,7 +169,7 @@ const Step2Ru = ({
             />
             <input
               className={classes.rightInput}
-              type="text"
+              type="number"
               placeholder="Enter text"
               value={field.page || ""}
               onChange={(e) => handleChangePage(idx, e)}

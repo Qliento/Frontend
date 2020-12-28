@@ -17,6 +17,7 @@ const DetailMarket = ({ data }) => {
   const orders = (e) => {
     dispatch(researchPushBasket(e));
   };
+  
   return (
     <div className={isClose ? classes.blockDetail1 : classes.blockDetail}>
       <div className={classes.leftCard}>

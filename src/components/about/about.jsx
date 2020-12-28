@@ -10,6 +10,7 @@ const About = () => {
   const data = useSelector((state) => state.AboutUs.arrayData);
   useEffect(() => {
     dispatch(aboutData());
+    window.scrollTo(0, 0)
   }, []);
   // const language = useSelector(state => state.langReducer.lang);
   const language = localStorage.getItem('lang');
