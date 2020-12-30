@@ -168,14 +168,14 @@ const Step2En = ({
             <input
               className={classes.centerInput}
               type="text"
-              placeholder="Enter text"
+             
               value={field.value || ""}
               onChange={(e) => handleChange(idx, e)}
             />
             <input
               className={classes.rightInput}
               type="number"
-              placeholder="Enter text"
+              
               value={field.page || ""}
               onChange={(e) => handleChangePage(idx, e)}
             />

@@ -120,9 +120,8 @@ const Tabs1 = ({ dataText, clickBtn }) => {
           ) : null}
           {active === 3 ? (
             <span>
-              {dataText.author.about_me
-                ? dataText.author.about_me
-                : "Автора нет"}
+              {dataText.author.about_me&&dataText.author.about_me
+                }
             </span>
           ) : null}
         </div>

@@ -13,18 +13,7 @@ const customStyles = {
     position: 'fixed',
     zIndex: 10
   },
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    height:"auto",
-    width:"40%",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    position: 'fixed',
-    zIndex: '10'
-  },
+
 };
 
 
@@ -40,7 +29,7 @@ function ModalPassword() {
   const language = localStorage.getItem('lang');
   const isModal = useSelector((state) => state.changePassword.isModal);
   return (
-    <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
+    <Modal isOpen={isModal !== "" ? true:false} style={customStyles} className={classes.modal_main}>
       <div className={classes.modal}>
         {isModal == 1 && (language == 1 || language == undefined) && <span className={classes.title}>Поздравляю</span>}
         {isModal == 1 && language == 2 && <span className={classes.title}>Congratulations</span>}
@@ -60,7 +49,7 @@ function ModalPassword() {
         </div>
         {
                   isModal === 1 &&  
-                  <Link to="/organization-page" onClick={changePasswordAfter1} >
+                  <Link to="/" onClick={changePasswordAfter1} >
                     <span className={classes.ok}>OK</span>
                   </Link>
         }

@@ -9,7 +9,7 @@ import {
   mainSearchCategoryText,
 } from "../../redux/actions/mainSearch/mainSearch";
 
-const MarketCards = ({ params, sort1, sort2 }) => {
+const MarketCards = ({ params, sort1, sort2 ,filter}) => {
 
   const numberKeys = Object.keys(params).length;
   const dispatch = useDispatch();
@@ -26,6 +26,9 @@ console.log(params)
   window.addEventListener('mousemove', editCursor);
 
 });
+useEffect(()=>{
+
+},[filter])
 
 const addFlyEfyf = () => {
   const cursor = document.querySelector('.add_fly');

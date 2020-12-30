@@ -54,6 +54,12 @@ export function dataStep2(data) {
     payload: data,
   };
 }
+export function dataStep2null() {
+  return {
+    type: "UPLOAD_DATA_STEP_2_NULL",
+    
+  };
+}
 export function dataStep1(data) {
   return {
     type: "UPLOAD_DATA_STEP_1",

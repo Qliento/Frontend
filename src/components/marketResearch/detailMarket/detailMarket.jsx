@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { researchPushBasket } from "../../../redux/actions/pushResearch/pushResearch";
+import RegistrModalDemo from "../modalRegistr/modal";
+import ModalRegist from "../modalRegistr/modalRegistr";
 import classes from "./detailMarket.module.css";
 import img1 from "./img/Rectangle 47.png";
 import Tabs1 from "./tabs/tabs";
+import ReactDOM from 'react-dom';
 
 const DetailMarket = ({ data }) => {
   const dispatch = useDispatch();
   // const language = useSelector(state => state.langReducer.lang)
   const language = localStorage.getItem("lang");
   const [isClose, setIsClose] = useState(false);
+  const user = localStorage.getItem("user")
+  const [edit,setEdit]=useState(false)
   const clickBtn = () => {
     setIsClose(!isClose);
   };
@@ -17,8 +22,9 @@ const DetailMarket = ({ data }) => {
   const orders = (e) => {
     dispatch(researchPushBasket(e));
   };
-  
+
   return (
+    <>
     <div className={isClose ? classes.blockDetail1 : classes.blockDetail}>
       <div className={classes.leftCard}>
         <div className={classes.blockImg}>
@@ -126,7 +132,9 @@ const DetailMarket = ({ data }) => {
                 Корзинага
               </button>
             )}
-            {(language == 1 || language == undefined) && (
+{user?
+<>
+{(language == 1 || language == undefined) && (
               <a
                 href={data.demo && data.demo}
                 target="_blank"
@@ -156,6 +164,37 @@ const DetailMarket = ({ data }) => {
                 Демо версия
               </a>
             )}
+</>
+:<>
+{(language == 1 || language == undefined) && (
+              <button
+            onClick={()=>setEdit(true)}
+                className={classes.demo1}
+            
+              >
+                Демо версия
+              </button>
+            )}
+            {language == 2 && (
+              <button
+               onClick={()=>setEdit(true)}
+                className={classes.demo1}
+               
+              >
+                Demo version
+              </button>
+            )}
+            {language == 3 && (
+              <button
+           onClick={()=>setEdit(true)}
+                className={classes.demo1}
+                
+              >
+                Демо версия
+              </button>
+            )}
+</>}
+            
             </div>
           </div>
         </div>
@@ -246,7 +285,9 @@ const DetailMarket = ({ data }) => {
                 Корзинага
               </button>
             )}
-            {(language == 1 || language == undefined) && (
+{user?
+<>
+{(language == 1 || language == undefined) && (
               <a
                 href={data.demo && data.demo}
                 target="_blank"
@@ -276,6 +317,36 @@ const DetailMarket = ({ data }) => {
                 Демо версия
               </a>
             )}
+</>
+:<>
+{(language == 1 || language == undefined) && (
+              <button
+            onClick={()=>setEdit(true)}
+                className={classes.demo1}
+            
+              >
+                Демо версия
+              </button>
+            )}
+            {language == 2 && (
+              <button
+               onClick={()=>setEdit(true)}
+                className={classes.demo1}
+               
+              >
+                Demo version
+              </button>
+            )}
+            {language == 3 && (
+              <button
+           onClick={()=>setEdit(true)}
+                className={classes.demo1}
+                
+              >
+                Демо версия
+              </button>
+            )}
+</>}
           </div>
         </div>
       </div>
@@ -283,6 +354,12 @@ const DetailMarket = ({ data }) => {
         <Tabs1 dataText={data && data} clickBtn={clickBtn} />
       </div>
     </div>
+    {edit == true && ReactDOM.createPortal(
+                <ModalRegist changeState={() => setEdit(false)} idResearch={data.id}/>,
+                document.getElementById('portal')
+            )}
+                  <RegistrModalDemo />
+    </>
   );
 };
 export default DetailMarket;

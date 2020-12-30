@@ -4,8 +4,8 @@ const initialState = {
   ubdateResearch: false,
   dataStep2: {},
   dataStep1: {},
-  isModal:"",
-  static:{}
+  isModal: "",
+  static: {},
 };
 
 export function ResearchList(state = initialState, action) {
@@ -30,26 +30,32 @@ export function ResearchList(state = initialState, action) {
         ...state,
         ubdateResearch: false,
       };
+ 
     case "UPLOAD_DATA_STEP_2":
       return {
         ...state,
         dataStep2: action.payload,
+      };
+    case "UPLOAD_DATA_STEP_2_NULL":
+      return {
+        ...state,
+        dataStep2: {},
       };
     case "UPLOAD_DATA_STEP_1":
       return {
         ...state,
         dataStep1: action.payload,
       };
-      case "UPLOAD_RESEARCH_SPINER":
-        return {
-          ...state,
-          isModal: action.isModal,
-        };
-        case "SECCESS_STATIC":
-          return {
-            ...state,
-            static: action.data,
-          };
+    case "UPLOAD_RESEARCH_SPINER":
+      return {
+        ...state,
+        isModal: action.isModal,
+      };
+    case "SECCESS_STATIC":
+      return {
+        ...state,
+        static: action.data,
+      };
     default:
       return state;
   }

@@ -44,7 +44,7 @@ const ModalRegist = ({ edit, changeState, idResearch }) => {
               Войти
             </Link>
             <Link to="/registration" className={classes.regist}>
-              Зарегистрироватся
+              Зарегистрироваться
             </Link>
             <div className={classes.blockText2}>
               <span className={classes.title}>Без регистрации</span>

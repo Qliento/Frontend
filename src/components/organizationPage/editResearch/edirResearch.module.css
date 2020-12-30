@@ -9,6 +9,16 @@
 
   padding: 10px;
 }
+.modal_main{
+  border: 1px solid #cacaca;
+  background-color: #fff;
+  width: 40%;
+  margin-left: calc(50% - 20%);
+  
+  padding: 30px;
+  position: relative;
+  top:10px ;
+}
 .editResearch{
   position: fixed;
   top: 0;
@@ -83,4 +93,32 @@
 }
 .krestik:hover{
   cursor: pointer;
+}
+@media screen and (max-width: 850px){
+  .modal_main{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+   
+  }
+}
+
+@media screen and (max-width: 500px){
+  .modal_main{
+   
+    width: 100;
+    margin-left: 10%;
+  }
+  .content img{
+    width: 64px;
+  }
+  .modal{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .modal_main{
+   
+  }
 }

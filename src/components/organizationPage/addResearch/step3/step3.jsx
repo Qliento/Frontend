@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from "./step3.module.css";
 import img from "./img/Rectangle 47.png";
 import { useDispatch, useSelector } from "react-redux";
-import {uploadResearchAction} from "../../../../redux/actions/organizationPage/action"
+import {dataStep2null, uploadResearchAction} from "../../../../redux/actions/organizationPage/action"
 import PostResearchModal from "./modal";
 
 const Step3 = ({ isStep3 }) => {
@@ -178,6 +178,7 @@ const Step3 = ({ isStep3 }) => {
       console.log(`${key}: ${value}`);
     }
     dispatch(uploadResearchAction(formData));
+    dispatch(dataStep2null())
   };
 
   const isData = () => {
