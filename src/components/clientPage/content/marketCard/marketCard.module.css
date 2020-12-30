@@ -153,6 +153,8 @@
   font-size: 18px;
   line-height: 22px;
   color: #ffffff;
+  text-align: center;
+  line-height: 42px;
 }
 .toBasket:hover {
   background: #ffffff;

@@ -55,9 +55,9 @@ const MarketCard = ({ data }) => {
             <span className={classes.newPrace}>{data.old_price} сом</span>
           </div>
           <div className={classes.blockBtn}>
-            {(language == 1 || language == undefined) && <button className={classes.toBasket} id={data.id} >Скачать</button>}
-            {language == 2 && <button className={classes.toBasket} id={data.id} >Download</button>}
-            {language == 3 && <button className={classes.toBasket} id={data.id} >Жүктөө</button>}
+            {(language == 1 || language == undefined) && <a className={classes.toBasket} id={data.id} href={data.demo} download='file'>Скачать</a>}
+            {language == 2 && <a download className={classes.toBasket} id={data.id} >Download</a>}
+            {language == 3 && <a download className={classes.toBasket} id={data.id} >Жүктөө</a>}
             <div className={classes.details}>
               {(language == 1 || language == undefined) && <span>Время покупки</span>}
               {language == 2 && <span>Purchase time</span>}

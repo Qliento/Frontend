@@ -29,8 +29,8 @@ function RegistrModal() {
           <div className={classes.blockText}>
           <span className={classes.descr}>
               {(language == 1 || language == undefined) && isModal === 1 &&  "Прошла успешно. На почту отправлена ссылка для подтверждения"}
-              {language == 2 && isModal === 1 &&  "Прошла успешно. На почту отправлена ссылка для подтверждения"}
-              {language == 3 && isModal === 1 &&  "Прошла успешно. На почту отправлена ссылка для подтверждения"}
+              {language == 2 && isModal === 1 &&  "Was successful. A confirmation link has been sent to the mail"}
+              {language == 3 && isModal === 1 &&  "Ийгиликтүү болду. Почтага ырастоочу шилтеме жөнөтүлдү"}
               {(language == 1 || language == undefined) && isModal === 2 &&  "Произошла ошибка попробуйте снова"}
               {language == 2 && isModal === 2 &&  "An error has occurred! Try again"}
               {language == 3 && isModal === 2 &&  "Ката кетти! Кайра аракет кылыңыз"}

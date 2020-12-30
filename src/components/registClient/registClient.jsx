@@ -204,7 +204,7 @@ const RegistClient = () => {
           <div className={classes.blockInput}>
             {(language == 1 || language == undefined) && <label>Пароль</label>}
             {language == 2 && <label>Password</label>}
-            {language == 3 && <label>Сыр соз</label>}
+            {language == 3 && <label>Сыр сөз</label>}
             <div className={classes.inputs_password_block}>
               <input
                 name="password"
@@ -259,7 +259,7 @@ const RegistClient = () => {
                 <span className={classes.error}>Passwords do not match</span>
               )}
             {language == 3 && err && (
-                <span className={classes.error}>Сырсөздөр дал келген жок</span>
+                <span className={classes.error}>Сыр сөздөр дал келген жок</span>
               )}
           </div>
           <div className={classes.blockChecket}>
