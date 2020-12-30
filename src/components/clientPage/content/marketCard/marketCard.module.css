@@ -153,6 +153,8 @@
   font-size: 18px;
   line-height: 22px;
   color: #ffffff;
+  text-align: center;
+  line-height: 42px;
 }
 .toBasket:hover {
   background: #ffffff;
@@ -192,6 +194,33 @@
   margin-top: 10px;
 }
 
-.details span:nth-child(2){
-  width: 40%;
+
+
+@media screen and (max-width: 1000px){
+  .link{
+    position: relative;
+  }
+  .marketCard{
+    margin-bottom: 240px;
+  }
+  .content{
+    position: absolute;
+    top: 221px;
+    width: 200%;
+  }
+  .img{
+    width: 100%;
+  }
+  .link{
+    width: 50%;
+  }
+  .blockAct{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .nameResearch span {
+    font-size: 15px;
+  }
 }

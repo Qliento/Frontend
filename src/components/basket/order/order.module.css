@@ -38,6 +38,9 @@
   line-height: 44px;
   color: #333333;
 }
+.text a{
+  color: var(--green);
+}
 .btn {
   background: #76b73e;
   border: 1px solid #76b73e ;
@@ -46,9 +49,6 @@
   line-height: 29px;
   color: #ffffff;
   margin-top: 0px !important;
-}
-a{
-  color: #1B8E3D;
 }
 .checkbox {
   width: 100px;
@@ -90,7 +90,7 @@ a{
     height: 159px;
 
   }
-  .text span, a{
+  .text span, .text a{
     font-size: 12px;
       }
 }

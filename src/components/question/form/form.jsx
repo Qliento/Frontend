@@ -64,13 +64,7 @@ const Form = () => {
             className={classes.input}
             placeholder="Название организации"
             name="name"
-            ref={register}
-          />
-          {errors.name && (
-            <span className={classes.error}>
-              Название огранизации меньше 2 символов
-            </span>
-          )}</>}
+          /></>}
           {language == 2 &&<>
             <label>Name of the organization</label>
           <input
@@ -78,15 +72,7 @@ const Form = () => {
             className={classes.input}
             placeholder="Name of the organization*"
             name="name"
-            ref={register({
-              validate: (name) => name && name.length > 2,
-            })}
-          />
-          {errors.name && (
-            <span className={classes.error}>
-              Less then 2 characters
-            </span>
-          )}</>}
+          /></>}
           {language == 3 &&<>
             <label>Уюм аты</label>
           <input
@@ -94,15 +80,7 @@ const Form = () => {
             className={classes.input}
             placeholder="Уюм аты*"
             name="name"
-            ref={register({
-              validate: (name) => name && name.length > 2,
-            })}
-          />
-          {errors.name && (
-            <span className={classes.error}>
-              2 белгиден кем
-            </span>
-          )}</>}
+          /></>}
         </div>
         <div className={classes.inputs}>
           <label>Email*</label>
