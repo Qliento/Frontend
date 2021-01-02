@@ -257,6 +257,15 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+  .blockStep{
+    width: 60%;
+  }
+  .step {
+    font-size: 12px;
+  }
+  .step11 {
+    font-size: 12px;
+  }
 }
 @media only screen and (max-width:410px){
 

@@ -3,11 +3,13 @@ import { useParams } from "react-router-dom";
 import EditModal from "../editResearch/editResearch";
 import classes from "./detailMarket.module.css";
 import Dropdown from "./dropdown";
+import Modal from "react-modal";
 import img1 from "./img/Rectangle 47.png";
 import Tabs1 from "./tabs/tabs";
+import ReactDOM from "react-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { detailResearch } from "../../../redux/actions/organizationPage/action";
-
+Modal.setAppElement("#root");
 const DetailMarket = () => {
   const [isClose, setIsClose] = useState(false);
   const [edit, setEdit] = useState(false);
@@ -257,7 +259,11 @@ const DetailMarket = () => {
           </div>
         </div>
       </div>
-      {edit && <EditModal edit={edit} changeState={(e) => setEdit(e)} />}
+      {edit == true &&
+        ReactDOM.createPortal(
+          <EditModal changeState={() => setEdit(false)} id={data.id} />,
+          document.getElementById("portal")
+        )}
     </>
   );
 };

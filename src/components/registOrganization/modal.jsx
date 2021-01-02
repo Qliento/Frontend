@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-import classes from "./regisrtOrganization.module.css";
+import classes from '../bePartner/modal.module.css';
 import {  useSelector } from "react-redux";
 import img1 from "./img/1.png"
 import img2 from "./img/2.png"
@@ -27,13 +27,13 @@ function RegistrModal() {
   const language = localStorage.getItem('lang');
 
   return (
-    <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
+    <Modal isOpen={isModal !== "" ? true:false} className={classes.modal_main}>
       <div className={classes.modal}>
-        {(language == 1 || language == undefined) && <span className={classes.title}>Регистрация</span>}
-        {language == 2 && <span className={classes.title}>Registration</span>}
-        {language == 3 && <span className={classes.title}>Каттоо</span>}
+        {isModal == 1 && (language == 1 || language == undefined) && <span className={classes.title}>Регистрация</span>}
+        {isModal == 1 && language == 2 && <span className={classes.title}>Registration</span>}
+        {isModal == 1 && language == 3 && <span className={classes.title}>Каттоо</span>}
         <div className={classes.content}>
-          <img alt="img" src={isModal ===1 ? img1 : img2}/>
+          <img alt="img" src={isModal == 1 ? img1 : img2}/>
           <div className={classes.blockText}>
           <span className={classes.descr}>
               {(language == 1 || language == undefined) && isModal === 1 &&  "Прошла успешно. На почту отправлена ссылка для подтверждения"}
@@ -45,7 +45,17 @@ function RegistrModal() {
           </span>
           </div>
         </div>
-        <Link to="/">OK</Link>
+        {
+                  isModal === 1 &&  
+                  <Link to="/"  >
+                    <span className={classes.ok}>OK</span>
+                  </Link>
+        }
+              {
+                  isModal === 2 &&  <div  >
+                  <span className={classes.ok}>OK</span>
+                </div>
+              }
       </div>
     </Modal>
   );

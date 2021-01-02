@@ -4,15 +4,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
-.blockAnalytic{
-    width: 100%;
-    height: 830px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.blockAnalytic {
+  width: 100%;
+  height: 830px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .blockImg {
   width: 47%;
@@ -27,7 +26,7 @@
   font-size: 36px;
   color: #333333;
 }
-.titleV{
+.titleV {
   display: none;
   font-size: 36px;
   color: #333333;
@@ -38,68 +37,78 @@
   color: #333333;
   margin-top: 50px;
 }
-.blockTitle{
+.blockTitle {
   max-height: 50%;
   min-height: 50%;
   overflow: hidden;
   width: 100%;
 }
-.blockDescr{
+.blockDescr {
   width: 100%;
   min-height: 70%;
   max-height: 70%;
   overflow: hidden;
 }
-.content{
-    height: 100%;
-    width: 47%;
-    display: flex;
-    flex-direction: column;
-    text-overflow: auto;
-    justify-content: space-between;
-    overflow: hidden;
-
+.content {
+  height: 100%;
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  text-overflow: auto;
+  justify-content: space-between;
+  overflow: hidden;
 }
 @media screen and (max-width: 1200px) {
-  .description{
-      font-size: 14px;
+  .description {
+    font-size: 14px;
   }
-  }
-  @media screen and (max-width: 908px) {
-    .analytic{
-      height: 300px;
-    }
-
-  }
-  @media screen and (max-width: 768px) {
-      .analytic{
-          height: 700px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin-top: 30px;
-      }
-      .blockAnalytic{
-        height: 800px;
-      }
-      .blockImg{
-          width: 100%;
-          height: 200px;
-      }
-      .content{
-          width: 100%;
-          height:450px;
-          margin-left: 0px;
-      }
-      .blockTitle{
-          display: none;
-      }
-.blockDescr{
-  margin-top: 50px;
 }
-      .titleV{
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-      }
-      }
+@media screen and (max-width: 908px) {
+  .analytic {
+    height: 300px;
+  }
+  .blockTitle {
+    max-height: 30%;
+    min-height: 30%;
+    overflow: hidden;
+    width: 100%;
+  }
+  .blockDescr {
+    width: 100%;
+    min-height: 70%;
+    max-height: 70%;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 768px) {
+  .analytic {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .blockAnalytic {
+    height: auto;
+  }
+  .blockImg {
+    width: 100%;
+    height: 200px;
+  }
+  .content {
+    width: 100%;
+    height: 450px;
+    margin-left: 0px;
+  }
+  .blockTitle {
+    display: none;
+  }
+  .blockDescr {
+    margin-top: 50px;
+  }
+  .titleV {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

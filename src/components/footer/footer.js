@@ -117,7 +117,7 @@ const Footer = () => {
         {arrContacts &&
           arrContacts.map((item) => {
             return (
-              <Link>
+              <Link key={item.id}>
                 <span>{item.info}</span>
               </Link>
             );

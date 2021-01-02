@@ -281,10 +281,12 @@ color: #000000;
   margin-top: 40px;
   }
   .blockBtn{
-    width: 200px;
+    width: auto;
+
   }
   .demo{
     width: 100%;
+    padding: 0px 10px;
   }
   .descrip span {
     font-size: 10px;

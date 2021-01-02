@@ -76,7 +76,7 @@ const Step1Ru = ({
       </div>
       <div className={classes.blockDropdown}>
         <div className={classes.dropdown}>
-          <span className={classes.dropdownTitle}>Категоря</span>
+          <span className={classes.dropdownTitle}>Категория</span>
           <Dropdown
             name="Выберите категорию"
             lang="ru"

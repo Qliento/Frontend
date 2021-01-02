@@ -6,7 +6,7 @@
   background: #e5e5e5;
 }
 .blockRegist {
-  width: 35%;
+  width: 450px;
   height: auto;
   margin-left: auto;
   margin-right: auto;
@@ -197,13 +197,11 @@ margin-top: 10px;
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 920px) {
-.blockRegist{
-  width: 50%;
-}
+@media screen and (max-width: 500px){
+  .regist{
+    padding-top: 30px;
   }
-  @media screen and (max-width: 760px) {
-    .blockRegist{
-      width: 100%;
-    }
-      }
+  .blockRegist {
+    width: 100%;
+  }
+}
