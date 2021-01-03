@@ -27,7 +27,7 @@ const Auth = () => {
     const responseFacebook = (response) => {
         dispatch(authSocialFace(response.accessToken))
       }
-      const onSuccess = (res) =>{
+    const onSuccess = (res) =>{
         dispatch(authSocial(res.tokenId))
     }
     const onFailure = (res) =>{
@@ -43,7 +43,8 @@ const Auth = () => {
     
     
         const authHandler = (err, data) => {
-          console.log(err, data)}
+          console.log(err, data)
+        }
 
     return(
     <div className={st.auth_bg}>

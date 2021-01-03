@@ -213,8 +213,9 @@ export function authSocialFace(token){
     await API.authSocialFace('client', token)
     .then(res => {
       if( res.status == 200){
-        localStorage.setItem('user', res.data.access);
+        localStorage.setItem('user', res.data.tokens.access);
         localStorage.setItem('type', 'client');
+        localStorage.setItem('auth', 'social');
         dispatch({ type: 'POSTED_SUCCES_AUTH'})
       }
     })
