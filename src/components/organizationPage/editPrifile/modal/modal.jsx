@@ -50,12 +50,12 @@ function UbdateModal() {
         </div>
         {
                   isModal === 1 &&  
-                  <Link to="/" onClick={updateClientAfter1} >
+                  <Link to="/" className={classes.ashka} onClick={updateClientAfter1} >
                     <span className={classes.ok}>OK</span>
                   </Link>
         }
               {
-                  isModal === 2 &&  <div onClick={updateClientAfter1} >
+                  isModal === 2 &&  <div onClick={updateClientAfter1} className={classes.ashka}>
                   <span className={classes.ok}>OK</span>
                 </div>
               }

@@ -275,11 +275,17 @@
   .addInput{
     font-size: 12px;
   }
+   .blockStep{
+    width: 50%;
+  }
   .fileName{
     font-size: 10px;
   }
   .contentTitle1{
     display: none;
+  }
+  .title{
+    font-size: 14px;
   }
   .contentTitleNone, .contentTitle{
     display: block;

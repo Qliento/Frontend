@@ -8,18 +8,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { seccesPost } from "../../../redux/actions/getQuestion/getQuestion";
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    height:"auto",
-    width:"40%",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
+
 
 Modal.setAppElement("#root");
 
@@ -34,7 +23,7 @@ const registSuccess=()=>{
   // const language = useSelector(state => state.langReducer.lang);
   const language = localStorage.getItem('lang');
   return (
-    <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
+    <Modal isOpen={isModal !== "" ? true:false} className={classes.modal_main}>
       <div className={classes.modal}>
         {(language == 1 || language == undefined) && <span className={classes.title}></span>}
         {language == 2 && <span className={classes.title}>Registration</span>}
@@ -54,12 +43,12 @@ const registSuccess=()=>{
         </div>
         {
                   isModal === 1 &&  
-                  <Link to="/" onClick={registSuccess} >
+                  <Link to="/" onClick={registSuccess} className={classes.ashka}>
                     <span className={classes.ok}>OK</span>
                   </Link>
         }
               {
-                  isModal === 2 &&  <div onClick={registSuccess} >
+                  isModal === 2 &&  <div onClick={registSuccess} className={classes.ashka}>
                   <span className={classes.ok}>OK</span>
                 </div>
               }

@@ -49,12 +49,12 @@ function ModalPassword() {
         </div>
         {
                   isModal === 1 &&  
-                  <Link to="/" onClick={changePasswordAfter1} >
+                  <Link to="/" className={classes.ashka} onClick={changePasswordAfter1} >
                     <span className={classes.ok}>OK</span>
                   </Link>
         }
               {
-                  isModal === 2 &&  <div onClick={changePasswordAfter1} >
+                  isModal === 2 &&  <div onClick={changePasswordAfter1}  className={classes.ashka}>
                   <span className={classes.ok}>OK</span>
                 </div>
               }
