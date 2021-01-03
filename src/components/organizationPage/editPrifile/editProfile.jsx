@@ -287,12 +287,12 @@ const EditProfile = ({ changeModal, onModalPassword, data, offModal }) => {
         </button>
         )}
         {language == 2 && (
-          <button type="submit" className={classes.saveBtn}>
+          <button type="submit" className={classes.saveBtn} onClick={() => {changeModal()}}>
             Change password
           </button>
         )}
         {language == 3 && (
-          <button type="submit" className={classes.saveBtn}>
+          <button type="submit" className={classes.saveBtn} onClick={() => {changeModal()}}>
             Сыр соз өзгөртүү
           </button>
         )}

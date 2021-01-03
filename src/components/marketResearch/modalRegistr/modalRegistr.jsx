@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import classes from "./modalregistr.module.css";
 import img from "./img/Frame 72 (2).png";
@@ -10,7 +9,6 @@ import { sendDemoVersion } from "../../../redux/actions/marketInreriorPage/marke
 import RegistrModalDemo from "./modal";
 
 const ModalRegist = ({ edit, changeState, idResearch }) => {
-  // const language = useSelector(state => state.langReducer.lang)
   const language = localStorage.getItem("lang");
   const { handleSubmit, register, errors } = useForm();
   const [isModal, SetIsModal] = useState(true);
@@ -34,28 +32,72 @@ const ModalRegist = ({ edit, changeState, idResearch }) => {
           </div>
           <div className={classes.wrapper}>
             <div className={classes.blockText}>
-              <span className={classes.title}>Вы не авторизованы</span>
-              <span className={classes.desc}>
+              {(language == 1 || language == undefined) && <>
+                <span className={classes.title}>Вы не авторизованы</span>
+                <span className={classes.desc}>
                 войдите или зарегистрируйтесь, чтобы скачать демоверсию
                 исследования
-              </span>
+                </span>
+              </>}
+              {language == 2 && <>
+                <span className={classes.title}>You are not authorized</span>
+                <span className={classes.desc}>
+                login or register to download a demo study
+                </span>
+              </>}
+              {language == 3 && <>
+                <span className={classes.title}>Каттоосуз</span>
+                <span className={classes.desc}>Изилдөөнүн демо версиясын жүктөп алуу үчүн кирүү же каттоо керек</span>
+              </>}
             </div>
-            <Link to="/auth" className={classes.auth}>
+            {(language == 1 || language == undefined) && <>
+              <Link to="/auth" className={classes.auth}>
               Войти
             </Link>
             <Link to="/registration" className={classes.regist}>
               Зарегистрироватся
             </Link>
+            </>}
+            {language == 2 && <>
+              <Link to="/auth" className={classes.auth}>
+              Login
+            </Link>
+            <Link to="/registration" className={classes.regist}>
+              Registration
+            </Link>
+            </>}
+            {language == 3 && <>
+              <Link to="/auth" className={classes.auth}>
+              Кирүү
+            </Link>
+            <Link to="/registration" className={classes.regist}>
+              Каттоо
+            </Link>
+            </>}
             <div className={classes.blockText2}>
-              <span className={classes.title}>Без регистрации</span>
-              <span className={classes.desc}>
+              {(language == 1 || language == undefined) && <>
+                <span className={classes.title}>Без регистрации</span>
+                <span className={classes.desc}>
                 Если у вас еще нет аккаунта и вы не хотите регистрироваться на
                 сайте, оставьте свою эл.почту, чтобы мы могли выслать вам
                 демоверсию исследования
-              </span>
+                </span>
+                </>}
+                {language == 2 && <>
+                <span className={classes.title}>Without registration</span>
+                <span className={classes.desc}>
+                If you do not have an account yet and do not want to register on the site, please leave your email so that we can send you a demo of the research
+                </span>
+                </>}
+                {language == 3 && <>
+                <span className={classes.title}>Каттоосуз</span>
+                <span className={classes.desc}>Эгер сизде азырынча аккаунтуңуз жок болсо жана сайтка катталгыңыз келбесе, анда электрондук почтаңызды калтырыңыз, ошондо биз сизге изилдөөнүн демо версиясын жөнөтө алабыз
+                </span>
+                </>}
+              
             </div>
             <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-              <div className={classes.blockInputs}>
+            {(language == 1 || language == undefined) && <><div className={classes.blockInputs}>
                 <span className={classes.inputTitle}>ФИО</span>
                 <input
                   name="name"
@@ -66,12 +108,41 @@ const ModalRegist = ({ edit, changeState, idResearch }) => {
                   })}
                 />
               </div>
-
               {errors.name && (
                 <span className={classes.error}>Не корректно велли данные</span>
-              )}
+              )}</>} 
+              {language == 2 && <><div className={classes.blockInputs}>
+                <span className={classes.inputTitle}>Full name</span>
+                <input
+                  name="name"
+                  className={classes.inputs}
+                  placeholder="name"
+                  ref={register({
+                    validate: (name) => name && name.length > 2,
+                  })}
+                />
+              </div>
+              {errors.name && (
+                <span className={classes.error}>Fill input</span>
+              )}</>} 
+              {language == 3 && <><div className={classes.blockInputs}>
+                <span className={classes.inputTitle}>Сиздин атыңыз</span>
+                <input
+                  name="name"
+                  className={classes.inputs}
+                  placeholder="Сиздин атыңыз"
+                  ref={register({
+                    validate: (name) => name && name.length > 2,
+                  })}
+                />
+              </div>
+              {errors.name && (
+                <span className={classes.error}>Талааны толтуруңуз</span>
+              )}</>} 
+              
               <div className={classes.blockInputs}>
-                <span className={classes.inputTitle}>Почта</span>
+                {(language == 1 || language == 3 || language == undefined) && <span className={classes.inputTitle}>Почта</span>}
+                {language == 2 && <span className={classes.inputTitle}>Email</span>}
                 <input
                   name="email"
                   className={classes.inputs}
@@ -86,11 +157,13 @@ const ModalRegist = ({ edit, changeState, idResearch }) => {
                   })}
                 />
               </div>
-              {errors.email && (
-                <span className={classes.error}>{errors.email.message}</span>
-              )}
+              {errors.email && language == 1 && (<span className={classes.error}>Неверный адрес электронной почты</span>)}
+              {errors.email && language == undefined && (<span className={classes.error}>Неверный адрес электронной почты</span>)}
+              {errors.email && language == 2 && (<span className={classes.error}>Fill input</span>)}
+              {errors.email && language == 3 && (<span className={classes.error}>Талааны толтуруңуз</span>)}
               <div className={classes.blockInputs}>
-                <span className={classes.inputTitle}>Телефон</span>
+                {(language == 1 || language == 3 || language == undefined) && <span className={classes.inputTitle}>Телефон</span>}
+                {language == 2 && <span className={classes.inputTitle}>Phone</span>}
                 <input
                   name="phone"
                   className={classes.inputs}
@@ -101,12 +174,18 @@ const ModalRegist = ({ edit, changeState, idResearch }) => {
                 />
               </div>
 
-              {errors.phone && (
-                <span className={classes.error}>Не корректно велли данные</span>
-              )}
-              <button type="submit" className={classes.btnSubmit}>
+              {language == 1 && errors.phone && (<span className={classes.error}>Не корректно велли данные</span>)}
+              {language == 2 && errors.phone && (<span className={classes.error}>Fill input</span>)}
+              {language == 3 && errors.phone && (<span className={classes.error}>Талааны толтуруңуз</span>)}
+              {(language == 1 || language == undefined) &&<button type="submit" className={classes.btnSubmit}>
                 Отправить на почту
-              </button>
+              </button>}
+              {language == 2 &&<button type="submit" className={classes.btnSubmit}>
+              Send by mail
+              </button>}
+              {language == 3 &&<button type="submit" className={classes.btnSubmit}>
+              Почтага жөнөтүү
+              </button>}
             </form>
           </div>
         </div>
