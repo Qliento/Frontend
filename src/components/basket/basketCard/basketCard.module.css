@@ -82,6 +82,8 @@
   width: 100%;
   height: 25px;
   display: flex;
+  flex-wrap: wrap;
+  overflow-y: hidden;
   flex-direction: row;
   justify-content: flex-start;
 }
@@ -94,6 +96,7 @@
   align-items: center;
   padding-left: 8px;
   font-size: 14px;
+  margin-left: 10px;
   color: #ffffff;
   background: #bdbdbd;
   border-color: #ffffff;

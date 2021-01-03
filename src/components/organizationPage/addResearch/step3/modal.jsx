@@ -11,18 +11,18 @@ import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { Spiner } from "../../../../redux/actions/organizationPage/action";
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    height: "auto",
-    width: "40%",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
+// const customStyles = {
+//   content: {
+//     top: "50%",
+//     left: "50%",
+//     right: "auto",
+//     bottom: "auto",
+//     height: "auto",
+//     width: "40%",
+//     marginRight: "-50%",
+//     transform: "translate(-50%, -50%)",
+//   },
+// };
 
 Modal.setAppElement("#root");
 
@@ -34,10 +34,11 @@ function PostResearchModal() {
   const secces = () => {dispatch(Spiner(""))};
 
   return (
-    <Modal isOpen={isModal !== "" ? true : false} style={customStyles}>
+    <Modal isOpen={isModal !== "" ? true : false} className={classes.modal_main}>
       {isModal == 0 ? (
         <div className={classes.modal1}>
           <CircularIndeterminate />
+          <span className={classes.textLoad}>Загрузка...</span>
         </div>
       ) : (
         <></>

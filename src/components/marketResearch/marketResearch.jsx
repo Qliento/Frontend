@@ -14,7 +14,7 @@ const MarketResearch = ({ filter }) => {
   // const language = useSelector(state => state.langReducer.lang)
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
+  }, [filter])
   const language = localStorage.getItem('lang');
   const [sort1, setSort1] = useState(false);
   const [sort2, setSort2] = useState(false);

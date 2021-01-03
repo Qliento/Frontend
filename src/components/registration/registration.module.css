@@ -84,3 +84,18 @@
     width: 90%;
     height: 42px;
 }
+@media only screen and (max-width:1000px){
+  .blockRegist{
+  width: 50%;
+  }
+}
+@media only screen and (max-width:800px){
+  .blockRegist{
+  width: 80%;
+  }
+}
+@media only screen and (max-width:500px){
+  .blockRegist{
+    width: 100%;
+    }
+}

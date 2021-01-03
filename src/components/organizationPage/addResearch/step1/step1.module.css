@@ -195,6 +195,15 @@
   .input1, .inputDescrip{
     font-size: 14px;
   }
+  .blockStep{
+    width: 60%;
+  }
+  .step {
+    font-size: 12px;
+  }
+  .step11 {
+    font-size: 12px;
+  }
 }
 
 

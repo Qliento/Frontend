@@ -10,6 +10,14 @@
     border-radius: 10px;
     color: #fff;
   }
+  .modal_main{
+    border: 1px solid #cacaca;
+    background-color: #fff;
+    width: 40%;
+    margin-left: calc(50% - 20%);
+    margin-top: 15%;
+    padding: 30px;
+  }
   .content{
     margin-top: 40px;
     display: flex;
@@ -21,4 +29,28 @@
   .blockText{
     width: 50%;
     height: auto;
+  }
+  @media screen and (max-width: 850px){
+    .modal_main{
+      width: 60%;
+      margin-left: 20%;
+      margin-top: 25%;
+    }
+  }
+
+  @media screen and (max-width: 500px){
+    .modal_main{
+      margin-top: 40%;
+      width: 80%;
+      margin-left: 10%;
+    }
+    .content img{
+      width: 64px;
+    }
+  }
+
+  @media screen and (max-width: 400px){
+    .modal_main{
+      margin-top: 65%;
+    }
   }

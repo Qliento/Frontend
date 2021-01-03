@@ -76,6 +76,7 @@ const ResearchCard = ({ data }) => {
               <button
                 className={classes.toBasket}
                 onClick={() => setEdit(true)}
+                disabled={(data&&data.status==4) ? false:true}
               >
                 Редактировать
               </button>
@@ -84,6 +85,7 @@ const ResearchCard = ({ data }) => {
               <button
                 className={classes.toBasket}
                 onClick={() => setEdit(true)}
+                disabled={(data&&data.status==4) ? false:true}
               >
                 Edit
               </button>
@@ -92,6 +94,7 @@ const ResearchCard = ({ data }) => {
               <button
                 className={classes.toBasket}
                 onClick={() => setEdit(true)}
+                disabled={(data&&data.status==4) ? false:true}
               >
                 Түзөтүү
               </button>
@@ -201,6 +204,7 @@ const ResearchCard = ({ data }) => {
               <button
                 className={classes.toBasket}
                 onClick={() => setEdit(true)}
+                disabled={(data&&data.status==4) ? false:true}
               >
                 Редактировать
               </button>
@@ -209,6 +213,7 @@ const ResearchCard = ({ data }) => {
               <button
                 className={classes.toBasket}
                 onClick={() => setEdit(true)}
+                disabled={(data&&data.status==4) ? false:true}
               >
                 Edit
               </button>
@@ -217,6 +222,7 @@ const ResearchCard = ({ data }) => {
               <button
                 className={classes.toBasket}
                 onClick={() => setEdit(true)}
+                disabled={(data&&data.status==4) ? false:true}
               >
                 Түзөтүү
               </button>

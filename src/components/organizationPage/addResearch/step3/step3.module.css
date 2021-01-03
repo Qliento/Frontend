@@ -48,12 +48,21 @@
   justify-content: space-between;
   margin-bottom: 40px;
 }
+.modal_main{
+  border: 1px solid #cacaca;
+  background-color: #fff;
+  width: 40%;
+  margin-left: calc(50% - 20%);
+  margin-top: 15%;
+  padding: 30px;
+}
 .modal1{
   width: 100%;
   height: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .modalSeccess{
   width: 100%;
@@ -192,6 +201,28 @@
     font-size: 16px;
   }
 }
+@media screen and (max-width: 850px){
+    .modal_main{
+      width: 60%;
+      margin-left: 20%;
+      margin-top: 25%;
+    }
+  }
+
+  @media screen and (max-width: 500px){
+    .modal_main{
+      margin-top: 40%;
+      width: 80%;
+      margin-left: 10%;
+    }
+
+  }
+
+  @media screen and (max-width: 400px){
+    .modal_main{
+      margin-top: 65%;
+    }
+  }
 @media only screen and (max-width:720px){
   .content {
     margin-top: 40px;

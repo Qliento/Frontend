@@ -3,7 +3,8 @@
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  margin-top: 45%;
+top: 10px;
+  position: absolute;
   height: auto;
   padding: 45px;
 }
@@ -152,4 +153,10 @@
 .error{
   color: red;
   font-size: 11px;
+}
+@media only screen and (max-width:440px)
+{
+  .form{
+    width: 100%;
+  }
 }

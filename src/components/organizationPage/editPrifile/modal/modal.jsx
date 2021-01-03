@@ -13,18 +13,7 @@ const customStyles = {
     position: 'fixed',
     zIndex: 10
   },
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    height:"auto",
-    width:"40%",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    position: 'fixed',
-    zIndex: '10'
-  },
+
 };
 
 
@@ -41,7 +30,7 @@ function UbdateModal() {
   // const language = useSelector(state => state.langReducer.lang)
   const language = localStorage.getItem('lang');
   return (
-    <Modal isOpen={isModal !== "" ? true:false} style={customStyles}>
+    <Modal isOpen={isModal !== "" ? true:false} style={customStyles} className={classes.modal_main}>
       <div className={classes.modal}>
         {isModal == 1 && (language == 1 || language == undefined) && <span className={classes.title}>Поздравляю</span>}
         {isModal == 1 && language == 2 && <span className={classes.title}>Congratulations</span>}
@@ -61,7 +50,7 @@ function UbdateModal() {
         </div>
         {
                   isModal === 1 &&  
-                  <Link to="/organization-page" onClick={updateClientAfter1} >
+                  <Link to="/" onClick={updateClientAfter1} >
                     <span className={classes.ok}>OK</span>
                   </Link>
         }

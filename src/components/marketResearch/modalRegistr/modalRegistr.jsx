@@ -55,7 +55,7 @@ const ModalRegist = ({ edit, changeState, idResearch }) => {
               Войти
             </Link>
             <Link to="/registration" className={classes.regist}>
-              Зарегистрироватся
+              Зарегистрироваться
             </Link>
             </>}
             {language == 2 && <>

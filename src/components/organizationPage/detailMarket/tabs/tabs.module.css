@@ -99,7 +99,16 @@
     height: 400px;
   }
 }
-@media only screen and(max-width:500px){
+@media only screen and (max-width:500px){
+  .tab, .activeTab{
+    font-size: 12px;
+    width: 33.3%;
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .contentText span {
     font-size: 12px;
     color: #000000;
@@ -111,4 +120,5 @@
   .contentBtn{
     font-size: 14px;
   }
+
 }

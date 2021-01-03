@@ -89,7 +89,7 @@ const EditPassword = ({ edit, changeState2,offModal }) => {
               />
             </div>
             {errors.old_password && (<>
-              {(language == 1 || language == undefined) && <span className={classes.error}>Не корректно велли данные</span>}
+              {(language == 1 || language == undefined) && <span className={classes.error}>Не корректно ввели данные</span>}
               {language == 2 && <span className={classes.error}>Data incorrectly entered</span>}
               {language == 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
             </>)}
@@ -128,7 +128,7 @@ const EditPassword = ({ edit, changeState2,offModal }) => {
               />
             </div>
             {errors.new_password && (<>
-              {(language == 1 || language == undefined) && <span className={classes.error}>Не корректно велли данные</span>}
+              {(language == 1 || language == undefined) && <span className={classes.error}>Не корректно ввели данные</span>}
               {language == 2 && <span className={classes.error}>Data incorrectly entered</span>}
               {language == 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
             </>)}
@@ -167,7 +167,7 @@ const EditPassword = ({ edit, changeState2,offModal }) => {
               />
             </div>
             {errors.password_check && (<>
-              {(language == 1 || language == undefined) && <span className={classes.error}>Не корректно велли данные</span>}
+              {(language == 1 || language == undefined) && <span className={classes.error}>Не корректно ввели данные</span>}
               {language == 2 && <span className={classes.error}>Data incorrectly entered</span>}
               {language == 3 && <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>}
             </>)}

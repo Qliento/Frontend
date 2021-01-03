@@ -34,8 +34,9 @@ top: -38px;
     height: auto;
   }
  }
- @media only screen and (max-width:550px){
+ @media only screen and (max-width:768px){
   .blockNews{
       margin-top: 100px;
+      height: 700px;
   }
 }
