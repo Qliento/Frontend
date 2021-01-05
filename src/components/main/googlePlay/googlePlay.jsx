@@ -3,6 +3,7 @@ import classes from "./googlePlay.module.css";
 import phone from "./img/phone.png";
 import google from "./img/google-play-badge 1.png";
 import img1 from "./img/1.png";
+import img2 from "./img/phoneMobi.png"
 
 const GooglePlay = ({ data }) => {
   let image;
@@ -13,6 +14,7 @@ const GooglePlay = ({ data }) => {
   return (
     <div className={classes.googlePlay}>
       <img alt="img" src={image ? data.image : phone} className={classes.img} />
+      <img alt="img" src={img2} className={classes.img2}/>
       <div className={classes.blockText}>
         <span className={classes.title}>
           {data && data.header ? data.header : null}
