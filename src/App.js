@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import Main from "./components/main/main";
 import Auth from "./components/auth/auth";
@@ -22,9 +23,25 @@ import RecoveryPassword from "./components/recoveryPassword/recoveryPassword";
 import Agreement from "./components/agreement/agreement";
 import OrgPage from "./components/organizationPage/organizationPage";
 import ClientPage from './components/clientPage/clientPage';
+import {refreshToken} from './redux/actions/actions';
 
 function App() {
-  // localStorage.setItem('lang', 1)
+  const dispatch = useDispatch();
+  const time = new Date().getDate();
+  const timeToken = localStorage.getItem('time');
+  const refresh = localStorage.getItem('refresh');
+  useEffect(() =>{
+    if(timeToken != undefined){
+      if(time != timeToken){
+        dispatch(refreshToken(refresh));
+      }else{
+        console.log(2);
+      }
+    }
+    else{
+      console.log('работает');
+    }
+  })
   return (
     <div className="App">
       <Header />

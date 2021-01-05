@@ -207,6 +207,10 @@ export default {
     auth_token : token,
     user: user
   }),
+  refreshToken: (token) =>
+    http.post(`/auth/jwt/refresh/`, {
+      'refresh' : token,
+    }),
 };
 
 

@@ -43,7 +43,8 @@ const Auth = () => {
     
     
         const authHandler = (err, data) => {
-          console.log(err, data)
+          console.log(err, data);
+          dispatch(authSocial(data.oauth_token))
         }
 
     return(

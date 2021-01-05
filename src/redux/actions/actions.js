@@ -265,6 +265,9 @@ export function createToken(email, password){
       if( res.status == 200){
         localStorage.setItem('user', res.data.access);
         localStorage.setItem('type', res.data.user);
+        localStorage.setItem('refresh', res.data.refresh);
+        const time = new Date().getDate();
+        localStorage.setItem('time', time);
         dispatch({ type: 'POSTED_SUCCES_AUTH'})
       }
     })
@@ -274,6 +277,21 @@ export function createToken(email, password){
     )
 }}
 
+export function refreshToken(token) {
+  return async (dispatch)=>{
+    await API.refreshToken(token)
+    .then(res => {
+      if( res.status == 200){
+        localStorage.setItem('user', res.data.access);
+        const time = new Date().getDate();
+        localStorage.setItem('time', time);
+      }
+    })
+    .catch(err =>{
+    }
+    )
+}
+}
 
 export function changePasswordAfter() {
   return {
