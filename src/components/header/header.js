@@ -15,6 +15,8 @@ const Header = () => {
   const logout = () =>{
     localStorage.removeItem('user');
     localStorage.removeItem('auth');
+    localStorage.removeItem('time');
+    localStorage.removeItem('refresh');
     window.location.reload();
   }
   const [burger, setBurger] = useState(false);
@@ -140,7 +142,7 @@ const Header = () => {
                   fill="#090509"
                 />
               </svg>
-              <span className={st.basket_amount}>{basket[0] && basket[0].ordered_items.length}</span>
+              <span className={st.basket_amount}>{basket[0] && basket[0].ordered_items ? basket[0].ordered_items.length : 0}</span>
             </Link>
           ) : (
             <Link to="/auth">
