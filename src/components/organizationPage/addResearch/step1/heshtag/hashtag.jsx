@@ -48,18 +48,49 @@ const CreatableInputOnly = ({ changeHashtag, lang, data }) => {
 
   return (
     <div className="hashtag">
-      <CreatableSelect
-        components={components}
-        inputValue={inputValue}
-        isClearable
-        isMulti
-        menuIsOpen={false}
-        onChange={handleChange}
-        onInputChange={handleInputChange}
-        onKeyDown={handleKeyDown}
-        placeholder="Какие слова описывают ваше исследование"
-        value={value}
-      />
+    {
+      lang == 'en' && <CreatableSelect
+      components={components}
+      inputValue={inputValue}
+      isClearable
+      isMulti
+      menuIsOpen={false}
+      onChange={handleChange}
+      onInputChange={handleInputChange}
+      onKeyDown={handleKeyDown}
+      placeholder="Which words describe your research"
+      value={value}
+    />
+    }
+    {
+      lang == 'ru' && <CreatableSelect
+      components={components}
+      inputValue={inputValue}
+      isClearable
+      isMulti
+      menuIsOpen={false}
+      onChange={handleChange}
+      onInputChange={handleInputChange}
+      onKeyDown={handleKeyDown}
+      placeholder="Какие слова описывают ваше исследование"
+      value={value}
+    />
+    }
+    {
+      lang == 'kg' && <CreatableSelect
+      components={components}
+      inputValue={inputValue}
+      isClearable
+      isMulti
+      menuIsOpen={false}
+      onChange={handleChange}
+      onInputChange={handleInputChange}
+      onKeyDown={handleKeyDown}
+      placeholder="Изилдөөңүздү сүрөттөгөн сөздөр"
+      value={value}
+    />
+    }
+      
     </div>
   );
 };
