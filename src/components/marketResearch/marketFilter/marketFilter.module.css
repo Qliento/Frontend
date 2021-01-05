@@ -219,3 +219,8 @@ display: none;
     display: none;
   }
 }
+@media only screen and (max-width:420px){
+  .inputSearch1{
+    font-size: 10px;
+  }
+}

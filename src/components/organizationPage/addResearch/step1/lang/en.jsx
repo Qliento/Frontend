@@ -4,6 +4,7 @@ import classes from "../step1.module.css";
 import { Link } from "react-router-dom";
 import Country from "../country/country";
 import CreatableInputOnly from "../heshtag/hashtag";
+import { useSelector } from "react-redux";
 
 const Step1En = ({
   inputValue,
@@ -18,6 +19,7 @@ const Step1En = ({
   dataList,
   subCategory
 }) => {
+  const data1 = useSelector((state) => state.clientData.data.data);
   return (
     <div className={classes.form}>
       <div className={classes.blockTitle}>
@@ -69,7 +71,7 @@ const Step1En = ({
       <div className={classes.blockInput}>
         <span className={classes.inputTitle}>About company</span>
         <div className={classes.blockDescrip}>
-          <span>About Company</span>
+          <span>{data1 && data1.about_me}</span>
         </div>
       </div>
       <div className={classes.blockDropdown}>

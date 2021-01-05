@@ -222,6 +222,18 @@
     .modal_main{
       margin-top: 65%;
     }
+    .blockStep{
+      width: 50%;
+    }
+    .title{
+      font-size: 14px;
+    }
+    .step {
+      font-size: 12px;
+    }
+    .step11 {
+      font-size: 12px;
+    }
   }
 @media only screen and (max-width:720px){
   .content {

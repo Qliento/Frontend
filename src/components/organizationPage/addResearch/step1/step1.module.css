@@ -196,13 +196,16 @@
     font-size: 14px;
   }
   .blockStep{
-    width: 60%;
+    width: 50%;
   }
   .step {
     font-size: 12px;
   }
   .step11 {
     font-size: 12px;
+  }
+  .title{
+    font-size: 14px;
   }
 }
 
