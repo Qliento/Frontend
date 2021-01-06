@@ -7,6 +7,7 @@ import PostResearchModal from "./modal";
 
 const Step3 = ({ isStep3 }) => {
   let dispatch=useDispatch();
+  const language = localStorage.getItem('lang');
   const [data, setData] = useState({
     photo: null,
     price: null,
@@ -200,15 +201,26 @@ const Step3 = ({ isStep3 }) => {
     <div className={classes.step3}>
       <div className={classes.form}>
         <div className={classes.blockTitle}>
-          <span className={classes.title}>Исследование</span>
+          {(language == 1 || language == undefined) && <span className={classes.title}>Исследование</span>}
+          {language == 2 && <span className={classes.title}>Research</span>}
+          {language == 3 && <span className={classes.title}>Изилдөө</span>}
           <div className={classes.blockStep}>
-            <span className={classes.step11} onClick={() => isStep3(1)}>
-              Шаг 1
-            </span>
-            <span className={classes.step11} onClick={() => isStep3(2)}>
-              Шаг 2
-            </span>
+          {(language == 1 || language == undefined) && <>
+            <span className={classes.step11} onClick={() => isStep3(1)}>Шаг 1</span>
+            <span className={classes.step11} onClick={() => isStep3(2)}>Шаг 2</span>
             <span className={classes.step11}>Шаг 3</span>
+          </>}
+          {language == 2 && <>
+            <span className={classes.step11} onClick={() => isStep3(1)}>Step 1</span>
+            <span className={classes.step11} onClick={() => isStep3(2)}>Step 2</span>
+            <span className={classes.step11}>Step 3</span>
+          </>}
+          {language == 3 && <>
+            <span className={classes.step11} onClick={() => isStep3(1)}>Кадам 1</span>
+            <span className={classes.step11} onClick={() => isStep3(2)}>Кадам 2</span>
+            <span className={classes.step11}>Кадам 3</span>
+          </>}
+            
           </div>
         </div>
         <div className={classes.content}>
@@ -216,14 +228,38 @@ const Step3 = ({ isStep3 }) => {
           <div className={classes.rightBlock}>
             <div>
               <div className={classes.blockDescrip}>
-                <span className={classes.descripTitle}>Название</span>
+                {(language == 1 || language == undefined) && <>
+                  <span className={classes.descripTitle}>Название</span>
                 <span className={classes.descrip}>
                   {data.photo ? data.photo.name : "Название документа"}
                 </span>
+                </> }
+                {language == 2 && <>
+                  <span className={classes.descripTitle}>Name</span>
+                <span className={classes.descrip}>
+                  {data.photo ? data.photo.name : "Name of the document"}
+                </span>
+                </> }
+                {language == 3 && <>
+                  <span className={classes.descripTitle}>Аты</span>
+                <span className={classes.descrip}>
+                  {data.photo ? data.photo.name : "Документтин аталышы"}
+                </span>
+                </> }
               </div>
               <div className={classes.blockDescrip2}>
-                <span className={classes.descripTitle}>Примечание</span>
+                {(language == 1 || language == undefined) && <>
+                  <span className={classes.descripTitle}>Примечание</span>
                 <span className={classes.descrip}>форматы .JPEG .JPG</span>
+                </>}
+                {language == 2 && <>
+                  <span className={classes.descripTitle}>Notice</span>
+                <span className={classes.descrip}>formats .JPEG .JPG</span>
+                </>}
+                {language == 3 && <>
+                  <span className={classes.descripTitle}>Эскертүү</span>
+                <span className={classes.descrip}>.JPEG .JPG форматтары</span>
+                </>}
               </div>
             </div>
             <input
@@ -233,22 +269,21 @@ const Step3 = ({ isStep3 }) => {
               type="file"
               id="input__photo"
             ></input>
-            {data.photo ? (
-              <button
-                className={classes.btnDelete}
-                onClick={() => deletePhoto()}
-              >
-                Удалить
-              </button>
-            ) : (
-              <label for="input__photo" className={classes.btn}>
-                Загрузить
-              </label>
-            )}
+            {data.photo ? (<>
+              {(language == 1 || language == undefined) && <button className={classes.btnDelete} onClick={() => deletePhoto()}>Удалить</button>}
+              {language == 2 && <button className={classes.btnDelete} onClick={() => deletePhoto()}>Delete</button>}
+              {language == 3 && <button className={classes.btnDelete} onClick={() => deletePhoto()}>Очүрүү</button>}
+            </>) : (<>
+              {(language == 1 || language == undefined) && <label for="input__photo" className={classes.btn}>Загрузить</label>}
+              {language == 2 && <label for="input__photo" className={classes.btn}>Download</label>}
+              {language == 3 && <label for="input__photo" className={classes.btn}>Жүктөө</label>}
+            </>)}
           </div>
         </div>
-        <span className={classes.titlePrice}>Цена</span>
-        <div className={classes.bottomBlock}>
+        {(language == 1 || language == undefined) && <span className={classes.titlePrice}>Цена</span>}
+        {language == 2 && <span className={classes.titlePrice}>Price</span>}
+        {language == 3 && <span className={classes.titlePrice}>Баа</span>}
+        {(language == 1 || language == undefined) && <div className={classes.bottomBlock}>
           <input
             className={classes.inputPrice}
             type="text"
@@ -259,7 +294,31 @@ const Step3 = ({ isStep3 }) => {
           <button className={classes.btn2} onClick={() => isData()}>
             Оформить
           </button>
-        </div>
+        </div>}
+        {language == 2 && <div className={classes.bottomBlock}>
+          <input
+            className={classes.inputPrice}
+            type="text"
+            placeholder="price"
+            value={data.price}
+            onChange={(e) => handleInputChange(e)}
+          />
+          <button className={classes.btn2} onClick={() => isData()}>
+            Checkout
+          </button>
+        </div>}
+        {language == 3 && <div className={classes.bottomBlock}>
+          <input
+            className={classes.inputPrice}
+            type="text"
+            placeholder="Баа"
+            value={data.price}
+            onChange={(e) => handleInputChange(e)}
+          />
+          <button className={classes.btn2} onClick={() => isData()}>
+              Каттоо
+          </button>
+        </div>}
       </div>
     </div>
 <PostResearchModal/>
