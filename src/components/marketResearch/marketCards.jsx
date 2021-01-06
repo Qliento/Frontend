@@ -13,7 +13,7 @@ const MarketCards = ({ params, sort1, sort2 ,filter}) => {
 
   const numberKeys = Object.keys(params).length;
   const dispatch = useDispatch();
-
+  const language = localStorage.getItem('lang');
   let arrResearch = useSelector((state) => state.mainResultSearch.researchList);
 console.log(params)
   useEffect(() => {
@@ -56,7 +56,7 @@ const addFlyEfyf = () => {
     if (numberKeys === 0 ) {
       dispatch(allResearch());
     }
-  }, [params, sort1, sort2]);
+  }, [params, sort1, sort2,language]);
 
   return (
     <>
