@@ -82,10 +82,7 @@ console.log(dataList)
     } else {
       setTriger(false);
     }
-
-    console.log(count);
   };
-  console.log(data_en);
   const changeLang = (e) => {
     setLang(e);
   };
@@ -111,7 +108,6 @@ console.log(dataList)
   };
 
   const changeData = (e, r) => {
-    console.log(e);
    
     if (dataList.Category) {
       setSubCategory(dataList.Category.filter((item) => {
@@ -171,7 +167,7 @@ console.log(dataList)
       setErrHashtag(true);
     }
   };
-  console.log(triger);
+
   const isModal = (is) => {
     isHashtag();
     let arr = [];
@@ -203,7 +199,7 @@ console.log(dataList)
       }
     }
   };
-  console.log(objErr);
+
   const further = () => {
     const arrLang1 = [];
 

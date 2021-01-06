@@ -48,10 +48,10 @@ const Dropdown = ({ name,lang,changeData,dataSubRu ,dataList,subCategory}) => {
   
     }
     if(lang==="kg"){
-      if(name==="Выберите категорию"){
+      if(name==='Категория'){
         changeData(e,"category_kg")
       }
-      if(name==="Выберите подкатегорию"){
+      if(name==="Подкатегориялар"){
         changeData(e,"subCategory_kg")
       
       }
@@ -60,15 +60,16 @@ const Dropdown = ({ name,lang,changeData,dataSubRu ,dataList,subCategory}) => {
   
     }
     if(lang==="en"){
-      if(name==="Выберите категорию"){
+      if(name==="Choose category"){
         changeData(e,"category_en")
       }
-      if(name==="Выберите подкатегорию"){
+      if(name==="Choose subcategory"){
         changeData(e,"subCategory_en")
       }
     }
  
   };
+  console.log(subCategory)
   return (
     <div className="dropdown1">
       <Select
