@@ -10,7 +10,7 @@ const options = [
   { value: "vanilla", label: "Vanilla" },
 ];
 
-const Dropdown = ({ name,lang,changeData,dataSubRu ,dataList,subCategory}) => {
+const Dropdown = ({ name,lang,changeData,dataSubRu ,dataList,subCategory,mainCategory}) => {
 
   let arr = [];
   
@@ -33,7 +33,7 @@ const Dropdown = ({ name,lang,changeData,dataSubRu ,dataList,subCategory}) => {
         };
       });
     }
-  
+
 
   const chengeData = (e) => {
     if(lang==="ru"){
@@ -41,7 +41,7 @@ const Dropdown = ({ name,lang,changeData,dataSubRu ,dataList,subCategory}) => {
         changeData(e,"category")
       }
       if(name==="Выберите подкатегорию"){
-        changeData(e,"subCategory")
+        changeData(e,"subCategory1")
         console.log(e)
       }
 
@@ -49,10 +49,10 @@ const Dropdown = ({ name,lang,changeData,dataSubRu ,dataList,subCategory}) => {
     }
     if(lang==="kg"){
       if(name==='Категория'){
-        changeData(e,"category_kg")
+        changeData(e,"category")
       }
       if(name==="Подкатегориялар"){
-        changeData(e,"subCategory_kg")
+        changeData(e,"subCategory1")
       
       }
       
@@ -61,15 +61,15 @@ const Dropdown = ({ name,lang,changeData,dataSubRu ,dataList,subCategory}) => {
     }
     if(lang==="en"){
       if(name==="Choose category"){
-        changeData(e,"category_en")
+        changeData(e,"category")
       }
       if(name==="Choose subcategory"){
-        changeData(e,"subCategory_en")
+        changeData(e,"subCategory1")
       }
     }
  
   };
-  console.log(subCategory)
+  console.log(dataSubRu)
   return (
     <div className="dropdown1">
       <Select

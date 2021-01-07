@@ -57,19 +57,10 @@ const Step3 = ({ isStep3 }) => {
       //console.log(researchData.data.subCategory)
       let arr = [];
       country =
-        (researchData.dataStep1.data.country &&
-          researchData.dataStep1.data.country
+        (researchData.dataStep1.mainCountry &&
+          researchData.dataStep1.mainCountry
             .map((item) => item.value)
-            .join(", ")) ||
-        (researchData.dataStep1.dataKg.country_kg &&
-          researchData.dataStep1.dataKg.country_kg
-            .map((item) => item.value)
-            .join(", ")) ||
-        (researchData.dataStep1.data_en.country_en &&
-          researchData.dataStep1.data_en.country_en
-            .map((item) => item.value)
-            .join(", "));
-
+            .join(", "))
             hashtags =
             (researchData.dataStep1.hashtag 
                 .map((item) => item.value)
@@ -161,12 +152,8 @@ const Step3 = ({ isStep3 }) => {
     );
     formData.append(
       "category",
-      (researchData.dataStep1.data.subCategory &&
-        researchData.dataStep1.data.subCategory.id) ||
-        (researchData.dataStep1.dataKg.subCategory_kg &&
-          researchData.dataStep1.dataKg.subCategory_kg.id) ||
-        (researchData.dataStep1.data_en.subCategory_en &&
-          researchData.dataStep1.data_en.subCategory_en.id)
+      (researchData.dataStep1.mainCategory.subCategory1.id &&
+        researchData.dataStep1.mainCategory.subCategory1.id)
     );
 
     formData.append("hashtag", hashtags);

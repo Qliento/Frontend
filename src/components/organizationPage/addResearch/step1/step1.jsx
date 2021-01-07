@@ -23,37 +23,36 @@ const Step1 = ({ langChange }) => {
   const [hashtag, setHashtag] = useState([]);
   const [errHashtag, setErrHashtag] = useState();
   const [subCategory,setSubCategory]= useState([])
+  const [errCategory,setErrCategory]= useState()
+  const [errSubCategory,setErrSubCategory]= useState()
+  const [mainCountry,setMainCountry]=useState()
+  const [errCountry,setErrCountry]=useState()
+  const [mainCategory,setMainCategory]= useState({
+    category:null,
+    subCategory1:null
+  })
   const [data, setData] = useState({
     name: null,
     description: null,
-    category: null,
-    subCategory: null,
-    country: null,
   });
   const [dataKg, setDataKg] = useState({
     name_kg: null,
     description_kg: null,
-    category_kg: null,
-    subCategory_kg: null,
-    country_kg: null,
   });
   const [data_en, setData_en] = useState({
     name_en: null,
     description_en: null,
-    category_en: null,
-    subCategory_en: null,
-    country_en: null,
   });
   const dispatch = useDispatch();
   const dataList = useSelector((state) => state.FilterMarket.listData);
   useEffect(() => {
     checkForm();
     dispatch(listDataFilter());
-    dispatch(dataStep1({ data, dataKg, data_en, hashtag }));
-  }, [data, dataKg, data_en, hashtag]);
+    dispatch(dataStep1({ data, dataKg, data_en, hashtag,mainCategory,mainCountry }));
+  }, [data, dataKg, data_en, hashtag,mainCategory,mainCountry]);
   let count = 0;
-console.log(dataList)
-
+console.log(data.category)
+console.log(mainCountry)
   const checkForm = () => {
     if (lang === 1) {
       for (const item in data) {
@@ -77,7 +76,7 @@ console.log(dataList)
       }
     }
 
-    if (count == 5 || count == 0) {
+    if (count == 2 || count == 0) {
       setTriger(true);
     } else {
       setTriger(false);
@@ -114,45 +113,19 @@ console.log(dataList)
         return item.name == e.value;
       }))
     }
-    if (lang === 1) {
-      setData({
-        ...data,
-        [r]: e,
-      });
-    }
-    if (lang === 2) {
-      setDataKg({
-        ...dataKg,
-        [r]: e,
-      });
-    }
-    if (lang === 3) {
-      setData_en({
-        ...data_en,
-        [r]: e,
-      });
-    }
+    setMainCategory({
+      ...mainCategory,
+      [r]: e
+    })
+    
   };
+  console.log(mainCategory)
   const changeCountry = (e) => {
-    if (lang === 1) {
-      setData({
-        ...data,
-        country: e,
-      });
-    }
-    if (lang === 2) {
-      setDataKg({
-        ...dataKg,
-        country_kg: e,
-      });
-    }
-    if (lang === 3) {
-      setData_en({
-        ...data_en,
-        country_en: e,
-      });
-    }
+    setMainCountry(e)
   };
+  const changeCategory=()=>{
+
+  }
   const changeHashtag = (e) => {
     setHashtag(e);
     setErrHashtag(false);
@@ -161,15 +134,39 @@ console.log(dataList)
     setObjErr(e);
   };
   const isHashtag = () => {
-    if (hashtag.length !== 0) {
+    if (hashtag&&hashtag.length !== 0) {
       setErrHashtag(false);
     } else {
       setErrHashtag(true);
     }
   };
+  const isCountry=()=>{
+    if(mainCountry){
+      setErrCountry(false)
+    }
+    else{
+      setErrCountry(true)
+    }
+  }
+  const isCategory =()=>{
+    if(mainCategory.category){
+      setErrCategory(false)
+    }
+    if(!mainCategory.category){
+      setErrCategory(true)
+    }
+    if(mainCategory.subCategory1){
+      setErrSubCategory(false)
+    }
+    if(!mainCategory.subCategory1){
+      setErrSubCategory(true)
+    }
+  }
 
   const isModal = (is) => {
     isHashtag();
+    isCategory();
+    isCountry()
     let arr = [];
     if (is) {
       setObjErr([]);
@@ -201,10 +198,11 @@ console.log(dataList)
   };
 
   const further = () => {
+    isModal();
     const arrLang1 = [];
 
     let from = 0;
-    from += Object.values(data).every((o) => o !== null || o !== "" || o !== [])
+    from += Object.values(data).every((o) => o !== null && o !== "" && o !== [])
       ? 1
       : 0;
     from += Object.values(dataKg).every(
@@ -234,10 +232,13 @@ console.log(dataList)
         : 0
     );
     console.log(from);
-    console.log(arrLang);
+    console.log(errCategory)
+    console.log(errSubCategory)
 console.log(errHashtag)
 
-    if (triger && from > 0 && !errHashtag) {
+
+    if (triger && from > 0 && !errHashtag && !errCategory && !errSubCategory && !errCountry) {
+
       setIsStep(2);
       isModal(false);
       setArrLang(arrLang1);
@@ -287,10 +288,15 @@ console.log(errHashtag)
               changeData={changeData}
               changeCountry={changeCountry}
               data={data}
+              errCountry={errCountry}
+              mainCategory={mainCategory}
+              mainCountry={mainCountry}
               changeHashtag={changeHashtag}
               arrErrRu={objErr}
               further={further}
               hashtag={hashtag}
+              errCategory={errCategory}
+              errSubCategory={errSubCategory}
               errHashtag={errHashtag}
               dataList={dataList&&dataList.Category}
               subCategory={subCategory && subCategory[0]}
@@ -302,12 +308,17 @@ console.log(errHashtag)
               changeData={changeData}
               changeCountry={changeCountry}
               data={dataKg}
+              errCountry={errCountry}
+              mainCountry={mainCountry}
               changeHashtag={changeHashtag}
               arrErrRu={objErr}
               further={further}
               hashtag={hashtag}
+              mainCountry={mainCountry}
+              errCategory={errCategory}
               errHashtag={errHashtag}
-           
+              errSubCategory={errSubCategory}
+              mainCategory={mainCategory}
               dataList={dataList&&dataList.Category}
               subCategory={subCategory && subCategory[0]}
             />
@@ -318,10 +329,14 @@ console.log(errHashtag)
               changeData={changeData}
               changeCountry={changeCountry}
               data={data_en}
+              errCountry={errCountry}
               changeHashtag={changeHashtag}
               arrErrRu={objErr}
               further={further}
               hashtag={hashtag}
+              errCategory={errCategory}
+              errSubCategory={errSubCategory}
+              mainCategory={mainCategory}
               errHashtag={errHashtag}
               dataList={dataList&&dataList.Category}
               subCategory={subCategory && subCategory[0]}

@@ -10,7 +10,7 @@
   font-size: 56px;
   color: #333333;
 
-position: absolute;
+position: relative;
 top: -38px;
 }
 .blockTitle{
@@ -38,5 +38,8 @@ top: -38px;
   .blockNews{
       margin-top: 100px;
       height: 700px;
+  }
+  .content{
+    margin-top: 60px;
   }
 }

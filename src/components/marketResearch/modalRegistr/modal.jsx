@@ -11,18 +11,7 @@ const customStyles = {
         position: 'fixed',
         zIndex: 10
       },
-      content: {
-        top: "50%",
-        left: "50%",
-        right: "auto",
-        bottom: "auto",
-        height:"auto",
-        width:"40%",
-        marginRight: "-50%",
-        transform: "translate(-50%, -50%)",
-        position: 'fixed',
-        zIndex: '10'
-      },
+
 };
 
 Modal.setAppElement("#root");
@@ -36,9 +25,9 @@ const isOpenModal=()=>{
     dispatch(errorMesseg())
 }
   return (
-    <Modal isOpen={isModal !== "" ? true:false}  style={customStyles}>
+    <Modal isOpen={isModal !== "" ? true:false} style={customStyles} className={classes.modal_main}>
       <div className={classes.modal}>
-        {(language == 1 || language == undefined) && <span className={classes.title}>Регистрация</span>}
+        {(language == 1 || language == undefined) && <span className={classes.title}></span>}
         {language == 2 && <span className={classes.title}>Registration</span>}
         {language == 3 && <span className={classes.title}>Каттоо</span>}
         <div className={classes.content}>
