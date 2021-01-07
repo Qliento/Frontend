@@ -17,7 +17,12 @@ const Step1Kg = ({
   hashtag,
   errHashtag,
   dataList,
-  subCategory
+  subCategory,
+  mainCategory,
+  errCategory,
+  errSubCategory,
+  mainCountry,
+  errCountry
 }) => {
   const data1 = useSelector((state) => state.clientData.data.data);
   return (
@@ -79,17 +84,13 @@ const Step1Kg = ({
             name="Категория"
             lang="kg"
               dataList={dataList}
-            dataSubRu={data.category_kg}
+              dataSubRu={mainCategory.category}
             changeData={(e, category) => changeData(e, category)}
+            mainCategory={mainCategory}
           />
-          {arrErrRu &&
-            arrErrRu.map((item) => {
-              if (item == "category_kg") {
-                return (
+          {errCategory &&
                   <span className={classes.err}>Талааны толтуруңуз!!!</span>
-                );
-              }
-            })}
+     }
         </div>
         <div className={classes.dropdown}>
           <span className={classes.dropdownTitle}>Подкатегориялар</span>
@@ -98,17 +99,13 @@ const Step1Kg = ({
             lang="kg"
             sub={true}
             subCategory={subCategory}
-            dataSubRu={data.subCategory_kg}
-            changeData={(e, category) => changeData(e, category)}
+            dataSubRu={mainCategory.subCategory1}
+            changeData={(e, subCategory1) => changeData(e, subCategory1)}
+            mainCategory={mainCategory}
           />
-          {arrErrRu &&
-            arrErrRu.map((item) => {
-              if (item == "subCategory_kg") {
-                return (
+          {errSubCategory &&
                   <span className={classes.err}>Талааны толтуруңуз!!!</span>
-                );
-              }
-            })}
+            }
         </div>
       </div>
       <div className={classes.blockDropdown}>
@@ -117,17 +114,13 @@ const Step1Kg = ({
           <Country
             name="Мамлекеттер"
             lang="kg"
-            data={data.country_kg}
+            data={mainCountry}
             changeCountry={(e) => changeCountry(e)}
           />
-          {arrErrRu &&
-            arrErrRu.map((item) => {
-              if (item == "country_kg") {
-                return (
+          {errCountry &&
+     
                   <span className={classes.err}>Талааны толтуруңуз!!!</span>
-                );
-              }
-            })}
+     }
         </div>
         <div className={classes.dropdown}>
           <span className={classes.dropdownTitle}>Сиздин изилдөөңүздү сүрөттөгөн сөздөр</span>

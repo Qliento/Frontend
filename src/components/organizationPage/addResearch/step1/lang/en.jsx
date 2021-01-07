@@ -17,7 +17,12 @@ const Step1En = ({
   arrErrRu,
   errHashtag,
   dataList,
-  subCategory
+  subCategory,
+  mainCategory,
+  errCategory,
+  errSubCategory,
+  mainCountry,
+  errCountry
 }) => {
   const data1 = useSelector((state) => state.clientData.data.data);
   return (
@@ -80,34 +85,28 @@ const Step1En = ({
           <Dropdown
             name="Choose category"
             lang="en"
+            mainCategory={mainCategory}
             dataList={dataList}
-            changeData={(e, category_en) => changeData(e, category_en)}
+            dataSubRu={mainCategory.category}
+            changeData={(e, category) => changeData(e, category)}
           />
-          {arrErrRu &&
-            arrErrRu.map((item) => {
-              if (item == "category_en") {
-                return (
+          {errCategory &&
                   <span className={classes.err}>Fill this field!!!</span>
-                );
-              }
-            })}
+            }
         </div>
         <div className={classes.dropdown}>
           <span className={classes.dropdownTitle}>Subcategory</span>
           <Dropdown
             name="Choose subcategory"
             lang="en"
+            mainCategory={mainCategory}
             subCategory={subCategory}
-            changeData={(e, subCategory_en) => changeData(e, subCategory_en)}
+            changeData={(e, subCategory1) => changeData(e, subCategory1)}
+            dataSubRu={mainCategory.subCategory1}
           />
-          {arrErrRu &&
-            arrErrRu.map((item) => {
-              if (item == "subCategory_en") {
-                return (
+          {errSubCategory &&
                   <span className={classes.err}>Fill this field!!!</span>
-                );
-              }
-            })}
+          }
         </div>
       </div>
       <div className={classes.blockDropdown}>
@@ -116,16 +115,13 @@ const Step1En = ({
           <Country
             name="Choose country"
             lang="en"
+            data={mainCountry}
             changeCountry={(e) => changeCountry(e)}
           />
-          {arrErrRu &&
-            arrErrRu.map((item) => {
-              if (item == "country_en") {
-                return (
+          {errCountry &&
+ 
                   <span className={classes.err}>Fill this field!!!</span>
-                );
-              }
-            })}
+  }
         </div>
         <div className={classes.dropdown}>
           <span className={classes.dropdownTitle}>Keywords</span>

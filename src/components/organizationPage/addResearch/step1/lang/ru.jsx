@@ -4,7 +4,7 @@ import classes from "../step1.module.css";
 import { Link } from "react-router-dom";
 import Country from "../country/country";
 import CreatableInputOnly from "../heshtag/hashtag";
-import {useSelector} from "react-redux"
+import { useSelector } from "react-redux";
 
 const Step1Ru = ({
   inputValue,
@@ -17,11 +17,16 @@ const Step1Ru = ({
   hashtag,
   errHashtag,
   dataList,
-  subCategory
+  subCategory,
+  mainCategory,
+  errCategory,
+  errSubCategory,
+  mainCountry,
+  errCountry
 }) => {
   console.log(arrErrRu);
   const data1 = useSelector((state) => state.clientData.data.data);
-  console.log(data1)
+  console.log(data1);
   return (
     <div className={classes.form}>
       <div className={classes.blockTitle}>
@@ -29,7 +34,9 @@ const Step1Ru = ({
 
         <div className={classes.blockStep}>
           <span className={classes.step11}>Шаг 1</span>
-          <span className={classes.step} onClick={() => further()}>Шаг 2</span>
+          <span className={classes.step} onClick={() => further()}>
+            Шаг 2
+          </span>
           <span className={classes.step}>Шаг 3</span>
         </div>
       </div>
@@ -71,7 +78,7 @@ const Step1Ru = ({
       <div className={classes.blockInput}>
         <span className={classes.inputTitle}>О компании</span>
         <div className={classes.blockDescrip}>
-        <span>{data1 && data1.about_me}</span>
+          <span>{data1 && data1.about_me}</span>
         </div>
       </div>
       <div className={classes.blockDropdown}>
@@ -80,36 +87,28 @@ const Step1Ru = ({
           <Dropdown
             name="Выберите категорию"
             lang="ru"
+            mainCategory={mainCategory}
             dataList={dataList}
-            dataSubRu={data.category}
+            dataSubRu={mainCategory.category}
             changeData={(e, category) => changeData(e, category)}
           />
-          {arrErrRu &&
-            arrErrRu.map((item) => {
-              if (item == "category") {
-                return (
-                  <span className={classes.err}>Заполинте это поле!!!</span>
-                );
-              }
-            })}
+          {errCategory && (
+            <span className={classes.err}>Заполинте это поле!!!</span>
+          )}
         </div>
         <div className={classes.dropdown}>
           <span className={classes.dropdownTitle}>Подкатегорию</span>
           <Dropdown
             name="Выберите подкатегорию"
             lang="ru"
+            mainCategory={mainCategory}
             subCategory={subCategory}
-            changeData={(e, category) => changeData(e, category)}
-            dataSubRu={data.subCategory}
+            changeData={(e, subCategory1) => changeData(e, subCategory1)}
+            dataSubRu={mainCategory.subCategory1}
           />
-          {arrErrRu &&
-            arrErrRu.map((item) => {
-              if (item == "subCategory") {
-                return (
+          {errSubCategory &&
                   <span className={classes.err}>Заполинте это поле!!!</span>
-                );
-              }
-            })}
+        }
         </div>
       </div>
       <div className={classes.blockDropdown}>
@@ -118,17 +117,12 @@ const Step1Ru = ({
           <Country
             name="Выберите страны"
             lang="ru"
-            data={data.country}
+            data={mainCountry}
             changeCountry={(e) => changeCountry(e)}
           />
-          {arrErrRu &&
-            arrErrRu.map((item) => {
-              if (item == "country") {
-                return (
+          {errCountry &&
                   <span className={classes.err}>Заполинте это поле!!!</span>
-                );
-              }
-            })}
+      }
         </div>
         <div className={classes.dropdown}>
           <span className={classes.dropdownTitle}>Ключевые слова</span>
@@ -137,10 +131,9 @@ const Step1Ru = ({
             changeHashtag={(e) => changeHashtag(e)}
             data={hashtag}
           />
-          { errHashtag&&
-    
-                  <span className={classes.err}>Заполинте это поле!!!</span>
-      }
+          {errHashtag && (
+            <span className={classes.err}>Заполинте это поле!!!</span>
+          )}
         </div>
       </div>
       <div className={classes.blockBtn}>
