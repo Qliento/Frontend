@@ -42,11 +42,11 @@ const Form = () => {
           {errors.fio && (
             <span className={classes.error}>Data incorrectly entered</span>
           )}</>}
-          {language == 3 && <><label>ФИО*</label>
+          {language == 3 && <><label>Сиздин атыңыз*</label>
           <input
             type="text"
             className={classes.input}
-            placeholder="Ваш ФИО"
+            placeholder="Сиздин атыңыз"
             name="fio"
             ref={register({
               validate: (fio) => fio && fio.length > 4,
@@ -144,7 +144,7 @@ const Form = () => {
           </>}
           {language == 2 && <>
             <label>Your question*</label>
-          <textarea className={classes.inputTextarea}  placeholder="Ваш вопрос" name="question" ref={register({
+          <textarea className={classes.inputTextarea}  placeholder="Your question" name="question" ref={register({
               required: "Это поле обязательное",
               pattern: {
                 message: "Fill in the field",
@@ -153,7 +153,7 @@ const Form = () => {
           </>}
           {language == 3 && <>
             <label>Сиздин сурооңуз*</label>
-          <textarea className={classes.inputTextarea}  placeholder="Ваш вопрос" name="question" ref={register({
+          <textarea className={classes.inputTextarea}  placeholder="Сиздин сурооңуз" name="question" ref={register({
               required: "Это поле обязательное",
               pattern: {
                 message: "Талааны толтуруңуз",

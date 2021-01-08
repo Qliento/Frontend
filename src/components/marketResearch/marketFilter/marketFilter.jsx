@@ -31,9 +31,10 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
   }
 
   const ubdateData = (name, e) => {
-    if (name === "Все котегории") {
+    console.log(name);
+    if (name === "Все категории" || name === 'All categories' || name === 'Баардык категориялар') {
       setInputCategory(e);
-    } else if (name === "Подкотегории") {
+    } else if (name === "Подкатегории" || name === 'Subcategories' || name === 'Подкатегориялар') {
       setInputSubCategory(e.value);
     } else if (name === "Выберите автора") {
       setInputAuthor(e.value);
@@ -56,20 +57,45 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
     <div className={classes.blockFilter}>
       <div className={classes.blockRow,classes.blockRow11}>
         <div className={classes.inputs}>
-          <Category
+          {(language == 1 || language == undefined) && <Category
             name="Все категории"
             category={category}
             listCategory={data && data.Category}
             changeCategory={(e) => setCategor(e.value)}
             ubdateData={ubdateData}
-          />
+          />}
+          {language == 2 && <Category
+            name="All categories"
+            category={category}
+            listCategory={data && data.Category}
+            changeCategory={(e) => setCategor(e.value)}
+            ubdateData={ubdateData}
+          />}
+          {language == 3 && <Category
+            name="Баардык категориялар"
+            category={category}
+            listCategory={data && data.Category}
+            changeCategory={(e) => setCategor(e.value)}
+            ubdateData={ubdateData}
+          />}
+          
         </div>
         <div className={classes.inputs}>
-          <Category
+          {(language == 1 || language == undefined) && <Category
             name="Подкатегории"
             subCategory={subCategory && subCategory[0]}
             ubdateData={ubdateData}
-          />
+          />}
+          {language == 2 && <Category
+            name="Subcategories"
+            subCategory={subCategory && subCategory[0]}
+            ubdateData={ubdateData}
+          />}
+          {language == 3 && <Category
+            name="Подкатегориялар"
+            subCategory={subCategory && subCategory[0]}
+            ubdateData={ubdateData}
+          />}
         </div>
 
         {(language == 1 || language == undefined) && (
@@ -125,18 +151,38 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
       </div>
       <div className={classes.blockRow}>
         <div className={classes.inputs}>
-          <Category
+          {(language == 1 || language == undefined) && <Category
             name="Выберите автора"
             authors={data && data.QAdmins}
             ubdateData={ubdateData}
-          />
+          />}
+          {language == 2 && <Category
+            name="Choose company"
+            authors={data && data.QAdmins}
+            ubdateData={ubdateData}
+          />}
+          {language == 3 && <Category
+            name="Компанияны тандаңыз"
+            authors={data && data.QAdmins}
+            ubdateData={ubdateData}
+          />}
         </div>
         <div className={classes.inputs}>
-          <Category
+          {(language == 1 || language == undefined) && <Category
             name="Выбрать страну"
             country={data && data.Country}
             ubdateData={ubdateData}
-          />
+          />}
+          {language == 2 && <Category
+            name="Choose country"
+            country={data && data.Country}
+            ubdateData={ubdateData}
+          />}
+          {language == 3 && <Category
+            name="Мамлекетти тандаңыз"
+            country={data && data.Country}
+            ubdateData={ubdateData}
+          />}
         </div>
         {(language == 1 || language == undefined) && (
           <>
