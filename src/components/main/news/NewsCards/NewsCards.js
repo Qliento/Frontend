@@ -27,7 +27,10 @@ const NewsCards = () => {
                   <img alt="img" className={classes.img} src={item.image} />
                 </div>
                 <div className={classes.content}>
+                  <div className={classes.blockTitleCard}>
                   <span className={classes.title}>{item.name}</span>
+                  </div>
+                  
                   <div className={classes.blockDescrip}>
                     <span className={classes.description}>
                       {item.description}

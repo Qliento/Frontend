@@ -309,7 +309,7 @@ console.log(errHashtag)
               changeCountry={changeCountry}
               data={dataKg}
               errCountry={errCountry}
-              mainCountry={mainCountry}
+         
               changeHashtag={changeHashtag}
               arrErrRu={objErr}
               further={further}
@@ -330,6 +330,7 @@ console.log(errHashtag)
               changeCountry={changeCountry}
               data={data_en}
               errCountry={errCountry}
+              mainCountry={mainCountry}
               changeHashtag={changeHashtag}
               arrErrRu={objErr}
               further={further}

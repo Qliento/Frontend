@@ -53,7 +53,9 @@
   align-items: flex-start;
 }
 .textRight {
-  width: auto;
+  max-width: 50%;
+  text-overflow: auto;
+  overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -109,5 +111,30 @@
   }
   .cards > a + a {
     margin-left: 15px;
+  }
+}
+@media only screen and (max-width:768px){
+  .link{
+    min-width: 230px;
+  }
+  .blockImg{
+    height: 140px;
+  }
+  .blockDescrip{
+    height: 120px;
+  }
+  .blockTitleCard{
+    height: 40px;
+    width: 100%;
+    text-overflow: auto;
+    overflow: hidden;
+  }
+  .content{
+    height: 234px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .description{
+    font-size: 12px;
   }
 }

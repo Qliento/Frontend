@@ -119,7 +119,7 @@ export default {
       `/researches/?name_icontains=${text}&category=${category}`
     ),
   dataFilter: () => http.get(`/filters/`),
-  allListResearch: () => http.get(`/researches/`),
+  allListResearch: () => http.get(`/research/`),
   aboutData: () => http.get("/about-us/"),
   ListNews: () => http.get("/news"),
   getQuestion: () => http.get("/faq"),
