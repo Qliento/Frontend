@@ -44,7 +44,7 @@ const Auth = () => {
     
         const authHandler = (err, data) => {
           console.log(err, data);
-          dispatch(authSocialTwit(data.oauth_token))
+          dispatch(authSocialTwit(data.oauth_token, data.oauth_token_secret))
         }
 
     return(
