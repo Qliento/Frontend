@@ -37,9 +37,15 @@ top: -38px;
  @media only screen and (max-width:768px){
   .blockNews{
       margin-top: 100px;
-      height: 700px;
+      height: 500px;
   }
   .content{
-    margin-top: 60px;
+    margin-top: 30px;
+  }
+}
+@media only screen and (max-width:500px){
+  .title{
+    font-size: 24px;
+    top: -15px;
   }
 }
