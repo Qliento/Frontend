@@ -203,8 +203,9 @@ export default {
   },{
     headers: { Authorization: "Bearer " + token }
   }),
-  authSocialTwit: (user, token) => http.post('/users/twitter/',{
-    auth_token : token,
+  authSocialTwit: (user, token, secret) => http.post('/users/twitter/',{
+    access_token_key : token,
+    access_token_secret : secret,
     user: user
   }),
   refreshToken: (token) =>

@@ -225,9 +225,9 @@ export function authSocialFace(token){
     );
 }}
 
-export function authSocialTwit(token){
+export function authSocialTwit(token, secret){
   return async (dispatch)=>{
-    await API.authSocialTwit('client', token)
+    await API.authSocialTwit('client', token, secret)
     .then(res => {
       if( res.status == 200){
         localStorage.setItem('user', res.data.access);
