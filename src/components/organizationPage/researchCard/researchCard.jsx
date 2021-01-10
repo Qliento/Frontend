@@ -9,7 +9,12 @@ import { useDispatch, useSelector } from "react-redux";
 const ResearchCard = ({ data }) => {
   const [edit, setEdit] = useState(false);
   const dispatch = useDispatch();
-
+  let textCountry1=data.country &&
+  data.country.map((item,index) => {
+     return item.name
+   
+  })
+  let textCountry= textCountry1.join(" ")
   // const language = useSelector(state => state.langReducer.lang)
   const language = localStorage.getItem("lang");
   return (
@@ -42,10 +47,7 @@ const ResearchCard = ({ data }) => {
                 <span>ID: {data && data.id}</span>
                 <div className={classes.country}>
                   <span>Страны: </span>
-                  {data.country &&
-                    data.country.map((item) => {
-                      return <span key={item.id}> {item.name}</span>;
-                    })}
+                <span>{textCountry}</span>
                 </div>
               </div>
             </div>
@@ -322,10 +324,7 @@ const ResearchCard = ({ data }) => {
                 <span>ID: {data && data.id}</span>
                 <div className={classes.country}>
                   <span>Страны: </span>
-                  {data.country &&
-                    data.country.map((item) => {
-                      return <span key={item.id}> {item.name}</span>;
-                    })}
+                  <span>{textCountry}</span>
                 </div>
               </div>
             </div>

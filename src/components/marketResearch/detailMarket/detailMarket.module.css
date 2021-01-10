@@ -59,7 +59,7 @@ justify-content: flex-start;
 
 .blockHeshteg div {
   width: auto;
-  height: 25px;
+  min-height: 25px;
   padding-right: 8px;
   display: flex;
   flex-direction: row;

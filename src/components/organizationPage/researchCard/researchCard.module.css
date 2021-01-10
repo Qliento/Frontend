@@ -20,9 +20,10 @@
 }
 .country {
   width: 100%;
-  height: auto;
+  height: 60px;
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 .link{
   width: 73%;
@@ -195,7 +196,7 @@
 }
 .status_desc {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 10px;
   line-height: 17px;
   display: flex;
   align-items: flex-end;
@@ -203,7 +204,7 @@
 }
 .status_desc2 {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 10px;
   line-height: 17px;
   display: flex;
   align-items: flex-end;
@@ -211,7 +212,7 @@
 }
 .status_desc3 {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 10px;
   line-height: 17px;
   display: flex;
   align-items: flex-end;
@@ -219,7 +220,7 @@
 }
 .status_desc4 {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 10px;
   line-height: 17px;
   display: flex;
   align-items: flex-end;

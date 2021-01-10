@@ -95,9 +95,10 @@
 
 .country {
   width: 100%;
-  height: auto;
+  height: 60px;
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 .blockHeshteg div {
   width: auto;

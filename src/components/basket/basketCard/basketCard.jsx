@@ -17,7 +17,7 @@ const BasketCard = ({ id, data }) => {
     <>
         <div className={classes.marketCard}>
       <Link to={`/market-research-detail/${data.id}`} className={classes.link}>
-        <img alt="img" src={data.image?'https://back.qliento.com' + data.image:doctor} className={classes.img} />
+        <img alt="img" src={data.image?data.image:doctor} className={classes.img} />
         <div className={classes.content}>
           <div className={classes.nameCompany}>
             <span className={classes.name}>

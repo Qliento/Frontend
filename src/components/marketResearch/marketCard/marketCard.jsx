@@ -18,7 +18,14 @@ const MarketCard = ({ data, addFlyEfyf }) => {
     dispatch(researchPushBasket(e));
     addFlyEfyf();
   };
-
+let textCountry1=data.country &&
+data.country.map((item,index) => {
+   return item.name
+ 
+})
+let textCountry= textCountry1.join(" ")
+console.log(textCountry1)
+console.log(textCountry)
   return (
     <>
       <div className={classes.marketCard}>
@@ -47,10 +54,7 @@ const MarketCard = ({ data, addFlyEfyf }) => {
                   )}
                   {language == 2 && <span>Countries: </span>}
                   {language == 3 && <span>Мамлекеттер: </span>}
-                  {data.country &&
-                    data.country.map((item) => {
-                      return <span key={item.id}> {item.name}</span>;
-                    })}
+                  <span>{textCountry}</span>
                 </div>
               </div>
             </div>
@@ -292,10 +296,7 @@ const MarketCard = ({ data, addFlyEfyf }) => {
                   )}
                   {language == 2 && <span>Countries: </span>}
                   {language == 3 && <span>Мамлекеттер: </span>}
-                  {data.country &&
-                    data.country.map((item) => {
-                      return <span key={item.id}> {item.name}</span>;
-                    })}
+                  <span>{textCountry}</span>
                 </div>
               </div>
             </div>
