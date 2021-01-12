@@ -25,7 +25,10 @@ const Step2Ru = ({
   arrImg,
   isStep,
   objErr,
-  further
+  further,
+  pages,
+  errorPage
+
 }) => {
   return (
     <div className={classes.form}>
@@ -128,18 +131,16 @@ const Step2Ru = ({
         <span>Количество страниц</span>
       </div>
       <input
-        type="number"
+        type="text"
         className={classes.inputNumberPage}
         placeholder="количество страниц"
-        value={data.pages || ""}
-        onChange={(e) => changePage(e)}
+        value={pages}
+        onChange={ changePage}
       />
-      {objErr &&
-        objErr.map((item) => {
-          if (item == "pages") {
-            return <span className={classes.err}>Добавьте страницы!!!</span>;
-          }
-        })}
+      {errorPage &&
+       
+         <span className={classes.err}>Добавьте страницы!!!</span>
+ }
       <div className={classes.topBlock}>
         <span>Оглавление</span>
       </div>

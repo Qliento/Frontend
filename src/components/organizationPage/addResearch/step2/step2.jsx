@@ -19,20 +19,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { dataStep2 } from "../../../../redux/actions/organizationPage/action";
 
 const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
+  const dataRedux = useSelector((state) => state.ResearchList.dataStep2);
   const [files, setFiles] = useState([]);
   const [fields, setFields] = useState([{ value: null, page: null }]);
   const [objErr, setObjErr] = useState([]);
   const [triger, setTriger] = useState(true);
   const [lang, setLang] = useState(isLang.filter((number) => number > 0)[0]);
+  const [errorPage,setErrorPage]=useState()
+  const [pages,setPages]=useState(dataRedux.pages?dataRedux.pages:'')
   console.log(lang);
-  const dataRedux = useSelector((state) => state.ResearchList.dataStep2);
+ 
   const [data, setData] = useState(
     dataRedux.data
       ? dataRedux.data
       : {
           files_research: [],
           file_demo: null,
-          pages: null,
+        
           content: [{ value: null, page: null }],
         }
   );
@@ -42,7 +45,7 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
       : {
           files_research_kg: [],
           file_demo_kg: null,
-          pages_kg: null,
+          
           content_kg: [{ value: null, page: null }],
         }
   );
@@ -52,7 +55,7 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
       : {
           files_research_en: [],
           file_demo_en: null,
-          pages_en: null,
+         
           content_en: [{ value: null, page: null }],
         }
   );
@@ -70,11 +73,11 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
 
   useEffect(() => {
     checkForm();
-    dispatch(dataStep2({ data, dataKg, data_en }));
-  }, [data, dataKg, data_en]);
+    dispatch(dataStep2({ data, dataKg, data_en,pages }));
+  }, [data, dataKg, data_en,pages]);
   let count = 0;
   const checkForm = () => {
-    console.log(data);
+  
     if (lang === 1) {
       for (const item in data) {
         if (data[item] == null || data[item].length == 0) {
@@ -97,19 +100,28 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
       }
     }
 
-    if (count == 3 || count == 0) {
+    if (count == 2 || count == 0) {
       setTriger(true);
     } else {
       setTriger(false);
     }
 
-    console.log(count);
+    
   };
   const pushErr = (e) => {
     setObjErr(e);
   };
 
+
   const isModal = (is) => {
+    if(!pages){
+      
+      setErrorPage(true)
+    }
+    else{
+      setErrorPage(false)
+    }
+    
     let arr = [];
     if (is) {
       setObjErr([]);
@@ -147,7 +159,7 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
     let file = e.target.files[0];
     let index = null;
     let filetype = file.name.split(".").pop();
-    console.log(filetype);
+  
 
     if (files) {
       arrImg.forEach((element, idx) => {
@@ -196,7 +208,7 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
         }
       }
     };
-    console.log(files);
+
     // console.log(files[0].img==arrImg[4])
     reader.readAsDataURL(file);
   };
@@ -274,7 +286,7 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
         });
       }
     };
-    console.log(files);
+
 
     reader.readAsDataURL(file);
   };
@@ -422,23 +434,16 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
     setLang(e);
   };
   const changePage = (e) => {
-    if (lang === 1) {
-      setData({
-        ...data,
-        pages: e.target.value,
-      });
+    setPages(e.target.value)
+    console.log(e.target.value)
+    
+    if(pages){
+      setErrorPage(false)
+      console.log("1")
     }
-    if (lang === 2) {
-      setDataKg({
-        ...dataKg,
-        pages_kg: e.target.value,
-      });
-    }
-    if (lang === 3) {
-      setData_en({
-        ...data_en,
-        pages_en: e.target.value,
-      });
+    else{
+      setErrorPage(true)
+      console.log("2")
     }
   };
 
@@ -475,7 +480,7 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
         : 0
     );
 
-    if (triger && from > 0) {
+    if (triger && from > 0 && pages) {
       if (a) {
         if (JSON.stringify(arrLang1) == JSON.stringify(isLang)) {
           isStep2(e);
@@ -492,7 +497,7 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
     }
   };
 
-  console.log("step2", data);
+  console.log("step2", pages);
   return (
     <div className={classes.step1}>
       <Tabs
@@ -512,6 +517,8 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
           handleAdd={handleAdd}
           handleRemove={handleRemove}
           data={data}
+          errorPage={errorPage}
+          pages={pages}
           arrImg={arrImg}
           deleteFile={deleteFile}
           objErr={objErr}
@@ -529,6 +536,8 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
           handleAdd={handleAdd}
           handleRemove={handleRemove}
           data={dataKg}
+          errorPage={errorPage}
+          pages={pages}
           arrImg={arrImg}
           deleteFile={deleteFile}
           objErr={objErr}
@@ -546,6 +555,8 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
           handleAdd={handleAdd}
           handleRemove={handleRemove}
           data={data_en}
+          errorPage={errorPage}
+          pages={pages}
           arrImg={arrImg}
           deleteFile={deleteFile}
           objErr={objErr}

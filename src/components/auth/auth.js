@@ -28,6 +28,7 @@ const Auth = () => {
         dispatch(authSocialFace(response.accessToken))
       }
     const onSuccess = (res) =>{
+        console.log(res)
         dispatch(authSocial(res.tokenId))
     }
     const onFailure = (res) =>{

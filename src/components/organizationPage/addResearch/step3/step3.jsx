@@ -146,10 +146,7 @@ const Step3 = ({ isStep3 }) => {
     formData.append("content_data", JSON.stringify([...arr_content_ru,...arr_content_ky,...arr_content_en]))
     formData.append(
       "pages",
-      researchData.dataStep2.data.pages ||
-        researchData.dataStep2.dataKg.pages_kg ||
-        researchData.dataStep2.data_en.pages_en
-    );
+      researchData.dataStep2.pages && researchData.dataStep2.pages);
     formData.append(
       "category",
       (researchData.dataStep1.mainCategory.subCategory1.id &&

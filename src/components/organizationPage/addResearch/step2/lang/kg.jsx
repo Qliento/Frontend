@@ -25,7 +25,9 @@ const Step2Kg = ({
   arrImg,
   isStep,
   objErr,
-  further
+  further,
+  pages,
+  errorPage,
 }) => {
   return (
     <div className={classes.form}>
@@ -36,7 +38,9 @@ const Step2Kg = ({
             1 кадам
           </span>
           <span className={classes.step11}>2 кадам</span>
-          <span className={classes.step} onClick={() => further(3,true)}>3 кадам</span>
+          <span className={classes.step} onClick={() => further(3, true)}>
+            3 кадам
+          </span>
         </div>
       </div>
       <div className={classes.topBlock}>
@@ -90,7 +94,7 @@ const Step2Kg = ({
       <div className={classes.files}>
         {data.file_demo_kg ? (
           <>
-            <img alt="img" src={jpeg} />
+            <img alt="img" src={pdf} />
             <span className={classes.fileName}>{data.file_demo_kg.name}</span>
             <img
               alt="img"
@@ -133,19 +137,14 @@ const Step2Kg = ({
         type="number"
         className={classes.inputNumberPage}
         placeholder="Барактар саны"
-        value={data.pages_kg || ""}
-        onChange={(e) => changePage(e)}
+        value={pages || ""}
+        onChange={ changePage}
       />
-      {objErr &&
-        objErr.map((item) => {
-          if (item == "pages_kg") {
-            return (
-              <span className={classes.err}>
-                Жок дегенде бир изилдөө жүктөп алыңыз!!!
-              </span>
-            );
-          }
-        })}
+      {errorPage && (
+        <span className={classes.err}>
+          Жок дегенде бир изилдөө жүктөп алыңыз!!!
+        </span>
+      )}
       <div className={classes.topBlock}>
         <span>Мазмунун</span>
       </div>
@@ -157,7 +156,7 @@ const Step2Kg = ({
           <span className={classes.contentTitle}>Бөлүмдүн аталышы</span>
         </div>
         <div className={classes.rightBlock}>
-        <span className={classes.contentTitleNone}>Бар</span>
+          <span className={classes.contentTitleNone}>Бар</span>
           <span className={classes.contentTitle1}>Барак</span>
         </div>
       </div>
@@ -169,14 +168,12 @@ const Step2Kg = ({
             <input
               className={classes.centerInput}
               type="text"
-              
               value={field.value || ""}
               onChange={(e) => handleChange(idx, e)}
             />
             <input
               className={classes.rightInput}
               type="number"
-           
               value={field.page || ""}
               onChange={(e) => handleChangePage(idx, e)}
             />
@@ -199,7 +196,7 @@ const Step2Kg = ({
       </button>
 
       <div className={classes.blockBtn1}>
-        <button className={classes.btn} onClick={() => further(3,true)}>
+        <button className={classes.btn} onClick={() => further(3, true)}>
           Кийинки
         </button>
       </div>

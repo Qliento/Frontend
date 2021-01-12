@@ -25,7 +25,9 @@ const Step2En = ({
   arrImg,
   isStep,
   objErr,
-  further
+  further,
+  pages,
+  errorPage
 }) => {
     console.log(objErr)
   return (
@@ -89,7 +91,7 @@ const Step2En = ({
       <div className={classes.files}>
         {data.file_demo_en ? (
           <>
-            <img alt="img" src={jpeg} />
+            <img alt="img" src={pdf} />
             <span className={classes.fileName}>{data.file_demo_en.name}</span>
             <img
               alt="img"
@@ -132,19 +134,15 @@ const Step2En = ({
         type="number"
         className={classes.inputNumberPage}
         placeholder="Amoung of pages"
-        value={data.pages_en || ""}
-        onChange={(e) => changePage(e)}
+        value={pages || ""}
+        onChange={ changePage}
       />
-      {objErr &&
-          objErr.map((item) => {
-            if (item == "pages_en") {
-              return (
+      {errorPage &&
+
                 <span className={classes.err}>
                   Download at least one research!!!
                 </span>
-              );
-            }
-          })}
+}
       <div className={classes.topBlock}>
         <span>Title</span>
       </div>
