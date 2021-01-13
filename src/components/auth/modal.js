@@ -45,7 +45,7 @@ function RegistrModal() {
             <span className={classes.descr}>
                 {isModal == 1 && (language == 1 || language == undefined) && "Вы успешно отправили данные"}
                 {isModal == 1 && language == 2 && "You have successfully submitted data"}
-                {isModal == 1 && language == 3 && "Вы успешно отправили данные"}
+                {isModal == 1 && language == 3 && "Дайындарды ийгиликтүү тапшырдыңыз"}
                 {isModal == 2 && (language == 1 || language == undefined) &&  "Произошла ошибка! Попробуйте снова"}
                 {isModal == 2 && language == 2 &&  "An error has occurred! Try again"}
                 {isModal == 2 && language == 3 &&  "Ката кетти! Кайра аракет кылыңыз"}

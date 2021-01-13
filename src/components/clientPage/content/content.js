@@ -19,7 +19,7 @@ const Content = () =>{
         <div className={classes.content}>
             {(language == 1 || language == undefined) && <h2>Мои покупки</h2>}
             {language == 2 && <h2>My purchase</h2>}
-            {language == 3 && <h2>Мои покупки</h2>}
+            {language == 3 && <h2>Менин сатып алууларым</h2>}
             <div className={classes.market_cards}>
                 {data && data.map(elem => (
                     <MarketCard data={elem} />

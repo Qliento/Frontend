@@ -140,6 +140,9 @@
   .content img{
     width: 64px;
   }
+  .input, .inputTextarea{
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 400px){
