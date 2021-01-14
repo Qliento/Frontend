@@ -52,7 +52,7 @@ const MarketCard = ({ data }) => {
         </Link>
         <div className={classes.blockAct}>
           <div className={classes.blockPrace}>
-            <span className={classes.newPrace}>{data.old_price} сом</span>
+            <span className={classes.newPrace}>{data.old_price} $</span>
           </div>
           <div className={classes.blockBtn}>
             {(language == 1 || language == undefined) && <a className={classes.toBasket} id={data.id} href={`back.qliento.com/purchase/download/${data.id}/`} download>Скачать</a>}
