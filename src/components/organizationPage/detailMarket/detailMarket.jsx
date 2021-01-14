@@ -268,10 +268,10 @@ const DetailMarket = () => {
                 Скачивание демо версии
               </span>
             )}
-            {language == 2 && <span className={classes.column_title}> жүктөө</span>}
+            {language == 2 && <span className={classes.column_title}> Download demo version</span>}
             {language == 3 && (
               <span className={classes.column_title}>
-                Download demo version
+                 жүктөө
               </span>
             )}
             <span className={classes.column_data}>
