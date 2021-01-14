@@ -217,7 +217,7 @@ const Auth = () => {
           {language == 3 && <span>Аркылуу кирүү</span>}
           <div className={st.social_auth_icons}>
             <GoogleLogin
-              clientId="58961824729-lsb3a5tam72c45qqe931nt50rmv28sr6.apps.googleusercontent.com"
+              clientId="1032556798687-6427pbbpse1jm5ho5is64cja01bad94u.apps.googleusercontent.com"
               render={(renderProps) => (
                 <img
                   src={require("./image/Group 59.png")}
