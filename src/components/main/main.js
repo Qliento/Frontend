@@ -20,12 +20,21 @@ const Main = () => {
     dispatch(mainData());
     dispatch(ListNews());
   }, []);
-
+  const language = localStorage.getItem('lang');
   //iravolv7
   return (
     <div className={classes.wrapperMain}>
       <div className={classes.wrapper}>
         <img alt="img" src={banner} className={classes.banner} />
+        <div className={classes.blockTitle}>
+          {(language == 1 || language == undefined) && (
+            <span className={classes.title}>Маркет исследований</span>
+          )}
+          {language == 2 && (
+            <span className={classes.title}>Research market</span>
+          )}
+          {language == 3 && <span className={classes.title}>Изилдөөлөр</span>}
+        </div>
         <div className={classes.blockSearch}>
           <Inputs arrCategory={data && data.category} />
         </div>

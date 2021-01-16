@@ -41,7 +41,7 @@ const Step2En = ({
         </div>
       </div>
       <div className={classes.topBlock}>
-        <span>File of research Eng</span>
+        <span>File of research</span>
       </div>
       <div className={classes.blockFiles}>
         {data.files_research_en &&

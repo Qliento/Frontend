@@ -44,7 +44,7 @@ const Step2Kg = ({
         </div>
       </div>
       <div className={classes.topBlock}>
-        <span>Изилдөө файлы Кырг</span>
+        <span>Изилдөө файлы</span>
       </div>
       <div className={classes.blockFiles}>
         {data.files_research_kg &&
@@ -146,7 +146,7 @@ const Step2Kg = ({
         </span>
       )}
       <div className={classes.topBlock}>
-        <span>Мазмунун</span>
+        <span>Мазмуну</span>
       </div>
       <div className={classes.titleContent}>
         <div className={classes.leftBlock}>

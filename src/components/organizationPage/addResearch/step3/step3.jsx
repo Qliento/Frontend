@@ -264,9 +264,9 @@ const Step3 = ({ isStep3 }) => {
             </>)}
           </div>
         </div>
-        {(language == 1 || language == undefined) && <span className={classes.titlePrice}>Цена</span>}
-        {language == 2 && <span className={classes.titlePrice}>Price</span>}
-        {language == 3 && <span className={classes.titlePrice}>Баа</span>}
+        {(language == 1 || language == undefined) && <span className={classes.titlePrice}>Цена ($)</span>}
+        {language == 2 && <span className={classes.titlePrice}>Price ($)</span>}
+        {language == 3 && <span className={classes.titlePrice}>Баа ($)</span>}
         {(language == 1 || language == undefined) && <div className={classes.bottomBlock}>
           <input
             className={classes.inputPrice}

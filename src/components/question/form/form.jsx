@@ -9,167 +9,280 @@ const Form = () => {
   const { handleSubmit, register, errors } = useForm();
   const dispatch = useDispatch();
   // const language = useSelector(state => state.langReducer.lang);
-  const language = localStorage.getItem('lang');
+  const language = localStorage.getItem("lang");
   const onSubmit = (values) => dispatch(sendQuestions(values));
   return (
     <>
-    <form className={classes.form} onSubmit={handleSubmit(onSubmit)} MutationObserverunregister shouldUnregister>
-      <div className={classes.leftColumn}>
-        <div className={classes.inputs}>
-          {(language == 1 || language == undefined) && <><label>ФИО*</label>
-          <input
-            type="text"
-            className={classes.input}
-            placeholder="Ваш ФИО"
-            name="fio"
-            ref={register({
-              validate: (fio) => fio && fio.length > 4,
-            })}
-          />
-          {errors.fio && (
-            <span className={classes.error}>Не корректно велли данные</span>
-          )}</>}
-            {language == 2 && <><label>Full name*</label>
-          <input
-            type="text"
-            className={classes.input}
-            placeholder="Full name"
-            name="fio"
-            ref={register({
-              validate: (fio) => fio && fio.length > 4,
-            })}
-          />
-          {errors.fio && (
-            <span className={classes.error}>Data incorrectly entered</span>
-          )}</>}
-          {language == 3 && <><label>Сиздин атыңыз*</label>
-          <input
-            type="text"
-            className={classes.input}
-            placeholder="Сиздин атыңыз"
-            name="fio"
-            ref={register({
-              validate: (fio) => fio && fio.length > 4,
-            })}
-          />
-          {errors.fio && (
-            <span className={classes.error}>Маалыматтар туура эмес киргизилген</span>
-          )}</>}
+      <form
+        className={classes.form}
+        onSubmit={handleSubmit(onSubmit)}
+        MutationObserverunregister
+        shouldUnregister
+      >
+        <div className={classes.leftColumn}>
+          <div className={classes.inputs}>
+            {(language == 1 || language == undefined) && (
+              <>
+                <label>ФИО*</label>
+                <input
+                  type="text"
+                  className={classes.input}
+                  placeholder="Ваш ФИО"
+                  name="fio"
+                  ref={register({
+                    validate: (fio) => fio && fio.length > 4,
+                  })}
+                />
+                {errors.fio && (
+                  <span className={classes.error}>Заполните поле</span>
+                )}
+              </>
+            )}
+            {language == 2 && (
+              <>
+                <label>Full name*</label>
+                <input
+                  type="text"
+                  className={classes.input}
+                  placeholder="Full name"
+                  name="fio"
+                  ref={register({
+                    validate: (fio) => fio && fio.length > 4,
+                  })}
+                />
+                {errors.fio && (
+                  <span className={classes.error}>Fill in the field </span>
+                )}
+              </>
+            )}
+            {language == 3 && (
+              <>
+                <label>Сиздин атыңыз*</label>
+                <input
+                  type="text"
+                  className={classes.input}
+                  placeholder="Сиздин атыңыз"
+                  name="fio"
+                  ref={register({
+                    validate: (fio) => fio && fio.length > 4,
+                  })}
+                />
+                {errors.fio && (
+                  <span className={classes.error}>Талааны толтуруңуз</span>
+                )}
+              </>
+            )}
+          </div>
+          <div className={classes.inputs}>
+            {(language == 1 || language == undefined) && (
+              <>
+                <label>Название организации</label>
+                <input
+                  type="text"
+                  className={classes.input}
+                  placeholder="Название организации"
+                  name="name"
+                />
+              </>
+            )}
+            {language == 2 && (
+              <>
+                <label>Name of the organization</label>
+                <input
+                  type="text"
+                  className={classes.input}
+                  placeholder="Name of the organization*"
+                  name="name"
+                />
+              </>
+            )}
+            {language == 3 && (
+              <>
+                <label>Уюм аты</label>
+                <input
+                  type="text"
+                  className={classes.input}
+                  placeholder="Уюм аты*"
+                  name="name"
+                />
+              </>
+            )}
+          </div>
+          <div className={classes.inputs}>
+            <label>Email*</label>
+            {(language == 1 || language == undefined) && (
+              <>
+                <input
+                  type="text"
+                  className={classes.input}
+                  placeholder="email"
+                  name="email"
+                  ref={register({
+                    required: "Заполните поле",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "Неверный адрес электронной почты",
+                    },
+                  })}
+                />
+                {errors.email && (
+                  <span className={classes.error}>{errors.email.message}</span>
+                )}
+              </>
+            )}
+            {language == 2 && (
+              <>
+                <input
+                  type="text"
+                  className={classes.input}
+                  placeholder="email"
+                  name="email"
+                  ref={register({
+                    required: "Fill in the field",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "Invalid email",
+                    },
+                  })}
+                />
+                {errors.email && (
+                  <span className={classes.error}>{errors.email.message}</span>
+                )}
+              </>
+            )}
+            {language == 3 && (
+              <>
+                <input
+                  type="text"
+                  className={classes.input}
+                  placeholder="email"
+                  name="email"
+                  ref={register({
+                    required: "Талааны толтуруңуз",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "Электрондук почта жараксыз",
+                    },
+                  })}
+                />
+                {errors.email && (
+                  <span className={classes.error}>{errors.email.message}</span>
+                )}
+              </>
+            )}
+          </div>
+          <div className={classes.inputs}>
+            {(language == 1 || language == undefined) && (
+              <label>Телефон*</label>
+            )}
+            {language == 2 && <label>Phone number*</label>}
+            {language == 3 && <label>Телефон*</label>}
+            <input
+              type="text"
+              className={classes.input}
+              placeholder="+996 ___ - __ - __ - __"
+              name="phone"
+              ref={register({
+                validate: (phone) => phone && phone.length > 6,
+              })}
+            />
+            {(language == 1 || language == undefined) && (
+              <>
+                {errors.phone && (
+                  <span className={classes.error}>
+                    Название огранизации меньше 6 символов
+                  </span>
+                )}
+              </>
+            )}
+            {language == 2 && (
+              <>
+                {errors.phone && (
+                  <span className={classes.error}>Less than 6 characterss</span>
+                )}
+              </>
+            )}
+            {language == 3 && (
+              <>
+                {errors.phone && (
+                  <span className={classes.error}>6 белгиден кем</span>
+                )}
+              </>
+            )}
+          </div>
         </div>
-        <div className={classes.inputs}>
-          {(language == 1 || language == undefined) &&<>
-            <label>Название организации</label>
-          <input
-            type="text"
-            className={classes.input}
-            placeholder="Название организации"
-            name="name"
-          /></>}
-          {language == 2 &&<>
-            <label>Name of the organization</label>
-          <input
-            type="text"
-            className={classes.input}
-            placeholder="Name of the organization*"
-            name="name"
-          /></>}
-          {language == 3 &&<>
-            <label>Уюм аты</label>
-          <input
-            type="text"
-            className={classes.input}
-            placeholder="Уюм аты*"
-            name="name"
-          /></>}
-        </div>
-        <div className={classes.inputs}>
-          <label>Email*</label>
-          <input
-            type="text"
-            className={classes.input}
-            placeholder="email"
-            name="email"
-            ref={register({
-              required: "Это поле обязательное",
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "Неверный адрес электронной почты",
-              },
-            })}
-          />
-          {errors.email && (
-            <span className={classes.error}>{errors.email.message}</span>
+        <div className={classes.rightColumn}>
+          <div className={classes.inputs}>
+            {(language == 1 || language == undefined) && (
+              <>
+                <label>Ваш вопрос*</label>
+                <textarea
+                  className={classes.inputTextarea}
+                  placeholder="Ваш вопрос"
+                  name="question"
+                  ref={register({
+                    required: "Это поле обязательное",
+                    pattern: {
+                      message: "Введите вопрос",
+                    },
+                  })}
+                />
+              </>
+            )}
+            {language == 2 && (
+              <>
+                <label>Your question*</label>
+                <textarea
+                  className={classes.inputTextarea}
+                  placeholder="Your question"
+                  name="question"
+                  ref={register({
+                    required: "Это поле обязательное",
+                    pattern: {
+                      message: "Fill in the field",
+                    },
+                  })}
+                />
+              </>
+            )}
+            {language == 3 && (
+              <>
+                <label>Сиздин сурооңуз*</label>
+                <textarea
+                  className={classes.inputTextarea}
+                  placeholder="Сиздин сурооңуз"
+                  name="question"
+                  ref={register({
+                    required: "Это поле обязательное",
+                    pattern: {
+                      message: "Талааны толтуруңуз",
+                    },
+                  })}
+                />
+              </>
+            )}
+            {errors.question && (
+              <span className={classes.error}>{errors.question.message}</span>
+            )}
+          </div>
+          {(language == 1 || language == undefined) && (
+            <button type="submit" className={classes.btn}>
+              Отправить
+            </button>
+          )}
+          {language == 2 && (
+            <button type="submit" className={classes.btn}>
+              Send
+            </button>
+          )}
+          {language == 3 && (
+            <button type="submit" className={classes.btn}>
+              Жөнөтүү
+            </button>
           )}
         </div>
-        <div className={classes.inputs}>
-          {(language == 1 || language == undefined) && <label>Телефон*</label>}
-          {language == 2 && <label>Phone_number*</label>}
-          {language == 3 && <label>Телефон*</label>}
-          <input
-            type="text"
-            className={classes.input}
-            placeholder="+996 ___ - __ - __ - __"
-            name="phone"
-            ref={register({
-              validate: (phone) => phone && phone.length > 6,
-            })}
-          />
-          {errors.phone && (
-            <span className={classes.error}>Это поле обязательно</span>
-          )}
-          {errors.phone && language === 1 &&  (
-            <span className={classes.error}>
-              Название огранизации меньше 6 символов
-            </span>)}
-            {errors.phone && language === 2 &&  (
-            <span className={classes.error}>
-              Less than 6 characters
-            </span>)}
-            {errors.phone && language === 3 &&  (
-            <span className={classes.error}>
-              6 белгиден кем
-            </span>)}
-        </div>
-      </div>
-      <div className={classes.rightColumn}>
-        <div className={classes.inputs}>
-          {(language == 1 || language == undefined) && <>
-            <label>Ваш вопрос*</label>
-          <textarea className={classes.inputTextarea}  placeholder="Ваш вопрос" name="question" ref={register({
-              required: "Это поле обязательное",
-              pattern: {
-                message: "Введите вопрос",
-              },
-            })}/>
-          </>}
-          {language == 2 && <>
-            <label>Your question*</label>
-          <textarea className={classes.inputTextarea}  placeholder="Your question" name="question" ref={register({
-              required: "Это поле обязательное",
-              pattern: {
-                message: "Fill in the field",
-              },
-            })}/>
-          </>}
-          {language == 3 && <>
-            <label>Сиздин сурооңуз*</label>
-          <textarea className={classes.inputTextarea}  placeholder="Сиздин сурооңуз" name="question" ref={register({
-              required: "Это поле обязательное",
-              pattern: {
-                message: "Талааны толтуруңуз",
-              },
-            })}/>
-          </>}
-          {errors.question && (
-            <span className={classes.error}>{errors.question.message}</span>
-          )}
-        </div>
-        {(language == 1 || language == undefined) && <button type="submit" className={classes.btn}>Отправить</button>}
-        {language == 2 && <button type="submit" className={classes.btn}>Send</button>}
-        {language == 3 && <button type="submit" className={classes.btn}>Жөнөтүү</button>}
-      </div>
-    </form>
-    {<RegistrModal/>}
+      </form>
+      {<RegistrModal />}
     </>
   );
 };

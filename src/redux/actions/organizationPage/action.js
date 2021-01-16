@@ -85,10 +85,9 @@ export function uploadResearchAction(dataStep3) {
         }
       })
       .catch((err) => {
-        if (err.response.status === 400) {
+     
           dispatch(Spiner(2));
-        }
-        console.log(err);
+        
       });
   };
 }

@@ -253,7 +253,7 @@ const RegistOrganization = () => {
                     validate: (repeatPassword) =>
                       repeatPassword && repeatPassword.length > 8,
                   })}/>}
-                  {language == 3 && <input name="repeatPassword" className={classes.inputs1} placeholder="Сыр соз" type={visibility2 ? "text" : "password"}
+                  {language == 3 && <input name="repeatPassword" className={classes.inputs1} placeholder="Сыр сөз" type={visibility2 ? "text" : "password"}
                   ref={register({
                     validate: (repeatPassword) =>
                       repeatPassword && repeatPassword.length > 8,

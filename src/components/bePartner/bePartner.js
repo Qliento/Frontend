@@ -45,7 +45,7 @@ const BePartner = () =>{
                         validate: (name) => name && name.length > 4,
                         })}></input>
                         {errors.name && (
-                            <span className={st.errorString}>Не корректно ввели данные</span>
+                            <span className={st.errorString}>Заполните поле</span>
                         )}
                         <label for="name_of_organization">Название организации</label>
                         <input id="name_of_organization" placeholder="Название организации" name="name_of_organization"></input>
@@ -66,7 +66,7 @@ const BePartner = () =>{
                         validate: (phone) => phone && phone > 6
                         })}></input>
                         {errors.phone && (
-                            <span className={st.errorString}>Заполните поле корректно</span>
+                            <span className={st.errorString}>Введите данные</span>
                         )}
                     </div>}
 
@@ -76,7 +76,7 @@ const BePartner = () =>{
                         validate: (name) => name && name.length > 3,
                         })}></input>
                         {errors.name && (
-                            <span className={st.errorString}>Less than 8 characters</span>
+                            <span className={st.errorString}>Fill form (less then 8 charecters)</span>
                         )}
                         <label for="name_of_organization">Name of the organization</label>
                         <input id="name_of_organization" placeholder="Name of the organization" name="name_of_organization"></input>
@@ -97,7 +97,8 @@ const BePartner = () =>{
                         validate: (phone) => phone && phone > 6
                         })}></input>
                         {errors.phone && (
-                            <span className={st.errorString}>Data incorrectly entered</span>
+                            <span className={st.errorString}>Fill in the field
+                            </span>
                         )}
                     </div>}
                     {language == 3 && <div className={st.form_input_block}>
@@ -106,7 +107,8 @@ const BePartner = () =>{
                         validate: (name) => name && name.length > 3,
                         })}></input>
                         {errors.name && (
-                            <span className={st.errorString}>3 белгиден кем</span>
+                            <span className={st.errorString}>Талааны толтуруңуз
+                            </span>
                         )}
                         <label for="name_of_organization">Уюмдун аталышы</label>
                         <input id="name_of_organization" placeholder="Уюмдун аталышы" name="name_of_organization"></input>
@@ -127,14 +129,15 @@ const BePartner = () =>{
                         validate: (phone) => phone && phone > 6
                         })}></input>
                         {errors.phone && (
-                            <span className={st.errorString}>Маалыматтар туура эмес киргизилген</span>
+                            <span className={st.errorString}>Талааны толтуруңуз
+                            </span>
                         )}
                     </div>}
                     
                     <div className={st.form_textarea_block}>
                         {(language == 1 || language == undefined) &&<>
-                            <label for="description">Дополнительная информация*</label>
-                        <textarea id="description" placeholder="Допольнительная информация"  name="extra" ref={register({
+                            <label for="description">Описание*</label>
+                        <textarea id="description" placeholder="Описание"  name="extra" ref={register({
                         validate: (extra) => extra && extra.length > 10
                         })}></textarea>
                         {errors.extra && (
@@ -143,8 +146,8 @@ const BePartner = () =>{
                         <button onClick={handleSubmit(onSubmit)}>Отправить</button></>}
 
                         {language == 2 &&<>
-                            <label for="description">Additional Information*</label>
-                        <textarea id="description" placeholder="Additional Information"  name="extra" ref={register({
+                            <label for="description">Description *</label>
+                        <textarea id="description" placeholder="Description"  name="extra" ref={register({
                         validate: (extra) => extra && extra.length > 8
                         })}></textarea>
                         {errors.extra && (
@@ -153,8 +156,8 @@ const BePartner = () =>{
                         <button onClick={handleSubmit(onSubmit)}>Send</button></>}
 
                         {language == 3 &&<>
-                            <label for="description">Кошумча маалымат*</label>
-                        <textarea id="description" placeholder="Кошумча маалымат"  name="extra" ref={register({
+                            <label for="description">Сурөттөө*</label>
+                        <textarea id="description" placeholder="Сурөттөө"  name="extra" ref={register({
                         validate: (extra) => extra && extra.length > 10
                         })}></textarea>
                         {errors.extra && (

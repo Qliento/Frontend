@@ -97,7 +97,7 @@ const EditPassword = ({ edit, changeState2,offModal }) => {
           <div className={classes.blockInput}>
             {(language == 1 || language == undefined) && <span className={classes.title}>Новый пароль</span>}
             {language == 2 && <span className={classes.title}>New password</span>}
-            {language == 3 && <span className={classes.title}>Жаны сыр сөз</span>}
+            {language == 3 && <span className={classes.title}>Жаңы сыр сөз</span>}
             <div className={classes.inputWrapper}>
               {(language == 1 || language == undefined) && <input name="new_password" type={visibility2 ? "text" : "password"} placeholder="Придумайте пароль"
                 className={classes.input}

@@ -67,7 +67,7 @@ const AnaliticCard = () => {
 
   let textCountry1 =
     data &&
-    data.research.country &&
+    data.research && data.research.country &&
     data.research.country.map((item) => {
       return item.name;
     });

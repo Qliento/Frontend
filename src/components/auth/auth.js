@@ -245,8 +245,7 @@ const Auth = () => {
               authCallback={authHandler}
               consumerKey={"tsT9tmc9IM7Yyoos2vcPBQa5w"}
               consumerSecret={
-                "rlU1YpC1rivVwH3LdXGYLhHDSWzTICDqi0yvUDiMbwlU03Jkwg"
-              }
+                "rlU1YpC1rivVwH3LdXGYLhHDSWzTICDqi0yvUDiMbwlU03Jkwg"}
               children={
                 <img
                   src={require("./image/twitter.png")}
