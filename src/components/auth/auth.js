@@ -39,7 +39,7 @@ const Auth = () => {
 
   const authHandler = (err, data) => {
     console.log(err, data);
-    //dispatch(authSocialTwit(data.oauth_token, data.oauth_token_secret))
+    dispatch(authSocialTwit(data.oauth_token, data.oauth_token_secret))
   };
   const responseGoogle = (response) => {
     console.log(response);

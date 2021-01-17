@@ -221,12 +221,14 @@ const Form = () => {
                   placeholder="Ваш вопрос"
                   name="question"
                   ref={register({
-                    required: "Это поле обязательное",
-                    pattern: {
-                      message: "Введите вопрос",
-                    },
+                    validate: (question) => question && question.length > 0,
                   })}
                 />
+                {errors.question && (
+                  <span className={classes.error}>
+                    Это поле обязательное
+                  </span>
+                )}
               </>
             )}
             {language == 2 && (
@@ -237,12 +239,14 @@ const Form = () => {
                   placeholder="Your question"
                   name="question"
                   ref={register({
-                    required: "Это поле обязательное",
-                    pattern: {
-                      message: "Fill in the field",
-                    },
+                    validate: (question) => question && question.length > 0,
                   })}
                 />
+                {errors.question && (
+                  <span className={classes.error}>
+                    This field is required
+                  </span>
+                )}
               </>
             )}
             {language == 3 && (
@@ -252,17 +256,17 @@ const Form = () => {
                   className={classes.inputTextarea}
                   placeholder="Сиздин сурооңуз"
                   name="question"
+
                   ref={register({
-                    required: "Это поле обязательное",
-                    pattern: {
-                      message: "Талааны толтуруңуз",
-                    },
+                    validate: (question) => question && question.length > 0,
                   })}
                 />
+                {errors.question && (
+                  <span className={classes.error}>
+                    Бул талаа милдеттүү түрдө
+                  </span>
+                )}
               </>
-            )}
-            {errors.question && (
-              <span className={classes.error}>{errors.question.message}</span>
             )}
           </div>
           {(language == 1 || language == undefined) && (
