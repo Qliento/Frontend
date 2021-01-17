@@ -68,14 +68,14 @@ const OrderResearch = () =>{
                         validate: (name) => name && name.length > 4,
                         })}></input>
                         {errors.name && (
-                            <span className={st.errorString}>Не корректно ввели данные</span>
+                            <span className={st.errorString}>Заполните поле</span>
                         )}
                         <label for="surname">Фамилия*</label>
                         <input id="surname" placeholder="Ваша фамилия" name="surname" ref={register({
                         validate: (surname) => surname && surname.length > 4,
                         })}></input>
                         {errors.surname && (
-                            <span className={st.errorString}>Не корректно ввели данные</span>
+                            <span className={st.errorString}>Заполните поле</span>
                         )}
                         <label for="companyName">Название организации</label>
                         <input id="companyName" placeholder="Название организации" name="logo" ></input>
@@ -103,14 +103,14 @@ const OrderResearch = () =>{
                         validate: (name) => name && name.length > 3,
                         })}></input>
                         {errors.name && (
-                            <span className={st.errorString}>Data incorrectly entered</span>
+                            <span className={st.errorString}>Fill in the field</span>
                         )}
                         <label for="surname">Surname*</label>
                         <input id="surname" placeholder="Your surname" name="surname" ref={register({
                         validate: (surname) => surname && surname.length > 3,
                         })}></input>
                         {errors.surname && (
-                            <span className={st.errorString}>Data incorrectly entered</span>
+                            <span className={st.errorString}>Fill in the field</span>
                         )}
                         <label for="companyName">Name of the organization</label>
                         <input id="companyName" placeholder="Name of the organization" name="logo"></input>
@@ -138,14 +138,14 @@ const OrderResearch = () =>{
                         validate: (name) => name && name.length > 4,
                         })}></input>
                         {errors.name && (
-                            <span className={st.errorString}>Маалыматтар туура эмес киргизилген</span>
+                            <span className={st.errorString}>Талааны толтуруңуз</span>
                         )}
                         <label for="surname">Сиздин фамилияңыз*</label>
                         <input id="surname" placeholder="Сиздин фамилияңыз" name="surname" ref={register({
                         validate: (surname) => surname && surname.length > 4,
                         })}></input>
                         {errors.surname && (
-                            <span className={st.errorString}>Маалыматтар туура эмес киргизилген</span>
+                            <span className={st.errorString}>Талааны толтуруңуз</span>
                         )}
                         <label for="companyName">Уюмдун аталышы</label>
                         <input id="companyName" placeholder="Уюмдун аталышы" name="logo"></input>

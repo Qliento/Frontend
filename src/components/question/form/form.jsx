@@ -183,14 +183,14 @@ const Form = () => {
               placeholder="+996 ___ - __ - __ - __"
               name="phone"
               ref={register({
-                validate: (phone) => phone && phone.length > 6,
+                validate: (phone) => phone && phone.length > 9,
               })}
             />
             {(language == 1 || language == undefined) && (
               <>
                 {errors.phone && (
                   <span className={classes.error}>
-                    Название огранизации меньше 6 символов
+                    Ошибка (меньше 9 символов) 
                   </span>
                 )}
               </>
@@ -198,14 +198,14 @@ const Form = () => {
             {language == 2 && (
               <>
                 {errors.phone && (
-                  <span className={classes.error}>Less than 6 characterss</span>
+                  <span className={classes.error}>Less than 9 characterss</span>
                 )}
               </>
             )}
             {language == 3 && (
               <>
                 {errors.phone && (
-                  <span className={classes.error}>6 белгиден кем</span>
+                  <span className={classes.error}>9 белгиден кем</span>
                 )}
               </>
             )}
