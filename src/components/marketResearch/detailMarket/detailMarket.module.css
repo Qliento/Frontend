@@ -212,7 +212,7 @@ color: #000000;
 }
 .buttomBlockH{
   width: 100%;
-  height: 25px;
+  height: auto;
   overflow-y: hidden;
   margin-top: 10px;
 }

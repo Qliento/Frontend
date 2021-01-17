@@ -100,7 +100,7 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
       }
     }
 
-    if (count == 2 || count == 0) {
+    if (count == 0 ) {
       setTriger(true);
     } else {
       setTriger(false);
@@ -449,41 +449,45 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
 
   const further = (e, a) => {
     let from = 0;
-    const arrLang1 = [];
-    from += Object.values(data).every((o) => o !== null || o !== "" || o !== [])
+    let arrLang1 = [];
+    from += Object.values(data).every((o) => o !== null && o !== "" && o !== [])
       ? 1
       : 0;
     from += Object.values(dataKg).every(
-      (o) => o !== null || o !== "" || o !== []
+      (o) => o !== null && o !== "" && o !== []
     )
       ? 1
       : 0;
     from += Object.values(data_en).every(
-      (o) => o !== null || o !== "" || o !== []
+      (o) => o !== null && o !== "" && o !== []
     )
       ? 1
       : 0;
 
     arrLang1.push(
-      Object.values(data).every((o) => o !== null || o !== "" || o !== [])
+      Object.values(data).every((o) => o !== null && o !== "" && o !== [])
         ? 1
         : 0
     );
     arrLang1.push(
-      Object.values(dataKg).every((o) => o !== null || o !== "" || o !== [])
+      Object.values(dataKg).every((o) => o !== null && o !== "" && o !== [])
         ? 2
         : 0
     );
     arrLang1.push(
-      Object.values(data_en).every((o) => o !== null || o !== "" || o !== [])
+      Object.values(data_en).every((o) => o !== null && o !== ""  && o !== [])
         ? 3
         : 0
     );
-
+console.log(isLang)
+console.log(arrLang1)
     if (triger && from > 0 && pages) {
       if (a) {
         if (JSON.stringify(arrLang1) == JSON.stringify(isLang)) {
           isStep2(e);
+          isModal();
+        }
+        else{
           isModal();
         }
       } else {

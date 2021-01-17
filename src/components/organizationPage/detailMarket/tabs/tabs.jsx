@@ -12,6 +12,7 @@ const Tabs1 = ({ dataText, clickBtn, data }) => {
     setIsClose(!isClose);
     clickBtn();
   };
+
   return (
     <div className={classes.blockInfo}>
       {(language == undefined || language == 1) && (

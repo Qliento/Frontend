@@ -186,6 +186,7 @@
 
 .details span{
   color: #4F4F4F;
+  font-size: 12px;
 }
 
 .details span:nth-child(1){
