@@ -12,6 +12,13 @@ const BasketCard = ({ id, data }) => {
   const deleteBtn = (e) => {
     dispatch(deleteBasket(e.target.id));
   };
+  let textCountry1=data.country &&
+data.country.map((item,index) => {
+   return item.name
+ 
+})
+let textCountry= textCountry1.join(" ")
+
 
   return (
     <>
@@ -33,11 +40,12 @@ const BasketCard = ({ id, data }) => {
               <span>{data.pages && data.pages} стр</span>
               <span>ID: {data.id}</span>
               <div className={classes.country}>
-                <span>Страна:&#160;</span>
-                {data.country &&
-                  data.country.map((item) => {
-                    return <span key={item.id}>{item.name}</span>;
-                  })}
+              {(language == 1 || language == undefined) && (
+                    <span>Страны: </span>
+                  )}
+                  {language == 2 && <span>Countries: </span>}
+                  {language == 3 && <span>Мамлекеттер: </span>}
+                <span >  {textCountry}</span>
               </div>
             </div>
           </div>
@@ -104,7 +112,7 @@ const BasketCard = ({ id, data }) => {
           to={`/market-research-detail/${data && data.id}`}
           className={classes.linkImg}
         >
-          <img alt="img" src={data.image?'https://back.qliento.com' + data.image:doctor} className={classes.img} />
+          <img alt="img" src={data.image?  data.image:doctor} className={classes.img} />
         </Link>
 
         <div className={classes.blockAct}>
@@ -175,10 +183,9 @@ const BasketCard = ({ id, data }) => {
                   )}
                   {language == 2 && <span>Countries: </span>}
                   {language == 3 && <span>Мамлекеттер: </span>}
-                  {data.country &&
-                    data.country.map((item) => {
-                      return <span key={item.id}> {item.name}</span>;
-                    })}
+               
+                       <span >  {textCountry}</span>
+             
                 </div>
               </div>
             </div>

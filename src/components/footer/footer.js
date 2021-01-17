@@ -76,7 +76,7 @@ const Footer = () => {
          {language == 3 && <span className={st.footer_title}>Бөлүмдөр</span>}
          <Link to="/about-us">
           {(language == 1 || language == undefined) && <span>О нас</span>}
-          {language == 2 && <span>About</span>}
+          {language == 2 && <span>About Us</span>}
           {language == 3 && <span>Биз жөнүндө</span>}
         </Link>
         <Link to="/market-research">

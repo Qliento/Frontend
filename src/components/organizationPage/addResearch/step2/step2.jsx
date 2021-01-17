@@ -450,32 +450,32 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
   const further = (e, a) => {
     let from = 0;
     const arrLang1 = [];
-    from += Object.values(data).every((o) => o !== null && o !== "" && o !== [])
+    from += Object.values(data).every((o) => o !== null || o !== "" || o !== [])
       ? 1
       : 0;
     from += Object.values(dataKg).every(
-      (o) => o !== null && o !== "" && o !== []
+      (o) => o !== null || o !== "" || o !== []
     )
       ? 1
       : 0;
     from += Object.values(data_en).every(
-      (o) => o !== null && o !== "" && o !== []
+      (o) => o !== null || o !== "" || o !== []
     )
       ? 1
       : 0;
 
     arrLang1.push(
-      Object.values(data).every((o) => o !== null && o !== "" && o !== [])
+      Object.values(data).every((o) => o !== null || o !== "" || o !== [])
         ? 1
         : 0
     );
     arrLang1.push(
-      Object.values(dataKg).every((o) => o !== null && o !== "" && o !== [])
+      Object.values(dataKg).every((o) => o !== null || o !== "" || o !== [])
         ? 2
         : 0
     );
     arrLang1.push(
-      Object.values(data_en).every((o) => o !== null && o !== "" && o !== [])
+      Object.values(data_en).every((o) => o !== null || o !== "" || o !== [])
         ? 3
         : 0
     );

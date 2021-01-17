@@ -212,6 +212,9 @@ export default {
     http.post(`/auth/jwt/refresh/`, {
       'refresh' : token,
     }),
+    downLoadFilesAPI: (id,token)=>http.get(`/purchase/download/${id}/`,{
+        headers: { Authorization: "Bearer " + token }
+    })
 };
 
 

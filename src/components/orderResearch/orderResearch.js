@@ -170,7 +170,7 @@ const OrderResearch = () =>{
                     <div className={st.form_textarea_block}>
                         {(language == 1 || language == undefined) && <>
                             <label for="description">Дополнительная информация*</label>
-                        <textarea id="description" placeholder="Краткое описание продукта\услуги, рынка, отрасли, географии охвата" name="description" ref={register({
+                        <textarea id="description" name="description"placeholder="Краткое описание продукта\услуги, рынка, отрасли, географии охвата" name="description" ref={register({
                         validate: (description) => description && description.length > 10
                         })}></textarea>
                         {errors.description && (
@@ -178,7 +178,7 @@ const OrderResearch = () =>{
                         )}</>}
                         {language == 2 && <>
                             <label for="description">Additional Information*</label>
-                        <textarea id="description" placeholder="А short description of the product / service, market, industry, geography of coverage" name="description" ref={register({
+                        <textarea id="description" name="description" placeholder="А short description of the product / service, market, industry, geography of coverage" name="description" ref={register({
                         validate: (description) => description && description.length > 10
                         })}></textarea>
                         {errors.description && (
@@ -186,7 +186,7 @@ const OrderResearch = () =>{
                         )}</>}
                         {language == 3 && <>
                             <label for="description">Кошумча маалымат*</label>
-                        <textarea id="description" placeholder="Онүмдүн / кызматтын, базардын, тармактын кыскача сүрөттөлүшү, камтуу географиясы" ref={register({
+                        <textarea id="description" name="description" placeholder="Онүмдүн / кызматтын, базардын, тармактын кыскача сүрөттөлүшү, камтуу географиясы" ref={register({
                         validate: (description) => description && description.length > 10
                         })}></textarea>
                         {errors.description && (
