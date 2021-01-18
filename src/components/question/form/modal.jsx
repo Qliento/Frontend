@@ -25,9 +25,9 @@ const registSuccess=()=>{
   return (
     <Modal isOpen={isModal !== "" ? true:false} className={classes.modal_main}>
       <div className={classes.modal}>
-        {(language == 1 || language == undefined) && <span className={classes.title}></span>}
-        {language == 2 && <span className={classes.title}>Registration</span>}
-        {language == 3 && <span className={classes.title}>Каттоо</span>}
+        {/* {(language == 1 || language == undefined) && <span className={classes.title}></span>}
+        {language == 2 && <span className={classes.title}>Congratulations</span>}
+        {language == 3 && <span className={classes.title}>Куттуктайм</span>} */}
         <div className={classes.content}>
           <img alt="img" src={isModal == 1 ? img1 : img2}/>
           <div className={classes.blockText}>

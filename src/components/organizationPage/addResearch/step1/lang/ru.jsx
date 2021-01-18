@@ -52,7 +52,7 @@ const Step1Ru = ({
         {arrErrRu &&
           arrErrRu.map((item) => {
             if (item == "name") {
-              return <span className={classes.err}>Заполинте это поле!!!</span>;
+              return <span className={classes.err}>Заполните это поле!!!</span>;
             }
           })}
       </div>
@@ -93,7 +93,7 @@ const Step1Ru = ({
             changeData={(e, category) => changeData(e, category)}
           />
           {errCategory && (
-            <span className={classes.err}>Заполинте это поле!!!</span>
+            <span className={classes.err}>Заполните это поле!!!</span>
           )}
         </div>
         <div className={classes.dropdown}>
@@ -107,7 +107,7 @@ const Step1Ru = ({
             dataSubRu={mainCategory.subCategory1}
           />
           {errSubCategory &&
-                  <span className={classes.err}>Заполинте это поле!!!</span>
+                  <span className={classes.err}>Заполните это поле!!!</span>
         }
         </div>
       </div>
@@ -121,7 +121,7 @@ const Step1Ru = ({
             changeCountry={(e) => changeCountry(e)}
           />
           {errCountry &&
-                  <span className={classes.err}>Заполинте это поле!!!</span>
+                  <span className={classes.err}>Заполните это поле!!!</span>
       }
         </div>
         <div className={classes.dropdown}>
@@ -132,7 +132,7 @@ const Step1Ru = ({
             data={hashtag}
           />
           {errHashtag && (
-            <span className={classes.err}>Заполинте это поле!!!</span>
+            <span className={classes.err}>Заполните это поле!!!</span>
           )}
         </div>
       </div>

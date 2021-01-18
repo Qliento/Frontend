@@ -131,13 +131,23 @@ const AnaliticCard = () => {
                 <div className={st.research_info_content}>
                   <h5>{data.research.name}</h5>
                   <div className={st.research_info_details}>
-                    <span>{data.research.pages} стр</span>
-                    <span>ID: {data.research.id}</span>
+                    
                     {(language == 1 || language == undefined) && (
-                      <span>Страны: <span>{textCountry}</span> </span>
+                      <span>{data.research.pages} стр</span>
                     )}
-                    {language == 2 && <span>Countries:<span>{textCountry}</span> </span>}
-                    {language == 3 && <span>Мамлекеттер:<span>{textCountry}</span> </span>}
+                    {language == 2 && <span>{data.research.pages} p</span>}
+                    {language == 3 && <span>{data.research.pages} бет</span>}
+                    <span>ID: {data.research.id}</span>
+                    <div className={st.country}>
+                    {(language == 1 || language == undefined) && (
+                      <span>Страны: </span>
+                      
+                    )}
+                    {language == 2 && <span>Countries: </span>}
+                    {language == 3 && <span>Мамлекеттер: </span>}
+                    <span>{textCountry}</span>
+                    </div>
+
          
                   </div>
                 </div>

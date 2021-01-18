@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from "react";
 import st from "./header.module.css";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Select from 'react-select';
 import { useDispatch , useSelector } from "react-redux";
 import {getBasketActions} from '../../redux/actions/getBasket/getBasket';
@@ -12,12 +12,15 @@ const Header = () => {
     { value: 3, label: 'Кырг' }
   ]
   const type = localStorage.getItem('type');
+const [logautHome,setlogautHome]=useState(false)
   const logout = () =>{
     localStorage.removeItem('user');
     localStorage.removeItem('auth');
     localStorage.removeItem('time');
     localStorage.removeItem('refresh');
     window.location.reload();
+    setlogautHome(true)
+
   }
   const [burger, setBurger] = useState(false);
   const toggleBurger = () =>{
@@ -38,6 +41,8 @@ const Header = () => {
   }
   const basket = useSelector(state => state.ListBasket.listResearch);
   return (
+    <>
+    {logautHome && <Redirect to="/"/>}
     <nav className={st.header}>
       <Link to="/">
         <svg
@@ -210,6 +215,8 @@ const Header = () => {
         <div className={st.burger}></div>
       </div>
     </nav>
+    </>
+    
   );
 };
 

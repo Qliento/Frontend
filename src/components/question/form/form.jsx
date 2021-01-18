@@ -91,7 +91,7 @@ const Form = () => {
                 <input
                   type="text"
                   className={classes.input}
-                  placeholder="Name of the organization*"
+                  placeholder="Name of the organization"
                   name="name"
                 />
               </>
@@ -102,7 +102,7 @@ const Form = () => {
                 <input
                   type="text"
                   className={classes.input}
-                  placeholder="Уюм аты*"
+                  placeholder="Уюм аты"
                   name="name"
                 />
               </>
