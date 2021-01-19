@@ -74,7 +74,8 @@ export default {
   searchMarketCerds: (category, subcaregory, author, country, text) =>
     http.get(
       `/researches/?country__name__icontains=${country}&category__name__iexact=${subcaregory}&hashtag__name__icontains=${text}&category=${category}&author__logo__icontains=${author}`
-    ),
+    )
+   ,
   orderResearch: (data) => http.post("/purchase/order-form/", data),
   getMainData: () => http.get("/main-page/"),
   createToken: (data) => http.post("/users/jwt-create/", data),

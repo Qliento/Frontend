@@ -45,7 +45,7 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
   const search = () => {
     dispatch(
       searchMarket(
-        inputCategory,
+        categor,
         inputSubCategory,
         inputAuthor,
         inputCountry,

@@ -14,8 +14,7 @@ export function listDataFilter(){
     return async (dispatch)=>{
       await API.dataFilter()
       .then(res => {
-    dispatch(seccess(res.data))
-
+        dispatch(seccess(res.data))
       });
 
 }
