@@ -143,8 +143,10 @@ const Step2En = ({
                   Download at least one research!!!
                 </span>
 }
+
       <div className={classes.topBlock}>
-        <span>Title</span>
+        <span className={classes.topBlockTitle}>Title </span>
+        <span className={classes.topBlockDesc}>(Optional)</span>
       </div>
       <div className={classes.titleContent}>
         <div className={classes.leftBlock}>

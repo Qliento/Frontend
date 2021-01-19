@@ -42,13 +42,20 @@
 .topBlock {
   width: 100%;
   height: auto;
+  display: flex;
+  flex-direction: row;
   margin-top: 40px;
 }
-.topBlock span {
+.topBlockTitle{
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
   color: #000000;
+}
+.topBlockDesc{
+  font-size: 16px;
+  line-height: 22px;
+  color: #828282;
 }
 .blockFiles {
   margin-top: 20px;
@@ -269,7 +276,7 @@
 }
 @media only screen and (max-width:410px){
 
-  .topBlock span{
+  .topBlockTitle, .topBlockDesc{
     font-size: 14px;
   }
   .addInput{

@@ -142,7 +142,8 @@ const Step2Ru = ({
          <span className={classes.err}>Добавьте страницы!!!</span>
  }
       <div className={classes.topBlock}>
-        <span>Оглавление</span>
+        <span className={classes.topBlockTitle}>Оглавление </span>
+        <span className={classes.topBlockDesc}>(Опционально)</span>
       </div>
       <div className={classes.titleContent}>
         <div className={classes.leftBlock}>

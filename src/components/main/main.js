@@ -6,6 +6,7 @@ import Order from "./order/order";
 import AboutUs from "./aboutUs/aboutUs";
 import News from "./news/news";
 import banner from "./img/Фон горы.png";
+import banner1 from "./img/Frame 119.png"
 import GooglePlay from "./googlePlay/googlePlay";
 import Analytics from "./analytics/analytics";
 import { useDispatch, useSelector } from "react-redux";
@@ -26,6 +27,7 @@ const Main = () => {
     <div className={classes.wrapperMain}>
       <div className={classes.wrapper}>
         <img alt="img" src={banner} className={classes.banner} />
+        <img alt="img" src={banner1} className={classes.banner1} />
         <div className={classes.blockTitle}>
           {(language == 1 || language == undefined) && (
             <span className={classes.title}>Маркет исследований</span>

@@ -58,7 +58,7 @@ const CreatableInputOnly = ({ changeHashtag, lang, data }) => {
       onChange={handleChange}
       onInputChange={handleInputChange}
       onKeyDown={handleKeyDown}
-      placeholder="Which words describe your research"
+      placeholder="after entering keywords press enter"
       value={value}
     />
     }
@@ -72,7 +72,7 @@ const CreatableInputOnly = ({ changeHashtag, lang, data }) => {
       onChange={handleChange}
       onInputChange={handleInputChange}
       onKeyDown={handleKeyDown}
-      placeholder="Какие слова описывают ваше исследование"
+      placeholder="после ввода ключевого слова нажмите 'enter'"
       value={value}
     />
     }

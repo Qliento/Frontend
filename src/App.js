@@ -62,6 +62,8 @@ function App() {
             path="/market-research/:category/:text"
             component={MarketResearch}
           />
+   
+          
           <Route
             path="/market-research-detail/:id"
             component={MarketResearch}
@@ -76,6 +78,8 @@ function App() {
           <Route path="/be-partner" component={BePartner} />
           <Route path="/news" component={News} />
           <Route path="/questions" component={QuestionPage} />
+          <Route path="/questions-ask"><QuestionPage flag={true}/></Route>
+
           <Route path="/newsCard" component={NewsCard} />
           <Route path="/basket" component={Basket} />
           <Route path="/recovery-password" component={RecoveryPassword} />

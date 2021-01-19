@@ -14,6 +14,7 @@ const BePartner = () =>{
     const language = localStorage.getItem('lang');
     useEffect(() => {
         dispatch(BePartnerData());
+        window.scrollTo(0, 0)
     }, []);
 
     const { handleSubmit, register, errors } = useForm();

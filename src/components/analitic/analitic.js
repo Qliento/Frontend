@@ -1,4 +1,4 @@
-import React, {useEffect}  from "react";
+import React, {useEffect,useState}  from "react";
 import st from "./analitic.module.css";
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
@@ -6,6 +6,9 @@ import { blogData } from '../../redux/actions/actions';
 import noPhoto from './no_photo.jpg';
 
 const Analitic = () => {
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+    },[])
     const dispatch = useDispatch();
     const data = useSelector((state) => state.blogData.data.data);
     useEffect(() => {dispatch(blogData())}, []);

@@ -147,7 +147,7 @@ const Footer = () => {
             {(language == 1 || language == undefined) &&<span className={st.footer_title}>Вопросы и ответы</span>}
             {language == 2 &&<span className={st.footer_title}>Q&A</span>}
             {language == 3 &&<span className={st.footer_title}>Суроолор жана жооптор</span>}
-          <Link to="/questions">
+          <Link to="/questions-ask">
             {(language == 1 || language == undefined) &&<span>Часто задаваемые вопросы</span>}
             {language == 2 &&<span>FAQ</span>}
             {language == 3 &&<span>Көп берилүүчү суроолор</span>}

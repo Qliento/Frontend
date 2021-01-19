@@ -11,6 +11,9 @@ const Agreement = () =>{
     // const language = useSelector(state => state.langReducer.lang);
     const language = localStorage.getItem('lang');
     useEffect(() => {dispatch(AgreementData())}, []);
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+    },[])
 
     return(
         <div className={st.agreement}>

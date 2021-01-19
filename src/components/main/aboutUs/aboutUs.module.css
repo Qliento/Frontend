@@ -90,6 +90,6 @@ color: #333333;
     }
     @media only screen and (max-width:550px){
         .blockAbout{
-            margin-top: 100px;
+            margin-top: 40px;
         }
     }

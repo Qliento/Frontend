@@ -6,6 +6,12 @@
 .banner {
   width: 100%;
   height: 100%;
+  display: block;
+}
+.banner1{
+  width: 100%;
+  height: 100%;
+  display: none;
 }
 .blockSearch {
   position: absolute;
@@ -61,7 +67,7 @@
     margin-right: 0%;
 
     width: 100%;
-    top: 100px;
+    top: 50px;
 
   }
 
@@ -72,6 +78,21 @@
     margin-left: 10%;
     margin-right: 10%;
     height: 130px;
+  }
+  .wrapper {
+    width: 100%;
+    height: 354px;
+  }
+  .banner{
+    display: none;
+  }
+  .banner1{
+    display: block;
+  }
+  .blockSearch {
+  
+    top: 110px;
+
   }
 }
 

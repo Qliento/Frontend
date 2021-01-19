@@ -18,6 +18,9 @@ const OrderResearch = () =>{
     const onSubmit = (data) =>{
         dispatch(orderResearch(data));
     }
+    useEffect(()=>{
+        window.scrollTo(0, 0)
+    },[])
 
     return(
         <div className={st.order_block}>

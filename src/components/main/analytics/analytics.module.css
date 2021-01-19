@@ -95,6 +95,12 @@
     width: 100%;
     height: 200px;
   }
+  .blockDescr {
+
+
+    max-height: 80%;
+
+  }
   .content {
     width: 100%;
     height: 450px;
