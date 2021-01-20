@@ -469,11 +469,11 @@ const Step2 = ({ isLang, isStep2 ,cahngeArrLang}) => {
         ? 1
         : 0
     );
-    arrLang1.push(
-      Object.values(dataKg).every((o) => o !== null && o !== "" && o !== [])
-        ? 2
-        : 0
-    );
+    // arrLang1.push(
+    //   Object.values(dataKg).every((o) => o !== null && o !== "" && o !== [])
+    //     ? 2
+    //     : 0
+    // );
     arrLang1.push(
       Object.values(data_en).every((o) => o !== null && o !== ""  && o !== [])
         ? 3

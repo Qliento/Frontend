@@ -19,7 +19,7 @@ const Step1 = ({ langChange }) => {
   const [triger, setTriger] = useState(true);
   const [objErr, setObjErr] = useState([]);
   const [isStep, setIsStep] = useState(1);
-  const [arrLang, setArrLang] = useState([1, 2, 3]);
+  const [arrLang, setArrLang] = useState([1, 3]);
   const [hashtag, setHashtag] = useState([]);
   const [errHashtag, setErrHashtag] = useState();
   const [subCategory,setSubCategory]= useState([])
@@ -221,11 +221,11 @@ console.log(mainCountry)
         ? 1
         : 0
     );
-    arrLang1.push(
-      Object.values(dataKg).every((o) => o !== null && o !== "" && o !== [])
-        ? 2
-        : 0
-    );
+    // arrLang1.push(
+    //   Object.values(dataKg).every((o) => o !== null && o !== "" && o !== [])
+    //     ? 2
+    //     : 0
+    // );
     arrLang1.push(
       Object.values(data_en).every((o) => o !== null && o !== "" && o !== [])
         ? 3
@@ -253,7 +253,7 @@ console.log(errHashtag)
     setIsStep(e);
   };
   const cahngeArrLang = () => {
-    setArrLang([1, 2, 3]);
+    setArrLang([1, 3]);
   };
   console.log(isStep)
   console.log(subCategory)
