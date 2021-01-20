@@ -231,7 +231,7 @@ export function authSocialTwit(token, secret){
     .then(res => {
       if( res.status == 200){
         console.log(res)
-        localStorage.setItem('user', res.data.access);
+        localStorage.setItem('user', res.data.tokens.access);
         localStorage.setItem('type', 'client');
         dispatch({ type: 'POSTED_SUCCES_AUTH'})
       }

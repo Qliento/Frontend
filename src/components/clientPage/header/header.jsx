@@ -21,14 +21,14 @@ const Header=({onModal, data})=>{
                         <span className={classes.desc}>{data && data.email}</span>
                     </div>
                     <div className={classes.centerBlock}>
-                        {auth ? '' : <span className={classes.titleNumber}>{data && data.phone_number}</span>}
+                         <span className={classes.titleNumber}>{data && data.phone_number}</span>
                         <span></span>
                     </div>
-                    {auth ? '' : <div className={classes.rightBlock}>
+                     <div className={classes.rightBlock}>
                         {(language == 1 || language == undefined) &&<span className={classes.redact} onClick={() => onModal()}>Редактировать</span>}
                         {language == 2 &&<span className={classes.redact} onClick={() => onModal()}>Edit</span>}
                         {language == 3 &&<span className={classes.redact} onClick={() => onModal()}>Түзөтүү</span>}
-                    </div>}
+                    </div>
                 </div>
             </div>
             <div className={classes.photo}>

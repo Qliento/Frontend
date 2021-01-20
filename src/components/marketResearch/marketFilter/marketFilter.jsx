@@ -33,7 +33,7 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
   const ubdateData = (name, e) => {
     console.log(name);
     if (name === "Все категории" || name === 'All categories' || name === 'Баардык категориялар') {
-      setInputCategory(e);
+      setInputCategory(e.value);
     } else if (name === "Подкатегории" || name === 'Subcategories' || name === 'Подкатегориялар') {
       setInputSubCategory(e.value);
     } else if (name === "Выберите автора") {
@@ -45,7 +45,7 @@ const MarketFilter = ({ category, sort1, sort2, text, sendDataFilter }) => {
   const search = () => {
     dispatch(
       searchMarket(
-        categor,
+        inputCategory,
         inputSubCategory,
         inputAuthor,
         inputCountry,
