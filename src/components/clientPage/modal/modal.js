@@ -29,7 +29,7 @@ const Modal = ({ offModal, changeModal, data }) => {
     };
     reader.readAsDataURL(e.target.files[0]);
   };
-
+  const auth = localStorage.getItem("auth");
   return (
     <div className={st.modal}>
       <Modal1 />
@@ -44,7 +44,7 @@ const Modal = ({ offModal, changeModal, data }) => {
               <img
                 src={
                   data && data.photo
-                    ? "https://qliento.com" + data.photo
+                    ? "https://back.qliento.com" + data.photo
                     : file == ""
                     ? noPhoto
                     : file
@@ -176,25 +176,34 @@ const Modal = ({ offModal, changeModal, data }) => {
           )}
           {(language == 1 || language == undefined) && (
             <>
-              <button className={st.changePass} onClick={changeModal}>
-                Сменить пароль
-              </button>
+              {auth ? null : (
+                <button className={st.changePass} onClick={changeModal}>
+                  Сменить пароль
+                </button>
+              )}
+
               <button onClick={handleSubmit(onSubmit)}>Сохранить</button>
             </>
           )}
           {language == 2 && (
             <>
-              <button className={st.changePass} onClick={changeModal}>
-                Change password
-              </button>
+  
+              {auth ? null : (
+                <button className={st.changePass} onClick={changeModal}>
+                  Change password
+                </button>
+              )}
               <button onClick={handleSubmit(onSubmit)}>Save</button>
             </>
           )}
           {language == 3 && (
             <>
-              <button className={st.changePass} onClick={changeModal}>
-                Сыр сөздү өзгөртүү
-              </button>
+
+              {auth ? null : (
+                <button className={st.changePass} onClick={changeModal}>
+                   Сыр сөздү өзгөртүү
+                </button>
+              )}
               <button onClick={handleSubmit(onSubmit)}>Сактоо</button>
             </>
           )}

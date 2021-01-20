@@ -37,7 +37,7 @@
     justify-content: flex-start;
   }
 }
-@media screen and (max-width: 378px) {
+@media screen and (max-width: 430px) {
   .title{
     font-size: 20px;
   }

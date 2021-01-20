@@ -9,7 +9,6 @@ const Header = () => {
   const options = [
     { value: 1, label: 'Рус' },
     { value: 2, label: 'Eng' },
-    { value: 3, label: 'Кырг' }
   ]
   const type = localStorage.getItem('type');
 const [logautHome,setlogautHome]=useState(false)
