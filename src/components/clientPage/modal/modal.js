@@ -182,7 +182,7 @@ const Modal = ({ offModal, changeModal, data }) => {
                 </button>
               )}
 
-              <button onClick={handleSubmit(onSubmit)}>Сохранить</button>
+              <button onClick={handleSubmit(onSubmit)} className={st.changeBtn}>Сохранить</button>
             </>
           )}
           {language == 2 && (
@@ -193,7 +193,7 @@ const Modal = ({ offModal, changeModal, data }) => {
                   Change password
                 </button>
               )}
-              <button onClick={handleSubmit(onSubmit)}>Save</button>
+              <button onClick={handleSubmit(onSubmit)} className={st.changeBtn}>Save</button>
             </>
           )}
           {language == 3 && (
@@ -204,7 +204,7 @@ const Modal = ({ offModal, changeModal, data }) => {
                    Сыр сөздү өзгөртүү
                 </button>
               )}
-              <button onClick={handleSubmit(onSubmit)}>Сактоо</button>
+              <button onClick={handleSubmit(onSubmit)} className={st.changeBtn}>Сактоо</button>
             </>
           )}
         </form>
