@@ -34,13 +34,13 @@ const Order = () => {
       <div className={classes.content}>
         <div className={classes.blockPrice}>
           {(language == 1 || language == undefined) && (
-            <span className={classes.titlePrice}>Итоговоя сумма</span>
+            <span className={classes.titlePrice}>Итоговая сумма</span>
           )}
           {language == 2 && (
             <span className={classes.titlePrice}>Total cost</span>
           )}
           {language === 3 && (
-            <span className={classes.titlePrice}>Итоговоя сумма</span>
+            <span className={classes.titlePrice}>Итоговая сумма</span>
           )}
           <span className={classes.price1}>
             {data.length !== 0 && data[0].total_sum} ${" "}

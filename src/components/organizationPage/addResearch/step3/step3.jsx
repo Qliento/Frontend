@@ -111,25 +111,25 @@ const Step3 = ({ isStep3 }) => {
        })
        
     }
-    if (researchData.dataStep1.dataKg.name_kg) {
-      formData.append("name_ky", researchData.dataStep1.dataKg.name_kg);
-      formData.append(
-        "description_ky",
-        researchData.dataStep1.dataKg.description_kg
-      );
-      formData.append("demo_ky", researchData.dataStep2.dataKg.file_demo_kg);
+    // if (researchData.dataStep1.dataKg.name_kg) {
+    //   formData.append("name_ky", researchData.dataStep1.dataKg.name_kg);
+    //   formData.append(
+    //     "description_ky",
+    //     researchData.dataStep1.dataKg.description_kg
+    //   );
+    //   formData.append("demo_ky", researchData.dataStep2.dataKg.file_demo_kg);
 
-      file_research_kg.map((item)=>  formData.append("file_ky",item))
-    arr_content_ky=researchData.dataStep2.dataKg.content_kg.map((item)=>{
-      if(item.value && item.page){
-        return{
-         content_ky:item.value,
-         page_ky:item.page
-        }
-        }
-      })
+    //   file_research_kg.map((item)=>  formData.append("file_ky",item))
+    // arr_content_ky=researchData.dataStep2.dataKg.content_kg.map((item)=>{
+    //   if(item.value && item.page){
+    //     return{
+    //      content_ky:item.value,
+    //      page_ky:item.page
+    //     }
+    //     }
+    //   })
      
-    }
+    // }
 
     if (researchData.dataStep1.data_en.name_en) {
       formData.append("name_en", researchData.dataStep1.data_en.name_en);
