@@ -16,7 +16,7 @@ const Footer = () => {
     dispatch(networkData());
   }, []);
   let arrContacts = [];
-  if (data.сontacts) {
+  if (data&&data.сontacts) {
       arrContacts = [...data.сontacts.contacts];
   }
 

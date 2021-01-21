@@ -72,6 +72,7 @@ const CreatableInputOnly = ({ changeHashtag, lang, data }) => {
         height:"auto",
         top:"0%",
         transform: "translateY(0%)",
+        fontSize: 12,
       }),
       valueContainer: (provided)=>({
         ...provided,
