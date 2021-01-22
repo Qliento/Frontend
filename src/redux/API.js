@@ -161,7 +161,7 @@ export default {
       headers: { Authorization: "Bearer " + token },
     }),
   updateClient: (data, token) =>
-      httpUpadate.put("/users/update/users/", data, {
+      httpUpadate.put("/users/update/users", data, {
       headers: { Authorization: "Bearer " + token },
     }),
   getResearchListOrgn: (token) =>
