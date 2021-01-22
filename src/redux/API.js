@@ -210,7 +210,7 @@ export default {
     user: user
   }),
   refreshToken: (token) =>
-    http.post(`/auth/jwt/refresh/`, {
+    http.post(`/users/jwt-refresh/`, {
       'refresh' : token,
     }),
     downLoadFilesAPI: (id,token)=>http.get(`/purchase/download/${id}/`,{
