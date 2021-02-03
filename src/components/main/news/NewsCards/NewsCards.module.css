@@ -16,7 +16,7 @@
   padding-left: 20px;
 }
 .link {
-  min-width: 30%;
+  width: 30%;
   height: 100%;
   margin: 15px;
 }
@@ -87,7 +87,7 @@
   .link {
  
     margin: 0px;
-    min-width: 300px;
+  width: 300px;
   }
   .title {
     font-size: 16px;
@@ -115,7 +115,7 @@
 }
 @media only screen and (max-width:768px){
   .link{
-    min-width: 230px;
+    width: 230px;
   }
   .blockImg{
     height: 140px;
