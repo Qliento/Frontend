@@ -33,7 +33,7 @@ const About = () => {
           if (index % 2 === 0) {
             return (
               <div className={classes.block1} key={item.id}>
-                <img alt="img" className={classes.img} src={item.images[0].url} />
+                <img alt="img" className={classes.img} src={item &&item.images.length>0&& item.images[0].url} />
                 <div className={classes.text1}>
                   <span className={classes.blockTitle}>{item.header}</span>
                   <span>{item.description}</span>
@@ -47,7 +47,7 @@ const About = () => {
                   <span className={classes.blockTitle}>{item.header}</span>
                   <span>{item.description}</span>
                 </div>
-                <img alt="img" className={classes.img}  src={item.images[0].url} />
+                <img alt="img" className={classes.img}  src={item &&item.images.length>0&& item.images[0].url} />
               </div>
             );
           }
