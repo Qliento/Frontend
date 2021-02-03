@@ -5,7 +5,7 @@
 
   overflow-y: none;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 .card {
   width: 100%;
