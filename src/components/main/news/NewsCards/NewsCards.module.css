@@ -15,6 +15,12 @@
   padding-right: 20px;
   padding-left: 20px;
 }
+.blockTitleCard{
+  height: 60px;
+  width: 100%;
+  text-overflow: auto;
+  overflow: hidden;
+}
 .link {
   width: 30%;
   height: 100%;
@@ -78,7 +84,7 @@
 .blockDescrip {
   border-left: 3px solid #bdf58d;
   padding-left: 10px;
-  height: 140px;
+  height: 135px;
   text-overflow: auto;
   overflow: hidden;
 }
