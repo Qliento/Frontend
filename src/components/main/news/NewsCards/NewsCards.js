@@ -21,7 +21,7 @@ const NewsCards = () => {
       {arr &&
         arr.map((item) => {
           return (
-            <Link to="/news" className={classes.link}>
+            <Link to="/news" className={classes.link} key={item.id}>
               <div className={classes.card} key={item.id}>
                 <div className={classes.blockImg}>
                   <img alt="img" className={classes.img} src={item.image} />

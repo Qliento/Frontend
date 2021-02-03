@@ -14,7 +14,7 @@ const AboutUs = ({ data }) => {
         <img
           alt="img"
           className={classes.mainImg}
-          src={data && data.images[0].url}
+          src={data &&data.images.length>0&& data.images[0].url}
         />
       
       </div>

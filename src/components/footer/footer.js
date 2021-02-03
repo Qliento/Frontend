@@ -132,6 +132,7 @@ const Footer = () => {
             networks && networks.map(elem =>(
               <>
                <a
+               key={elem.id}
                   href={elem.url}
                   target="_blank"
                   rel="noopener noreferrer"
